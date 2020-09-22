@@ -16,6 +16,7 @@
 		35BB2BA7251A3E3C0028AF3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35BB2BA5251A3E3C0028AF3E /* LaunchScreen.storyboard */; };
 		35BB2BB2251A3E3D0028AF3E /* entrepreneurship_great_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BB2BB1251A3E3D0028AF3E /* entrepreneurship_great_appTests.swift */; };
 		35BB2BBD251A3E3D0028AF3E /* entrepreneurship_great_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BB2BBC251A3E3D0028AF3E /* entrepreneurship_great_appUITests.swift */; };
+		F1B5E516251A53E400140CB3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B5E515251A53E400140CB3 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		35BB2BB8251A3E3D0028AF3E /* entrepreneurship-great-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "entrepreneurship-great-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35BB2BBC251A3E3D0028AF3E /* entrepreneurship_great_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = entrepreneurship_great_appUITests.swift; sourceTree = "<group>"; };
 		35BB2BBE251A3E3D0028AF3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1B5E515251A53E400140CB3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = "entrepreneurship-great-app/User.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 		35BB2BD0251A4BE70028AF3E /* models */ = {
 			isa = PBXGroup;
 			children = (
+				F1B5E515251A53E400140CB3 /* User.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				35BB2BA2251A3E3C0028AF3E /* entrepreneurship_great_app.xcdatamodeld in Sources */,
 				35BB2B9C251A3E3C0028AF3E /* ViewController.swift in Sources */,
 				35BB2B98251A3E3C0028AF3E /* AppDelegate.swift in Sources */,
+				F1B5E516251A53E400140CB3 /* User.swift in Sources */,
 				35BB2B9A251A3E3C0028AF3E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
