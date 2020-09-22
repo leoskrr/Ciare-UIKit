@@ -106,8 +106,6 @@
 				35BB2BD1251A4BF40028AF3E /* views */,
 				35BB2BD0251A4BE70028AF3E /* models */,
 				1226A090251A406D00379581 /* entrepreneurship-great-app.entitlements */,
-				35BB2B9D251A3E3C0028AF3E /* Main.storyboard */,
-				35BB2BA5251A3E3C0028AF3E /* LaunchScreen.storyboard */,
 				35BB2BA8251A3E3C0028AF3E /* Info.plist */,
 				35BB2BA0251A3E3C0028AF3E /* entrepreneurship_great_app.xcdatamodeld */,
 			);
@@ -143,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				35BB2BA3251A3E3C0028AF3E /* Assets.xcassets */,
+				35BB2B9D251A3E3C0028AF3E /* Main.storyboard */,
+				35BB2BA5251A3E3C0028AF3E /* LaunchScreen.storyboard */,
 			);
 			path = views;
 			sourceTree = "<group>";
