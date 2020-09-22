@@ -17,6 +17,7 @@
 		35BB2BB2251A3E3D0028AF3E /* entrepreneurship_great_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BB2BB1251A3E3D0028AF3E /* entrepreneurship_great_appTests.swift */; };
 		35BB2BBD251A3E3D0028AF3E /* entrepreneurship_great_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BB2BBC251A3E3D0028AF3E /* entrepreneurship_great_appUITests.swift */; };
 		F1B5E516251A53E400140CB3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B5E515251A53E400140CB3 /* User.swift */; };
+		F1B5E51B251A7B2300140CB3 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B5E51A251A7B2300140CB3 /* Enums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		35BB2BBC251A3E3D0028AF3E /* entrepreneurship_great_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = entrepreneurship_great_appUITests.swift; sourceTree = "<group>"; };
 		35BB2BBE251A3E3D0028AF3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1B5E515251A53E400140CB3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = "entrepreneurship-great-app/User.swift"; sourceTree = SOURCE_ROOT; };
+		F1B5E51A251A7B2300140CB3 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Enums.swift; path = "entrepreneurship-great-app/Enums.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				F1B5E515251A53E400140CB3 /* User.swift */,
+				F1B5E51A251A7B2300140CB3 /* Enums.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				35BB2B9C251A3E3C0028AF3E /* ViewController.swift in Sources */,
 				35BB2B98251A3E3C0028AF3E /* AppDelegate.swift in Sources */,
 				F1B5E516251A53E400140CB3 /* User.swift in Sources */,
+				F1B5E51B251A7B2300140CB3 /* Enums.swift in Sources */,
 				35BB2B9A251A3E3C0028AF3E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
