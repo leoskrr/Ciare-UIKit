@@ -102,12 +102,11 @@
 		35BB2B96251A3E3C0028AF3E /* entrepreneurship-great-app */ = {
 			isa = PBXGroup;
 			children = (
+				35BB2BD2251A4BF90028AF3E /* controllers */,
+				35BB2BD1251A4BF40028AF3E /* views */,
+				35BB2BD0251A4BE70028AF3E /* models */,
 				1226A090251A406D00379581 /* entrepreneurship-great-app.entitlements */,
-				35BB2B97251A3E3C0028AF3E /* AppDelegate.swift */,
-				35BB2B99251A3E3C0028AF3E /* SceneDelegate.swift */,
-				35BB2B9B251A3E3C0028AF3E /* ViewController.swift */,
 				35BB2B9D251A3E3C0028AF3E /* Main.storyboard */,
-				35BB2BA3251A3E3C0028AF3E /* Assets.xcassets */,
 				35BB2BA5251A3E3C0028AF3E /* LaunchScreen.storyboard */,
 				35BB2BA8251A3E3C0028AF3E /* Info.plist */,
 				35BB2BA0251A3E3C0028AF3E /* entrepreneurship_great_app.xcdatamodeld */,
@@ -131,6 +130,31 @@
 				35BB2BBE251A3E3D0028AF3E /* Info.plist */,
 			);
 			path = "entrepreneurship-great-appUITests";
+			sourceTree = "<group>";
+		};
+		35BB2BD0251A4BE70028AF3E /* models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		35BB2BD1251A4BF40028AF3E /* views */ = {
+			isa = PBXGroup;
+			children = (
+				35BB2BA3251A3E3C0028AF3E /* Assets.xcassets */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		35BB2BD2251A4BF90028AF3E /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				35BB2B97251A3E3C0028AF3E /* AppDelegate.swift */,
+				35BB2B99251A3E3C0028AF3E /* SceneDelegate.swift */,
+				35BB2B9B251A3E3C0028AF3E /* ViewController.swift */,
+			);
+			path = controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
