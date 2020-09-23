@@ -124,6 +124,7 @@
                     <navigationItem key="navigationItem" id="w5T-hq-qCh"/>
                     <connections>
                         <outlet property="searchBar" destination="d6g-1q-usL" id="ynx-9L-xFK"/>
+                        <outlet property="tableView" destination="Ahn-vc-ROM" id="Ha2-l3-VVT"/>
                         <segue destination="e2v-IO-8wV" kind="presentation" identifier="backToFeedVC" animates="NO" modalPresentationStyle="fullScreen" id="V0T-NH-D7e"/>
                     </connections>
                 </viewController>

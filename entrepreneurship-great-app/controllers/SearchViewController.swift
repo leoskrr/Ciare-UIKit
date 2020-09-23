@@ -9,33 +9,30 @@ import UIKit
 
 class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     
-   
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    var filterUser: [User]!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return User.all.count
+        return filterUser.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let user = User.all[indexPath.row]
+        let user = filterUser[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SearchUserTableViewCell
         
         cell.fillCellData(user)
         
-        
         return cell
     }
-    
-    
-    
-    
-    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         searchBar.becomeFirstResponder()
+        filterUser = User.all
         
         // Do any additional setup after loading the view.
     }
@@ -44,15 +41,24 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         self.performSegue(withIdentifier: "backToFeedVC", sender: self)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    
+        filterUser = []
+        
+        if searchText == "" {
+            
+            filterUser = User.all
+            
+        }  else{
+            
+            for nameUser in User.all{
+                if nameUser.name.lowercased().contains(searchText.lowercased()){
+                    filterUser.append(nameUser)
+                }
+            }
+        }
+        
+        self.tableView.reloadData()
     }
-    */
 
 }
