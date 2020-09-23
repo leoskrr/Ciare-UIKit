@@ -7,7 +7,29 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UISearchBarDelegate {
+class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
+    
+   
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return User.all.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let user = User.all[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SearchUserTableViewCell
+        
+        cell.fillCellData(user)
+        
+        
+        return cell
+    }
+    
+    
+    
+    
     @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {

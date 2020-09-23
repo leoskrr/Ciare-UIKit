@@ -39,13 +39,87 @@
                                     <outlet property="delegate" destination="nfc-km-SQJ" id="aOE-1S-FFJ"/>
                                 </connections>
                             </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ahn-vc-ROM">
+                                <rect key="frame" x="0.0" y="100" width="375" height="678"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="91" id="grc-wg-QmS" customClass="SearchUserTableViewCell" customModule="entrepreneurship_great_app" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="91"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="grc-wg-QmS" id="AQZ-b1-ggz">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="91"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pni-SB-Wqn">
+                                                    <rect key="frame" x="97" y="16" width="46" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Niche" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GvM-xp-efc">
+                                                    <rect key="frame" x="97" y="46" width="44" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" systemColor="systemGray2Color"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="poi-Wr-eXR">
+                                                    <rect key="frame" x="27" y="16" width="50" height="51"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="izm-1y-rDG"/>
+                                                        <constraint firstAttribute="width" secondItem="poi-Wr-eXR" secondAttribute="height" multiplier="50:51" id="zjJ-Ja-sa1"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <integer key="value" value="25"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                            <constraints>
+                                                <constraint firstItem="GvM-xp-efc" firstAttribute="leading" secondItem="poi-Wr-eXR" secondAttribute="trailing" constant="20" id="6rU-ap-glC"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pni-SB-Wqn" secondAttribute="trailing" constant="20" symbolic="YES" id="CaU-xR-ajP"/>
+                                                <constraint firstItem="pni-SB-Wqn" firstAttribute="top" secondItem="AQZ-b1-ggz" secondAttribute="topMargin" constant="5" id="Cri-z1-jzx"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="poi-Wr-eXR" secondAttribute="bottom" constant="13" id="NIe-kn-GRw"/>
+                                                <constraint firstItem="GvM-xp-efc" firstAttribute="top" secondItem="pni-SB-Wqn" secondAttribute="bottom" constant="10" id="ZHh-31-POE"/>
+                                                <constraint firstItem="pni-SB-Wqn" firstAttribute="leading" secondItem="poi-Wr-eXR" secondAttribute="trailing" constant="20" id="due-hI-ak8"/>
+                                                <constraint firstItem="poi-Wr-eXR" firstAttribute="top" secondItem="AQZ-b1-ggz" secondAttribute="topMargin" constant="5" id="l6d-yD-F9k"/>
+                                                <constraint firstItem="poi-Wr-eXR" firstAttribute="leading" secondItem="AQZ-b1-ggz" secondAttribute="leadingMargin" constant="11" id="q5b-kb-oba"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="GvM-xp-efc" secondAttribute="bottom" constant="13" id="wnA-qm-Dbg"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GvM-xp-efc" secondAttribute="trailing" constant="20" symbolic="YES" id="xnx-Xq-dvV"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <integer key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameUser" destination="pni-SB-Wqn" id="62x-we-vOM"/>
+                                            <outlet property="niche" destination="GvM-xp-efc" id="LbZ-MR-455"/>
+                                            <outlet property="picture" destination="poi-Wr-eXR" id="6h4-Ts-sEa"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="nfc-km-SQJ" id="UAR-ZP-LxR"/>
+                                    <outlet property="delegate" destination="nfc-km-SQJ" id="A3P-Ih-BRn"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Dz9-sa-CZF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="d6g-1q-usL" firstAttribute="trailing" secondItem="Dz9-sa-CZF" secondAttribute="trailing" id="98o-uM-NFw"/>
+                            <constraint firstItem="Ahn-vc-ROM" firstAttribute="trailing" secondItem="Dz9-sa-CZF" secondAttribute="trailing" id="PZy-d9-x7n"/>
+                            <constraint firstItem="Ahn-vc-ROM" firstAttribute="bottom" secondItem="Dz9-sa-CZF" secondAttribute="bottom" id="QcN-Zw-DIN"/>
+                            <constraint firstItem="Ahn-vc-ROM" firstAttribute="bottom" secondItem="Dz9-sa-CZF" secondAttribute="bottom" id="REp-a3-SkA"/>
                             <constraint firstItem="d6g-1q-usL" firstAttribute="top" secondItem="Dz9-sa-CZF" secondAttribute="top" id="U1W-eQ-RPb"/>
                             <constraint firstItem="d6g-1q-usL" firstAttribute="leading" secondItem="Dz9-sa-CZF" secondAttribute="leading" id="rLJ-Ly-hba"/>
+                            <constraint firstItem="Ahn-vc-ROM" firstAttribute="top" secondItem="d6g-1q-usL" secondAttribute="bottom" id="wCm-ql-eGD"/>
+                            <constraint firstItem="Ahn-vc-ROM" firstAttribute="trailing" secondItem="Dz9-sa-CZF" secondAttribute="trailing" id="wSo-IM-ZOD"/>
+                            <constraint firstItem="Ahn-vc-ROM" firstAttribute="leading" secondItem="Dz9-sa-CZF" secondAttribute="leading" id="xAn-nB-h29"/>
+                            <constraint firstItem="Ahn-vc-ROM" firstAttribute="top" secondItem="d6g-1q-usL" secondAttribute="bottom" id="yJy-sa-dpu"/>
+                            <constraint firstItem="Ahn-vc-ROM" firstAttribute="leading" secondItem="Dz9-sa-CZF" secondAttribute="leading" id="zVH-rY-cRb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="w5T-hq-qCh"/>
@@ -56,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LgW-Pt-MS3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2929" y="715"/>
+            <point key="canvasLocation" x="-2868" y="714.53201970443354"/>
         </scene>
         <!--Feed-->
         <scene sceneID="CNg-Y1-Ayz">
@@ -170,6 +244,12 @@
         <image name="plus.square.fill" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

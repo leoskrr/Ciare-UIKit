@@ -31,7 +31,7 @@ class User {
         self.typeBuniness = typeBunisses
         self.areasExpertise = areasExpertise
         self.socialNetworks = socialNetworks
-        self.picture = UIImage(named: "")
+        self.picture = picture
         self.availablePartnerships = availablePartnerships
     }
     
