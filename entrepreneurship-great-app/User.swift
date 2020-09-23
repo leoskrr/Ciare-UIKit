@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class User {
+    var id: String
     var name: String
     var email: String
     var password: String
@@ -18,7 +19,9 @@ class User {
     var socialNetworks: [socialNetworks]?
     var picture: UIImage?
     
-    init(name: String, email: String, password: String, location: String? = nil, typeBunisses: typesBusiness, areasExpertise: [String] = [], socialNetworks: [socialNetworks] = []) {
+    init(id: String, name: String, email: String, password: String, location: String? = nil, typeBunisses: typesBusiness, areasExpertise: [String] = [], socialNetworks: [socialNetworks] = []) {
+        
+        self.id = id
         self.name = name
         self.email = name
         self.password = password
@@ -34,9 +37,9 @@ class User {
 
 extension User{
     static let all = [
-        User(name: "Misericordia Store", email: "misericordiastore@apple.com", password: "aaaa", typeBunisses: .digital, areasExpertise: ["Design"], socialNetworks: [.whatsapp, .facebook, .twitter]),
-        User(name: "Os Barés", email: "bares@apple.com", password: "bbbb", typeBunisses: .fisico, areasExpertise: ["Artesanato"], socialNetworks: [.whatsapp, .instagram]),
-        User(name: "Manaos", email: "manaos@apple.com", password: "cccc", location: "Brasil", typeBunisses: .ambos, areasExpertise: ["Gráfica"], socialNetworks: [.linkedin])
+        User(id: UUID().uuidString, name: "Misericordia Store", email: "misericordiastore@apple.com", password: "aaaa", typeBunisses: .digital, areasExpertise: ["Design"], socialNetworks: [.whatsapp, .facebook, .twitter]),
+        User(id: UUID().uuidString, name: "Os Barés", email: "bares@apple.com", password: "bbbb", typeBunisses: .fisico, areasExpertise: ["Artesanato"], socialNetworks: [.whatsapp, .instagram]),
+        User(id: UUID().uuidString, name: "Manaos", email: "manaos@apple.com", password: "cccc", location: "Brasil", typeBunisses: .ambos, areasExpertise: ["Gráfica"], socialNetworks: [.linkedin])
     ]
 }
 
