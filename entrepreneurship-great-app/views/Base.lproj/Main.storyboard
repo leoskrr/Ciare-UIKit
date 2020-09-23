@@ -24,21 +24,68 @@
             </objects>
             <point key="canvasLocation" x="-1210" y="727"/>
         </scene>
+        <!--Search View Controller-->
+        <scene sceneID="Ttb-F9-Lm6">
+            <objects>
+                <viewController id="nfc-km-SQJ" customClass="SearchViewController" customModule="entrepreneurship_great_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ueu-gU-5Pt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="d6g-1q-usL">
+                                <rect key="frame" x="0.0" y="44" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Dz9-sa-CZF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="d6g-1q-usL" firstAttribute="trailing" secondItem="Dz9-sa-CZF" secondAttribute="trailing" id="98o-uM-NFw"/>
+                            <constraint firstItem="d6g-1q-usL" firstAttribute="top" secondItem="Dz9-sa-CZF" secondAttribute="top" id="U1W-eQ-RPb"/>
+                            <constraint firstItem="d6g-1q-usL" firstAttribute="leading" secondItem="Dz9-sa-CZF" secondAttribute="leading" id="rLJ-Ly-hba"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="w5T-hq-qCh"/>
+                    <connections>
+                        <outlet property="searchBar" destination="d6g-1q-usL" id="ynx-9L-xFK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LgW-Pt-MS3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2908" y="715"/>
+        </scene>
         <!--Feed-->
         <scene sceneID="CNg-Y1-Ayz">
             <objects>
-                <viewController id="qga-c8-z3T" sceneMemberID="viewController">
+                <viewController id="qga-c8-z3T" customClass="FeedViewController" customModule="entrepreneurship_great_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gZk-uc-EfA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="133-0K-y4J">
+                                <rect key="frame" x="0.0" y="44" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="qga-c8-z3T" id="g1X-Wk-C3r"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="u4d-uH-fV4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="133-0K-y4J" firstAttribute="trailing" secondItem="u4d-uH-fV4" secondAttribute="trailing" id="EUh-CT-ZF6"/>
+                            <constraint firstItem="133-0K-y4J" firstAttribute="leading" secondItem="u4d-uH-fV4" secondAttribute="leading" id="IHz-h5-dSB"/>
+                            <constraint firstItem="133-0K-y4J" firstAttribute="top" secondItem="u4d-uH-fV4" secondAttribute="top" id="IM2-lt-yNf"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed" image="newspaper.fill" catalog="system" id="pC6-Aj-oXk" userLabel="Feed"/>
+                    <connections>
+                        <segue destination="nfc-km-SQJ" kind="presentation" identifier="goToSearchVC" animates="NO" modalPresentationStyle="fullScreen" id="slX-YX-vna"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gIm-vZ-dxj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1873" y="726"/>
+            <point key="canvasLocation" x="-2015" y="715"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lD6-Ka-Of9">

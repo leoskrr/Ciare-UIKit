@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35675318251B7F950020AB89 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35675317251B7F950020AB89 /* FeedViewController.swift */; };
+		358F4D8F251B844B0018BE34 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358F4D8E251B844B0018BE34 /* SearchViewController.swift */; };
 		35BB2B98251A3E3C0028AF3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BB2B97251A3E3C0028AF3E /* AppDelegate.swift */; };
 		35BB2B9A251A3E3C0028AF3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BB2B99251A3E3C0028AF3E /* SceneDelegate.swift */; };
 		35BB2B9C251A3E3C0028AF3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BB2B9B251A3E3C0028AF3E /* ViewController.swift */; };
@@ -39,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		1226A090251A406D00379581 /* entrepreneurship-great-app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "entrepreneurship-great-app.entitlements"; sourceTree = "<group>"; };
+		35675317251B7F950020AB89 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		358F4D8E251B844B0018BE34 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		35BB2B94251A3E3C0028AF3E /* entrepreneurship-great-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "entrepreneurship-great-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35BB2B97251A3E3C0028AF3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35BB2B99251A3E3C0028AF3E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +163,8 @@
 				35BB2B97251A3E3C0028AF3E /* AppDelegate.swift */,
 				35BB2B99251A3E3C0028AF3E /* SceneDelegate.swift */,
 				35BB2B9B251A3E3C0028AF3E /* ViewController.swift */,
+				35675317251B7F950020AB89 /* FeedViewController.swift */,
+				358F4D8E251B844B0018BE34 /* SearchViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -295,10 +301,12 @@
 			files = (
 				35BB2BA2251A3E3C0028AF3E /* entrepreneurship_great_app.xcdatamodeld in Sources */,
 				35BB2B9C251A3E3C0028AF3E /* ViewController.swift in Sources */,
+				358F4D8F251B844B0018BE34 /* SearchViewController.swift in Sources */,
 				35BB2B98251A3E3C0028AF3E /* AppDelegate.swift in Sources */,
 				F1B5E516251A53E400140CB3 /* User.swift in Sources */,
 				F1B5E51B251A7B2300140CB3 /* Enums.swift in Sources */,
 				35BB2B9A251A3E3C0028AF3E /* SceneDelegate.swift in Sources */,
+				35675318251B7F950020AB89 /* FeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
