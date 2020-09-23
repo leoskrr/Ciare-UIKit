@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
@@ -16,6 +16,10 @@ class SearchViewController: UIViewController {
         searchBar.becomeFirstResponder()
         
         // Do any additional setup after loading the view.
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.performSegue(withIdentifier: "backToFeedVC", sender: self)
     }
     
 

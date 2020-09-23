@@ -32,9 +32,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="d6g-1q-usL">
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d6g-1q-usL">
                                 <rect key="frame" x="0.0" y="44" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="nfc-km-SQJ" id="aOE-1S-FFJ"/>
+                                </connections>
                             </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Dz9-sa-CZF"/>
@@ -48,11 +51,12 @@
                     <navigationItem key="navigationItem" id="w5T-hq-qCh"/>
                     <connections>
                         <outlet property="searchBar" destination="d6g-1q-usL" id="ynx-9L-xFK"/>
+                        <segue destination="e2v-IO-8wV" kind="presentation" identifier="backToFeedVC" animates="NO" modalPresentationStyle="fullScreen" id="V0T-NH-D7e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LgW-Pt-MS3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2908" y="715"/>
+            <point key="canvasLocation" x="-2929" y="715"/>
         </scene>
         <!--Feed-->
         <scene sceneID="CNg-Y1-Ayz">
@@ -62,7 +66,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="133-0K-y4J">
+                            <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="133-0K-y4J">
                                 <rect key="frame" x="0.0" y="44" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -91,6 +95,7 @@
         <scene sceneID="lD6-Ka-Of9">
             <objects>
                 <tabBarController id="e2v-IO-8wV" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="xdZ-vW-0B0"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uCv-rX-paG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
