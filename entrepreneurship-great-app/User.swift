@@ -18,8 +18,10 @@ class User {
     var areasExpertise: [String]?
     var socialNetworks: [socialNetworks]?
     var picture: UIImage?
+    var availablePartnerships: Bool
+
     
-    init(id: String, name: String, email: String, password: String, location: String? = nil, typeBunisses: typesBusiness, areasExpertise: [String] = [], socialNetworks: [socialNetworks] = []) {
+    init(id: String, name: String, email: String, password: String, location: String? = nil, typeBunisses: typesBusiness, areasExpertise: [String] = [], socialNetworks: [socialNetworks] = [], picture: UIImage?, availablePartnerships: Bool) {
         
         self.id = id
         self.name = name
@@ -29,7 +31,8 @@ class User {
         self.typeBuniness = typeBunisses
         self.areasExpertise = areasExpertise
         self.socialNetworks = socialNetworks
-        self.picture = UIImage(named: self.name)
+        self.picture = UIImage(named: "")
+        self.availablePartnerships = availablePartnerships
     }
     
 }
@@ -37,9 +40,9 @@ class User {
 
 extension User{
     static let all = [
-        User(id: UUID().uuidString, name: "Misericordia Store", email: "misericordiastore@apple.com", password: "aaaa", typeBunisses: .digital, areasExpertise: ["Design"], socialNetworks: [.whatsapp, .facebook, .twitter]),
-        User(id: UUID().uuidString, name: "Os Barés", email: "bares@apple.com", password: "bbbb", typeBunisses: .fisico, areasExpertise: ["Artesanato"], socialNetworks: [.whatsapp, .instagram]),
-        User(id: UUID().uuidString, name: "Manaos", email: "manaos@apple.com", password: "cccc", location: "Brasil", typeBunisses: .ambos, areasExpertise: ["Gráfica"], socialNetworks: [.linkedin])
+        User(id: UUID().uuidString, name: "Misericordia Store", email: "misericordiastore@apple.com", password: "aaaa", typeBunisses: .digital, areasExpertise: ["Design"], socialNetworks: [.whatsapp, .facebook, .twitter], picture: UIImage(named: "img1"),  availablePartnerships: true),
+        User(id: UUID().uuidString, name: "Os Barés", email: "bares@apple.com", password: "bbbb", typeBunisses: .fisico, areasExpertise: ["Artesanato"], socialNetworks: [.whatsapp, .instagram], picture: UIImage(named: "img2"), availablePartnerships: false),
+        User(id: UUID().uuidString, name: "Manaos", email: "manaos@apple.com", password: "cccc", location: "Brasil", typeBunisses: .ambos, areasExpertise: ["Gráfica"], socialNetworks: [.linkedin], picture: UIImage(named: "img3"), availablePartnerships: true)
     ]
 }
 
