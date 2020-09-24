@@ -7,11 +7,26 @@
 
 import UIKit
 
-class PersonViewController: UIViewController {
-
+class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
+    
+    
+    
+    func change(to index: Int) {
+        print(index)
+    }
+    
+    @IBOutlet weak var interfaceSegmented: CustomSegmentedControl!{
+        didSet{
+            interfaceSegmented.setButtonTitles(buttonTitles: ["Meus","MidiaKit","MoodBoard"])
+            interfaceSegmented.selectorViewColor = .orange
+            interfaceSegmented.selectorTextColor = .orange
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        interfaceSegmented.delegate = self
         // Do any additional setup after loading the view.
     }
     
