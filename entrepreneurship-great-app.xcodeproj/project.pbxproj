@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		126D5695251B8D2D00077FD3 /* SearchUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126D5694251B8D2D00077FD3 /* SearchUserTableViewCell.swift */; };
 		12A176CC251CD0EE00495AD4 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A176CB251CD0EE00495AD4 /* CustomSegmentedControl.swift */; };
+		12A176EB251CDF0000495AD4 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A176EA251CDF0000495AD4 /* PersonViewController.swift */; };
 		35675318251B7F950020AB89 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35675317251B7F950020AB89 /* FeedViewController.swift */; };
 		358F4D8F251B844B0018BE34 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358F4D8E251B844B0018BE34 /* SearchViewController.swift */; };
 		35BB2B98251A3E3C0028AF3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BB2B97251A3E3C0028AF3E /* AppDelegate.swift */; };
@@ -45,6 +46,7 @@
 		1226A090251A406D00379581 /* entrepreneurship-great-app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "entrepreneurship-great-app.entitlements"; sourceTree = "<group>"; };
 		126D5694251B8D2D00077FD3 /* SearchUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserTableViewCell.swift; sourceTree = "<group>"; };
 		12A176CB251CD0EE00495AD4 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
+		12A176EA251CDF0000495AD4 /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		35675317251B7F950020AB89 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		358F4D8E251B844B0018BE34 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		35BB2B94251A3E3C0028AF3E /* entrepreneurship-great-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "entrepreneurship-great-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +181,7 @@
 				35BB2B9B251A3E3C0028AF3E /* ViewController.swift */,
 				35675317251B7F950020AB89 /* FeedViewController.swift */,
 				358F4D8E251B844B0018BE34 /* SearchViewController.swift */,
+				12A176EA251CDF0000495AD4 /* PersonViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				358F4D8F251B844B0018BE34 /* SearchViewController.swift in Sources */,
 				35BB2B98251A3E3C0028AF3E /* AppDelegate.swift in Sources */,
 				F1B5E516251A53E400140CB3 /* User.swift in Sources */,
+				12A176EB251CDF0000495AD4 /* PersonViewController.swift in Sources */,
 				F1B5E51B251A7B2300140CB3 /* Enums.swift in Sources */,
 				35BB2B9A251A3E3C0028AF3E /* SceneDelegate.swift in Sources */,
 				35675318251B7F950020AB89 /* FeedViewController.swift in Sources */,

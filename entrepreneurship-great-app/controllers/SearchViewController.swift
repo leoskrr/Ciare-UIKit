@@ -56,5 +56,18 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         }
         self.tableView.reloadData()
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let personVC = self.storyboard?.instantiateViewController(withIdentifier: "personVC")
+        self.definesPresentationContext = true
+        personVC?.modalPresentationStyle = .overCurrentContext
+        self.present(personVC!, animated: false, completion: nil)
+        
+        
+    }
+    
+
+    
 
 }
