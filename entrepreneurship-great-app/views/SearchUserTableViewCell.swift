@@ -9,15 +9,13 @@ import UIKit
 
 class SearchUserTableViewCell: UITableViewCell {
 
+    var userId: String?
     @IBOutlet weak var picture: UIImageView!
     @IBOutlet weak var nameUser: UILabel!
     @IBOutlet weak var niche: UILabel!
     
-    
     override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        
+        super.awakeFromNib()        
     }
     
     override func layoutSubviews() {
@@ -27,17 +25,12 @@ class SearchUserTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        
-        
-
-        // Configure the view for the selected state
     }
 
     func fillCellData(_ user: User) {
+        self.userId = user.id
         self.nameUser.text = user.name
         self.picture.image = user.picture
         self.niche.text = user.areasExpertise?[0] ?? ""
     }
-
 }

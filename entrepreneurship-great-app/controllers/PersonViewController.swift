@@ -9,12 +9,14 @@ import UIKit
 
 class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
     
+    var person: User?
     
-    
-    func change(to index: Int) {
-        print(index)
-    }
-    
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var niche: UILabel!
+    @IBOutlet weak var partnershipsQuantity: UILabel!
+    @IBOutlet weak var followingQuantity: UILabel!
+    @IBOutlet weak var followersQuantity: UILabel!
     @IBOutlet weak var interfaceSegmented: CustomSegmentedControl!{
         didSet{
             interfaceSegmented.setButtonTitles(buttonTitles: ["Meus","MidiaKit","MoodBoard"])
@@ -23,14 +25,30 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
         }
     }
     
+    func change(to index: Int) {
+        print(index)
+    }
+    
+    func loadPersonDataOnView(){
+        if let person = self.person {
+            profileImage.image = person.picture
+            name.text = person.name
+            niche.text = person.areasExpertise?[0] ?? ""
+            partnershipsQuantity.text = "\(person.partners?.count ?? 0)"
+            followingQuantity.text = "\(person.following?.count ?? 0)"
+            followersQuantity.text = "\(person.partners?.count ?? 0)"
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadPersonDataOnView()
+        
         interfaceSegmented.delegate = self
+        
         // Do any additional setup after loading the view.
     }
-    
-
     /*
     // MARK: - Navigation
 

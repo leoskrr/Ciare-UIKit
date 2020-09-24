@@ -11,7 +11,14 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    
     var filterUser: [User]!
+    let usersRepository: UsersRepository
+    
+    required init?(coder: NSCoder) {
+        self.usersRepository = UsersRepository()
+        super.init(coder: coder)
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filterUser.count
@@ -65,16 +72,20 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+                
+        let userCell = tableView.cellForRow(at: indexPath) as! SearchUserTableViewCell
         
-        let personVC = self.storyboard?.instantiateViewController(withIdentifier: "personVC")
-        self.definesPresentationContext = true
-        personVC?.modalPresentationStyle = .overCurrentContext
-        self.present(personVC!, animated: false, completion: nil)
-        
-        
+        if let userId = userCell.userId {
+            let selectedUser = usersRepository.findUserById(userId)
+            
+            let personVC = self.storyboard?.instantiateViewController(withIdentifier: "personVC") as! PersonViewController
+            
+            self.definesPresentationContext = true
+            
+            personVC.modalPresentationStyle = .overCurrentContext
+            personVC.person = selectedUser
+                        
+            self.present(personVC, animated: false, completion: nil)
+        }
     }
-    
-
-    
-
 }
