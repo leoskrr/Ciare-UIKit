@@ -29,11 +29,9 @@ class Post {
 }
 
 extension Post {
-    
     static let all = [
         Post(id:  UUID().uuidString, author_id: users[0].id, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis varius placerat elit ut viverra.", picture: UIImage(named: "img1"), likes: 100, comments: 50),
         Post(id:  UUID().uuidString, author_id: users[0].id, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis varius placerat elit ut viverra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis varius placerat elit ut viverra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis varius placerat elit ut viverra.", picture: UIImage(named: "img2"), likes: 10, comments: 2),
         Post(id:  UUID().uuidString, author_id: users[0].id, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", picture: UIImage(named: "img3"), likes: 1000, comments: 500),
     ]
-    
 }

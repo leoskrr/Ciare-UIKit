@@ -21,8 +21,6 @@ class FeedViewController: UIViewController, UISearchBarDelegate {
         newVC?.modalPresentationStyle = .overCurrentContext
         self.present(newVC!, animated: false, completion: nil)
     }
-    
-
     /*
     // MARK: - Navigation
 
@@ -32,5 +30,4 @@ class FeedViewController: UIViewController, UISearchBarDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
