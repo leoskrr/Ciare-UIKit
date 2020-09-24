@@ -126,6 +126,7 @@
                     <connections>
                         <outlet property="searchBar" destination="d6g-1q-usL" id="ynx-9L-xFK"/>
                         <outlet property="tableView" destination="Ahn-vc-ROM" id="Ha2-l3-VVT"/>
+                        <segue destination="e2v-IO-8wV" kind="presentation" identifier="backToFeedVC" animates="NO" modalPresentationStyle="fullScreen" id="V0T-NH-D7e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LgW-Pt-MS3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -157,9 +158,6 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed" image="newspaper.fill" catalog="system" id="pC6-Aj-oXk" userLabel="Feed"/>
-                    <connections>
-                        <segue destination="nfc-km-SQJ" kind="presentation" identifier="goToSearchVC" animates="NO" modalPresentationStyle="fullScreen" id="slX-YX-vna"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gIm-vZ-dxj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
