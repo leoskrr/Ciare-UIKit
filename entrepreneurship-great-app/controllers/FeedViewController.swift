@@ -16,7 +16,10 @@ class FeedViewController: UIViewController, UISearchBarDelegate {
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        self.performSegue(withIdentifier: "goToSearchVC", sender: self)
+        let newVC = self.storyboard?.instantiateViewController(withIdentifier: "searchVC")
+        self.definesPresentationContext = true
+        newVC?.modalPresentationStyle = .overCurrentContext
+        self.present(newVC!, animated: false, completion: nil)
     }
     
 
