@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		126D5695251B8D2D00077FD3 /* SearchUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126D5694251B8D2D00077FD3 /* SearchUserTableViewCell.swift */; };
+		12A176CC251CD0EE00495AD4 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A176CB251CD0EE00495AD4 /* CustomSegmentedControl.swift */; };
 		35675318251B7F950020AB89 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35675317251B7F950020AB89 /* FeedViewController.swift */; };
 		358F4D8F251B844B0018BE34 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358F4D8E251B844B0018BE34 /* SearchViewController.swift */; };
 		35BB2B98251A3E3C0028AF3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BB2B97251A3E3C0028AF3E /* AppDelegate.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		1226A090251A406D00379581 /* entrepreneurship-great-app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "entrepreneurship-great-app.entitlements"; sourceTree = "<group>"; };
 		126D5694251B8D2D00077FD3 /* SearchUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserTableViewCell.swift; sourceTree = "<group>"; };
+		12A176CB251CD0EE00495AD4 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		35675317251B7F950020AB89 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		358F4D8E251B844B0018BE34 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		35BB2B94251A3E3C0028AF3E /* entrepreneurship-great-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "entrepreneurship-great-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12A176D0251CD14F00495AD4 /* custom */ = {
+			isa = PBXGroup;
+			children = (
+				12A176CB251CD0EE00495AD4 /* CustomSegmentedControl.swift */,
+			);
+			path = custom;
+			sourceTree = "<group>";
+		};
 		35BB2B8B251A3E3B0028AF3E = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +162,7 @@
 		35BB2BD1251A4BF40028AF3E /* views */ = {
 			isa = PBXGroup;
 			children = (
+				12A176D0251CD14F00495AD4 /* custom */,
 				35BB2BA3251A3E3C0028AF3E /* Assets.xcassets */,
 				35BB2B9D251A3E3C0028AF3E /* Main.storyboard */,
 				35BB2BA5251A3E3C0028AF3E /* LaunchScreen.storyboard */,
@@ -305,6 +316,7 @@
 				126D5695251B8D2D00077FD3 /* SearchUserTableViewCell.swift in Sources */,
 				35BB2BA2251A3E3C0028AF3E /* entrepreneurship_great_app.xcdatamodeld in Sources */,
 				35BB2B9C251A3E3C0028AF3E /* ViewController.swift in Sources */,
+				12A176CC251CD0EE00495AD4 /* CustomSegmentedControl.swift in Sources */,
 				358F4D8F251B844B0018BE34 /* SearchViewController.swift in Sources */,
 				35BB2B98251A3E3C0028AF3E /* AppDelegate.swift in Sources */,
 				F1B5E516251A53E400140CB3 /* User.swift in Sources */,
