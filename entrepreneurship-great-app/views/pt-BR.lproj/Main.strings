@@ -1,0 +1,21 @@
+
+/* Class = "UITabBarItem"; title = "Publicar"; ObjectID = "DY3-EJ-k6l"; */
+"DY3-EJ-k6l.title" = "Publicar";
+
+/* Class = "UILabel"; text = "Niche"; ObjectID = "GvM-xp-efc"; */
+"GvM-xp-efc.text" = "Niche";
+
+/* Class = "UITabBarItem"; title = "Insights"; ObjectID = "Hdq-VT-pY7"; */
+"Hdq-VT-pY7.title" = "Insights";
+
+/* Class = "UITabBarItem"; title = "Chat"; ObjectID = "UaV-0G-Ktv"; */
+"UaV-0G-Ktv.title" = "Conversas";
+
+/* Class = "UITabBarItem"; title = "Perfil"; ObjectID = "bTM-9e-1qh"; */
+"bTM-9e-1qh.title" = "Perfil";
+
+/* Class = "UITabBarItem"; title = "Feed"; ObjectID = "pC6-Aj-oXk"; */
+"pC6-Aj-oXk.title" = "Feed";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "pni-SB-Wqn"; */
+"pni-SB-Wqn.text" = "Name";
