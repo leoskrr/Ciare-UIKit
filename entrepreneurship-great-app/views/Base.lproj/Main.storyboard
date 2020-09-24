@@ -200,7 +200,7 @@
             </objects>
             <point key="canvasLocation" x="-538" y="-50"/>
         </scene>
-        <!--Publicar-->
+        <!--Post-->
         <scene sceneID="EFX-3o-cdL">
             <objects>
                 <viewController id="iaz-Mh-Bqd" sceneMemberID="viewController">
@@ -210,7 +210,7 @@
                         <viewLayoutGuide key="safeArea" id="OM3-kS-fy9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Publicar" image="plus.square.fill" catalog="system" id="DY3-EJ-k6l"/>
+                    <tabBarItem key="tabBarItem" title="Post" image="plus.square.fill" catalog="system" id="DY3-EJ-k6l"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ctZ-Zg-Zs9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
