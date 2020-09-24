@@ -46,18 +46,14 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         filterUser = []
         
         if searchText == "" {
-            
             filterUser = User.all
-            
-        }  else{
-            
+        }else{
             for nameUser in User.all{
                 if nameUser.name.lowercased().contains(searchText.lowercased()){
                     filterUser.append(nameUser)
                 }
             }
         }
-        
         self.tableView.reloadData()
     }
 

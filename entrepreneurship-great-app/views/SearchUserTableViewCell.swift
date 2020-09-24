@@ -35,12 +35,9 @@ class SearchUserTableViewCell: UITableViewCell {
     }
 
     func fillCellData(_ user: User) {
-        
         self.nameUser.text = user.name
         self.picture.image = user.picture
         self.niche.text = user.areasExpertise?[0] ?? ""
-        
-        
     }
 
 }
