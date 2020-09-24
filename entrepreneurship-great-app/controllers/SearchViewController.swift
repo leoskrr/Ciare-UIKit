@@ -48,14 +48,21 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         if searchText == "" {
             filterUser = User.all
         }else{
-            for nameUser in User.all{
-                if nameUser.name.lowercased().contains(searchText.lowercased()){
-                    filterUser.append(nameUser)
+            for user in User.all{
+                if user.name.lowercased().contains(searchText.lowercased()){
+                    filterUser.append(user)
+                }
+                
+                else if !(user.areasExpertise!.isEmpty){
+                    if user.areasExpertise![0].lowercased().contains(searchText.lowercased()){
+                        filterUser.append(user)
+                    }
                 }
             }
         }
         self.tableView.reloadData()
     }
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
