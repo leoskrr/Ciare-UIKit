@@ -232,7 +232,7 @@
             </objects>
             <point key="canvasLocation" x="132" y="726"/>
         </scene>
-        <!--Perfil-->
+        <!--Profile-->
         <scene sceneID="G6E-3L-AT7">
             <objects>
                 <viewController id="Szg-Rh-TSd" sceneMemberID="viewController">
@@ -242,7 +242,7 @@
                         <viewLayoutGuide key="safeArea" id="0Gx-hR-Ehz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Perfil" image="person.fill" catalog="system" id="bTM-9e-1qh"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="bTM-9e-1qh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XZy-mA-bic" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

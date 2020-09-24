@@ -9,9 +9,9 @@
 "Hdq-VT-pY7.title" = "Insights";
 
 /* Class = "UITabBarItem"; title = "Chat"; ObjectID = "UaV-0G-Ktv"; */
-"UaV-0G-Ktv.title" = "Conversas";
+"UaV-0G-Ktv.title" = "Chat";
 
-/* Class = "UITabBarItem"; title = "Profile"; ObjectID = "bTM-9e-1qh"; */
+/* Class = "UITabBarItem"; title = "Perfil"; ObjectID = "bTM-9e-1qh"; */
 "bTM-9e-1qh.title" = "Perfil";
 
 /* Class = "UITabBarItem"; title = "Feed"; ObjectID = "pC6-Aj-oXk"; */
