@@ -17,6 +17,8 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
     @IBOutlet weak var partnershipsQuantity: UILabel!
     @IBOutlet weak var followingQuantity: UILabel!
     @IBOutlet weak var followersQuantity: UILabel!
+    @IBOutlet weak var followButton: UIButton!
+    
     @IBOutlet weak var interfaceSegmented: CustomSegmentedControl!{
         didSet{
             interfaceSegmented.setButtonTitles(buttonTitles: ["Meus","MidiaKit","MoodBoard"])
@@ -38,6 +40,10 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
             followingQuantity.text = "\(person.following?.count ?? 0)"
             followersQuantity.text = "\(person.partners?.count ?? 0)"
         }
+    }
+    
+    @IBAction func onTouchUpButton(_ sender: Any) {
+    
     }
     
     override func viewDidLoad() {
