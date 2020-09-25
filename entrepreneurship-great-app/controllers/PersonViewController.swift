@@ -55,6 +55,33 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
         
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func backToSearchView(_ sender: Any) {
+        
+        let searchVC = self.storyboard?.instantiateViewController(withIdentifier: "searchVC") as! SearchViewController
+        
+        self.definesPresentationContext = true
+        
+        searchVC.modalPresentationStyle = .overCurrentContext
+        self.present(searchVC, animated: false, completion: nil)
+    }
+    
+    @IBAction func actionViewButton(_ sender: Any) {
+        
+        let actionSheet = UIAlertController(title: "Ações", message: "Selecione alguma das opções abaixo", preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Enviar menssagem", style: .default, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Deixar de seguir", style: .default, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Bloquear usuário", style: .destructive, handler: nil))
+        
+        present(actionSheet, animated: true)
+        
+        
+    }
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 

@@ -408,6 +408,9 @@
                                 <state key="normal">
                                     <imageReference key="image" image="ellipsis" catalog="system" symbolScale="large"/>
                                 </state>
+                                <connections>
+                                    <action selector="actionViewButton:" destination="lv8-rd-Ihi" eventType="touchUpInside" id="n7y-Xa-wcG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1R-Sz-dYn">
                                 <rect key="frame" x="16" y="54" width="14.666666666666664" height="22"/>
@@ -415,6 +418,9 @@
                                 <state key="normal">
                                     <imageReference key="image" image="chevron.left" catalog="system" symbolScale="large"/>
                                 </state>
+                                <connections>
+                                    <action selector="backToSearchView:" destination="lv8-rd-Ihi" eventType="touchUpInside" id="w3o-X1-5kG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wFd-Sj-L5s"/>
