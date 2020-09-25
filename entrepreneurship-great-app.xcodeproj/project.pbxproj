@@ -10,6 +10,7 @@
 		126D5695251B8D2D00077FD3 /* SearchUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126D5694251B8D2D00077FD3 /* SearchUserTableViewCell.swift */; };
 		12A176CC251CD0EE00495AD4 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A176CB251CD0EE00495AD4 /* CustomSegmentedControl.swift */; };
 		12A176EB251CDF0000495AD4 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A176EA251CDF0000495AD4 /* PersonViewController.swift */; };
+		3500ACB5251E2929007E89E7 /* CreateFollowUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3500ACB4251E2929007E89E7 /* CreateFollowUserService.swift */; };
 		3518010D251CF392001B7B38 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3518010C251CF392001B7B38 /* Post.swift */; };
 		35675318251B7F950020AB89 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35675317251B7F950020AB89 /* FeedViewController.swift */; };
 		358F4D8F251B844B0018BE34 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358F4D8E251B844B0018BE34 /* SearchViewController.swift */; };
@@ -49,6 +50,7 @@
 		126D5694251B8D2D00077FD3 /* SearchUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserTableViewCell.swift; sourceTree = "<group>"; };
 		12A176CB251CD0EE00495AD4 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		12A176EA251CDF0000495AD4 /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
+		3500ACB4251E2929007E89E7 /* CreateFollowUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFollowUserService.swift; sourceTree = "<group>"; };
 		3518010C251CF392001B7B38 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		35675317251B7F950020AB89 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		358F4D8E251B844B0018BE34 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,14 @@
 			path = custom;
 			sourceTree = "<group>";
 		};
+		3500ACAE251E252C007E89E7 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				3500ACB4251E2929007E89E7 /* CreateFollowUserService.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
 		35BB2B8B251A3E3B0028AF3E = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +146,7 @@
 				35BB2BD1251A4BF40028AF3E /* views */,
 				35BB2BD2251A4BF90028AF3E /* controllers */,
 				35D51548251D289900ACC8D2 /* repositories */,
+				3500ACAE251E252C007E89E7 /* services */,
 				1226A090251A406D00379581 /* entrepreneurship-great-app.entitlements */,
 				35BB2BA8251A3E3C0028AF3E /* Info.plist */,
 				35BB2BA0251A3E3C0028AF3E /* entrepreneurship_great_app.xcdatamodeld */,
@@ -345,6 +356,7 @@
 				35BB2B98251A3E3C0028AF3E /* AppDelegate.swift in Sources */,
 				F1B5E516251A53E400140CB3 /* User.swift in Sources */,
 				35D5154A251D290300ACC8D2 /* UsersRepository.swift in Sources */,
+				3500ACB5251E2929007E89E7 /* CreateFollowUserService.swift in Sources */,
 				12A176EB251CDF0000495AD4 /* PersonViewController.swift in Sources */,
 				F1B5E51B251A7B2300140CB3 /* Enums.swift in Sources */,
 				35BB2B9A251A3E3C0028AF3E /* SceneDelegate.swift in Sources */,

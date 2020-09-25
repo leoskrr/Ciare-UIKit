@@ -25,7 +25,6 @@ class User {
     var followers: [User]?
     var following: [User]?
 
-    
     init(id: String,
          name: String,
          email: String,
@@ -63,9 +62,8 @@ class User {
     
 }
  
-
 extension User{
-    static let all = [
+    static var all = [
         User(id: UUID().uuidString, name: "Misericórdia Store", email: "misericordiastore@apple.com", password: "aaaa", typeBunisses: .digital, areasExpertise: ["Design"], socialNetworks: [.whatsapp, .facebook, .twitter], picture: UIImage(named: "img1"),  availablePartnerships: true, partners: [], conversations: [], blocked: [], followers: [], following: []),
         
         User(id: UUID().uuidString, name: "Os Barés", email: "bares@apple.com", password: "bbbb", typeBunisses: .fisico, areasExpertise: ["Artesanato"], socialNetworks: [.whatsapp, .instagram], picture: UIImage(named: "img2"), availablePartnerships: false, partners: [], conversations: [], blocked: [], followers: [], following: []),
