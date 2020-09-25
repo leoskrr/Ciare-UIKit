@@ -92,4 +92,6 @@ extension User{
         
         User(id: UUID().uuidString, name: "Lia Cruz", email: "manaos@apple.com", password: "cccc", location: "Brasil", typeBunisses: .ambos, areasExpertise: ["Estúdio Tatoo"], socialNetworks: [.linkedin], picture: UIImage(named: "img2"), availablePartnerships: true, partners: [], conversations: [], blocked: [], followers: [], following: [])
     ]
+    
+    static let loggedUser = all[0]
 }
