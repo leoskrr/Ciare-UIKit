@@ -1,3 +1,8 @@
+/* Class = "UILabel"; text = "Seguindo"; ObjectID = "0Nh-Z2-h1r"; */
+"0Nh-Z2-h1r.text" = "Seguindo";
+
+/* Class = "UILabel"; text = "Parceiros"; ObjectID = "9X8-ow-7ix"; */
+"9X8-ow-7ix.text" = "Parceiros";
 
 /* Class = "UITabBarItem"; title = "Publicar"; ObjectID = "DY3-EJ-k6l"; */
 "DY3-EJ-k6l.title" = "Publicar";
@@ -19,3 +24,20 @@
 
 /* Class = "UILabel"; text = "Name"; ObjectID = "pni-SB-Wqn"; */
 "pni-SB-Wqn.text" = "Name";
+
+/* Class = "UIButton"; normalTitle = "Seguir"; ObjectID = "fEs-wL-3PD"; */
+"fEs-wL-3PD.normalTitle" = "Seguir";
+
+/* Class = "UILabel"; text = "12"; ObjectID = "txW-xm-LYL"; */
+"txW-xm-LYL.text" = "12";
+
+/* Class = "UILabel"; text = "Seguidores"; ObjectID = "u1v-Ac-a2O"; */
+"u1v-Ac-a2O.text" = "Seguidores";
+
+/* Class = "UILabel"; text = "10"; ObjectID = "uCR-Mb-StD"; */
+"uCR-Mb-StD.text" = "10";
+
+/* Class = "UILabel"; text = "7"; ObjectID = "vaR-El-heM"; */
+"vaR-El-heM.text" = "7";
+
+

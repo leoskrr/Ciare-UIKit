@@ -14,10 +14,10 @@ enum typesBusiness {
 }
 
 enum socialNetworks {
-    case instagram
-    case facebook
-    case twitter
-    case linkedin
-    case tiktok
-    case whatsapp
+    case instagram(account: String)
+    case facebook(account: String)
+    case twitter(account: String)
+    case linkedin(account: String)
+    case tiktok(account: String)
+    case whatsapp(number: String)
 }
