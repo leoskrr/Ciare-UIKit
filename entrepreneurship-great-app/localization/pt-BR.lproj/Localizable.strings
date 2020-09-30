@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  entrepreneurship-great-app
+
+  Created by Gustavo Anjos on 30/09/20.
+  
+*/
+
+"PersonViewController.placeholder.btnFollow" = "Seguir";

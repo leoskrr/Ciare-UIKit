@@ -54,6 +54,8 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
         interfaceSegmented.delegate = self
         
         // Do any additional setup after loading the view.
+        
+        followButton.setTitle(Translation.Placeholder.btnFollow, for: .normal)
     }
     
     @IBAction func backToSearchView(_ sender: Any) {
