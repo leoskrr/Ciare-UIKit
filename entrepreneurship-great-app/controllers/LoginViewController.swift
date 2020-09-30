@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import AuthenticationServices
+import CloudKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, ASAuthorizationControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,17 +18,27 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signInWithAppleButton(_ sender: Any) {
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        
+        let request = appleIDProvider.createRequest()
+        
+        request.requestedScopes = [.email, .fullName]
+        
+        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+        
+        authorizationController.delegate = self
+        authorizationController.performRequests()
+    }
+}
+
+extension LoginViewController {
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        self.performSegue(withIdentifier: "goToTabViewController", sender: self)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        print(error.localizedDescription)
     }
-    */
-
+    
+    
 }
