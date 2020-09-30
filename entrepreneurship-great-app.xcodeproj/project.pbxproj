@@ -12,6 +12,7 @@
 		12A176CC251CD0EE00495AD4 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A176CB251CD0EE00495AD4 /* CustomSegmentedControl.swift */; };
 		12A176EB251CDF0000495AD4 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A176EA251CDF0000495AD4 /* PersonViewController.swift */; };
 		3500ACB5251E2929007E89E7 /* CreateFollowUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3500ACB4251E2929007E89E7 /* CreateFollowUserService.swift */; };
+		350633FD2524D6580039FB90 /* SignUpUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350633FC2524D6580039FB90 /* SignUpUser.swift */; };
 		3518010D251CF392001B7B38 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3518010C251CF392001B7B38 /* Post.swift */; };
 		35675318251B7F950020AB89 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35675317251B7F950020AB89 /* FeedViewController.swift */; };
 		358F4D8F251B844B0018BE34 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358F4D8E251B844B0018BE34 /* SearchViewController.swift */; };
@@ -54,6 +55,7 @@
 		12A176CB251CD0EE00495AD4 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		12A176EA251CDF0000495AD4 /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		3500ACB4251E2929007E89E7 /* CreateFollowUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFollowUserService.swift; sourceTree = "<group>"; };
+		350633FC2524D6580039FB90 /* SignUpUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUser.swift; sourceTree = "<group>"; };
 		3518010C251CF392001B7B38 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		35675317251B7F950020AB89 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		358F4D8E251B844B0018BE34 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				3500ACB4251E2929007E89E7 /* CreateFollowUserService.swift */,
+				350633FC2524D6580039FB90 /* SignUpUser.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				350633FD2524D6580039FB90 /* SignUpUser.swift in Sources */,
 				126D5695251B8D2D00077FD3 /* SearchUserTableViewCell.swift in Sources */,
 				35BB2BA2251A3E3C0028AF3E /* entrepreneurship_great_app.xcdatamodeld in Sources */,
 				35BB2B9C251A3E3C0028AF3E /* ViewController.swift in Sources */,

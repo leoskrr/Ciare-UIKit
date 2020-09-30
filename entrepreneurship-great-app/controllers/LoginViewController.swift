@@ -10,10 +10,10 @@ import AuthenticationServices
 import CloudKit
 
 class LoginViewController: UIViewController, ASAuthorizationControllerDelegate {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -33,12 +33,27 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate {
 
 extension LoginViewController {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-        self.performSegue(withIdentifier: "goToTabViewController", sender: self)
+        
+        if let appleIDCredential = authorization.credential as?  ASAuthorizationAppleIDCredential {
+            let userID = appleIDCredential.user
+            if let name = appleIDCredential.fullName?.givenName,
+               let emailAddr = appleIDCredential.email {
+                //New user (Signing up).
+                //Save this information to CloudKit
+                
+                //Terminar essa parte quando tiver a tela de cadastro
+            } else {
+                //Returning user (signing in)
+                //Fetch the user name/ email address
+                //from private CloudKit
+            }
+        }
+    
+        performSegue(withIdentifier: "goToTabViewController", sender: self)
     }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        print(error.localizedDescription)
+        print(error.localizedDescription.description)
     }
-    
-    
 }
+

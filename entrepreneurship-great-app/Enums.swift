@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum typesBusiness {
+enum typesBusiness: String {
     case digital
     case fisico
     case ambos
