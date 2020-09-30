@@ -7,3 +7,8 @@
 */
 
 "PersonViewController.placeholder.btnFollow" = "Seguir";
+"SearchViewController.placeholder.searchBar" = "Pesquisar";
+"PersonViewController.info.labelPartners" = "Parceiros";
+"PersonViewController.info.labelFollowing" = "Seguindo";
+"PersonViewController.info.labelFollowers" = "Seguidores";
+

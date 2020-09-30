@@ -8,11 +8,14 @@
 import UIKit
 
 class FeedViewController: UIViewController, UISearchBarDelegate {
-
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        searchBar.placeholder = Translation.Placeholder.searchBar
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
