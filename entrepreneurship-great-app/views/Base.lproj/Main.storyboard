@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kTQ-yH-1ay">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nyP-gE-t1e">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -141,6 +141,75 @@
             </objects>
             <point key="canvasLocation" x="-2015" y="1381"/>
         </scene>
+        <!--Register View Controller-->
+        <scene sceneID="mtx-HQ-cmC">
+            <objects>
+                <viewController id="nyP-gE-t1e" customClass="RegisterViewController" customModule="entrepreneurship_great_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kj9-Na-gHS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Brand name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dr8-we-SrG">
+                                <rect key="frame" x="16" y="181" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="NkD-rx-DBL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" textContentType="name"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVC-km-Le9">
+                                <rect key="frame" x="16" y="241" width="115" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" red="0.34283557529999997" green="0.34282749890000003" blue="0.34282910820000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmd-VC-2e9">
+                                <rect key="frame" x="16" y="140" width="76" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" red="0.34283557529999997" green="0.34282749890000003" blue="0.34282910820000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yft-Kt-lOH" userLabel="CustomSegmented" customClass="CustomSegmentedControl" customModule="entrepreneurship_great_app" customModuleProvider="target">
+                                <rect key="frame" x="16" y="272" width="343" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="8yY-h0-MNa"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjB-Ki-2S1">
+                                <rect key="frame" x="16.000000000000007" y="84" width="117.66666666666669" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" red="0.34283557529999997" green="0.34282749890000003" blue="0.34282910820000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="St8-Yb-sta"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dr8-we-SrG" firstAttribute="leading" secondItem="St8-Yb-sta" secondAttribute="leading" constant="16" id="2ev-AZ-92v"/>
+                            <constraint firstItem="St8-Yb-sta" firstAttribute="trailing" secondItem="yft-Kt-lOH" secondAttribute="trailing" constant="16" id="33U-jQ-QJu"/>
+                            <constraint firstItem="gmd-VC-2e9" firstAttribute="top" secondItem="FjB-Ki-2S1" secondAttribute="bottom" constant="20" id="6Td-6V-UhI"/>
+                            <constraint firstItem="dr8-we-SrG" firstAttribute="top" secondItem="gmd-VC-2e9" secondAttribute="bottom" constant="20" id="84R-zp-a7l"/>
+                            <constraint firstItem="yft-Kt-lOH" firstAttribute="leading" secondItem="St8-Yb-sta" secondAttribute="leading" constant="16" id="8uw-Qv-R0L"/>
+                            <constraint firstItem="St8-Yb-sta" firstAttribute="trailing" secondItem="dr8-we-SrG" secondAttribute="trailing" constant="16" id="FWS-Sa-94Z"/>
+                            <constraint firstItem="St8-Yb-sta" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gmd-VC-2e9" secondAttribute="trailing" symbolic="YES" id="FcP-id-Ew1"/>
+                            <constraint firstItem="cVC-km-Le9" firstAttribute="top" secondItem="dr8-we-SrG" secondAttribute="bottom" constant="20" id="Iau-lU-2el"/>
+                            <constraint firstItem="FjB-Ki-2S1" firstAttribute="top" secondItem="St8-Yb-sta" secondAttribute="top" constant="40" id="PJh-do-6R8"/>
+                            <constraint firstItem="cVC-km-Le9" firstAttribute="leading" secondItem="St8-Yb-sta" secondAttribute="leading" constant="16" id="cT5-lU-eEl"/>
+                            <constraint firstItem="St8-Yb-sta" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cVC-km-Le9" secondAttribute="trailing" symbolic="YES" id="ecB-Fc-3l2"/>
+                            <constraint firstItem="FjB-Ki-2S1" firstAttribute="leading" secondItem="St8-Yb-sta" secondAttribute="leading" constant="16" id="k9z-We-Pji"/>
+                            <constraint firstItem="yft-Kt-lOH" firstAttribute="top" secondItem="cVC-km-Le9" secondAttribute="bottom" constant="10" id="p6M-s4-2Me"/>
+                            <constraint firstItem="gmd-VC-2e9" firstAttribute="leading" secondItem="St8-Yb-sta" secondAttribute="leading" constant="16" id="uPe-2N-gZX"/>
+                            <constraint firstItem="St8-Yb-sta" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FjB-Ki-2S1" secondAttribute="trailing" symbolic="YES" id="yCw-ap-cnv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="interfaceSegmented" destination="yft-Kt-lOH" id="hpt-TE-hI1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8hd-IE-gkN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3014" y="-50"/>
+        </scene>
         <!--Feed-->
         <scene sceneID="CNg-Y1-Ayz">
             <objects>
@@ -213,7 +282,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GHh-19-v5U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1566" y="-50"/>
+            <point key="canvasLocation" x="-1486" y="-50"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lD6-Ka-Of9">
@@ -510,7 +579,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="V0T-NH-D7e"/>
+        <segue reference="lkR-W7-B66"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
