@@ -15,27 +15,19 @@ class UsersRepository{
     
     init() {
         self.publicDatabase = CKContainer(identifier: "iCloud.com.vianaleonardo.entrepreneurship").publicCloudDatabase
-//        self.record = CKRecord(recordType: "User", recordID: CKRecord.ID(recordName: userId))
     }
     
-    public func findUserById(_ id: String) -> User? {
-        if let user = User.all.first(where: { $0.id == id }) {
-            return user
-        }
-        return nil
-    }
-    
-    public func updateUser(_ user: User?) -> User? {
+    public func saveUser(userId: String, name: String, email: String){
+        let record = CKRecord(recordType: "User", recordID: CKRecord.ID(recordName: userId))
         
-        if let userExists = user {
-            if let userIndexInArray = User.all.firstIndex(where: { $0.id == userExists.id }) {
-                User.all[userIndexInArray] = userExists
-                
-                return userExists
-            }
-            return nil
+        record["name"] = name
+        record["email"] = email
+        
+        publicDatabase.save(record) {_,_ in
+            UserDefaults.standard.setValue(record.recordID.recordName, forKey: "userProfileId")
+            //criar retorno de objeto da classe User se der tudo certo
         }
-        return nil
+        //retornar nil se der errado
     }
     
     public func fetchUser(userId: String) -> User?{
@@ -59,4 +51,25 @@ class UsersRepository{
         }
         return nil
     }
+    
+    public func findUserById(_ id: String) -> User? {
+        if let user = User.all.first(where: { $0.id == id }) {
+            return user
+        }
+        return nil
+    }
+    
+    public func updateUser(_ user: User?) -> User? {
+        
+        if let userExists = user {
+            if let userIndexInArray = User.all.firstIndex(where: { $0.id == userExists.id }) {
+                User.all[userIndexInArray] = userExists
+                
+                return userExists
+            }
+            return nil
+        }
+        return nil
+    }
+    
 }
