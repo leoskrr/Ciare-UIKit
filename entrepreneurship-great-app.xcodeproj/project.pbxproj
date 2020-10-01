@@ -14,6 +14,7 @@
 		3500ACB5251E2929007E89E7 /* CreateFollowUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3500ACB4251E2929007E89E7 /* CreateFollowUserService.swift */; };
 		3518010D251CF392001B7B38 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3518010C251CF392001B7B38 /* Post.swift */; };
 		351826FF25257DE700AC4D48 /* SignUpUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351826FE25257DE700AC4D48 /* SignUpUserService.swift */; };
+		355674DA25260C6500BFD4A7 /* SignInUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355674D925260C6500BFD4A7 /* SignInUserService.swift */; };
 		35675318251B7F950020AB89 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35675317251B7F950020AB89 /* FeedViewController.swift */; };
 		358F4D8F251B844B0018BE34 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358F4D8E251B844B0018BE34 /* SearchViewController.swift */; };
 		35BB2B98251A3E3C0028AF3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BB2B97251A3E3C0028AF3E /* AppDelegate.swift */; };
@@ -59,6 +60,7 @@
 		3500ACB4251E2929007E89E7 /* CreateFollowUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFollowUserService.swift; sourceTree = "<group>"; };
 		3518010C251CF392001B7B38 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		351826FE25257DE700AC4D48 /* SignUpUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUserService.swift; sourceTree = "<group>"; };
+		355674D925260C6500BFD4A7 /* SignInUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUserService.swift; sourceTree = "<group>"; };
 		35675317251B7F950020AB89 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		358F4D8E251B844B0018BE34 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		35BB2B94251A3E3C0028AF3E /* entrepreneurship-great-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "entrepreneurship-great-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +127,7 @@
 			children = (
 				3500ACB4251E2929007E89E7 /* CreateFollowUserService.swift */,
 				351826FE25257DE700AC4D48 /* SignUpUserService.swift */,
+				355674D925260C6500BFD4A7 /* SignInUserService.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				35BB2BA2251A3E3C0028AF3E /* entrepreneurship_great_app.xcdatamodeld in Sources */,
 				35BB2B9C251A3E3C0028AF3E /* ViewController.swift in Sources */,
 				128769842524C49100B04079 /* LoginViewController.swift in Sources */,
+				355674DA25260C6500BFD4A7 /* SignInUserService.swift in Sources */,
 				3518010D251CF392001B7B38 /* Post.swift in Sources */,
 				12A176CC251CD0EE00495AD4 /* CustomSegmentedControl.swift in Sources */,
 				358F4D8F251B844B0018BE34 /* SearchViewController.swift in Sources */,
