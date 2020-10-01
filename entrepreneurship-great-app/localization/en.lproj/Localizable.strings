@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  entrepreneurship-great-app
+
+  Created by Gustavo Anjos on 30/09/20.
+  
+*/
+
+"PersonViewController.placeholder.btnFollow" = "Follow";
+"SearchViewController.placeholder.searchBar" = "Search";
+"PersonViewController.info.labelPartners" = "Partners";
+"PersonViewController.info.labelFollowing" = "Following";
+"PersonViewController.info.labelFollowers" = "Followers";
+
+
+
+

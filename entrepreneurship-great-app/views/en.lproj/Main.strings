@@ -1,11 +1,18 @@
+
 /* Class = "UILabel"; text = "Seguindo"; ObjectID = "0Nh-Z2-h1r"; */
 "0Nh-Z2-h1r.text" = "Seguindo";
+
+/* Class = "UIButton"; normalTitle = " Sign in with Apple"; ObjectID = "3oc-k3-pdF"; */
+"3oc-k3-pdF.normalTitle" = " Sign in with Apple";
 
 /* Class = "UILabel"; text = "Parceiros"; ObjectID = "9X8-ow-7ix"; */
 "9X8-ow-7ix.text" = "Parceiros";
 
-/* Class = "UITabBarItem"; title = "Publicar"; ObjectID = "DY3-EJ-k6l"; */
-"DY3-EJ-k6l.title" = "Publicar";
+/* Class = "UITabBarItem"; title = "Post"; ObjectID = "DY3-EJ-k6l"; */
+"DY3-EJ-k6l.title" = "Post";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "ErO-i7-fi3"; */
+"ErO-i7-fi3.text" = "Name";
 
 /* Class = "UILabel"; text = "Niche"; ObjectID = "GvM-xp-efc"; */
 "GvM-xp-efc.text" = "Niche";
@@ -16,17 +23,20 @@
 /* Class = "UITabBarItem"; title = "Chat"; ObjectID = "UaV-0G-Ktv"; */
 "UaV-0G-Ktv.title" = "Chat";
 
-/* Class = "UITabBarItem"; title = "Perfil"; ObjectID = "bTM-9e-1qh"; */
-"bTM-9e-1qh.title" = "Perfil";
+/* Class = "UITabBarItem"; title = "Profile"; ObjectID = "bTM-9e-1qh"; */
+"bTM-9e-1qh.title" = "Profile";
+
+/* Class = "UILabel"; text = "Niche"; ObjectID = "bfk-wR-Bqn"; */
+"bfk-wR-Bqn.text" = "Niche";
+
+/* Class = "UIButton"; normalTitle = "Seguir"; ObjectID = "fEs-wL-3PD"; */
+"fEs-wL-3PD.normalTitle" = "Seguir";
 
 /* Class = "UITabBarItem"; title = "Feed"; ObjectID = "pC6-Aj-oXk"; */
 "pC6-Aj-oXk.title" = "Feed";
 
 /* Class = "UILabel"; text = "Name"; ObjectID = "pni-SB-Wqn"; */
 "pni-SB-Wqn.text" = "Name";
-
-/* Class = "UIButton"; normalTitle = "Seguir"; ObjectID = "fEs-wL-3PD"; */
-"fEs-wL-3PD.normalTitle" = "Seguir";
 
 /* Class = "UILabel"; text = "12"; ObjectID = "txW-xm-LYL"; */
 "txW-xm-LYL.text" = "12";
@@ -39,5 +49,3 @@
 
 /* Class = "UILabel"; text = "7"; ObjectID = "vaR-El-heM"; */
 "vaR-El-heM.text" = "7";
-
-

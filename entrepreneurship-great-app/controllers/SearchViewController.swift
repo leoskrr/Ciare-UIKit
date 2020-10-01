@@ -42,6 +42,8 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         filterUser = User.all
         
         // Do any additional setup after loading the view.
+        
+        searchBar.placeholder = Translation.Placeholder.searchBar
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {

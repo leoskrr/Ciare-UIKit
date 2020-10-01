@@ -166,6 +166,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed" image="newspaper.fill" catalog="system" id="pC6-Aj-oXk" userLabel="Feed"/>
+                    <connections>
+                        <outlet property="searchBar" destination="133-0K-y4J" id="Oyd-RX-ZBM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gIm-vZ-dxj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -489,11 +492,14 @@
                     </view>
                     <connections>
                         <outlet property="followButton" destination="fEs-wL-3PD" id="qnX-gN-44C"/>
+                        <outlet property="followersLabel" destination="C1J-Uh-hRr" id="CnM-Jw-rrB"/>
                         <outlet property="followersQuantity" destination="vaR-El-heM" id="Pqe-hy-l36"/>
+                        <outlet property="followingLabel" destination="0Nh-Z2-h1r" id="ULF-Jp-ArA"/>
                         <outlet property="followingQuantity" destination="uCR-Mb-StD" id="hx3-rI-9LP"/>
                         <outlet property="interfaceSegmented" destination="bUI-wO-Hpq" id="rvu-qz-GqL"/>
                         <outlet property="name" destination="ErO-i7-fi3" id="qPl-zO-93B"/>
                         <outlet property="niche" destination="bfk-wR-Bqn" id="fJW-mg-U6T"/>
+                        <outlet property="partnersLabel" destination="9X8-ow-7ix" id="FSX-sC-WJO"/>
                         <outlet property="partnershipsQuantity" destination="txW-xm-LYL" id="gmK-BM-2gI"/>
                         <outlet property="profileImage" destination="rjb-Z3-4ZE" id="3xo-Yf-qp1"/>
                     </connections>
@@ -504,7 +510,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lkR-W7-B66"/>
+        <segue reference="V0T-NH-D7e"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="chevron.left" catalog="system" width="96" height="128"/>

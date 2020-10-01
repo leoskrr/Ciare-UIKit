@@ -19,6 +19,10 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
     @IBOutlet weak var followersQuantity: UILabel!
     @IBOutlet weak var followButton: UIButton!
     
+    @IBOutlet weak var partnersLabel: UILabel!
+    @IBOutlet weak var followingLabel: UILabel!
+    @IBOutlet weak var followersLabel: UILabel!
+    
     @IBOutlet weak var interfaceSegmented: CustomSegmentedControl!{
         didSet{
             interfaceSegmented.setButtonTitles(buttonTitles: ["Meus","MidiaKit","MoodBoard"])
@@ -54,6 +58,8 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
         interfaceSegmented.delegate = self
         
         // Do any additional setup after loading the view.
+        
+        
     }
     
     @IBAction func backToSearchView(_ sender: Any) {
@@ -77,6 +83,13 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
         present(actionSheet, animated: true)
         
         
+    }
+    
+    func translation() {
+        followButton.setTitle(Translation.Placeholder.btnFollow, for: .normal)
+        partnersLabel.text = Translation.Info.partners
+        followingLabel.text = Translation.Info.following
+        followersLabel.text = Translation.Info.followers
     }
     
     
