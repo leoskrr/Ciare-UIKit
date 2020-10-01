@@ -12,6 +12,7 @@
 		12A176CC251CD0EE00495AD4 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A176CB251CD0EE00495AD4 /* CustomSegmentedControl.swift */; };
 		12A176EB251CDF0000495AD4 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A176EA251CDF0000495AD4 /* PersonViewController.swift */; };
 		12D2CA1D2525F666001FCFCC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D2CA1C2525F666001FCFCC /* RegisterViewController.swift */; };
+		12D2CA2225262FDD001FCFCC /* DigitalSegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D2CA2125262FDD001FCFCC /* DigitalSegmentedViewController.swift */; };
 		3500ACB5251E2929007E89E7 /* CreateFollowUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3500ACB4251E2929007E89E7 /* CreateFollowUserService.swift */; };
 		3518010D251CF392001B7B38 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3518010C251CF392001B7B38 /* Post.swift */; };
 		351826FF25257DE700AC4D48 /* SignUpUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351826FE25257DE700AC4D48 /* SignUpUserService.swift */; };
@@ -58,6 +59,7 @@
 		12A176CB251CD0EE00495AD4 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		12A176EA251CDF0000495AD4 /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		12D2CA1C2525F666001FCFCC /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		12D2CA2125262FDD001FCFCC /* DigitalSegmentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalSegmentedViewController.swift; sourceTree = "<group>"; };
 		3500ACB4251E2929007E89E7 /* CreateFollowUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFollowUserService.swift; sourceTree = "<group>"; };
 		3518010C251CF392001B7B38 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		351826FE25257DE700AC4D48 /* SignUpUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUserService.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				12A176CB251CD0EE00495AD4 /* CustomSegmentedControl.swift */,
+				12D2CA2125262FDD001FCFCC /* DigitalSegmentedViewController.swift */,
 			);
 			path = custom;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				12A176EB251CDF0000495AD4 /* PersonViewController.swift in Sources */,
 				F1B5E51B251A7B2300140CB3 /* Enums.swift in Sources */,
 				35BB2B9A251A3E3C0028AF3E /* SceneDelegate.swift in Sources */,
+				12D2CA2225262FDD001FCFCC /* DigitalSegmentedViewController.swift in Sources */,
 				35675318251B7F950020AB89 /* FeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
