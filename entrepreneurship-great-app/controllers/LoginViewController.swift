@@ -36,14 +36,22 @@ extension LoginViewController {
         
         if let appleIDCredential = authorization.credential as?  ASAuthorizationAppleIDCredential {
             let userID = appleIDCredential.user
+            print(userID)
             if let name = appleIDCredential.fullName?.givenName,
                let emailAddr = appleIDCredential.email {
                 //New user (Signing up).
                 //Save this information to CloudKit
-                
+                print("SIGN UP")
+                do {
+                    try SignUpUserService().execute(userId: userID, name: name, email: emailAddr)
+                } catch {
+                    print(error)
+                }
                 //Terminar essa parte quando tiver a tela de cadastro
             } else {
                 //Returning user (signing in)
+                print("SIGN IN")
+                SignInUserService().execute(userId: userID)
                 //Fetch the user name/ email address
                 //from private CloudKit
             }
