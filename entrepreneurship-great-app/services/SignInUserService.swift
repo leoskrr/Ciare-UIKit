@@ -15,7 +15,20 @@ class SignInUserService {
         self.usersRepository = UsersRepository()
     }
     
-    public func execute(userId: String){
-        usersRepository.fetchUser(userId: userId)
+    public func execute(){
+        CKContainer.default().fetchUserRecordID {
+            recordID, error in
+            
+            guard let recordID = recordID, error == nil else {
+                return
+            }
+            
+            do{
+                try self.usersRepository.fetchUser(recordID: recordID)
+            } catch {
+                print(error)
+            }
+        }
+        print("SIGN IN SUCCESS!")
     }
 }

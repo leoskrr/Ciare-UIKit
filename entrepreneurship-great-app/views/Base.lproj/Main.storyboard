@@ -290,25 +290,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3oc-k3-pdF">
-                                <rect key="frame" x="20" y="622" width="335" height="40"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="TXZ-XW-Woj"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="21"/>
-                                <state key="normal" title=" Sign in with Apple">
-                                    <color key="titleColor" systemColor="labelColor"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="7"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="signInWithAppleButton:" destination="kTQ-yH-1ay" eventType="touchUpInside" id="eiI-GO-2OQ"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="e0q-dw-XQ2">
                                 <rect key="frame" x="20" y="529" width="335" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -316,11 +297,6 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nkm-H8-j3r"/>
                         <color key="backgroundColor" red="0.94438391919999998" green="0.66800862549999995" blue="0.31152465940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstItem="3oc-k3-pdF" firstAttribute="bottom" secondItem="nkm-H8-j3r" secondAttribute="bottom" constant="-5" id="LXi-Ww-9Cp"/>
-                            <constraint firstItem="3oc-k3-pdF" firstAttribute="leading" secondItem="nkm-H8-j3r" secondAttribute="leading" constant="20" id="Rc5-GX-8pD"/>
-                            <constraint firstItem="nkm-H8-j3r" firstAttribute="trailing" secondItem="3oc-k3-pdF" secondAttribute="trailing" constant="20" id="xYB-kR-oe0"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="stackViewForAppleIDButton" destination="e0q-dw-XQ2" id="Eyi-wt-iCI"/>
@@ -1105,9 +1081,6 @@
         <image name="newspaper.fill" catalog="system" width="128" height="111"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="plus.square.fill" catalog="system" width="128" height="114"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

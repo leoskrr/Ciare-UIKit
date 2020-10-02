@@ -24,7 +24,7 @@ class UsersRepository{
         record["email"] = email
         
         publicDatabase.save(record) { record, err in
-//            UserDefaults.standard.setValue(record.recordID.recordName, forKey: "userProfileId")
+            //            UserDefaults.standard.setValue(record.recordID.recordName, forKey: "userProfileId")
             if let user = record {
                 print("\n\n User successfully saved \n\n")
                 print(user)
@@ -38,33 +38,28 @@ class UsersRepository{
         //retornar nil se der errado
     }
     
-    public func fetchUser(userId: String){
-        CKContainer.default().fetchUserRecordID {
-            recordID, error in
-            guard let recordID = recordID, error == nil else {
-                print("\n Error fetching user\n")
-                print(error)
+    public func fetchUser(recordID: CKRecord.ID) throws{
+        var handleError: Error?
+        
+        self.publicDatabase.fetch(withRecordID: recordID) { (record, error) in
+            guard let record = record, error == nil else {
+                handleError = error
                 return
             }
-            self.publicDatabase.fetch(withRecordID: recordID) { (record, error) in
-                if let fetchedInfo = record {
-                    print("\n\n SUCCESS FETCHING USER \n\n")
-                }
-                if let handleError = error {
-                    print("\n\n ERROR FETCHING USER \n\n")
-                    print(handleError)
-                }
-            }
+            print("record is: \(record)")
+        }
+        
+        if let error = handleError {
+            throw error
         }
     }
-    
     public func findUserById(_ id: String) -> User? {
         if let user = User.all.first(where: { $0.id == id }) {
             return user
         }
         return nil
     }
-    
+
     public func updateUser(_ user: User?) -> User? {
         
         if let userExists = user {
@@ -77,5 +72,4 @@ class UsersRepository{
         }
         return nil
     }
-    
 }
