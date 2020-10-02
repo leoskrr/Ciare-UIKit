@@ -11,6 +11,7 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
   
     @IBOutlet weak var physicalConteiner: UIView!
     @IBOutlet weak var digitalConteiner: UIView!
+    @IBOutlet weak var bothConteiner: UIView!
     
     func change(to index: Int) {
         
@@ -19,57 +20,15 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
         case 0:
             physicalConteiner.isHidden = false
             digitalConteiner.isHidden = true
-            
-            
-            
-//            let BusinessAreaTextField =  UITextField()
-//            BusinessAreaTextField.placeholder = "Business Area"
-//            BusinessAreaTextField.font = UIFont.systemFont(ofSize: 15)
-//            BusinessAreaTextField.borderStyle = UITextField.BorderStyle.roundedRect
-//            view.addSubview(BusinessAreaTextField)
-//
-//            BusinessAreaTextField.translatesAutoresizingMaskIntoConstraints = false
-//
-//            let leadingConstraint = NSLayoutConstraint(item: BusinessAreaTextField, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 16)
-//            let trailingConstraint = NSLayoutConstraint(item: BusinessAreaTextField, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: -16)
-//            let topConstraint = NSLayoutConstraint(item: BusinessAreaTextField, attribute: .top, relatedBy: .equal, toItem: interfaceSegmented, attribute: .bottom, multiplier: 1, constant: 20)
-//            BusinessAreaTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
-//
-//            NSLayoutConstraint.activate([leadingConstraint, topConstraint, trailingConstraint])
-//
-//            let locationTextField =  UITextField()
-//            locationTextField.placeholder = "Location"
-//            locationTextField.font = UIFont.systemFont(ofSize: 15)
-//            locationTextField.borderStyle = UITextField.BorderStyle.roundedRect
-//            locationTextField.textContentType = .location
-//            view.addSubview(locationTextField)
-//
-//            locationTextField.translatesAutoresizingMaskIntoConstraints = false
-//
-//            let leadingConstraintLocation = NSLayoutConstraint(item: locationTextField, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 16)
-//            let trailingConstraintLocation = NSLayoutConstraint(item: locationTextField, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: -16)
-//            let topConstraintLocation = NSLayoutConstraint(item: locationTextField, attribute: .top, relatedBy: .equal, toItem: BusinessAreaTextField, attribute: .bottom, multiplier: 1, constant: 20)
-//            locationTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
-//
-//            NSLayoutConstraint.activate([leadingConstraintLocation, trailingConstraintLocation, topConstraintLocation])
-            
-//            let BusinessAreaTextField =  UITextField()
-//            BusinessAreaTextField.placeholder = "Business Area"
-//            BusinessAreaTextField.font = UIFont.systemFont(ofSize: 15)
-//            BusinessAreaTextField.borderStyle = UITextField.BorderStyle.roundedRect
-//            view.addSubview(BusinessAreaTextField)
-//
-//            BusinessAreaTextField.translatesAutoresizingMaskIntoConstraints = false
-//
-//            let leadingConstraint = NSLayoutConstraint(item: BusinessAreaTextField, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 16)
-//            let trailingConstraint = NSLayoutConstraint(item: BusinessAreaTextField, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: -16)
-//            let topConstraint = NSLayoutConstraint(item: BusinessAreaTextField, attribute: .top, relatedBy: .equal, toItem: interfaceSegmented, attribute: .bottom, multiplier: 1, constant: 20)
-//            BusinessAreaTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
-//
-//            NSLayoutConstraint.activate([leadingConstraint, topConstraint, trailingConstraint])
+            bothConteiner.isHidden = true
         case 1:
             physicalConteiner.isHidden = true
             digitalConteiner.isHidden = false
+            bothConteiner.isHidden = true
+        case 2:
+            physicalConteiner.isHidden = true
+            digitalConteiner.isHidden = true
+            bothConteiner.isHidden = false
         default:
             break
         }

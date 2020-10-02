@@ -1,16 +1,18 @@
 //
-//  DigitalSegmentedViewController.swift
+//  BothSegmentedViewController.swift
 //  entrepreneurship-great-app
 //
-//  Created by Vinicius Alencar on 01/10/20.
+//  Created by Vinicius Alencar on 02/10/20.
 //
 
 import UIKit
 
-class DigitalSegmentedViewController: UIViewController {
-
-    @IBOutlet weak var plataformsLabel: UILabel!
+class BothSegmentedViewController: UIViewController {
+    
     @IBOutlet weak var businessAreaTextField: UITextField!
+    
+    @IBOutlet weak var locationTextField: UITextField!
+    
     @IBOutlet weak var instagramButton: UIButton!
     @IBOutlet weak var facebookButton: UIButton!
     @IBOutlet weak var twitterButton: UIButton!
@@ -26,12 +28,12 @@ class DigitalSegmentedViewController: UIViewController {
     var selected4 = false
     var selected5 = false
     var selected6 = false
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        
+        // Do any additional setup after loading the view.
     }
     
     @IBAction func instagramSelected(_ sender: UIButton) {
