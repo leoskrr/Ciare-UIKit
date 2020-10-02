@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nyP-gE-t1e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kTQ-yH-1ay">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -247,7 +247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8hd-IE-gkN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3015.1999999999998" y="-50.824587706146929"/>
+            <point key="canvasLocation" x="-2551" y="-51"/>
         </scene>
         <!--Feed-->
         <scene sceneID="CNg-Y1-Ayz">
@@ -309,6 +309,10 @@
                                     <action selector="signInWithAppleButton:" destination="kTQ-yH-1ay" eventType="touchUpInside" id="eiI-GO-2OQ"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="e0q-dw-XQ2">
+                                <rect key="frame" x="20" y="529" width="335" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nkm-H8-j3r"/>
                         <color key="backgroundColor" red="0.94438391919999998" green="0.66800862549999995" blue="0.31152465940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -319,12 +323,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="stackViewForAppleIDButton" destination="e0q-dw-XQ2" id="Eyi-wt-iCI"/>
                         <segue destination="e2v-IO-8wV" kind="presentation" identifier="goToTabViewController" animates="NO" modalPresentationStyle="fullScreen" id="lkR-W7-B66"/>
+                        <segue destination="nyP-gE-t1e" kind="presentation" identifier="goToRegisterVC" modalPresentationStyle="fullScreen" id="D1E-wI-gWP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GHh-19-v5U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1486" y="-50"/>
+            <point key="canvasLocation" x="-1487.2" y="-50.824587706146929"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lD6-Ka-Of9">
@@ -624,7 +630,7 @@
             <objects>
                 <viewController storyboardIdentifier="Digital" id="WaO-sf-clG" customClass="DigitalSegmentedViewController" customModule="entrepreneurship_great_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mbi-B9-6QW">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="376"/>
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="376.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Business Area" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zrX-Og-LUp">
@@ -806,14 +812,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hlQ-l0-QtQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2281" y="76"/>
+            <point key="canvasLocation" x="-2631" y="-754"/>
         </scene>
         <!--Physical Segmented View Controller-->
         <scene sceneID="yCZ-5B-1Ci">
             <objects>
                 <viewController storyboardIdentifier="Physical" id="y65-sH-JVd" customClass="PhysicalSegmentedViewController" customModule="entrepreneurship_great_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fd8-2y-Ym8">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="376"/>
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="376.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Business Area" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wHU-IJ-03F">
@@ -876,14 +882,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rc9-xl-Qsw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2282" y="-323"/>
+            <point key="canvasLocation" x="-3604" y="-554"/>
         </scene>
         <!--Both Segmented View Controller-->
         <scene sceneID="ket-DW-1qK">
             <objects>
                 <viewController id="MSc-az-Em6" customClass="BothSegmentedViewController" customModule="entrepreneurship_great_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gnF-rA-N0z">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="376"/>
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="376.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Business Area" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lZ6-RL-zUm">
@@ -1083,11 +1089,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C58-7Y-ryb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3726" y="76"/>
+            <point key="canvasLocation" x="-3604" y="79"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="V0T-NH-D7e"/>
+        <segue reference="lkR-W7-B66"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="chevron.left" catalog="system" width="96" height="128"/>

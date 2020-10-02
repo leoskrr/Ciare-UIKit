@@ -39,23 +39,21 @@ class UsersRepository{
     }
     
     public func fetchUser(userId: String){
-        publicDatabase.fetch(withRecordID: CKRecord.ID(recordName: userId)) { (record, error) in
-            if let fetchedInfo = record {
-                print(fetchedInfo)
-//                let name = fetchedInfo["name"] as? String
-//                let email = fetchedInfo["email"] as? String
-//                let expertiseAreas = fetchedInfo["expertiseAreas"] as? [String]
-//                let location = fetchedInfo["location"] as? CLLocation?
-//                let socialNetworks = fetchedInfo["socialNetworks"] as? [String]
-//                let typeBusiness = fetchedInfo["typeBusiness"] as? String
-//                let availablePartnerships = fetchedInfo["availablePartnerships"] as? Int
-
-                //You can now use the user name and email address (like save it to local)
-//                UserDefaults.standard.set(name, forKey: "userName")
-//                UserDefaults.standard.set(userId, forKey: "userProfileID")
+        CKContainer.default().fetchUserRecordID {
+            recordID, error in
+            guard let recordID = recordID, error == nil else {
+                print("\n Error fetching user\n")
+                print(error)
+                return
             }
-            if let handleError = error {
-                print(handleError)
+            self.publicDatabase.fetch(withRecordID: recordID) { (record, error) in
+                if let fetchedInfo = record {
+                    print("\n\n SUCCESS FETCHING USER \n\n")
+                }
+                if let handleError = error {
+                    print("\n\n ERROR FETCHING USER \n\n")
+                    print(handleError)
+                }
             }
         }
     }
