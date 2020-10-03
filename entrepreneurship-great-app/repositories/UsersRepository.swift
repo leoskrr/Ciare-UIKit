@@ -9,6 +9,11 @@ import Foundation
 import UIKit
 import CloudKit
 
+enum OperationResult {
+    case Successed
+    case Failed
+}
+
 class UsersRepository{
     
     let publicDatabase: CKDatabase
@@ -38,21 +43,16 @@ class UsersRepository{
         //retornar nil se der errado
     }
     
-    public func fetchUser(recordID: CKRecord.ID) throws{
-        var handleError: Error?
-        
-        self.publicDatabase.fetch(withRecordID: recordID) { (record, error) in
-            guard let record = record, error == nil else {
-                handleError = error
+    public func fetchOneUser(withRecordID recordID: CKRecord.ID, completionHandler: @escaping (OperationResult,CKRecord?, Error?) -> ()){
+        self.publicDatabase.fetch(withRecordID: recordID) { record, error in
+            guard let user = record, error == nil else {
+                completionHandler(.Failed, nil, error)
                 return
             }
-            print("record is: \(record)")
-        }
-        
-        if let error = handleError {
-            throw error
+            completionHandler(.Successed, user, nil)
         }
     }
+    
     public func findUserById(_ id: String) -> User? {
         if let user = User.all.first(where: { $0.id == id }) {
             return user

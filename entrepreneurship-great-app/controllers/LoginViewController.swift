@@ -21,9 +21,9 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, 
         let authorizationButton = ASAuthorizationAppleIDButton()
         
         authorizationButton.addTarget(self, action: #selector(handleAuthorizationAppleIDButtonPress), for: .touchUpInside)
-
+        
         self.stackViewForAppleIDButton.addArrangedSubview(authorizationButton)
-
+        
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
@@ -46,7 +46,6 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, 
 }
 
 extension LoginViewController {
-    
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         
         if let appleIdCredential = authorization.credential as? ASAuthorizationAppleIDCredential{
@@ -58,8 +57,20 @@ extension LoginViewController {
                 //performSegue(withIdentifier: "goToRegisterVC", sender: self)
             } else {
                 print("\n\nSIGN IN\n\n")
-                SignInUserService().execute()
-                //performSegue(withIdentifier: "goToTabViewController", sender: self)
+                SignInUserService().execute() { response, user, error in
+                    switch response {
+                        case .SendUserToFeed:
+                            DispatchQueue.main.async {
+                                self.performSegue(withIdentifier: "goToTabViewController", sender: self)
+                            }
+                        case .SendUserToRegister:
+                            DispatchQueue.main.async {
+                                self.performSegue(withIdentifier: "goToRegisterVC", sender: self)
+                            }
+                        case .Error:
+                            print(error!)
+                    }
+                }
             }
         }
     }
