@@ -49,12 +49,18 @@ extension LoginViewController {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         
         if let appleIdCredential = authorization.credential as? ASAuthorizationAppleIDCredential{
-            let userId = appleIdCredential.user
-            
             if let name = appleIdCredential.fullName,
                let email = appleIdCredential.email {
                 print("\n\nSIGN UP\n\n")
-                //performSegue(withIdentifier: "goToRegisterVC", sender: self)
+                let registerViewController = RegisterViewController()
+                
+                registerViewController.userName = "\(name)"
+                registerViewController.userEmail = email
+
+                let segue: UIStoryboardSegue = .init(identifier: "goToRegisterVC", source: self, destination: registerViewController)
+                
+                prepare(for: segue, sender: self)
+                
             } else {
                 print("\n\nSIGN IN\n\n")
                 SignInUserService().execute() { response, user, error in

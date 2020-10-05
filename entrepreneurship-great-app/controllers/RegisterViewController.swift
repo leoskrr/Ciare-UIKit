@@ -13,6 +13,9 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
     @IBOutlet weak var digitalConteiner: UIView!
     @IBOutlet weak var bothConteiner: UIView!
     
+    var userName: String?
+    var userEmail: String?
+    
     func change(to index: Int) {
         
         switch index {
