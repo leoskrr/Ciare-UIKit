@@ -47,6 +47,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
         self.performSegue(withIdentifier: "backToFeedVC", sender: self)
     }
     
