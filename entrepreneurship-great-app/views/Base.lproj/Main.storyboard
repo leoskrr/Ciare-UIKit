@@ -144,7 +144,7 @@
         <!--Register View Controller-->
         <scene sceneID="mtx-HQ-cmC">
             <objects>
-                <viewController id="nyP-gE-t1e" customClass="RegisterViewController" customModule="entrepreneurship_great_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nyP-gE-t1e" customClass="RegisterViewController" customModule="entrepreneurship_great_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kj9-Na-gHS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -174,6 +174,9 @@
                                         <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="brandNameDidEndEditing:" destination="nyP-gE-t1e" eventType="editingDidEnd" id="aYb-Tp-ETv"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVC-km-Le9">
                                 <rect key="frame" x="16" y="204.5" width="118" height="21"/>
@@ -190,7 +193,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vnh-Rt-byh" userLabel="Conteiner 1">
                                 <rect key="frame" x="16" y="290.5" width="343" height="376.5"/>
                                 <connections>
-                                    <segue destination="y65-sH-JVd" kind="embed" id="ng9-lt-Wqt"/>
+                                    <segue destination="y65-sH-JVd" kind="embed" identifier="physicalContainerSegue" id="ng9-lt-Wqt"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MhQ-li-JKj" userLabel="Conteiner 2">
@@ -240,6 +243,7 @@
                     </view>
                     <connections>
                         <outlet property="bothConteiner" destination="4Ej-ca-J9P" id="4Ku-mN-gFD"/>
+                        <outlet property="brandName" destination="dr8-we-SrG" id="SNA-gl-URP"/>
                         <outlet property="digitalConteiner" destination="MhQ-li-JKj" id="JGS-Bg-cAU"/>
                         <outlet property="interfaceSegmented" destination="yft-Kt-lOH" id="hpt-TE-hI1"/>
                         <outlet property="physicalConteiner" destination="vnh-Rt-byh" id="Sty-q7-LdE"/>
@@ -290,13 +294,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="e0q-dw-XQ2">
-                                <rect key="frame" x="20" y="529" width="335" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="e0q-dw-XQ2">
+                                <rect key="frame" x="20" y="612" width="335" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="GB1-uf-40p"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nkm-H8-j3r"/>
                         <color key="backgroundColor" red="0.94438391919999998" green="0.66800862549999995" blue="0.31152465940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="nkm-H8-j3r" firstAttribute="trailing" secondItem="e0q-dw-XQ2" secondAttribute="trailing" constant="20" id="2mj-uW-pJe"/>
+                            <constraint firstItem="nkm-H8-j3r" firstAttribute="bottom" secondItem="e0q-dw-XQ2" secondAttribute="bottom" constant="10" id="QAP-Hr-ywZ"/>
+                            <constraint firstItem="e0q-dw-XQ2" firstAttribute="leading" secondItem="nkm-H8-j3r" secondAttribute="leading" constant="20" id="aBX-ZJ-AOl"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="stackViewForAppleIDButton" destination="e0q-dw-XQ2" id="Eyi-wt-iCI"/>

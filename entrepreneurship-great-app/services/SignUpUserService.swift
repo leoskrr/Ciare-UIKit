@@ -19,11 +19,27 @@ class SignUpUserService {
         self.usersRepository = UsersRepository()
     }
     
-    public func execute(userId: String, name: String?, email: String) throws{
-        if let userName = name {
-            usersRepository.saveUser(userId: userId, name: userName, email: email)
-        } else {
-            throw SignUpUserServiceError.unespecifiedName
+    public func execute(name: String){
+        CKContainer.default().fetchUserRecordID {
+            recordID, error in
+            
+            guard let recordID = recordID, error == nil else {
+                return
+            }
+            
+            self.usersRepository.fetchOneUser(withRecordID: recordID) {
+                operationResult, record, error in
+                
+                switch operationResult {
+                case .Successed:
+                    record!["name"] = name
+                    self.usersRepository.saveUser(record: record!)
+                case .Failed:
+                    print("Erro ao salvar registro")
+                }
+                
+            }
+            
         }
     }
 }

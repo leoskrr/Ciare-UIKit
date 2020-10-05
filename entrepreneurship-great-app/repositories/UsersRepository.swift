@@ -22,25 +22,15 @@ class UsersRepository{
         self.publicDatabase = CKContainer(identifier: "iCloud.com.vianaleonardo.entrepreneurship").publicCloudDatabase
     }
     
-    public func saveUser(userId: String, name: String, email: String){
-        let record = CKRecord(recordType: "Users", recordID: CKRecord.ID(recordName: userId))
-        
-        record["name"] = name
-        record["email"] = email
-        
-        publicDatabase.save(record) { record, err in
-            //            UserDefaults.standard.setValue(record.recordID.recordName, forKey: "userProfileId")
-            if let user = record {
-                print("\n\n User successfully saved \n\n")
-                print(user)
+    public func saveUser(record: CKRecord){
+        self.publicDatabase.save(record) {_,error in
+            guard error == nil else {
+                print("Error")
+                return
             }
-            if let error = err {
-                print("\n\n Error saving user \n\n")
-                print(error)
-            }
-            //criar retorno de objeto da classe User se der tudo certo
+            print("Succes saving user")
         }
-        //retornar nil se der errado
+        
     }
     
     public func fetchOneUser(withRecordID recordID: CKRecord.ID, completionHandler: @escaping (OperationResult,CKRecord?, Error?) -> ()){

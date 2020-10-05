@@ -12,6 +12,7 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
     @IBOutlet weak var physicalConteiner: UIView!
     @IBOutlet weak var digitalConteiner: UIView!
     @IBOutlet weak var bothConteiner: UIView!
+    @IBOutlet weak var brandName: UITextField!
     
     var userName: String?
     var userEmail: String?
@@ -37,8 +38,6 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
         }
     }
     
-    
-    
     @IBOutlet weak var interfaceSegmented: CustomSegmentedControl!{
         didSet{
             interfaceSegmented.setButtonTitles(buttonTitles: ["Physical","Digital","Both"])
@@ -60,7 +59,14 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func brandNameDidEndEditing(_ sender: UITextField) {
+        if let brandName = sender.text {
+            userName = brandName
+        } else {
+            userName = nil
+        }
+        //print(userName!)
+    }
     /*
     // MARK: - Navigation
 
@@ -70,6 +76,13 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
         // Pass the selected object to the new view controller.
     }
     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "physicalContainerSegue" {
+            let physicalSVC = segue.destination as! PhysicalSegmentedViewController
+            physicalSVC.registerViewController = self
+        }
+    }
+    
 
 }
 
