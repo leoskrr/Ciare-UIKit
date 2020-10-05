@@ -87,7 +87,8 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
             
             personVC.modalPresentationStyle = .overCurrentContext
             personVC.person = selectedUser
-                        
+            
+            searchBar.resignFirstResponder()
             self.present(personVC, animated: false, completion: nil)
         }
     }
