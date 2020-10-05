@@ -11,5 +11,11 @@
 "PersonViewController.info.labelPartners" = "Socios";
 "PersonViewController.info.labelFollowing" = "Siguiendo";
 "PersonViewController.info.labelFollowers" = "Seguidores";
+"PersonViewController.alert.alertMessage" = "Enviar Mensaje";
+"PersonViewController.alert.alertUnfollow" = "Dejar de Seguir";
+"PersonViewController.alert.alertBlockUser" = "Bloquear Usuario";
+"PersonViewController.alert.alertCancel" = "Cancelar";
+
+
 
 

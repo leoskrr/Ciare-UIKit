@@ -75,10 +75,14 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
     @IBAction func actionViewButton(_ sender: Any) {
         
         let actionSheet = UIAlertController(title: "Ações", message: "Selecione alguma das opções abaixo", preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
-        actionSheet.addAction(UIAlertAction(title: "Enviar menssagem", style: .default, handler: nil))
-        actionSheet.addAction(UIAlertAction(title: "Deixar de seguir", style: .default, handler: nil))
-        actionSheet.addAction(UIAlertAction(title: "Bloquear usuário", style: .destructive, handler: nil))
+        
+        actionSheet.addAction(UIAlertAction(title: Translation.Alert.cancel, style: .cancel, handler: nil))
+        
+        actionSheet.addAction(UIAlertAction(title: Translation.Alert.message, style: .default, handler: nil))
+        
+        actionSheet.addAction(UIAlertAction(title: Translation.Alert.unfollow, style: .default, handler: nil))
+        
+        actionSheet.addAction(UIAlertAction(title: Translation.Alert.blockUser, style: .destructive, handler: nil))
         
         present(actionSheet, animated: true)
         
