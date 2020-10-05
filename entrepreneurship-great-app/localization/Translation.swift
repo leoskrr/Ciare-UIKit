@@ -23,4 +23,14 @@ class Translation {
         static let following = NSLocalizedString("PersonViewController.info.labelFollowing", comment: "")
     }
     
+    class Alert{
+        static let cancel = NSLocalizedString("PersonViewController.alert.alertCancel", comment: "")
+        
+        static let message = NSLocalizedString("PersonViewController.alert.alertMessage", comment: "")
+        
+        static let unfollow = NSLocalizedString("PersonViewController.alert.alertUnfollow", comment: "")
+        
+        static let blockUser = NSLocalizedString("PersonViewController.alert.alertBlockUser", comment: "")
+    }
+    
 }
