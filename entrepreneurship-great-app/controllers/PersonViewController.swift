@@ -57,9 +57,12 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
         
         interfaceSegmented.delegate = self
         
+        followButton.setTitle(Translation.Placeholder.btnFollow, for: .normal)
+        partnersLabel.text = Translation.Info.partners
+        followingLabel.text = Translation.Info.following
+        followersLabel.text = Translation.Info.followers
+        
         // Do any additional setup after loading the view.
-        
-        
     }
     
     @IBAction func backToSearchView(_ sender: Any) {
@@ -85,19 +88,7 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
         actionSheet.addAction(UIAlertAction(title: Translation.Alert.blockUser, style: .destructive, handler: nil))
         
         present(actionSheet, animated: true)
-        
-        
     }
-    
-    func translation() {
-        followButton.setTitle(Translation.Placeholder.btnFollow, for: .normal)
-        partnersLabel.text = Translation.Info.partners
-        followingLabel.text = Translation.Info.following
-        followersLabel.text = Translation.Info.followers
-    }
-    
-    
-    
     
     /*
     // MARK: - Navigation
