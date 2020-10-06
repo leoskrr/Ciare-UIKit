@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kTQ-yH-1ay">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e2v-IO-8wV">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -150,19 +150,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjB-Ki-2S1">
-                                <rect key="frame" x="16" y="40" width="125.5" height="38.5"/>
+                                <rect key="frame" x="16" y="84" width="125.5" height="38.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                 <color key="textColor" red="0.34283557529999997" green="0.34282749890000003" blue="0.34282910820000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmd-VC-2e9">
-                                <rect key="frame" x="16" y="98.5" width="78" height="21"/>
+                                <rect key="frame" x="16" y="142.5" width="78" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="0.34283557529999997" green="0.34282749890000003" blue="0.34282910820000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Brand name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dr8-we-SrG">
-                                <rect key="frame" x="16" y="139.5" width="343" height="45"/>
+                                <rect key="frame" x="16" y="183.5" width="343" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="NkD-rx-DBL"/>
                                 </constraints>
@@ -179,31 +179,31 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVC-km-Le9">
-                                <rect key="frame" x="16" y="204.5" width="118" height="21"/>
+                                <rect key="frame" x="16" y="248.5" width="118" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="0.34283557529999997" green="0.34282749890000003" blue="0.34282910820000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yft-Kt-lOH" userLabel="CustomSegmented" customClass="CustomSegmentedControl" customModule="entrepreneurship_great_app" customModuleProvider="target">
-                                <rect key="frame" x="16" y="235.5" width="343" height="45"/>
+                                <rect key="frame" x="16" y="279.5" width="343" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="8yY-h0-MNa"/>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vnh-Rt-byh" userLabel="Conteiner 1">
-                                <rect key="frame" x="16" y="290.5" width="343" height="376.5"/>
+                                <rect key="frame" x="16" y="334.5" width="343" height="332.5"/>
                                 <connections>
                                     <segue destination="y65-sH-JVd" kind="embed" identifier="physicalContainerSegue" id="ng9-lt-Wqt"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MhQ-li-JKj" userLabel="Conteiner 2">
-                                <rect key="frame" x="16" y="290.5" width="343" height="376.5"/>
+                                <rect key="frame" x="16" y="334.5" width="343" height="332.5"/>
                                 <connections>
                                     <segue destination="WaO-sf-clG" kind="embed" id="1vr-Lc-V4w"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ej-ca-J9P" userLabel="Container 3">
-                                <rect key="frame" x="16" y="290.5" width="343" height="376.5"/>
+                                <rect key="frame" x="16" y="334.5" width="343" height="332.5"/>
                                 <connections>
                                     <segue destination="MSc-az-Em6" kind="embed" id="Uuq-zZ-g8k"/>
                                 </connections>
@@ -241,17 +241,20 @@
                             <constraint firstItem="St8-Yb-sta" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FjB-Ki-2S1" secondAttribute="trailing" symbolic="YES" id="yCw-ap-cnv"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="x9B-dU-Ic2"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="bothConteiner" destination="4Ej-ca-J9P" id="4Ku-mN-gFD"/>
                         <outlet property="brandName" destination="dr8-we-SrG" id="SNA-gl-URP"/>
                         <outlet property="digitalConteiner" destination="MhQ-li-JKj" id="JGS-Bg-cAU"/>
                         <outlet property="interfaceSegmented" destination="yft-Kt-lOH" id="hpt-TE-hI1"/>
                         <outlet property="physicalConteiner" destination="vnh-Rt-byh" id="Sty-q7-LdE"/>
+                        <segue destination="7em-MN-fwJ" kind="show" identifier="goToMapVC" id="eaQ-VT-fYm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8hd-IE-gkN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2551" y="-51"/>
+            <point key="canvasLocation" x="-1655" y="-51"/>
         </scene>
         <!--Feed-->
         <scene sceneID="CNg-Y1-Ayz">
@@ -312,12 +315,12 @@
                     <connections>
                         <outlet property="stackViewForAppleIDButton" destination="e0q-dw-XQ2" id="Eyi-wt-iCI"/>
                         <segue destination="e2v-IO-8wV" kind="presentation" identifier="goToTabViewController" animates="NO" modalPresentationStyle="fullScreen" id="lkR-W7-B66"/>
-                        <segue destination="nyP-gE-t1e" kind="presentation" identifier="goToRegisterVC" modalPresentationStyle="fullScreen" id="D1E-wI-gWP"/>
+                        <segue destination="TGF-gb-Vqb" kind="presentation" identifier="goToRegisterVC" modalPresentationStyle="fullScreen" id="D1E-wI-gWP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GHh-19-v5U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1487.2" y="-50.824587706146929"/>
+            <point key="canvasLocation" x="-548" y="-50.824587706146929"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lD6-Ka-Of9">
@@ -339,7 +342,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Gg-Sn-W9B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-538" y="-50"/>
+            <point key="canvasLocation" x="400.80000000000001" y="-50.824587706146929"/>
         </scene>
         <!--Post-->
         <scene sceneID="EFX-3o-cdL">
@@ -617,7 +620,7 @@
             <objects>
                 <viewController storyboardIdentifier="Digital" id="WaO-sf-clG" customClass="DigitalSegmentedViewController" customModule="entrepreneurship_great_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mbi-B9-6QW">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="376.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="332.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Business Area" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zrX-Og-LUp">
@@ -746,7 +749,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SuM-eO-jCb">
-                                <rect key="frame" x="0.0" y="321.5" width="343" height="45"/>
+                                <rect key="frame" x="0.0" y="277.5" width="343" height="45"/>
                                 <color key="backgroundColor" red="0.98967987300000004" green="0.65510869029999996" blue="0.21552142499999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="pDN-71-yfN"/>
@@ -799,14 +802,61 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hlQ-l0-QtQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2631" y="-754"/>
+            <point key="canvasLocation" x="-2577" y="-754"/>
+        </scene>
+        <!--backToMapVC-->
+        <scene sceneID="AJF-y6-TLX">
+            <objects>
+                <viewController title="backToMapVC" id="7em-MN-fwJ" customClass="MapViewController" customModule="entrepreneurship_great_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L6L-fi-2jv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9yD-zE-qMM">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                            </mapView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write your location here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BDv-om-LTd">
+                                <rect key="frame" x="20" y="64" width="335" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="miR-tt-gFl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="locationTextFieldDidEndEditing:" destination="7em-MN-fwJ" eventType="editingDidEnd" id="2y1-bX-hgG"/>
+                                    <outlet property="delegate" destination="7em-MN-fwJ" id="L5J-Jd-m5F"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Xoy-Cl-vC1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Xoy-Cl-vC1" firstAttribute="trailing" secondItem="BDv-om-LTd" secondAttribute="trailing" constant="20" id="0Ge-A0-aaV"/>
+                            <constraint firstItem="BDv-om-LTd" firstAttribute="top" secondItem="Xoy-Cl-vC1" secondAttribute="top" constant="20" id="6Tr-ug-Isa"/>
+                            <constraint firstItem="9yD-zE-qMM" firstAttribute="leading" secondItem="Xoy-Cl-vC1" secondAttribute="leading" id="S55-yj-PXb"/>
+                            <constraint firstItem="9yD-zE-qMM" firstAttribute="top" secondItem="Xoy-Cl-vC1" secondAttribute="top" id="fIW-KA-CvC"/>
+                            <constraint firstItem="9yD-zE-qMM" firstAttribute="bottom" secondItem="Xoy-Cl-vC1" secondAttribute="bottom" id="ltb-jO-4YJ"/>
+                            <constraint firstItem="9yD-zE-qMM" firstAttribute="trailing" secondItem="Xoy-Cl-vC1" secondAttribute="trailing" id="psF-42-3Ie"/>
+                            <constraint firstItem="BDv-om-LTd" firstAttribute="leading" secondItem="Xoy-Cl-vC1" secondAttribute="leading" constant="20" id="r5j-SJ-Gxb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="DZT-Jx-3O1"/>
+                    <connections>
+                        <outlet property="mapView" destination="9yD-zE-qMM" id="w8d-4a-ZGF"/>
+                        <outlet property="userBusinessLocationTextField" destination="BDv-om-LTd" id="aea-QP-gzQ"/>
+                        <segue destination="nyP-gE-t1e" kind="show" id="rB0-zL-qYv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mdw-I5-xSh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1655.2" y="-781.25937031484261"/>
         </scene>
         <!--Physical Segmented View Controller-->
         <scene sceneID="yCZ-5B-1Ci">
             <objects>
                 <viewController storyboardIdentifier="Physical" id="y65-sH-JVd" customClass="PhysicalSegmentedViewController" customModule="entrepreneurship_great_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fd8-2y-Ym8">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="376.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="332.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Business Area" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wHU-IJ-03F">
@@ -828,7 +878,7 @@
                                 <textInputTraits key="textInputTraits" textContentType="location"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KiB-Of-3qU">
-                                <rect key="frame" x="0.0" y="321.5" width="343" height="45"/>
+                                <rect key="frame" x="0.0" y="277.5" width="343" height="45"/>
                                 <color key="backgroundColor" red="0.98967987300000004" green="0.65510869029999996" blue="0.21552142499999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="rP3-yH-Xva"/>
@@ -869,14 +919,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rc9-xl-Qsw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3604" y="-554"/>
+            <point key="canvasLocation" x="-3604" y="-553"/>
         </scene>
         <!--Both Segmented View Controller-->
         <scene sceneID="ket-DW-1qK">
             <objects>
                 <viewController id="MSc-az-Em6" customClass="BothSegmentedViewController" customModule="entrepreneurship_great_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gnF-rA-N0z">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="376.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="332.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Business Area" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lZ6-RL-zUm">
@@ -1020,7 +1070,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Al4-kB-x78">
-                                <rect key="frame" x="0.0" y="321.5" width="343" height="45"/>
+                                <rect key="frame" x="0.0" y="277.5" width="343" height="45"/>
                                 <color key="backgroundColor" red="0.98967987300000004" green="0.65510869029999996" blue="0.21552142499999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Yi8-Kb-ABO"/>
@@ -1078,9 +1128,28 @@
             </objects>
             <point key="canvasLocation" x="-3604" y="79"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Aig-2t-rC2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TGF-gb-Vqb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="eYn-Mh-7YY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nyP-gE-t1e" kind="relationship" relationship="rootViewController" id="02X-KR-mRs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ecD-rJ-UuB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2759" y="-52"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="lkR-W7-B66"/>
+        <segue reference="rB0-zL-qYv"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="chevron.left" catalog="system" width="96" height="128"/>

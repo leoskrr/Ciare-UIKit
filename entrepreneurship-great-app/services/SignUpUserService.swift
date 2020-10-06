@@ -7,6 +7,7 @@
 
 import Foundation
 import CloudKit
+import CoreLocation
 
 enum SignUpUserServiceError: Error {
     case unespecifiedName
@@ -19,7 +20,7 @@ class SignUpUserService {
         self.usersRepository = UsersRepository()
     }
     
-    public func execute(name: String){
+    public func execute(name: String, location: CLLocation?){
         CKContainer.default().fetchUserRecordID {
             recordID, error in
             
@@ -33,6 +34,9 @@ class SignUpUserService {
                 switch operationResult {
                 case .Successed:
                     record!["name"] = name
+                    if let userLocation = location {
+                        record!["location"] = userLocation
+                    } 
                     self.usersRepository.saveUser(record: record!)
                 case .Failed:
                     print("Erro ao salvar registro")

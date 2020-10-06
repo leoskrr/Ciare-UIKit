@@ -51,7 +51,6 @@ extension LoginViewController {
         if let appleIdCredential = authorization.credential as? ASAuthorizationAppleIDCredential{
             if let name = appleIdCredential.fullName,
                let email = appleIdCredential.email {
-                print("\n\nSIGN UP\n\n")
                 let registerViewController = RegisterViewController()
                 
                 registerViewController.userName = "\(name)"
@@ -62,7 +61,6 @@ extension LoginViewController {
                 prepare(for: segue, sender: self)
                 
             } else {
-                print("\n\nSIGN IN\n\n")
                 SignInUserService().execute() { response, user, error in
                     switch response {
                         case .SendUserToFeed:

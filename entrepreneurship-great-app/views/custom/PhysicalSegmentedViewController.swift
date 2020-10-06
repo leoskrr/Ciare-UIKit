@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class PhysicalSegmentedViewController: UIViewController {
     
@@ -15,25 +16,31 @@ class PhysicalSegmentedViewController: UIViewController {
     
     var brandName: String?
     var registerViewController: RegisterViewController?
+    //var mapViewController: MapViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        locationTextField.delegate = self
     }
     
     @IBAction func finishSelected(_ sender: UIButton) {
-        if let name = registerViewController!.brandName.text {
-            print(name)
-            
-            SignUpUserService().execute(name: name)
-            
-        } else {
-            print("Erro")
+        
+        guard let name = registerViewController!.brandName.text else {
+            return
         }
-//        let registerVC = self.storyboard?.instantiateViewController(identifier: "RegisterVC") as! RegisterViewController
-//
-//        print(registerVC.userName as! String)
-    
+        
+        if let coreLocation = registerViewController!.userBusinessCoordinate {
+            SignUpUserService().execute(name: name, location: CLLocation(latitude: coreLocation.latitude, longitude: coreLocation.longitude))
+        } else {
+            SignUpUserService().execute(name: name, location: nil)
+        }
+
     }
     
+}
+
+extension PhysicalSegmentedViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        registerViewController?.showMapView()
+    }
 }

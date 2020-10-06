@@ -19,6 +19,8 @@
 		3518010D251CF392001B7B38 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3518010C251CF392001B7B38 /* Post.swift */; };
 		351826FF25257DE700AC4D48 /* SignUpUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351826FE25257DE700AC4D48 /* SignUpUserService.swift */; };
 		355674DA25260C6500BFD4A7 /* SignInUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355674D925260C6500BFD4A7 /* SignInUserService.swift */; };
+		3556CEAD252BA33100CF1A64 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3556CEAC252BA33100CF1A64 /* MapViewController.swift */; };
+		3556CEB2252BAABD00CF1A64 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3556CEB1252BAABD00CF1A64 /* MapKit.framework */; };
 		35675318251B7F950020AB89 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35675317251B7F950020AB89 /* FeedViewController.swift */; };
 		358F4D8F251B844B0018BE34 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358F4D8E251B844B0018BE34 /* SearchViewController.swift */; };
 		35BB2B98251A3E3C0028AF3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BB2B97251A3E3C0028AF3E /* AppDelegate.swift */; };
@@ -69,6 +71,8 @@
 		3518010C251CF392001B7B38 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		351826FE25257DE700AC4D48 /* SignUpUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUserService.swift; sourceTree = "<group>"; };
 		355674D925260C6500BFD4A7 /* SignInUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUserService.swift; sourceTree = "<group>"; };
+		3556CEAC252BA33100CF1A64 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		3556CEB1252BAABD00CF1A64 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		35675317251B7F950020AB89 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		358F4D8E251B844B0018BE34 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		35BB2B94251A3E3C0028AF3E /* entrepreneurship-great-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "entrepreneurship-great-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3556CEB2252BAABD00CF1A64 /* MapKit.framework in Frameworks */,
 				35CC6D8D252230E900DD9E73 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,6 +236,7 @@
 				12A176EA251CDF0000495AD4 /* PersonViewController.swift */,
 				128769832524C49100B04079 /* LoginViewController.swift */,
 				12D2CA1C2525F666001FCFCC /* RegisterViewController.swift */,
+				3556CEAC252BA33100CF1A64 /* MapViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -238,6 +244,7 @@
 		35CC6D8B252230E900DD9E73 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3556CEB1252BAABD00CF1A64 /* MapKit.framework */,
 				35CC6D8C252230E900DD9E73 /* CloudKit.framework */,
 			);
 			name = Frameworks;
@@ -402,6 +409,7 @@
 				12BB29E425275850006408FF /* BothSegmentedViewController.swift in Sources */,
 				12A176CC251CD0EE00495AD4 /* CustomSegmentedControl.swift in Sources */,
 				358F4D8F251B844B0018BE34 /* SearchViewController.swift in Sources */,
+				3556CEAD252BA33100CF1A64 /* MapViewController.swift in Sources */,
 				12BB29DF25275817006408FF /* PhysicalSegmentedViewController.swift in Sources */,
 				351826FF25257DE700AC4D48 /* SignUpUserService.swift in Sources */,
 				35BB2B98251A3E3C0028AF3E /* AppDelegate.swift in Sources */,

@@ -28,7 +28,6 @@ class UsersRepository{
                 print("Error")
                 return
             }
-            print("Succes saving user")
         }
         
     }

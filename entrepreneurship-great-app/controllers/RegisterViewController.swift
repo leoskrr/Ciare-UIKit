@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, UITextFieldDelegate {
   
@@ -16,6 +17,7 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
     
     var userName: String?
     var userEmail: String?
+    var userBusinessCoordinate: CLLocationCoordinate2D?
     
     func change(to index: Int) {
         
@@ -52,11 +54,6 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
         change(to: 0)
         self.hideKeyboardWhenTappedAround()
         interfaceSegmented.delegate = self
-        //BusinessAreaTextField.delegate = self
-        
-        
-        
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func brandNameDidEndEditing(_ sender: UITextField) {
@@ -65,25 +62,23 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
         } else {
             userName = nil
         }
-        //print(userName!)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "physicalContainerSegue" {
             let physicalSVC = segue.destination as! PhysicalSegmentedViewController
             physicalSVC.registerViewController = self
+        } else if segue.identifier == "goToMapVC"{
+            let mapVC = segue.destination as! MapViewController
+            mapVC.callBack = { coordinate in
+                self.userBusinessCoordinate = coordinate
+            }
         }
     }
     
-
+    public func showMapView(){
+        performSegue(withIdentifier: "goToMapVC", sender: self)
+        self.view.endEditing(true)
+    }
 }
 
 extension UIViewController {
