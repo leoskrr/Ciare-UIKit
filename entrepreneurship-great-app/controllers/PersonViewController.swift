@@ -53,6 +53,8 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        assecibilityApple()
+        
         loadPersonDataOnView()
         
         interfaceSegmented.delegate = self
@@ -88,6 +90,10 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
         actionSheet.addAction(UIAlertAction(title: Translation.Alert.blockUser, style: .destructive, handler: nil))
         
         present(actionSheet, animated: true)
+    }
+    
+    func assecibilityApple(){
+        followButton.titleLabel?.adjustsFontForContentSizeCategory = true
     }
     
     /*
