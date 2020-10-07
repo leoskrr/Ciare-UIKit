@@ -57,7 +57,7 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        applyAccessibility()
+        acessibilityApple()
         
         change(to: 0)
         self.hideKeyboardWhenTappedAround()
@@ -87,10 +87,12 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
         performSegue(withIdentifier: "goToMapVC", sender: self)
         self.view.endEditing(true)
     }
-    public func applyAccessibility(){
+    public func acessibilityApple(){
         brandName.font = .preferredFont(forTextStyle: .body)
+        brandName.accessibilityTraits = .button
         companyLabel.adjustsFontForContentSizeCategory = true
         registerLabel.adjustsFontForContentSizeCategory = true
+        
     }
     
 }

@@ -94,6 +94,9 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
     
     func assecibilityApple(){
         followButton.titleLabel?.adjustsFontForContentSizeCategory = true
+        profileImage.isAccessibilityElement = true
+        profileImage.accessibilityTraits = .image
+        profileImage.accessibilityLabel = "perfil"
     }
     
     /*
