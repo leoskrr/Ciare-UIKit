@@ -14,6 +14,12 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
     @IBOutlet weak var digitalConteiner: UIView!
     @IBOutlet weak var bothConteiner: UIView!
     @IBOutlet weak var brandName: UITextField!
+    @IBOutlet weak var registerLabel: UILabel!
+    @IBOutlet weak var companyLabel: UILabel!
+    @IBOutlet weak var businessTypeLabel: UILabel!
+    
+    
+    
     
     var userName: String?
     var userEmail: String?
@@ -51,6 +57,8 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        acessibilityApple()
+        
         change(to: 0)
         self.hideKeyboardWhenTappedAround()
         interfaceSegmented.delegate = self
@@ -79,7 +87,16 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
         performSegue(withIdentifier: "goToMapVC", sender: self)
         self.view.endEditing(true)
     }
+    public func acessibilityApple(){
+        brandName.font = .preferredFont(forTextStyle: .body)
+        brandName.accessibilityTraits = .button
+        companyLabel.adjustsFontForContentSizeCategory = true
+        registerLabel.adjustsFontForContentSizeCategory = true
+        
+    }
+    
 }
+
 
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
@@ -92,3 +109,4 @@ extension UIViewController {
         view.endEditing(true)
     }
 }
+

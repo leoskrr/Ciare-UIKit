@@ -16,7 +16,7 @@ class CustomSegmentedControl: UIView {
     private var buttons: [UIButton]!
     private var selectorView: UIView!
     
-    var textColor:UIColor = .black
+    var textColor:UIColor = #colorLiteral(red: 0.3411435485, green: 0.3411974311, blue: 0.341131866, alpha: 1)
     var selectorViewColor: UIColor = .orange
     var selectorTextColor: UIColor = .orange
     
@@ -102,6 +102,8 @@ extension CustomSegmentedControl {
         for buttonTitle in buttonTitles {
             let button = UIButton(type: .system)
             button.setTitle(buttonTitle, for: .normal)
+            button.titleLabel?.font = .preferredFont(forTextStyle: .body)
+            button.titleLabel?.adjustsFontForContentSizeCategory = true
             button.addTarget(self, action:#selector(CustomSegmentedControl.buttonAction(sender:)), for: .touchUpInside)
             button.setTitleColor(textColor, for: .normal)
             buttons.append(button)

@@ -21,6 +21,8 @@ class PhysicalSegmentedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         locationTextField.delegate = self
+        
+        assecibilityApple()
     }
     
     @IBAction func finishSelected(_ sender: UIButton) {
@@ -35,6 +37,10 @@ class PhysicalSegmentedViewController: UIViewController {
             SignUpUserService().execute(name: name, location: nil)
         }
 
+    }
+    
+    func assecibilityApple(){
+        finishButton.titleLabel?.adjustsFontForContentSizeCategory = true
     }
     
 }

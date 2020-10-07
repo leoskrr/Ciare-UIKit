@@ -32,6 +32,8 @@ class BothSegmentedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        asseecibilityApple()
 
         // Do any additional setup after loading the view.
     }
@@ -102,6 +104,15 @@ class BothSegmentedViewController: UIViewController {
             sender.setTitleColor(#colorLiteral(red: 0.3428003788, green: 0.3428530097, blue: 0.3427838087, alpha: 1), for: .normal)
             selected6 = false
         }
+    }
+    func asseecibilityApple(){
+        instagramButton.titleLabel?.adjustsFontForContentSizeCategory = true
+        facebookButton.titleLabel?.adjustsFontForContentSizeCategory = true
+        twitterButton.titleLabel?.adjustsFontForContentSizeCategory = true
+        linkedinButton.titleLabel?.adjustsFontForContentSizeCategory = true
+        tiktokButton.titleLabel?.adjustsFontForContentSizeCategory = true
+        whatsappButton.titleLabel?.adjustsFontForContentSizeCategory = true
+        finishButton.titleLabel?.adjustsFontForContentSizeCategory = true
     }
     
     @IBAction func finishSelected(_ sender: UIButton) {

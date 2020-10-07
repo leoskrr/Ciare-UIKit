@@ -15,7 +15,9 @@ class SearchUserTableViewCell: UITableViewCell {
     @IBOutlet weak var niche: UILabel!
     
     override func awakeFromNib() {
-        super.awakeFromNib()        
+        super.awakeFromNib()
+        
+        acessibilityApple()
     }
     
     override func layoutSubviews() {
@@ -32,5 +34,11 @@ class SearchUserTableViewCell: UITableViewCell {
         self.nameUser.text = user.name
         self.picture.image = user.picture
         self.niche.text = user.areasExpertise?[0] ?? ""
+    }
+    
+    func acessibilityApple(){
+        picture.isAccessibilityElement = true
+        picture.accessibilityTraits = .image
+        picture.accessibilityLabel = "perfil"
     }
 }
