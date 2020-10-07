@@ -46,10 +46,29 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
         }
     }
     
-    @IBAction func onTouchUpButton(_ sender: Any) {
-    
+    @IBAction func followButtonSelected(_ sender: UIButton) {
+        
+        if sender.titleLabel?.text == Translation.Placeholder.btnFollow{
+            sender.setTitle("Ask for partnership", for: .normal)
+            sender.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            sender.layer.borderColor = #colorLiteral(red: 1, green: 0.6358063221, blue: 0, alpha: 1)
+            sender.layer.borderWidth = 1
+        } else if sender.titleLabel?.text == "Ask for partnership"{
+            sender.setTitle("Asked partnership", for: .normal)
+            sender.backgroundColor = #colorLiteral(red: 1, green: 0.6358063221, blue: 0, alpha: 1)
+            sender.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+        } else if sender.titleLabel?.text == "Asked partnership" {
+            sender.setTitle("Ask for partnership", for: .normal)
+            sender.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            sender.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+            sender.layer.borderColor = #colorLiteral(red: 1, green: 0.6358063221, blue: 0, alpha: 1)
+            sender.layer.borderWidth = 1
+            
+        }
+        
+        
     }
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -85,7 +104,12 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
         
         actionSheet.addAction(UIAlertAction(title: Translation.Alert.message, style: .default, handler: nil))
         
-        actionSheet.addAction(UIAlertAction(title: Translation.Alert.unfollow, style: .default, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: Translation.Alert.unfollow, style: .default, handler: {_ in
+            self.followButton.setTitle(Translation.Placeholder.btnFollow, for: .normal)
+            self.followButton.backgroundColor = #colorLiteral(red: 0.9505110383, green: 0.9506440759, blue: 0.9504690766, alpha: 1)
+            self.followButton.layer.borderWidth = 0
+            self.followButton.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+        }))
         
         actionSheet.addAction(UIAlertAction(title: Translation.Alert.blockUser, style: .destructive, handler: nil))
         
