@@ -54,13 +54,11 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = true
         
         registerLabel.text = Translation.Info.register
         companyLabel.text = Translation.Info.company
         businessTypeLabel.text = Translation.Info.businessType
         brandName.placeholder = Translation.Placeholder.brandName
-        
         
         acessibilityApple()
         
@@ -87,8 +85,6 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
             let bothSVC = segue.destination as! BothSegmentedViewController
             bothSVC.registerViewController = self
         } else if segue.identifier == "goToMapVC"{
-            self.navigationController?.isNavigationBarHidden = false
-            
             let mapVC = segue.destination as! MapViewController
             
             mapVC.callBack = { coordinate in
@@ -97,8 +93,6 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
                     self.userBusinessPlacemarkName = placemark
                 }
             }
-        } else if segue.identifier == "sendUserToTabBarController" {
-            self.navigationController?.isNavigationBarHidden = true
         }
     }
     
@@ -119,9 +113,7 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
         brandName.accessibilityTraits = .button
         companyLabel.adjustsFontForContentSizeCategory = true
         registerLabel.adjustsFontForContentSizeCategory = true
-        
     }
-    
 }
 
 

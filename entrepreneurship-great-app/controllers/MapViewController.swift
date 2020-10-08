@@ -33,11 +33,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         self.hideKeyboard()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "backToMapVC" {
-            let registerVC = segue.destination as! RegisterViewController
-            print("segue backtomapvc")
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        dismissTheKeyboard()
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

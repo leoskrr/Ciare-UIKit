@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iaz-Mh-Bqd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eCv-nJ-Tyh">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -258,13 +258,13 @@
                         <outlet property="interfaceSegmented" destination="yft-Kt-lOH" id="hpt-TE-hI1"/>
                         <outlet property="physicalConteiner" destination="vnh-Rt-byh" id="Sty-q7-LdE"/>
                         <outlet property="registerLabel" destination="FjB-Ki-2S1" id="oYt-MZ-732"/>
-                        <segue destination="7em-MN-fwJ" kind="show" identifier="goToMapVC" id="eaQ-VT-fYm"/>
-                        <segue destination="e2v-IO-8wV" kind="presentation" identifier="sendUserToTabBarController" modalPresentationStyle="fullScreen" id="96q-Ot-0O3"/>
+                        <segue destination="e2v-IO-8wV" kind="show" identifier="sendUserToTabBarController" id="96q-Ot-0O3"/>
+                        <segue destination="7em-MN-fwJ" kind="show" identifier="goToMapVC" id="orh-XO-0g7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8hd-IE-gkN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1854" y="-265"/>
+            <point key="canvasLocation" x="-1751" y="-267"/>
         </scene>
         <!--Feed-->
         <scene sceneID="CNg-Y1-Ayz">
@@ -326,7 +326,7 @@
                     <connections>
                         <outlet property="stackViewForAppleIDButton" destination="e0q-dw-XQ2" id="Eyi-wt-iCI"/>
                         <segue destination="e2v-IO-8wV" kind="presentation" identifier="goToTabViewController" animates="NO" modalPresentationStyle="fullScreen" id="lkR-W7-B66"/>
-                        <segue destination="TGF-gb-Vqb" kind="presentation" identifier="goToRegisterVC" modalPresentationStyle="fullScreen" id="D1E-wI-gWP"/>
+                        <segue destination="eCv-nJ-Tyh" kind="presentation" identifier="goToRegisterVC" modalPresentationStyle="fullScreen" id="d4k-Rk-E8E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GHh-19-v5U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -338,6 +338,7 @@
             <objects>
                 <tabBarController storyboardIdentifier="TabBarView" id="e2v-IO-8wV" customClass="TabBarViewController" customModule="entrepreneurship_great_app" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="xdZ-vW-0B0"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uCv-rX-paG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -354,7 +355,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Gg-Sn-W9B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-418" y="-266"/>
+            <point key="canvasLocation" x="520.79999999999995" y="-266.71664167916043"/>
         </scene>
         <!--Post-->
         <scene sceneID="EFX-3o-cdL">
@@ -1005,7 +1006,6 @@
                     <connections>
                         <outlet property="mapView" destination="9yD-zE-qMM" id="w8d-4a-ZGF"/>
                         <outlet property="userBusinessLocationTextField" destination="BDv-om-LTd" id="aea-QP-gzQ"/>
-                        <segue destination="nyP-gE-t1e" kind="presentation" modalPresentationStyle="fullScreen" id="rB0-zL-qYv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mdw-I5-xSh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1296,27 +1296,27 @@
             <point key="canvasLocation" x="-3138" y="186"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Aig-2t-rC2">
+        <scene sceneID="YYb-zc-8V0">
             <objects>
-                <navigationController storyboardIdentifier="NavBar" automaticallyAdjustsScrollViewInsets="NO" id="TGF-gb-Vqb" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eCv-nJ-Tyh" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="eYn-Mh-7YY">
+                    <navigationItem key="navigationItem" id="dff-8M-AkS"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WgI-3N-kZV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="nyP-gE-t1e" kind="relationship" relationship="rootViewController" id="02X-KR-mRs"/>
+                        <segue destination="nyP-gE-t1e" kind="relationship" relationship="rootViewController" id="rfk-G1-nhR"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ecD-rJ-UuB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eqF-Gg-RVk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1855" y="-1329"/>
+            <point key="canvasLocation" x="-1750" y="-1329"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lkR-W7-B66"/>
-        <segue reference="rB0-zL-qYv"/>
+        <segue reference="96q-Ot-0O3"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="bell.fill" catalog="system" width="128" height="124"/>

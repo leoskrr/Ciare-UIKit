@@ -20,7 +20,8 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var postButton: UIButton!
     
     var imageUrl: URL?
-    
+    let placeholder = "Describe your post here"
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,6 +29,11 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         view.addGestureRecognizer(tapOutsideTextView)
 
         descriptionTextView.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        descriptionTextView.text = placeholder
+        descriptionTextView.textColor = UIColor(named: "PlaceholderRegister")
     }
     
     @objc override func dismissKeyboard() {
@@ -134,8 +140,6 @@ extension PostViewController {
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        let placeholder = "Describe your post here"
-        
         if textView.text.isEmpty {
             textView.text = placeholder
             textView.textColor = UIColor(named: "PlaceholderRegister")
