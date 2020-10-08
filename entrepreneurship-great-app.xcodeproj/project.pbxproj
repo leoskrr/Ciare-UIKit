@@ -37,6 +37,7 @@
 		35BB2BBD251A3E3D0028AF3E /* entrepreneurship_great_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BB2BBC251A3E3D0028AF3E /* entrepreneurship_great_appUITests.swift */; };
 		35CC6D8D252230E900DD9E73 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC6D8C252230E900DD9E73 /* CloudKit.framework */; };
 		35D5154A251D290300ACC8D2 /* UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D51549251D290300ACC8D2 /* UsersRepository.swift */; };
+		35E028F1252E971100196D7C /* decryptGeoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E028F0252E971100196D7C /* decryptGeoLocation.swift */; };
 		F17CF2442524D81300C3D81F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F17CF2462524D81300C3D81F /* Localizable.strings */; };
 		F17CF2552524DB6100C3D81F /* Translation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17CF2542524DB6100C3D81F /* Translation.swift */; };
 		F1B5E516251A53E400140CB3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B5E515251A53E400140CB3 /* User.swift */; };
@@ -98,6 +99,7 @@
 		35BB2BBE251A3E3D0028AF3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35CC6D8C252230E900DD9E73 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		35D51549251D290300ACC8D2 /* UsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepository.swift; sourceTree = "<group>"; };
+		35E028F0252E971100196D7C /* decryptGeoLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = decryptGeoLocation.swift; sourceTree = "<group>"; };
 		F17CF2452524D81300C3D81F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F17CF24A2524D82600C3D81F /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F17CF2532524DB2200C3D81F /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				35BB2BD2251A4BF90028AF3E /* controllers */,
 				35D51548251D289900ACC8D2 /* repositories */,
 				3500ACAE251E252C007E89E7 /* services */,
+				35E028EF252E96F000196D7C /* utils */,
 				1226A090251A406D00379581 /* entrepreneurship-great-app.entitlements */,
 				35BB2BA8251A3E3C0028AF3E /* Info.plist */,
 				35BB2BA0251A3E3C0028AF3E /* entrepreneurship_great_app.xcdatamodeld */,
@@ -265,6 +268,14 @@
 				35D51549251D290300ACC8D2 /* UsersRepository.swift */,
 			);
 			path = repositories;
+			sourceTree = "<group>";
+		};
+		35E028EF252E96F000196D7C /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				35E028F0252E971100196D7C /* decryptGeoLocation.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 		F17CF23B2524D7EE00C3D81F /* localization */ = {
@@ -419,6 +430,7 @@
 				355674DA25260C6500BFD4A7 /* SignInUserService.swift in Sources */,
 				3518010D251CF392001B7B38 /* Post.swift in Sources */,
 				12BB29E425275850006408FF /* BothSegmentedViewController.swift in Sources */,
+				35E028F1252E971100196D7C /* decryptGeoLocation.swift in Sources */,
 				12A176CC251CD0EE00495AD4 /* CustomSegmentedControl.swift in Sources */,
 				358F4D8F251B844B0018BE34 /* SearchViewController.swift in Sources */,
 				3556CEAD252BA33100CF1A64 /* MapViewController.swift in Sources */,

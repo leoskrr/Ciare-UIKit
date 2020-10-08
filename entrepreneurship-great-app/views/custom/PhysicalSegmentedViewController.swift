@@ -10,18 +10,22 @@ import CoreLocation
 
 class PhysicalSegmentedViewController: UIViewController {
     
+    var brandName: String?
+    var registerViewController: RegisterViewController?
+    
     @IBOutlet weak var businessAreaTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var finishButton: UIButton!
-    
-    var brandName: String?
-    var registerViewController: RegisterViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         locationTextField.delegate = self
         
         assecibilityApple()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        locationTextField.text = registerViewController!.userBusinessPlacemarkName
     }
     
     @IBAction func finishSelected(_ sender: UIButton) {

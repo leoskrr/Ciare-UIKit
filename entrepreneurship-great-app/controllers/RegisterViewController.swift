@@ -18,11 +18,9 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
     @IBOutlet weak var companyLabel: UILabel!
     @IBOutlet weak var businessTypeLabel: UILabel!
     
-    
-    
-    
     var userName: String?
     var userEmail: String?
+    var userBusinessPlacemarkName: String?
     var userBusinessCoordinate: CLLocationCoordinate2D?
     
     func change(to index: Int) {
@@ -79,6 +77,9 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
             let mapVC = segue.destination as! MapViewController
             mapVC.callBack = { coordinate in
                 self.userBusinessCoordinate = coordinate
+                decryptGeoLocation(CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)) { placemark in
+                    self.userBusinessPlacemarkName = placemark
+                }
             }
         }
     }
