@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -18,9 +19,10 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var pickerImageButton: UIButton!
     @IBOutlet weak var postButton: UIButton!
     
+    var imageUrl: URL?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
@@ -54,7 +56,20 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image =  info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         
+        let imageData = image.pngData()
+        
         postImage.image = image
+        
+        do {
+            let path = NSTemporaryDirectory() + "avatar_temp_\(UUID().uuidString).png"
+            let url = URL(fileURLWithPath: path)
+
+            try imageData?.write(to: url)
+            
+            imageUrl = url
+        } catch {
+            print("Error writing avatar to temporary directory: \(error)")
+        }
         
         picker.dismiss(animated: true, completion: nil )
         
@@ -64,14 +79,37 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         picker.dismiss(animated: true, completion: nil)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func postButtonTouchedUp(_ sender: UIButton) {
+        guard let description = descriptionTextView.text else {
+            print("Error: missing description")
+            return
+        }
+        
+        guard let imgUrl = imageUrl else {
+            print("Error: missing image url")
+            return
+        }
+        
+        let userRecordName = getUserRecordNameFromUserDefaults()
+        
+        guard let recordName = userRecordName else {
+            print("Error: missing record name")
+            return
+        }
+        
+        let userId = CKRecord.ID(recordName: recordName)
+        
+        let post = Post(author_id: CKRecord.Reference(recordID: userId, action: .none), description: description, image: CKAsset(fileURL: imgUrl))
+        
+        CreatePostService().execute(post: post) {
+            response, createdPost, error in
+            
+            switch response {
+            case .success:
+                print("Post criado com sucesso!")
+            case .failed:
+                print("Erro ao criar post: \(error!)")
+            }
+        }
     }
-    */
-
 }
