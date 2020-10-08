@@ -21,6 +21,8 @@ class Translation {
         static let followers = NSLocalizedString("PersonViewController.info.labelFollowers", comment: "")
         
         static let following = NSLocalizedString("PersonViewController.info.labelFollowing", comment: "")
+        
+        static let my = NSLocalizedString("PersonViewController.alert.labelMy", comment: "")
     }
     
     class Alert{
@@ -31,6 +33,10 @@ class Translation {
         static let unfollow = NSLocalizedString("PersonViewController.alert.alertUnfollow", comment: "")
         
         static let blockUser = NSLocalizedString("PersonViewController.alert.alertBlockUser", comment: "")
+        
+        static let title = NSLocalizedString("PersonViewController.alert.alertTitle", comment: "")
+        
+        static let subtitle = NSLocalizedString("PersonViewController.alert.alertSubTitle", comment: "")
     }
     
 }
