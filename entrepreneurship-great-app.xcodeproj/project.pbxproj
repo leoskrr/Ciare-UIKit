@@ -36,6 +36,8 @@
 		35BB2BB2251A3E3D0028AF3E /* entrepreneurship_great_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BB2BB1251A3E3D0028AF3E /* entrepreneurship_great_appTests.swift */; };
 		35BB2BBD251A3E3D0028AF3E /* entrepreneurship_great_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BB2BBC251A3E3D0028AF3E /* entrepreneurship_great_appUITests.swift */; };
 		35BD989D252F3D43002A203E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD989C252F3D43002A203E /* TabBarViewController.swift */; };
+		35BD98A2252F404F002A203E /* PostsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD98A1252F404F002A203E /* PostsRepository.swift */; };
+		35BD98AF252F491E002A203E /* CreatePostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD98AE252F491E002A203E /* CreatePostService.swift */; };
 		35CC6D8D252230E900DD9E73 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC6D8C252230E900DD9E73 /* CloudKit.framework */; };
 		35D5154A251D290300ACC8D2 /* UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D51549251D290300ACC8D2 /* UsersRepository.swift */; };
 		35E028F1252E971100196D7C /* decryptGeoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E028F0252E971100196D7C /* decryptGeoLocation.swift */; };
@@ -99,6 +101,8 @@
 		35BB2BBC251A3E3D0028AF3E /* entrepreneurship_great_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = entrepreneurship_great_appUITests.swift; sourceTree = "<group>"; };
 		35BB2BBE251A3E3D0028AF3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35BD989C252F3D43002A203E /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		35BD98A1252F404F002A203E /* PostsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsRepository.swift; sourceTree = "<group>"; };
+		35BD98AE252F491E002A203E /* CreatePostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostService.swift; sourceTree = "<group>"; };
 		35CC6D8C252230E900DD9E73 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		35D51549251D290300ACC8D2 /* UsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepository.swift; sourceTree = "<group>"; };
 		35E028F0252E971100196D7C /* decryptGeoLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = decryptGeoLocation.swift; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 				355674D925260C6500BFD4A7 /* SignInUserService.swift */,
 				35176997252E310B00E6B214 /* ListAllUsersService.swift */,
 				35176992252E30F800E6B214 /* ListAllUsersByCharactersService.swift */,
+				35BD98AE252F491E002A203E /* CreatePostService.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				35D51549251D290300ACC8D2 /* UsersRepository.swift */,
+				35BD98A1252F404F002A203E /* PostsRepository.swift */,
 			);
 			path = repositories;
 			sourceTree = "<group>";
@@ -436,8 +442,10 @@
 				12BB29E425275850006408FF /* BothSegmentedViewController.swift in Sources */,
 				35E028F1252E971100196D7C /* decryptGeoLocation.swift in Sources */,
 				12A176CC251CD0EE00495AD4 /* CustomSegmentedControl.swift in Sources */,
+				35BD98AF252F491E002A203E /* CreatePostService.swift in Sources */,
 				358F4D8F251B844B0018BE34 /* SearchViewController.swift in Sources */,
 				3556CEAD252BA33100CF1A64 /* MapViewController.swift in Sources */,
+				35BD98A2252F404F002A203E /* PostsRepository.swift in Sources */,
 				12BB29DF25275817006408FF /* PhysicalSegmentedViewController.swift in Sources */,
 				351826FF25257DE700AC4D48 /* SignUpUserService.swift in Sources */,
 				35BB2B98251A3E3C0028AF3E /* AppDelegate.swift in Sources */,
