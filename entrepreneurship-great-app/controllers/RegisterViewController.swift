@@ -54,6 +54,7 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
         
         acessibilityApple()
         
@@ -74,20 +75,33 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
             let physicalSVC = segue.destination as! PhysicalSegmentedViewController
             physicalSVC.registerViewController = self
         } else if segue.identifier == "goToMapVC"{
+            self.navigationController?.isNavigationBarHidden = false
+            
             let mapVC = segue.destination as! MapViewController
+            
             mapVC.callBack = { coordinate in
                 self.userBusinessCoordinate = coordinate
                 decryptGeoLocation(CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)) { placemark in
                     self.userBusinessPlacemarkName = placemark
                 }
             }
+        } else if segue.identifier == "sendUserToTabBarController" {
+            self.navigationController?.isNavigationBarHidden = true
         }
     }
     
     public func showMapView(){
-        performSegue(withIdentifier: "goToMapVC", sender: self)
         self.view.endEditing(true)
+        performSegue(withIdentifier: "goToMapVC", sender: self)
     }
+    
+    func sendUserToTabBarController(){
+        DispatchQueue.main.async {
+            self.view.endEditing(true)
+            self.performSegue(withIdentifier: "sendUserToTabBarController", sender: self)
+        }
+    }
+    
     public func acessibilityApple(){
         brandName.font = .preferredFont(forTextStyle: .body)
         brandName.accessibilityTraits = .button

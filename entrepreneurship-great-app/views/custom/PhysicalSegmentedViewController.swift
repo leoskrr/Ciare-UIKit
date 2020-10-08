@@ -50,7 +50,7 @@ class PhysicalSegmentedViewController: UIViewController {
             
             switch signUpResult {
             case .success:
-                print("sucesso ao cadastrar!")
+                self.registerViewController!.sendUserToTabBarController()
             case .fail:
                 print("erro ao cadastrar: \(error!)")
             }
