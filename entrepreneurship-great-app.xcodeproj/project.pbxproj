@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		126D5695251B8D2D00077FD3 /* SearchUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126D5694251B8D2D00077FD3 /* SearchUserTableViewCell.swift */; };
+		12828E01252F5C9B0079FE7C /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12828E00252F5C9B0079FE7C /* PostViewController.swift */; };
 		128769842524C49100B04079 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128769832524C49100B04079 /* LoginViewController.swift */; };
 		12A176CC251CD0EE00495AD4 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A176CB251CD0EE00495AD4 /* CustomSegmentedControl.swift */; };
 		12A176EB251CDF0000495AD4 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A176EA251CDF0000495AD4 /* PersonViewController.swift */; };
@@ -69,6 +70,7 @@
 /* Begin PBXFileReference section */
 		1226A090251A406D00379581 /* entrepreneurship-great-app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "entrepreneurship-great-app.entitlements"; sourceTree = "<group>"; };
 		126D5694251B8D2D00077FD3 /* SearchUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserTableViewCell.swift; sourceTree = "<group>"; };
+		12828E00252F5C9B0079FE7C /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		128769832524C49100B04079 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		12A176CB251CD0EE00495AD4 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		12A176EA251CDF0000495AD4 /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				12D2CA1C2525F666001FCFCC /* RegisterViewController.swift */,
 				3556CEAC252BA33100CF1A64 /* MapViewController.swift */,
 				35BD989C252F3D43002A203E /* TabBarViewController.swift */,
+				12828E00252F5C9B0079FE7C /* PostViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 				351826FF25257DE700AC4D48 /* SignUpUserService.swift in Sources */,
 				35BD98B9252F56E0002A203E /* ListAllPostsService.swift in Sources */,
 				35BB2B98251A3E3C0028AF3E /* AppDelegate.swift in Sources */,
+				12828E01252F5C9B0079FE7C /* PostViewController.swift in Sources */,
 				12D2CA1D2525F666001FCFCC /* RegisterViewController.swift in Sources */,
 				F1B5E516251A53E400140CB3 /* User.swift in Sources */,
 				35D5154A251D290300ACC8D2 /* UsersRepository.swift in Sources */,
