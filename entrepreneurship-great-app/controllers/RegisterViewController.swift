@@ -77,6 +77,9 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
         } else if segue.identifier == "digitalContainerSegue" {
             let digitalSVC = segue.destination as! DigitalSegmentedViewController
             digitalSVC.registerViewController = self
+        } else if segue.identifier == "bothContainerSegue" {
+            let bothSVC = segue.destination as! BothSegmentedViewController
+            bothSVC.registerViewController = self
         } else if segue.identifier == "goToMapVC"{
             self.navigationController?.isNavigationBarHidden = false
             
