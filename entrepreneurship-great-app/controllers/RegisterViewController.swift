@@ -74,6 +74,9 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
         if segue.identifier == "physicalContainerSegue" {
             let physicalSVC = segue.destination as! PhysicalSegmentedViewController
             physicalSVC.registerViewController = self
+        } else if segue.identifier == "digitalContainerSegue" {
+            let digitalSVC = segue.destination as! DigitalSegmentedViewController
+            digitalSVC.registerViewController = self
         } else if segue.identifier == "goToMapVC"{
             self.navigationController?.isNavigationBarHidden = false
             

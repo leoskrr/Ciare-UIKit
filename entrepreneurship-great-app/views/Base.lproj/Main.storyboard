@@ -204,13 +204,13 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MhQ-li-JKj" userLabel="Conteiner 2">
                                 <rect key="frame" x="16" y="337" width="343" height="330"/>
                                 <connections>
-                                    <segue destination="WaO-sf-clG" kind="embed" id="1vr-Lc-V4w"/>
+                                    <segue destination="WaO-sf-clG" kind="embed" identifier="digitalContainerSegue" id="1vr-Lc-V4w"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ej-ca-J9P" userLabel="Container 3">
                                 <rect key="frame" x="16" y="337" width="343" height="330"/>
                                 <connections>
-                                    <segue destination="MSc-az-Em6" kind="embed" id="Uuq-zZ-g8k"/>
+                                    <segue destination="MSc-az-Em6" kind="embed" identifier="bothContainerSegue" id="Uuq-zZ-g8k"/>
                                 </connections>
                             </containerView>
                         </subviews>
