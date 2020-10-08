@@ -42,4 +42,50 @@ class PostsRepository {
             completionHandler(savedPost, nil)
         }
     }
+    
+    public func listsPostsByUser(withId author_id: CKRecord.ID, completionHandler: @escaping ([Post]?, Error?) -> ()) {
+        let predicate = NSPredicate(format: "author_id == %@", author_id)
+        let query = CKQuery(recordType: "Post", predicate: predicate)
+        let operation = CKQueryOperation(query: query)
+        
+        executeQueryOperation(operation: operation) {
+            posts, error in
+            
+            guard error == nil else {
+                completionHandler(nil, error)
+                return
+            }
+            
+            completionHandler(posts, nil)
+        }
+    }
+    
+    private func executeQueryOperation(operation: CKQueryOperation, completionHandler: @escaping ([Post]?, Error? ) -> ()){
+        
+        var posts: [Post] = []
+        
+        operation.recordFetchedBlock = {
+            record in
+            
+            let post = Post(id: record.recordID,
+                            author_id: record["author_id"] as! CKRecord.Reference,
+                            description: record["description"] as! String,
+                            image: record["image"] as! CKAsset)
+            
+            posts.append(post)
+        }
+        
+        operation.queryCompletionBlock = {
+            cursor, error in
+            
+            guard error == nil else {
+                completionHandler(nil, error)
+                return
+            }
+            
+            completionHandler(posts, nil)
+        }
+        
+        self.publicDatabase.add(operation)
+    }
 }
