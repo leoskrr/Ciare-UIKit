@@ -34,8 +34,8 @@ class PhysicalSegmentedViewController: UIViewController {
         }
         
         let userInfo = UserInfo(name: name)
-        
         userInfo.expertiseAreas = businessArea.components(separatedBy: " ")
+        userInfo.typeBusiness = "Physical"
         
         if let coreLocation = registerViewController!.userBusinessCoordinate {
             userInfo.location = CLLocation(latitude: coreLocation.latitude, longitude: coreLocation.longitude)
