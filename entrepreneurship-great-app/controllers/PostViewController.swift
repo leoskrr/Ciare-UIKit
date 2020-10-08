@@ -8,7 +8,7 @@
 import UIKit
 import CloudKit
 
-class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
 
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var companyNameLabel: UILabel!
@@ -23,11 +23,20 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        let tapOutsideTextView = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapOutsideTextView)
+
+        descriptionTextView.delegate = self
+    }
+    
+    @objc override func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     @IBAction func chooseImage(_ sender: UIButton) {
-        
+        view.endEditing(true)
+
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         
@@ -80,6 +89,8 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     @IBAction func postButtonTouchedUp(_ sender: UIButton) {
+        view.endEditing(true)
+        
         guard let description = descriptionTextView.text else {
             print("Error: missing description")
             return
@@ -112,4 +123,24 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             }
         }
     }
+}
+
+extension PostViewController {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor(named: "PlaceholderRegister") {
+            textView.text = ""
+            textView.textColor = UIColor(named: "Text")
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        let placeholder = "Describe your post here"
+        
+        if textView.text.isEmpty {
+            textView.text = placeholder
+            textView.textColor = UIColor(named: "PlaceholderRegister")
+        }
+    }
+    
+    
 }
