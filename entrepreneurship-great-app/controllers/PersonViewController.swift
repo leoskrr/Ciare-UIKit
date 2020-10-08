@@ -25,7 +25,7 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
     
     @IBOutlet weak var interfaceSegmented: CustomSegmentedControl!{
         didSet{
-            interfaceSegmented.setButtonTitles(buttonTitles: ["Meus","MidiaKit","MoodBoard"])
+            interfaceSegmented.setButtonTitles(buttonTitles: [Translation.Info.my,"MidiaKit","MoodBoard"])
             interfaceSegmented.selectorViewColor = .orange
             interfaceSegmented.selectorTextColor = .orange
         }
@@ -49,21 +49,20 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
     @IBAction func followButtonSelected(_ sender: UIButton) {
         
         if sender.titleLabel?.text == Translation.Placeholder.btnFollow{
-            sender.setTitle("Ask for partnership", for: .normal)
+            sender.setTitle(Translation.Placeholder.askPartnership, for: .normal)
             sender.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
             sender.layer.borderColor = #colorLiteral(red: 1, green: 0.6358063221, blue: 0, alpha: 1)
             sender.layer.borderWidth = 1
-        } else if sender.titleLabel?.text == "Ask for partnership"{
-            sender.setTitle("Asked partnership", for: .normal)
+        } else if sender.titleLabel?.text == Translation.Placeholder.askPartnership{
+            sender.setTitle(Translation.Placeholder.askedPartnership, for: .normal)
             sender.backgroundColor = #colorLiteral(red: 1, green: 0.6358063221, blue: 0, alpha: 1)
             sender.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
-        } else if sender.titleLabel?.text == "Asked partnership" {
-            sender.setTitle("Ask for partnership", for: .normal)
+        } else if sender.titleLabel?.text == Translation.Placeholder.askedPartnership {
+            sender.setTitle(Translation.Placeholder.askPartnership, for: .normal)
             sender.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
             sender.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
             sender.layer.borderColor = #colorLiteral(red: 1, green: 0.6358063221, blue: 0, alpha: 1)
             sender.layer.borderWidth = 1
-            
         }
         
         
@@ -98,7 +97,7 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
     
     @IBAction func actionViewButton(_ sender: Any) {
         
-        let actionSheet = UIAlertController(title: "Ações", message: "Selecione alguma das opções abaixo", preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(title: Translation.Alert.title, message: Translation.Alert.subtitle, preferredStyle: .actionSheet)
         
         actionSheet.addAction(UIAlertAction(title: Translation.Alert.cancel, style: .cancel, handler: nil))
         
@@ -120,7 +119,7 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
         followButton.titleLabel?.adjustsFontForContentSizeCategory = true
         profileImage.isAccessibilityElement = true
         profileImage.accessibilityTraits = .image
-        profileImage.accessibilityLabel = "perfil"
+        profileImage.accessibilityLabel = Translation.Assecibility.profile
     }
     
     /*

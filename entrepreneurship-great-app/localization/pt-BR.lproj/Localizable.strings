@@ -18,5 +18,7 @@
 "PersonViewController.alert.alertTitle" = "Ações";
 "PersonViewController.alert.alertSubTitle" = "Selecione alguma das opções abaixo";
 "PersonViewController.alert.labelMy" = "Meus";
-
+"PersonViewController.placeholder.askPartnership" = "Solicitar Parceria";
+"PersonViewController.placeholder.askedPartnership" = "Parceria Solicitada";
+"PersonViewController.assecibility.profile" = "Perfil";
 

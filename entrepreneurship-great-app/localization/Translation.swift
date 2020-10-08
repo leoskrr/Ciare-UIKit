@@ -13,6 +13,10 @@ class Translation {
         static let btnFollow = NSLocalizedString("PersonViewController.placeholder.btnFollow", comment: "")
         
         static let searchBar = NSLocalizedString("SearchViewController.placeholder.searchBar", comment: "")
+        
+        static let askPartnership = NSLocalizedString("PersonViewController.placeholder.askPartnership", comment: "")
+        
+        static let askedPartnership = NSLocalizedString("PersonViewController.placeholder.askedPartnership", comment: "")
     }
     
     class Info {
@@ -37,6 +41,10 @@ class Translation {
         static let title = NSLocalizedString("PersonViewController.alert.alertTitle", comment: "")
         
         static let subtitle = NSLocalizedString("PersonViewController.alert.alertSubTitle", comment: "")
+    }
+    
+    class Assecibility {
+        static let profile = NSLocalizedString("PersonViewController.assecibility.profile", comment: "")
     }
     
 }
