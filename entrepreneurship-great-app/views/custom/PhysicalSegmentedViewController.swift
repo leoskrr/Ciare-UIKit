@@ -16,7 +16,6 @@ class PhysicalSegmentedViewController: UIViewController {
     
     var brandName: String?
     var registerViewController: RegisterViewController?
-    //var mapViewController: MapViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,23 +25,37 @@ class PhysicalSegmentedViewController: UIViewController {
     }
     
     @IBAction func finishSelected(_ sender: UIButton) {
-        
         guard let name = registerViewController!.brandName.text else {
             return
         }
         
-        if let coreLocation = registerViewController!.userBusinessCoordinate {
-            SignUpUserService().execute(name: name, location: CLLocation(latitude: coreLocation.latitude, longitude: coreLocation.longitude))
-        } else {
-            SignUpUserService().execute(name: name, location: nil)
+        guard let businessArea = businessAreaTextField.text else {
+            return
         }
-
+        
+        let userInfo = UserInfo(name: name)
+        
+        userInfo.expertiseAreas = businessArea.components(separatedBy: " ")
+        
+        if let coreLocation = registerViewController!.userBusinessCoordinate {
+            userInfo.location = CLLocation(latitude: coreLocation.latitude, longitude: coreLocation.longitude)
+        }
+        
+        SignUpUserService().execute(userInfo) {
+            signUpResult, error in
+            
+            switch signUpResult {
+            case .success:
+                print("sucesso ao cadastrar!")
+            case .fail:
+                print("erro ao cadastrar: \(error!)")
+            }
+        }
     }
     
     func assecibilityApple(){
         finishButton.titleLabel?.adjustsFontForContentSizeCategory = true
     }
-    
 }
 
 extension PhysicalSegmentedViewController: UITextFieldDelegate {

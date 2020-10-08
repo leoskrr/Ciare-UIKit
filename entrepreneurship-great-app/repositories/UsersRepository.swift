@@ -22,11 +22,24 @@ class UsersRepository{
         self.publicDatabase = CKContainer(identifier: "iCloud.com.vianaleonardo.entrepreneurship").publicCloudDatabase
     }
     
-    public func saveUser(record: CKRecord){
-        self.publicDatabase.save(record) {_,error in
-            guard error == nil else {
-                print("Error")
+    public func saveUser(userRecord: CKRecord, userInfoRecord: CKRecord, completionHandler: @escaping (CKRecord?, Error?) -> ()){
+                
+        self.publicDatabase.save(userInfoRecord) { record, error in
+            guard let savedRecord = record, error == nil else {
+                completionHandler(nil, error)
                 return
+            }
+            
+            userRecord["informations"] = CKRecord.Reference(recordID: savedRecord.recordID, action: .none)
+            
+            self.publicDatabase.save(userRecord) {
+                record, error in
+                
+                guard error == nil else {
+                    completionHandler(nil, error)
+                    return
+                }
+                completionHandler(savedRecord, nil)
             }
         }
     }
@@ -98,7 +111,7 @@ class UsersRepository{
         operation.recordFetchedBlock = {
             record in
                         
-            let user = UserInfo(recordID: record.recordID, name: record["name"] as! String)
+            let user = UserInfo(name: record["name"] as! String, recordID: record.recordID)
 
             user.availablePartnerships = record["availablePartnerships"] as? Int64
             user.location = record["location"] as? CLLocation

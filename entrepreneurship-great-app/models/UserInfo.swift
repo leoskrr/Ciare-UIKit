@@ -9,8 +9,8 @@ import Foundation
 import CloudKit
 
 class UserInfo: NSObject {
-    var recordID: CKRecord.ID
     var name: String
+    var recordID: CKRecord.ID?
     var location: CLLocation?
     var picture: CKAsset?
     var availablePartnerships: Int64?
@@ -18,8 +18,8 @@ class UserInfo: NSObject {
     var expertiseAreas: [String]?
     var socialNetworks: [String]?
     
-    init(recordID: CKRecord.ID,
-         name: String,
+    init(name: String,
+         recordID: CKRecord.ID? = nil,
          location: CLLocation? = nil,
          picture: CKAsset? = nil,
          availablePartnerships: Int64? = nil,
