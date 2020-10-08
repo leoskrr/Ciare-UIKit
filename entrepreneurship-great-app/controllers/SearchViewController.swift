@@ -12,12 +12,38 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    var usersFromCK: [UserInfo]?
+    
     var filterUser: [User]!
     let usersRepository: UsersRepository
     
     required init?(coder: NSCoder) {
         self.usersRepository = UsersRepository()
         super.init(coder: coder)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+//        ListAllUsersService().execute() {
+//            allUsers, error in
+//
+//            guard let users = allUsers, error == nil else {
+//                print(error!)
+//                return
+//            }
+//
+//            self.usersFromCK = users
+//        }
+//
+//        ListAllUsersByCharactersService().execute(characters: "a"){
+//            allUsers, error in
+//
+//            guard let users = allUsers, error == nil else {
+//                print(error!)
+//                return
+//            }
+//
+//            self.usersFromCK = users
+//        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
