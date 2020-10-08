@@ -46,7 +46,7 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
     
     @IBOutlet weak var interfaceSegmented: CustomSegmentedControl!{
         didSet{
-            interfaceSegmented.setButtonTitles(buttonTitles: ["Physical","Digital","Both"])
+            interfaceSegmented.setButtonTitles(buttonTitles: [Translation.segmentedControl.physical,Translation.segmentedControl.digital,Translation.segmentedControl.both])
             interfaceSegmented.selectorViewColor = .orange
             interfaceSegmented.selectorTextColor = .orange
         }
@@ -55,6 +55,12 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
+        
+        registerLabel.text = Translation.Info.register
+        companyLabel.text = Translation.Info.company
+        businessTypeLabel.text = Translation.Info.businessType
+        brandName.placeholder = Translation.Placeholder.brandName
+        
         
         acessibilityApple()
         

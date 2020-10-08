@@ -21,6 +21,21 @@
 "PersonViewController.placeholder.askPartnership" = "Ask for Partnership";
 "PersonViewController.placeholder.askedPartnership" = "Asked partnership";
 "PersonViewController.assecibility.profile" = "Profile";
+"RegisterViewController.info.labelRegister" = "Register";
+"RegisterViewController.info.labelCompany" = "Company";
+"RegisterViewController.info.labelBusinessType" = "Business Type";
+"RegisterViewController.info.labelNameCompany" = "Brand Name";
+"RegisterViewController.segmentedControl.labelPhysical" = "Physical";
+"RegisterViewController.segmentedControl.labelDigital" = "Digital";
+"RegisterViewController.segmentedControl.labelBoth" = "Both";
+"RegisterViewController.segmentedControl.labelBusinessArea" = "Business Area";
+"RegisterViewController.segmentedControl.labelLocation" = "Location";
+
+
+
+
+
+
 
 
 

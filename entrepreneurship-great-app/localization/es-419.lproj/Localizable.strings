@@ -21,6 +21,15 @@
 "PersonViewController.placeholder.askPartnership" = "Solicitar asociación";
 "PersonViewController.placeholder.askedPartnership" = "Asociación solicitada";
 "PersonViewController.assecibility.profile" = "Perfil";
+"RegisterViewController.info.labelRegister" = "Registrarse";
+"RegisterViewController.info.labelCompany" = "Tipo de Negocio";
+"RegisterViewController.info.labelNameCompany" = "Nombre del Negocio";
+"RegisterViewController.segmentedControl.labelPhysical" = "Fisico";
+"RegisterViewController.segmentedControl.labelDigital" = "Digital";
+"RegisterViewController.segmentedControl.labelBoth" = "Ambos";
+"RegisterViewController.segmentedControl.labelBusinessArea" = "Área de Atuação";
+"RegisterViewController.segmentedControl.labelLocation" = "Localização";
+
 
 
 
