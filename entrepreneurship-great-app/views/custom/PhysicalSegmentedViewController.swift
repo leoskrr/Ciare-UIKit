@@ -25,7 +25,10 @@ class PhysicalSegmentedViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        locationTextField.text = registerViewController!.userBusinessPlacemarkName
+        if let userLocation = registerViewController!.userBusinessPlacemarkName {
+            locationTextField.text = userLocation
+
+        }
     }
     
     @IBAction func finishSelected(_ sender: UIButton) {

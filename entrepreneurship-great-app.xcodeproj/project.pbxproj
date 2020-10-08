@@ -35,6 +35,7 @@
 		35BB2BA7251A3E3C0028AF3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35BB2BA5251A3E3C0028AF3E /* LaunchScreen.storyboard */; };
 		35BB2BB2251A3E3D0028AF3E /* entrepreneurship_great_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BB2BB1251A3E3D0028AF3E /* entrepreneurship_great_appTests.swift */; };
 		35BB2BBD251A3E3D0028AF3E /* entrepreneurship_great_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BB2BBC251A3E3D0028AF3E /* entrepreneurship_great_appUITests.swift */; };
+		35BD989D252F3D43002A203E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD989C252F3D43002A203E /* TabBarViewController.swift */; };
 		35CC6D8D252230E900DD9E73 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC6D8C252230E900DD9E73 /* CloudKit.framework */; };
 		35D5154A251D290300ACC8D2 /* UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D51549251D290300ACC8D2 /* UsersRepository.swift */; };
 		35E028F1252E971100196D7C /* decryptGeoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E028F0252E971100196D7C /* decryptGeoLocation.swift */; };
@@ -97,6 +98,7 @@
 		35BB2BB8251A3E3D0028AF3E /* entrepreneurship-great-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "entrepreneurship-great-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35BB2BBC251A3E3D0028AF3E /* entrepreneurship_great_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = entrepreneurship_great_appUITests.swift; sourceTree = "<group>"; };
 		35BB2BBE251A3E3D0028AF3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35BD989C252F3D43002A203E /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		35CC6D8C252230E900DD9E73 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		35D51549251D290300ACC8D2 /* UsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepository.swift; sourceTree = "<group>"; };
 		35E028F0252E971100196D7C /* decryptGeoLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = decryptGeoLocation.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				128769832524C49100B04079 /* LoginViewController.swift */,
 				12D2CA1C2525F666001FCFCC /* RegisterViewController.swift */,
 				3556CEAC252BA33100CF1A64 /* MapViewController.swift */,
+				35BD989C252F3D43002A203E /* TabBarViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				35176998252E310B00E6B214 /* ListAllUsersService.swift in Sources */,
 				35176993252E30F800E6B214 /* ListAllUsersByCharactersService.swift in Sources */,
 				35BB2BA2251A3E3C0028AF3E /* entrepreneurship_great_app.xcdatamodeld in Sources */,
+				35BD989D252F3D43002A203E /* TabBarViewController.swift in Sources */,
 				35BB2B9C251A3E3C0028AF3E /* ViewController.swift in Sources */,
 				128769842524C49100B04079 /* LoginViewController.swift in Sources */,
 				35176981252E169F00E6B214 /* UserInfo.swift in Sources */,
