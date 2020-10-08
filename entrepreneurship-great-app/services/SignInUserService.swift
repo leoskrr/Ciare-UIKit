@@ -40,6 +40,8 @@ class SignInUserService {
                         } else {
                             completionHandler(.SendUserToRegister, record, nil)
                         }
+                        
+                        storeUserRecordNameInUserDefaults(recordID)
                     case .Failed:
                         completionHandler(.Error, nil, error)
                 }

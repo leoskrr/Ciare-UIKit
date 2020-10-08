@@ -40,6 +40,7 @@
 		35BD98AF252F491E002A203E /* CreatePostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD98AE252F491E002A203E /* CreatePostService.swift */; };
 		35BD98B4252F5391002A203E /* ListPostsByUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD98B3252F5391002A203E /* ListPostsByUserService.swift */; };
 		35BD98B9252F56E0002A203E /* ListAllPostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD98B8252F56E0002A203E /* ListAllPostsService.swift */; };
+		35BD98BE252F5DCC002A203E /* userDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD98BD252F5DCC002A203E /* userDefaultsStorage.swift */; };
 		35CC6D8D252230E900DD9E73 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC6D8C252230E900DD9E73 /* CloudKit.framework */; };
 		35D5154A251D290300ACC8D2 /* UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D51549251D290300ACC8D2 /* UsersRepository.swift */; };
 		35E028F1252E971100196D7C /* decryptGeoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E028F0252E971100196D7C /* decryptGeoLocation.swift */; };
@@ -107,6 +108,7 @@
 		35BD98AE252F491E002A203E /* CreatePostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostService.swift; sourceTree = "<group>"; };
 		35BD98B3252F5391002A203E /* ListPostsByUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPostsByUserService.swift; sourceTree = "<group>"; };
 		35BD98B8252F56E0002A203E /* ListAllPostsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAllPostsService.swift; sourceTree = "<group>"; };
+		35BD98BD252F5DCC002A203E /* userDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userDefaultsStorage.swift; sourceTree = "<group>"; };
 		35CC6D8C252230E900DD9E73 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		35D51549251D290300ACC8D2 /* UsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepository.swift; sourceTree = "<group>"; };
 		35E028F0252E971100196D7C /* decryptGeoLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = decryptGeoLocation.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				35E028F0252E971100196D7C /* decryptGeoLocation.swift */,
+				35BD98BD252F5DCC002A203E /* userDefaultsStorage.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				3518010D251CF392001B7B38 /* Post.swift in Sources */,
 				12BB29E425275850006408FF /* BothSegmentedViewController.swift in Sources */,
 				35E028F1252E971100196D7C /* decryptGeoLocation.swift in Sources */,
+				35BD98BE252F5DCC002A203E /* userDefaultsStorage.swift in Sources */,
 				12A176CC251CD0EE00495AD4 /* CustomSegmentedControl.swift in Sources */,
 				35BD98AF252F491E002A203E /* CreatePostService.swift in Sources */,
 				358F4D8F251B844B0018BE34 /* SearchViewController.swift in Sources */,
