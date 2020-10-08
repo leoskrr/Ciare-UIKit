@@ -38,6 +38,8 @@
 		35BD989D252F3D43002A203E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD989C252F3D43002A203E /* TabBarViewController.swift */; };
 		35BD98A2252F404F002A203E /* PostsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD98A1252F404F002A203E /* PostsRepository.swift */; };
 		35BD98AF252F491E002A203E /* CreatePostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD98AE252F491E002A203E /* CreatePostService.swift */; };
+		35BD98B4252F5391002A203E /* ListPostsByUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD98B3252F5391002A203E /* ListPostsByUserService.swift */; };
+		35BD98B9252F56E0002A203E /* ListAllPostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD98B8252F56E0002A203E /* ListAllPostsService.swift */; };
 		35CC6D8D252230E900DD9E73 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CC6D8C252230E900DD9E73 /* CloudKit.framework */; };
 		35D5154A251D290300ACC8D2 /* UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D51549251D290300ACC8D2 /* UsersRepository.swift */; };
 		35E028F1252E971100196D7C /* decryptGeoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E028F0252E971100196D7C /* decryptGeoLocation.swift */; };
@@ -103,6 +105,8 @@
 		35BD989C252F3D43002A203E /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		35BD98A1252F404F002A203E /* PostsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsRepository.swift; sourceTree = "<group>"; };
 		35BD98AE252F491E002A203E /* CreatePostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostService.swift; sourceTree = "<group>"; };
+		35BD98B3252F5391002A203E /* ListPostsByUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPostsByUserService.swift; sourceTree = "<group>"; };
+		35BD98B8252F56E0002A203E /* ListAllPostsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAllPostsService.swift; sourceTree = "<group>"; };
 		35CC6D8C252230E900DD9E73 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		35D51549251D290300ACC8D2 /* UsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepository.swift; sourceTree = "<group>"; };
 		35E028F0252E971100196D7C /* decryptGeoLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = decryptGeoLocation.swift; sourceTree = "<group>"; };
@@ -161,6 +165,8 @@
 				35176997252E310B00E6B214 /* ListAllUsersService.swift */,
 				35176992252E30F800E6B214 /* ListAllUsersByCharactersService.swift */,
 				35BD98AE252F491E002A203E /* CreatePostService.swift */,
+				35BD98B3252F5391002A203E /* ListPostsByUserService.swift */,
+				35BD98B8252F56E0002A203E /* ListAllPostsService.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -448,10 +454,12 @@
 				35BD98A2252F404F002A203E /* PostsRepository.swift in Sources */,
 				12BB29DF25275817006408FF /* PhysicalSegmentedViewController.swift in Sources */,
 				351826FF25257DE700AC4D48 /* SignUpUserService.swift in Sources */,
+				35BD98B9252F56E0002A203E /* ListAllPostsService.swift in Sources */,
 				35BB2B98251A3E3C0028AF3E /* AppDelegate.swift in Sources */,
 				12D2CA1D2525F666001FCFCC /* RegisterViewController.swift in Sources */,
 				F1B5E516251A53E400140CB3 /* User.swift in Sources */,
 				35D5154A251D290300ACC8D2 /* UsersRepository.swift in Sources */,
+				35BD98B4252F5391002A203E /* ListPostsByUserService.swift in Sources */,
 				3500ACB5251E2929007E89E7 /* CreateFollowUserService.swift in Sources */,
 				F17CF2552524DB6100C3D81F /* Translation.swift in Sources */,
 				12A176EB251CDF0000495AD4 /* PersonViewController.swift in Sources */,
