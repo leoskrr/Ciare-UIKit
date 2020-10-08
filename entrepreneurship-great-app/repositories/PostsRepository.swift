@@ -43,6 +43,23 @@ class PostsRepository {
         }
     }
     
+    public func listAll(completionHandler: @escaping ([Post]?, Error?) -> ()) {
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType: "Post", predicate: predicate)
+        let operation = CKQueryOperation(query: query)
+        
+        executeQueryOperation(operation: operation) {
+            posts, error in
+            
+            guard error == nil else {
+                completionHandler(nil, error)
+                return
+            }
+            
+            completionHandler(posts, nil)
+        }
+    }
+    
     public func listsPostsByUser(withId author_id: CKRecord.ID, completionHandler: @escaping ([Post]?, Error?) -> ()) {
         let predicate = NSPredicate(format: "author_id == %@", author_id)
         let query = CKQuery(recordType: "Post", predicate: predicate)
