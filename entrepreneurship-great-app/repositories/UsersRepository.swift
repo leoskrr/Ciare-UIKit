@@ -44,6 +44,40 @@ class UsersRepository{
         }
     }
     
+    public func saveUserInfo(userInfo: UserInfo, completionHandler: @escaping (UserInfo?, Error?) -> ()){
+        
+        var userInfoRecord = CKRecord(recordType: "UsersInfos")
+        
+        if let recordID = userInfo.recordID {
+            userInfoRecord = CKRecord(recordType: "UsersInfos", recordID: recordID)
+
+        }
+
+        userInfoRecord["availablePartnerships"] = userInfo.availablePartnerships
+        userInfoRecord["location"] = userInfo.location
+        userInfoRecord["picture"] = userInfo.picture
+        userInfoRecord["expertiseAreas"] = userInfo.expertiseAreas
+        userInfoRecord["name"] = userInfo.name
+        userInfoRecord["socialNetworks"] = userInfo.socialNetworks
+        userInfoRecord["typeBusiness"] = userInfo.typeBusiness
+        userInfoRecord["followers"] = userInfo.followers
+        userInfoRecord["following"] = userInfo.following
+        userInfoRecord["partners"] = userInfo.partners
+        
+        self.publicDatabase.save(userInfoRecord){
+            record, error in
+            
+            guard let savedRecord = record, error == nil else {
+                completionHandler(nil, error)
+                return
+            }
+            
+            userInfo.recordID = savedRecord.recordID
+            
+            completionHandler(userInfo, nil)
+        }
+    }
+    
     public func fetchOneUser(withRecordID recordID: CKRecord.ID, completionHandler: @escaping (OperationResult,CKRecord?, Error?) -> ()){
         self.publicDatabase.fetch(withRecordID: recordID) { record, error in
             guard let user = record, error == nil else {

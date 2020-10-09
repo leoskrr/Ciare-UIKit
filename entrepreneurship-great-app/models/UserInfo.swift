@@ -17,7 +17,10 @@ class UserInfo: NSObject {
     var typeBusiness: String?
     var expertiseAreas: [String]?
     var socialNetworks: [String]?
-    
+    var followers: [CKRecord.Reference]?
+    var following: [CKRecord.Reference]?
+    var partners: [CKRecord.Reference]?
+
     init(name: String,
          recordID: CKRecord.ID? = nil,
          location: CLLocation? = nil,
@@ -25,7 +28,10 @@ class UserInfo: NSObject {
          availablePartnerships: Int64? = nil,
          expertiseAreas: [String]? = nil,
          socialNetworks: [String]? = nil,
-         typeBusiness: String? = nil) {
+         typeBusiness: String? = nil,
+         followers: [CKRecord.Reference]? = [],
+         following: [CKRecord.Reference]? = [],
+         partners: [CKRecord.Reference]? = []) {
         
         self.recordID = recordID
         self.name = name

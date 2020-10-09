@@ -1,36 +1,57 @@
+////
+////  CreateFollowUserService.swift
+////  entrepreneurship-great-app
+////
+////  Created by Leonardo Viana on 25/09/20.
+////
 //
-//  CreateFollowUserService.swift
-//  entrepreneurship-great-app
+//import Foundation
+//import UIKit
+//import CloudKit
 //
-//  Created by Leonardo Viana on 25/09/20.
+//enum CreateFollowUserServiceResult {
+//    case success, failed
+//}
 //
-
-import Foundation
-import UIKit
-
-enum CreateFollowUserServiceError: Error {
-    case loggedUserNotExists
-    case followedUserNotExists
-}
-
-class CreateFollowUserService {
-    
-    var usersRepository: UsersRepository
-    
-    init() {
-        self.usersRepository = UsersRepository()
-    }
-    
-    public func execute(loggedUserId: String, followedUserId: String) throws -> [String: User?]{
-        guard let loggedUser = usersRepository.findUserById(loggedUserId) else { throw CreateFollowUserServiceError.loggedUserNotExists }
-        guard let followedUser = usersRepository.findUserById(followedUserId) else { throw CreateFollowUserServiceError.followedUserNotExists }
-        
-        let updatedLoggedUser = usersRepository.updateUser(loggedUser)
-        let updatedFollowedUser = usersRepository.updateUser(followedUser)
-        
-        return [
-            "loggedUser": updatedLoggedUser,
-            "followedUser": updatedFollowedUser
-        ]
-    }
-}
+//class CreateFollowUserService {
+//    
+//    var usersRepository: UsersRepository
+//    
+//    init() {
+//        self.usersRepository = UsersRepository()
+//    }
+//    
+//    public func execute(followerInfos: UserInfo, followedInfos: UserInfo, completionHandler: @escaping (CreateFollowUserServiceResult, UserInfo?, UserInfo?, Error?) -> ()) {
+//        //salvar user record infos com novo seguidor
+//        //
+//        guard let followerInfosId = followerInfos.recordID else {
+//            return
+//        }
+//        
+//        guard let followedInfosId = followedInfos.recordID else {
+//            return
+//        }
+//        
+//        followerInfos.following?.append(CKRecord.Reference(recordID: followedInfosId, action: .none))
+//        
+//        followedInfos.followers?.append(CKRecord.Reference(recordID: followerInfosId, action: .none))
+//        
+//        usersRepository.saveUserInfo(userInfo: followerInfos) {
+//            userInfos, error in
+//            
+//            guard let followerUserInfos = userInfos, error == nil else {
+//                return
+//            }
+//            
+//            self.usersRepository.saveUserInfo(userInfo: followedInfos) {
+//                userInfos, error in
+//                
+//                guard let followedUserInfos = userInfos, error == nil else {
+//                    return
+//                }
+//                
+//                completionHandler(followerUserInfos, nil)
+//            }
+//        }
+//    }
+//}
