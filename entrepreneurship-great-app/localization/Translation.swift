@@ -61,6 +61,23 @@ class Translation {
         static let digital = NSLocalizedString("RegisterViewController.segmentedControl.labelDigital", comment: "")
         
         static let both = NSLocalizedString("RegisterViewController.segmentedControl.labelBoth", comment: "")
+        
+        static let businessArea = NSLocalizedString("RegisterViewController.segmentedControl.labelBusinessArea", comment: "")
+        
+        static let location = NSLocalizedString("RegisterViewController.segmentedControl.labelLocation", comment: "")
+        
+        static let plataforms = NSLocalizedString("RegisterViewController.segmentedControl.labelPlataforms", comment: "")
+        
+        static let finish = NSLocalizedString("RegisterViewController.segmentedControl.buttonFinish", comment: "")
     }
     
+    class Post {
+        static let description = NSLocalizedString("PostViewController.post.descriptionPlaceholder", comment: "")
+        
+        static let textButtonPost = NSLocalizedString("PostViewController.post.textButtonPost", comment: "")
+        
+        static let camera = NSLocalizedString("PostViewController.post.alertCamera", comment: "")
+        
+        static let gallery = NSLocalizedString("PostViewController.post.alertGalery", comment: "")
+    }
 }

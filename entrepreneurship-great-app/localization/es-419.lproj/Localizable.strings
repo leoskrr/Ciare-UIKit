@@ -27,8 +27,15 @@
 "RegisterViewController.segmentedControl.labelPhysical" = "Fisico";
 "RegisterViewController.segmentedControl.labelDigital" = "Digital";
 "RegisterViewController.segmentedControl.labelBoth" = "Ambos";
-"RegisterViewController.segmentedControl.labelBusinessArea" = "Área de Atuação";
-"RegisterViewController.segmentedControl.labelLocation" = "Localização";
+"RegisterViewController.segmentedControl.labelBusinessArea" = "Area de actuación";
+"RegisterViewController.segmentedControl.labelLocation" = "Localización";
+"RegisterViewController.segmentedControl.labelPlataforms" = "Redes sociales";
+"RegisterViewController.segmentedControl.buttonFinish" = "Terminar";
+"PostViewController.post.descriptionPlaceholder" = "Describe tu publicación aquí";
+"PostViewController.post.textButtonPost" = "Publicar";
+"PostViewController.post.alertCamera" = "Cámara";
+"PostViewController.post.alertGalery" = "Galería";
+
 
 
 

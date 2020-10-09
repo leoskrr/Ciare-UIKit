@@ -32,7 +32,8 @@ class DigitalSegmentedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        businessAreaTextField.placeholder = Translation.segmentedControl.businessArea
+        plataformsLabel.text = Translation.segmentedControl.plataforms
         asseecibilityApple()
     }
     

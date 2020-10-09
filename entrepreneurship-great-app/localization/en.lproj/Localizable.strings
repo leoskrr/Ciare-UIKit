@@ -30,6 +30,18 @@
 "RegisterViewController.segmentedControl.labelBoth" = "Both";
 "RegisterViewController.segmentedControl.labelBusinessArea" = "Business Area";
 "RegisterViewController.segmentedControl.labelLocation" = "Location";
+"RegisterViewController.segmentedControl.labelPlataforms" = "Social networks";
+"RegisterViewController.segmentedControl.buttonFinish" = "Finish";
+"PostViewController.post.descriptionPlaceholder" = "Describe your post here";
+"PostViewController.post.textButtonPost" = "Post";
+"PostViewController.post.alertCamera" = "Camera";
+"PostViewController.post.alertGalery" = "Gallery";
+
+
+
+
+
+
 
 
 
