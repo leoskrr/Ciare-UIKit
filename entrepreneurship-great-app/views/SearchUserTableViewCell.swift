@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import CloudKit
 
 class SearchUserTableViewCell: UITableViewCell {
 
-    var userId: String?
+    var userInfoId: CKRecord.ID!
     @IBOutlet weak var picture: UIImageView!
     @IBOutlet weak var nameUser: UILabel!
     @IBOutlet weak var niche: UILabel!
@@ -29,16 +30,29 @@ class SearchUserTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
-    func fillCellData(_ user: User) {
-        self.userId = user.id
+    func fillCellData(_ user: UserInfo) {
+        self.userInfoId = user.recordID!
         self.nameUser.text = user.name
-        self.picture.image = user.picture
-        self.niche.text = user.areasExpertise?[0] ?? ""
+        
+        if let userAsset = user.picture {
+            if let imageUrl = userAsset.fileURL{
+                if let imageData = NSData(contentsOf: imageUrl){
+                    self.picture.image = UIImage(data: imageData as Data)
+                }
+            }
+        } else {
+            self.picture.image = UIImage(named: "img3")
+        }
+        
+        self.niche.text = user.expertiseAreas?[0] ?? ""
     }
     
     func acessibilityApple(){
-        picture.isAccessibilityElement = true
-        picture.accessibilityTraits = .image
-        picture.accessibilityLabel = "perfil"
+        
+        if let picture = picture {
+            picture.isAccessibilityElement = true
+            picture.accessibilityTraits = .image
+            picture.accessibilityLabel = "perfil"
+        }
     }
 }

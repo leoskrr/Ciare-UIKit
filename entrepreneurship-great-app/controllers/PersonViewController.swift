@@ -9,7 +9,7 @@ import UIKit
 
 class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
     
-    var person: User?
+    var person: UserInfo?
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var name: UILabel!
@@ -37,12 +37,18 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
     
     func loadPersonDataOnView(){
         if let person = self.person {
-            profileImage.image = person.picture
+            
+            if let userPicture = person.picture {
+                if let imageData = NSData(contentsOf: userPicture.fileURL!){
+                    profileImage.image = UIImage(data: imageData as Data)
+                }
+            }
+        
             name.text = person.name
-            niche.text = person.areasExpertise?[0] ?? ""
-            partnershipsQuantity.text = "\(person.partners?.count ?? 0)"
-            followingQuantity.text = "\(person.following?.count ?? 0)"
-            followersQuantity.text = "\(person.partners?.count ?? 0)"
+            niche.text = person.expertiseAreas?[0] ?? ""
+            partnershipsQuantity.text = "0"
+            followingQuantity.text = "0"
+            followersQuantity.text = "0"
         }
     }
     

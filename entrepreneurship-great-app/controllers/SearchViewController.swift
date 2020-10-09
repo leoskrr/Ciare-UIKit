@@ -14,7 +14,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     
     var usersFromCK: [UserInfo]?
     
-    var filterUser: [User]!
+    var filterUser: [UserInfo]!
     let usersRepository: UsersRepository
     
     required init?(coder: NSCoder) {
@@ -22,32 +22,33 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         super.init(coder: coder)
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        ListAllUsersService().execute() {
+            allUsers, error in
+
+            guard let users = allUsers, error == nil else {
+                print(error!)
+                return
+            }
+            
+            //self.filterUser = users
+            self.usersFromCK = users
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
-//        ListAllUsersService().execute() {
-//            allUsers, error in
-//
-//            guard let users = allUsers, error == nil else {
-//                print(error!)
-//                return
-//            }
-//
-//            self.usersFromCK = users
-//        }
-//
-//        ListAllUsersByCharactersService().execute(characters: "a"){
-//            allUsers, error in
-//
-//            guard let users = allUsers, error == nil else {
-//                print(error!)
-//                return
-//            }
-//
-//            self.usersFromCK = users
-//        }
+        searchBar.becomeFirstResponder()
+        searchBar.placeholder = Translation.Placeholder.searchBar
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filterUser.count
+        if let users = filterUser {
+            return users.count
+        } else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -61,17 +62,6 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         return cell
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        searchBar.becomeFirstResponder()
-        filterUser = User.all
-        
-        // Do any additional setup after loading the view.
-        
-        searchBar.placeholder = Translation.Placeholder.searchBar
-    }
-    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         self.performSegue(withIdentifier: "backToFeedVC", sender: self)
@@ -81,16 +71,21 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     
         filterUser = []
         
+        guard let users = usersFromCK else {
+            print("Erro ao encontrar usuários do banco")
+            return
+        }
+        
         if searchText == "" {
-            filterUser = User.all
+            filterUser = []
         }else{
-            for user in User.all{
+            for user in users{
                 if user.name.lowercased().contains(searchText.lowercased()){
                     filterUser.append(user)
                 }
                 
-                else if !(user.areasExpertise!.isEmpty){
-                    if user.areasExpertise![0].lowercased().contains(searchText.lowercased()){
+                else if !(user.expertiseAreas!.isEmpty){
+                    if user.expertiseAreas![0].lowercased().contains(searchText.lowercased()){
                         filterUser.append(user)
                     }
                 }
@@ -104,8 +99,8 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
                 
         let userCell = tableView.cellForRow(at: indexPath) as! SearchUserTableViewCell
         
-        if let userId = userCell.userId {
-            let selectedUser = usersRepository.findUserById(userId)
+        if let userId = userCell.userInfoId {
+            let selectedUser = usersFromCK?.first { $0.recordID == userId }
             
             let personVC = self.storyboard?.instantiateViewController(withIdentifier: "personVC") as! PersonViewController
             
