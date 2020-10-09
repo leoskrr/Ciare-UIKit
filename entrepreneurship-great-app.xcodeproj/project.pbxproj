@@ -30,6 +30,7 @@
 		3556CEAD252BA33100CF1A64 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3556CEAC252BA33100CF1A64 /* MapViewController.swift */; };
 		3556CEB2252BAABD00CF1A64 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3556CEB1252BAABD00CF1A64 /* MapKit.framework */; };
 		35675318251B7F950020AB89 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35675317251B7F950020AB89 /* FeedViewController.swift */; };
+		3568F28E2530AB7F00862FA9 /* SaveUserInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3568F28D2530AB7F00862FA9 /* SaveUserInfoService.swift */; };
 		358F4D8F251B844B0018BE34 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358F4D8E251B844B0018BE34 /* SearchViewController.swift */; };
 		35BB2B98251A3E3C0028AF3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BB2B97251A3E3C0028AF3E /* AppDelegate.swift */; };
 		35BB2B9A251A3E3C0028AF3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BB2B99251A3E3C0028AF3E /* SceneDelegate.swift */; };
@@ -97,6 +98,7 @@
 		3556CEAC252BA33100CF1A64 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3556CEB1252BAABD00CF1A64 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		35675317251B7F950020AB89 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		3568F28D2530AB7F00862FA9 /* SaveUserInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveUserInfoService.swift; sourceTree = "<group>"; };
 		358F4D8E251B844B0018BE34 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		35BB2B94251A3E3C0028AF3E /* entrepreneurship-great-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "entrepreneurship-great-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35BB2B97251A3E3C0028AF3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				35BD98AE252F491E002A203E /* CreatePostService.swift */,
 				35BD98B3252F5391002A203E /* ListPostsByUserService.swift */,
 				35BD98B8252F56E0002A203E /* ListAllPostsService.swift */,
+				3568F28D2530AB7F00862FA9 /* SaveUserInfoService.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				35176993252E30F800E6B214 /* ListAllUsersByCharactersService.swift in Sources */,
 				120EBAC42530A896001FD302 /* MyPostTableViewCell.swift in Sources */,
 				35BB2BA2251A3E3C0028AF3E /* entrepreneurship_great_app.xcdatamodeld in Sources */,
+				3568F28E2530AB7F00862FA9 /* SaveUserInfoService.swift in Sources */,
 				35BD989D252F3D43002A203E /* TabBarViewController.swift in Sources */,
 				35BB2B9C251A3E3C0028AF3E /* ViewController.swift in Sources */,
 				128769842524C49100B04079 /* LoginViewController.swift in Sources */,
