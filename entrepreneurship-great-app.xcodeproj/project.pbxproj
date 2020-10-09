@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		120EBABF2530A333001FD302 /* MyCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120EBABE2530A333001FD302 /* MyCustomViewController.swift */; };
+		120EBAC42530A896001FD302 /* MyPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120EBAC32530A896001FD302 /* MyPostTableViewCell.swift */; };
+		120EBAC92530B3CD001FD302 /* MidiaKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120EBAC82530B3CD001FD302 /* MidiaKitViewController.swift */; };
+		120EBACE2530B4A1001FD302 /* MoodBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120EBACD2530B4A1001FD302 /* MoodBoardViewController.swift */; };
 		126D5695251B8D2D00077FD3 /* SearchUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126D5694251B8D2D00077FD3 /* SearchUserTableViewCell.swift */; };
 		12828E01252F5C9B0079FE7C /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12828E00252F5C9B0079FE7C /* PostViewController.swift */; };
 		128769842524C49100B04079 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128769832524C49100B04079 /* LoginViewController.swift */; };
@@ -69,6 +73,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		120EBABE2530A333001FD302 /* MyCustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomViewController.swift; sourceTree = "<group>"; };
+		120EBAC32530A896001FD302 /* MyPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostTableViewCell.swift; sourceTree = "<group>"; };
+		120EBAC82530B3CD001FD302 /* MidiaKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiaKitViewController.swift; sourceTree = "<group>"; };
+		120EBACD2530B4A1001FD302 /* MoodBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodBoardViewController.swift; sourceTree = "<group>"; };
 		1226A090251A406D00379581 /* entrepreneurship-great-app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "entrepreneurship-great-app.entitlements"; sourceTree = "<group>"; };
 		126D5694251B8D2D00077FD3 /* SearchUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserTableViewCell.swift; sourceTree = "<group>"; };
 		12828E00252F5C9B0079FE7C /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +164,9 @@
 				12D2CA2125262FDD001FCFCC /* DigitalSegmentedViewController.swift */,
 				12BB29DE25275817006408FF /* PhysicalSegmentedViewController.swift */,
 				12BB29E325275850006408FF /* BothSegmentedViewController.swift */,
+				120EBABE2530A333001FD302 /* MyCustomViewController.swift */,
+				120EBAC82530B3CD001FD302 /* MidiaKitViewController.swift */,
+				120EBACD2530B4A1001FD302 /* MoodBoardViewController.swift */,
 			);
 			path = custom;
 			sourceTree = "<group>";
@@ -250,6 +261,7 @@
 				35BB2B9D251A3E3C0028AF3E /* Main.storyboard */,
 				35BB2BA5251A3E3C0028AF3E /* LaunchScreen.storyboard */,
 				126D5694251B8D2D00077FD3 /* SearchUserTableViewCell.swift */,
+				120EBAC32530A896001FD302 /* MyPostTableViewCell.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -444,6 +456,7 @@
 				126D5695251B8D2D00077FD3 /* SearchUserTableViewCell.swift in Sources */,
 				35176998252E310B00E6B214 /* ListAllUsersService.swift in Sources */,
 				35176993252E30F800E6B214 /* ListAllUsersByCharactersService.swift in Sources */,
+				120EBAC42530A896001FD302 /* MyPostTableViewCell.swift in Sources */,
 				35BB2BA2251A3E3C0028AF3E /* entrepreneurship_great_app.xcdatamodeld in Sources */,
 				35BD989D252F3D43002A203E /* TabBarViewController.swift in Sources */,
 				35BB2B9C251A3E3C0028AF3E /* ViewController.swift in Sources */,
@@ -455,10 +468,12 @@
 				35E028F1252E971100196D7C /* decryptGeoLocation.swift in Sources */,
 				35BD98BE252F5DCC002A203E /* userDefaultsStorage.swift in Sources */,
 				12A176CC251CD0EE00495AD4 /* CustomSegmentedControl.swift in Sources */,
+				120EBAC92530B3CD001FD302 /* MidiaKitViewController.swift in Sources */,
 				35BD98AF252F491E002A203E /* CreatePostService.swift in Sources */,
 				358F4D8F251B844B0018BE34 /* SearchViewController.swift in Sources */,
 				3556CEAD252BA33100CF1A64 /* MapViewController.swift in Sources */,
 				35BD98A2252F404F002A203E /* PostsRepository.swift in Sources */,
+				120EBACE2530B4A1001FD302 /* MoodBoardViewController.swift in Sources */,
 				12BB29DF25275817006408FF /* PhysicalSegmentedViewController.swift in Sources */,
 				351826FF25257DE700AC4D48 /* SignUpUserService.swift in Sources */,
 				35BD98B9252F56E0002A203E /* ListAllPostsService.swift in Sources */,
@@ -466,6 +481,7 @@
 				12828E01252F5C9B0079FE7C /* PostViewController.swift in Sources */,
 				12D2CA1D2525F666001FCFCC /* RegisterViewController.swift in Sources */,
 				F1B5E516251A53E400140CB3 /* User.swift in Sources */,
+				120EBABF2530A333001FD302 /* MyCustomViewController.swift in Sources */,
 				35D5154A251D290300ACC8D2 /* UsersRepository.swift in Sources */,
 				35BD98B4252F5391002A203E /* ListPostsByUserService.swift in Sources */,
 				3500ACB5251E2929007E89E7 /* CreateFollowUserService.swift in Sources */,
