@@ -20,7 +20,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var postButton: UIButton!
     
     var imageUrl: URL?
-    let placeholder = "Describe your post here"
+    let placeholder = Translation.Post.description
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +29,8 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         view.addGestureRecognizer(tapOutsideTextView)
 
         descriptionTextView.delegate = self
+        postButton.setTitle(Translation.Post.textButtonPost, for: .normal)
+        cancelButton.setTitle(Translation.Alert.cancel, for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,7 +50,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         let actionSheet = UIAlertController(title: "Photo Source", message: "Choose a source", preferredStyle: .actionSheet)
         
-        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action: UIAlertAction) in
+        actionSheet.addAction(UIAlertAction(title: Translation.Post.camera, style: .default, handler: { (action: UIAlertAction) in
             if UIImagePickerController.isSourceTypeAvailable(.camera){
                 imagePickerController.sourceType = .camera
                 self.present(imagePickerController, animated: true, completion: nil)
@@ -57,12 +59,12 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             }
             
         }))
-        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action: UIAlertAction) in
+        actionSheet.addAction(UIAlertAction(title: Translation.Post.gallery, style: .default, handler: { (action: UIAlertAction) in
             imagePickerController.sourceType
                 = .photoLibrary
             self.present(imagePickerController, animated: true, completion: nil)
         }))
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: Translation.Alert.cancel, style: .cancel, handler: nil))
         
         self.present(actionSheet, animated: true, completion: nil)
         

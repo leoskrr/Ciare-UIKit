@@ -49,6 +49,8 @@ class BothSegmentedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         locationTextField.delegate = self
+        businessAreaTextField.placeholder = Translation.segmentedControl.businessArea
+        locationTextField.placeholder = Translation.segmentedControl.location
         
         asseecibilityApple()
     }
