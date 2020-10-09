@@ -17,7 +17,7 @@
 "PersonViewController.alert.alertCancel" = "Cancel";
 "PersonViewController.alert.alertTitle" = "Actions";
 "PersonViewController.alert.alertSubTitle" = "Select any options below";
-"PersonViewController.alert.labelMy" = "My";
+"PersonViewController.alert.labelMy" = "Posts";
 "PersonViewController.placeholder.askPartnership" = "Ask for Partnership";
 "PersonViewController.placeholder.askedPartnership" = "Asked partnership";
 "PersonViewController.assecibility.profile" = "Profile";
@@ -35,7 +35,7 @@
 "PostViewController.post.descriptionPlaceholder" = "Describe your post here";
 "PostViewController.post.textButtonPost" = "Post";
 "PostViewController.post.alertCamera" = "Camera";
-"PostViewController.post.alertGalery" = "Gallery";
+"PostViewController.post.alertGalery" = "Photo Library";
 
 
 

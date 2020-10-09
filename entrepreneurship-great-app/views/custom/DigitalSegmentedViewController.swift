@@ -34,6 +34,7 @@ class DigitalSegmentedViewController: UIViewController {
         super.viewDidLoad()
         businessAreaTextField.placeholder = Translation.segmentedControl.businessArea
         plataformsLabel.text = Translation.segmentedControl.plataforms
+        finishButton.setTitle(Translation.segmentedControl.finish, for: .normal)
         asseecibilityApple()
     }
     

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lv8-rd-Ihi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eCv-nJ-Tyh">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -1321,6 +1321,7 @@
                         <outlet property="instagramButton" destination="3xj-z9-j7i" id="yjh-ca-lNn"/>
                         <outlet property="linkedinButton" destination="U6h-uP-wgk" id="6Ju-gR-bkv"/>
                         <outlet property="locationTextField" destination="Pf8-rf-hbs" id="iJ5-MH-zXr"/>
+                        <outlet property="plataformsLabel" destination="fzY-QY-p5R" id="eH6-Ux-sBE"/>
                         <outlet property="tiktokButton" destination="ZHy-xc-O7k" id="kDd-fH-zxB"/>
                         <outlet property="twitterButton" destination="257-Bk-7ZF" id="YfF-d2-ga0"/>
                         <outlet property="whatsappButton" destination="yjk-jq-N7i" id="cV5-pe-OLy"/>
@@ -1389,13 +1390,13 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZJR-aS-YeX">
                                                                     <rect key="frame" x="60" y="17.666666666666668" width="283" height="37.666666666666657"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Company name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mY8-Lr-24w">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" ambiguous="YES" text="Company name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mY8-Lr-24w">
                                                                             <rect key="frame" x="0.0" y="0.0" width="113.33333333333333" height="19.333333333333332"/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TvZ-QA-e4D">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TvZ-QA-e4D">
                                                                             <rect key="frame" x="0.0" y="24.333333333333332" width="58.333333333333336" height="13.333333333333332"/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                                                             <nil key="textColor"/>
@@ -1472,6 +1473,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="rTT-LN-j9w" id="aTz-pU-AN7"/>
+                                    <outlet property="delegate" destination="rTT-LN-j9w" id="JnC-cn-foE"/>
                                 </connections>
                             </tableView>
                         </subviews>

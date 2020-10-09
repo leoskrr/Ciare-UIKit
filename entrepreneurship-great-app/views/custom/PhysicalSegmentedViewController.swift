@@ -23,6 +23,7 @@ class PhysicalSegmentedViewController: UIViewController {
         locationTextField.delegate = self
         businessAreaTextField.placeholder = Translation.segmentedControl.businessArea
         locationTextField.placeholder = Translation.segmentedControl.location
+        finishButton.setTitle(Translation.segmentedControl.finish, for: .normal)
         
         assecibilityApple()
     }

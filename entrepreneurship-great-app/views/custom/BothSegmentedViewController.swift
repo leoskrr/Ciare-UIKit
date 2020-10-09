@@ -21,6 +21,7 @@ class BothSegmentedViewController: UIViewController {
     @IBOutlet weak var tiktokButton: UIButton!
     @IBOutlet weak var whatsappButton: UIButton!
     @IBOutlet weak var finishButton: UIButton!
+    @IBOutlet weak var plataformsLabel: UILabel!
     
     
     var selected1 = false
@@ -51,6 +52,8 @@ class BothSegmentedViewController: UIViewController {
         locationTextField.delegate = self
         businessAreaTextField.placeholder = Translation.segmentedControl.businessArea
         locationTextField.placeholder = Translation.segmentedControl.location
+        finishButton.setTitle(Translation.segmentedControl.finish, for: .normal)
+        plataformsLabel.text = Translation.segmentedControl.plataforms
         
         asseecibilityApple()
     }

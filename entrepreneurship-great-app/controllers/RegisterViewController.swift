@@ -18,24 +18,29 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
     @IBOutlet weak var companyLabel: UILabel!
     @IBOutlet weak var businessTypeLabel: UILabel!
     
+    var index:Int?
+    
     var userName: String?
     var userEmail: String?
     var userBusinessPlacemarkName: String?
     var userBusinessCoordinate: CLLocationCoordinate2D?
     
-    func change(to index: Int) {
+    func change(to value: Int) {
         
-        switch index {
+        switch value {
         
         case 0:
+            index = 0
             physicalConteiner.isHidden = false
             digitalConteiner.isHidden = true
             bothConteiner.isHidden = true
         case 1:
+            index = 1
             physicalConteiner.isHidden = true
             digitalConteiner.isHidden = false
             bothConteiner.isHidden = true
         case 2:
+            index = 2
             physicalConteiner.isHidden = true
             digitalConteiner.isHidden = true
             bothConteiner.isHidden = false
@@ -62,7 +67,7 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
         
         acessibilityApple()
         
-        change(to: 0)
+        change(to: index ?? 0)
         self.hideKeyboardWhenTappedAround()
         interfaceSegmented.delegate = self
     }

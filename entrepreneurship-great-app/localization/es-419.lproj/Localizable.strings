@@ -17,12 +17,13 @@
 "PersonViewController.alert.alertCancel" = "Cancelar";
 "PersonViewController.alert.alertTitle" = "Acciones";
 "PersonViewController.alert.alertSubTitle" = "Seleccione cualquiera de las opciones siguientes";
-"PersonViewController.alert.labelMy" = "Mios";
+"PersonViewController.alert.labelMy" = "Publicaciones";
 "PersonViewController.placeholder.askPartnership" = "Solicitar asociación";
 "PersonViewController.placeholder.askedPartnership" = "Asociación solicitada";
 "PersonViewController.assecibility.profile" = "Perfil";
 "RegisterViewController.info.labelRegister" = "Registrarse";
-"RegisterViewController.info.labelCompany" = "Tipo de Negocio";
+"RegisterViewController.info.labelCompany" = "Negocio";
+"RegisterViewController.info.labelBusinessType" = "Tipo del Negocio";
 "RegisterViewController.info.labelNameCompany" = "Nombre del Negocio";
 "RegisterViewController.segmentedControl.labelPhysical" = "Fisico";
 "RegisterViewController.segmentedControl.labelDigital" = "Digital";
