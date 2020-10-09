@@ -23,6 +23,40 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
     @IBOutlet weak var followingLabel: UILabel!
     @IBOutlet weak var followersLabel: UILabel!
     
+    
+    
+    @IBOutlet weak var MyConteiner: UIView!
+    @IBOutlet weak var MidiaKitConteiner: UIView!
+    @IBOutlet weak var MoodBoardConteiner: UIView!
+    
+    
+    func change(to index: Int) {
+
+        switch index {
+        
+        case 0:
+            MyConteiner.isHidden = false
+            MidiaKitConteiner.isHidden = true
+            MoodBoardConteiner.isHidden = true
+        case 1:
+            MidiaKitConteiner.isHidden = false
+            MyConteiner.isHidden = true
+            MoodBoardConteiner.isHidden = true
+        case 2:
+            MidiaKitConteiner.isHidden = true
+            MyConteiner.isHidden = true
+            MoodBoardConteiner.isHidden = false
+        default:
+            break
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
     @IBOutlet weak var interfaceSegmented: CustomSegmentedControl!{
         didSet{
             interfaceSegmented.setButtonTitles(buttonTitles: [Translation.Info.my,"MidiaKit","MoodBoard"])
@@ -31,9 +65,7 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
         }
     }
     
-    func change(to index: Int) {
-        print(index)
-    }
+    
     
     func loadPersonDataOnView(){
         if let person = self.person {
@@ -88,6 +120,7 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
         followingLabel.text = Translation.Info.following
         followersLabel.text = Translation.Info.followers
         
+        change(to: 0)
         // Do any additional setup after loading the view.
     }
     
