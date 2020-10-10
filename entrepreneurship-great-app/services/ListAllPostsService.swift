@@ -6,10 +6,7 @@
 //
 
 import Foundation
-
-enum ListAllPostsServiceResult {
-    case success, failed
-}
+import CloudKit
 
 class ListAllPostsService {
     let postsRepository: PostsRepository
@@ -18,17 +15,35 @@ class ListAllPostsService {
         self.postsRepository = PostsRepository()
     }
     
-    public func execute(completionHandler: @escaping (ListPostsByUserServiceResult, [Post]?, Error?)->()){
-        
-        postsRepository.listAll{
-            posts, error in
-            
-            guard error == nil else {
-                completionHandler(.failed, nil, error)
+    public func execute(completionHandler: @escaping ([Post], Error?)->()){
+        ListUserInformationService().execute(){
+            userInfo, error in
+                        
+            guard let user = userInfo, error == nil else {
+                print("Error finding user")
+                completionHandler([], error)
                 return
             }
             
-            completionHandler(.success, posts, nil)
+            self.postsRepository.listAll{
+                foundPosts, error in
+                
+                guard let allPosts = foundPosts, error == nil else {
+                    completionHandler([], error)
+                    return
+                }
+                
+                guard let usersFollowing = user.following else {
+                    completionHandler([], nil)
+                    return
+                }
+                
+                let allPostsByUsersFollowing = allPosts.filter {
+                    usersFollowing.contains($0.author_id)
+                }
+                
+                completionHandler(allPostsByUsersFollowing, nil)
+            }
         }
     }
 }
