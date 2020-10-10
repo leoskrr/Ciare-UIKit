@@ -36,19 +36,16 @@ class SearchUserTableViewCell: UITableViewCell {
         
         if let userAsset = user.picture {
             if let imageUrl = userAsset.fileURL{
-                if let imageData = NSData(contentsOf: imageUrl){
-                    self.picture.image = UIImage(data: imageData as Data)
-                }
+                self.picture.image = UIImage(contentsOfFile: imageUrl.path)
             }
         } else {
-            self.picture.image = UIImage(named: "img3")
+            self.picture.image = UIImage(named: "defaultUserProfileImage")
         }
         
         self.niche.text = user.expertiseAreas?[0] ?? ""
     }
     
     func acessibilityApple(){
-        
         if let picture = picture {
             picture.isAccessibilityElement = true
             picture.accessibilityTraits = .image

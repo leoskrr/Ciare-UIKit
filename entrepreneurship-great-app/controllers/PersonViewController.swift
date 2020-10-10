@@ -76,10 +76,12 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
         let person = personProfile
         
         DispatchQueue.main.async {
-            if let userPicture = person.picture {
-                if let imageData = NSData(contentsOf: userPicture.fileURL!){
-                    self.profileImage.image = UIImage(data: imageData as Data)
+            if let userAsset = person.picture {
+                if let imageUrl = userAsset.fileURL{
+                    self.profileImage.image = UIImage(contentsOfFile: imageUrl.path)
                 }
+            } else {
+                self.profileImage.image = UIImage(named: "defaultUserProfileImage")
             }
             
             self.name.text = person.name

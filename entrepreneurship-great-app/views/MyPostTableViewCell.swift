@@ -41,8 +41,18 @@ class MyPostTableViewCell: UITableViewCell {
         
         self.companyNameLabel.text = user.name
         self.descriptionPost.text = post.description
-        self.profileImage.image = UIImage(named: "img3")
         self.timestampLabel.text = ""
+        
+        if let userPicture = user.picture{
+            if let userPictureUrl = userPicture.fileURL {
+                self.profileImage.image = UIImage(contentsOfFile: userPictureUrl.path)
+            } else {
+                self.profileImage.image = UIImage(named: "defaultUserProfileImage")
+            }
+        } else {
+            self.profileImage.image = UIImage(named: "defaultUserProfileImage")
+        }
+        
         if let postImgUrl = post.image.fileURL {
             self.postImage.image = UIImage(contentsOfFile: postImgUrl.path)
         }
