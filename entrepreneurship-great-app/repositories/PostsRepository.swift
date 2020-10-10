@@ -61,7 +61,7 @@ class PostsRepository {
     }
     
     public func listsPostsByUser(withId author_id: CKRecord.ID, completionHandler: @escaping ([Post]?, Error?) -> ()) {
-        let predicate = NSPredicate(format: "author_id == %@", author_id)
+        let predicate = NSPredicate(format: "author_id == %@", CKRecord.Reference(recordID: author_id, action: .none))
         let query = CKQuery(recordType: "Post", predicate: predicate)
         let operation = CKQueryOperation(query: query)
         

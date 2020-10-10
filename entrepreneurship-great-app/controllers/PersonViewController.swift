@@ -274,4 +274,11 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
         drawLoadFollowButton()
         loadPersonData()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "personPostsContainer" {
+            let personPostsContainer = segue.destination as! MyCustomViewController
+            personPostsContainer.personViewController = self
+        }
+    }
 }

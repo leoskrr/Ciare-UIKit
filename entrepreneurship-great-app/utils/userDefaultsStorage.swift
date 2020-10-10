@@ -26,21 +26,20 @@ public func getUserRecordNameFromUserDefaults() -> String?{
     return recordName
 }
 
-//public func storeUserInformations(userInfo: UserInfo){
-//    let defaults = UserDefaults.standard
-//    
-//    defaults.setValue(userInfo.name, forKey: "userName")
-//    defaults.setValue(userInfo.availablePartnerships, forKey: "userName")
-//    defaults.setValue(userInfo.expertiseAreas, forKey: "userName")
-//    defaults.setValue(userInfo.followers?.count, forKey: "userName")
-//    defaults.setValue(userInfo.following?.count, forKey: "userName")
-//    defaults.setValue(userInfo.partners?.count, forKey: "userName")
-//    defaults.setValue(userInfo., forKey: "userName")
-//    defaults.setValue(userInfo.name, forKey: "userName")
-//    defaults.setValue(userInfo.name, forKey: "userName")
-//
-//}
-//
-//public func getUserInformations() -> UserInfo? {
-//    
-//}
+public func storeUserInfoRecordNameInUserDefaults(_ id: CKRecord.Reference){
+    let defaults = UserDefaults.standard
+    
+    defaults.setValue(id.recordID.recordName, forKey: "userInfoRecordName")
+}
+
+public func getUserInfoRecordNameFromUserDefaults() -> String?{
+    let defaults = UserDefaults.standard
+    
+    let rn = defaults.string(forKey: "userInfoRecordName")
+    
+    guard let recordName = rn else {
+        return nil
+    }
+    
+    return recordName
+}

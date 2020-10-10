@@ -8,22 +8,54 @@
 import UIKit
 
 class MyCustomViewController: UIViewController, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+    @IBOutlet weak var tableView: UITableView!
+    
+    var personViewController: PersonViewController?
+    var person: UserInfo!
+
+    var posts: [Post] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
+    } 
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let post = posts[indexPath.row]
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MyPostTableViewCell
         
-        cell.companyNameLabel.text = "Misericórdia"
+        cell.fillCellData(post, person)
         
         return cell
     }
     
+    func loadPostsFromDB(){
+        let userInfoId = personViewController?.person?.recordID
+        
+        ListPostsByUserService().execute(userInfoId: userInfoId!){
+            _, allPosts, error in
+            
+            guard let userPosts = allPosts, error == nil else {
+                print("Could not load posts")
+                return
+            }
+            
+            self.posts = userPosts
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.person = personViewController!.person!
+        
+        loadPostsFromDB()
         // Do any additional setup after loading the view.
     }
     

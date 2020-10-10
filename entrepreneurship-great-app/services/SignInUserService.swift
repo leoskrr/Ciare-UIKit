@@ -41,7 +41,10 @@ class SignInUserService {
                             completionHandler(.SendUserToRegister, record, nil)
                         }
                         
+                        let userInfoReference = record!["informations"] as! CKRecord.Reference
+                                                
                         storeUserRecordNameInUserDefaults(recordID)
+                        storeUserInfoRecordNameInUserDefaults(userInfoReference)
                     case .Failed:
                         completionHandler(.Error, nil, error)
                 }

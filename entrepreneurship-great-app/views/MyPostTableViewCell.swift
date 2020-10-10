@@ -37,7 +37,15 @@ class MyPostTableViewCell: UITableViewCell {
     }
     
     
-    func fillCellData(_ post: Post){
+    func fillCellData(_ post: Post,_ user: UserInfo){
+        
+        self.companyNameLabel.text = user.name
+        self.descriptionPost.text = post.description
+        self.profileImage.image = UIImage(named: "img3")
+        self.timestampLabel.text = ""
+        if let postImgUrl = post.image.fileURL {
+            self.postImage.image = UIImage(contentsOfFile: postImgUrl.path)
+        }
         
 //        self.postId = post.id
 //        self.companyNameLabel.text = post.author_id

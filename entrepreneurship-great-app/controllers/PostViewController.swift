@@ -109,7 +109,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             return
         }
         
-        let userRecordName = getUserRecordNameFromUserDefaults()
+        let userRecordName = getUserInfoRecordNameFromUserDefaults()
         
         guard let recordName = userRecordName else {
             print("Error: missing record name")

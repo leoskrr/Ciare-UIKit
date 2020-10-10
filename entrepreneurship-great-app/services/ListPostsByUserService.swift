@@ -19,9 +19,9 @@ class ListPostsByUserService {
         self.postsRepository = PostsRepository()
     }
     
-    public func execute(userId: CKRecord.ID, completionHandler: @escaping (ListPostsByUserServiceResult, [Post]?, Error?)->()){
+    public func execute(userInfoId: CKRecord.ID, completionHandler: @escaping (ListPostsByUserServiceResult, [Post]?, Error?)->()){
         
-        postsRepository.listsPostsByUser(withId: userId) {
+        postsRepository.listsPostsByUser(withId: userInfoId) {
             posts, error in
             
             guard error == nil else {
