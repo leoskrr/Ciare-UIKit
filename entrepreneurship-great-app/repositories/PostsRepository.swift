@@ -46,7 +46,7 @@ class PostsRepository {
     public func listAll(completionHandler: @escaping ([Post]?, Error?) -> ()) {
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: "Post", predicate: predicate)
-        query.sortDescriptors = [NSSortDescriptor(key: "createdAt", ascending: true)]
+        query.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         
         let operation = CKQueryOperation(query: query)
         

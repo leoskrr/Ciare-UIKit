@@ -27,12 +27,12 @@ class ListAllPostsService {
             
             self.postsRepository.listAll{
                 foundPosts, error in
-                
+                                
                 guard let allPosts = foundPosts, error == nil else {
                     completionHandler([], error)
                     return
                 }
-                
+                                
                 guard let usersFollowing = user.following else {
                     completionHandler([], nil)
                     return
