@@ -131,6 +131,75 @@ class UsersRepository{
         }
     }
     
+    public func updateUserInformations(newInformations: UserInfo, completionHandler: @escaping(UserInfo?, Error?)->()){
+        self.publicDatabase.fetch(withRecordID: newInformations.recordID!){
+            record, error in
+            
+            guard let record = record, error == nil else {
+                return
+            }
+            
+            record.setObject(newInformations.availablePartnerships as CKRecordValue?, forKey: "availablePartnerships")
+            record.setObject(newInformations.location, forKey: "location")
+            record.setObject(newInformations.picture, forKey: "picture")
+            record.setObject(newInformations.name as CKRecordValue?, forKey: "name")
+            record.setObject(newInformations.expertiseAreas as CKRecordValue?, forKey: "expertiseAreas")
+            record.setObject(newInformations.followers as CKRecordValue?, forKey: "followers")
+            record.setObject(newInformations.following as CKRecordValue?, forKey: "following")
+            record.setObject(newInformations.partners as CKRecordValue?, forKey: "partners")
+            record.setObject(newInformations.typeBusiness as CKRecordValue?, forKey: "typeBusiness")
+            record.setObject(newInformations.socialNetworks as CKRecordValue?, forKey: "socialNetworks")
+            
+            self.publicDatabase.save(record){
+                _, saveError in
+                
+                guard error == nil else {
+                    completionHandler(nil, error)
+                    return
+                }
+                completionHandler(newInformations, error)
+            }
+        }
+    }
+    
+    public func updateUsersInformations(informations: [UserInfo]) {
+        var ckRecordsArray = [CKRecord]()
+        
+        print("chegou")
+        
+        for newInformations in informations {
+            let record = CKRecord(recordType: "UsersInfos", recordID: newInformations.recordID!)
+            
+            record.setObject(newInformations.availablePartnerships as CKRecordValue?, forKey: "availablePartnerships")
+            record.setObject(newInformations.location, forKey: "location")
+            record.setObject(newInformations.picture, forKey: "picture")
+            record.setObject(newInformations.name as CKRecordValue?, forKey: "name")
+            record.setObject(newInformations.expertiseAreas as CKRecordValue?, forKey: "expertiseAreas")
+            record.setObject(newInformations.followers as CKRecordValue?, forKey: "followers")
+            record.setObject(newInformations.following as CKRecordValue?, forKey: "following")
+            record.setObject(newInformations.partners as CKRecordValue?, forKey: "partners")
+            record.setObject(newInformations.typeBusiness as CKRecordValue?, forKey: "typeBusiness")
+            record.setObject(newInformations.socialNetworks as CKRecordValue?, forKey: "socialNetworks")
+            
+            ckRecordsArray.append(record)
+        }
+        
+        let saveRecordsOperation = CKModifyRecordsOperation(recordsToSave: ckRecordsArray, recordIDsToDelete: nil)
+        saveRecordsOperation.savePolicy = .ifServerRecordUnchanged
+        
+        saveRecordsOperation.modifyRecordsCompletionBlock = {
+            savedRecords, _, error in
+            
+            guard error == nil else {
+                print("Error \(error!)")
+                return
+            }
+            
+            print("Records atualizados!")
+        }
+
+    }
+    
     public func findUserById(_ id: String) -> User? {
         if let user = User.all.first(where: { $0.id == id }) {
             return user

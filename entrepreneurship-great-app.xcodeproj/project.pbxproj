@@ -20,18 +20,19 @@
 		12BB29E425275850006408FF /* BothSegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BB29E325275850006408FF /* BothSegmentedViewController.swift */; };
 		12D2CA1D2525F666001FCFCC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D2CA1C2525F666001FCFCC /* RegisterViewController.swift */; };
 		12D2CA2225262FDD001FCFCC /* DigitalSegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D2CA2125262FDD001FCFCC /* DigitalSegmentedViewController.swift */; };
-		3500ACB5251E2929007E89E7 /* CreateFollowUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3500ACB4251E2929007E89E7 /* CreateFollowUserService.swift */; };
 		35176981252E169F00E6B214 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35176980252E169F00E6B214 /* UserInfo.swift */; };
 		35176993252E30F800E6B214 /* ListAllUsersByCharactersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35176992252E30F800E6B214 /* ListAllUsersByCharactersService.swift */; };
 		35176998252E310B00E6B214 /* ListAllUsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35176997252E310B00E6B214 /* ListAllUsersService.swift */; };
 		3518010D251CF392001B7B38 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3518010C251CF392001B7B38 /* Post.swift */; };
 		351826FF25257DE700AC4D48 /* SignUpUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351826FE25257DE700AC4D48 /* SignUpUserService.swift */; };
+		353BC5E62530EB2B0087FE7D /* UpdateUserInformationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353BC5E52530EB2B0087FE7D /* UpdateUserInformationsService.swift */; };
 		355674DA25260C6500BFD4A7 /* SignInUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355674D925260C6500BFD4A7 /* SignInUserService.swift */; };
 		3556CEAD252BA33100CF1A64 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3556CEAC252BA33100CF1A64 /* MapViewController.swift */; };
 		3556CEB2252BAABD00CF1A64 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3556CEB1252BAABD00CF1A64 /* MapKit.framework */; };
 		35675318251B7F950020AB89 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35675317251B7F950020AB89 /* FeedViewController.swift */; };
 		3568F28E2530AB7F00862FA9 /* SaveUserInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3568F28D2530AB7F00862FA9 /* SaveUserInfoService.swift */; };
 		3568F2932530B52500862FA9 /* ListUserInformationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3568F2922530B52500862FA9 /* ListUserInformationService.swift */; };
+		3587F0FA2531316600A918E9 /* ListInfoByIdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587F0F92531316600A918E9 /* ListInfoByIdService.swift */; };
 		358F4D8F251B844B0018BE34 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358F4D8E251B844B0018BE34 /* SearchViewController.swift */; };
 		35BB2B98251A3E3C0028AF3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BB2B97251A3E3C0028AF3E /* AppDelegate.swift */; };
 		35BB2B9A251A3E3C0028AF3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BB2B99251A3E3C0028AF3E /* SceneDelegate.swift */; };
@@ -89,18 +90,19 @@
 		12BB29E325275850006408FF /* BothSegmentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BothSegmentedViewController.swift; sourceTree = "<group>"; };
 		12D2CA1C2525F666001FCFCC /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		12D2CA2125262FDD001FCFCC /* DigitalSegmentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalSegmentedViewController.swift; sourceTree = "<group>"; };
-		3500ACB4251E2929007E89E7 /* CreateFollowUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFollowUserService.swift; sourceTree = "<group>"; };
 		35176980252E169F00E6B214 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		35176992252E30F800E6B214 /* ListAllUsersByCharactersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAllUsersByCharactersService.swift; sourceTree = "<group>"; };
 		35176997252E310B00E6B214 /* ListAllUsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAllUsersService.swift; sourceTree = "<group>"; };
 		3518010C251CF392001B7B38 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		351826FE25257DE700AC4D48 /* SignUpUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUserService.swift; sourceTree = "<group>"; };
+		353BC5E52530EB2B0087FE7D /* UpdateUserInformationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserInformationsService.swift; sourceTree = "<group>"; };
 		355674D925260C6500BFD4A7 /* SignInUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUserService.swift; sourceTree = "<group>"; };
 		3556CEAC252BA33100CF1A64 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3556CEB1252BAABD00CF1A64 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		35675317251B7F950020AB89 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		3568F28D2530AB7F00862FA9 /* SaveUserInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveUserInfoService.swift; sourceTree = "<group>"; };
 		3568F2922530B52500862FA9 /* ListUserInformationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserInformationService.swift; sourceTree = "<group>"; };
+		3587F0F92531316600A918E9 /* ListInfoByIdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInfoByIdService.swift; sourceTree = "<group>"; };
 		358F4D8E251B844B0018BE34 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		35BB2B94251A3E3C0028AF3E /* entrepreneurship-great-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "entrepreneurship-great-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35BB2B97251A3E3C0028AF3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -178,7 +180,6 @@
 		3500ACAE251E252C007E89E7 /* services */ = {
 			isa = PBXGroup;
 			children = (
-				3500ACB4251E2929007E89E7 /* CreateFollowUserService.swift */,
 				351826FE25257DE700AC4D48 /* SignUpUserService.swift */,
 				355674D925260C6500BFD4A7 /* SignInUserService.swift */,
 				35176997252E310B00E6B214 /* ListAllUsersService.swift */,
@@ -188,6 +189,8 @@
 				35BD98B8252F56E0002A203E /* ListAllPostsService.swift */,
 				3568F28D2530AB7F00862FA9 /* SaveUserInfoService.swift */,
 				3568F2922530B52500862FA9 /* ListUserInformationService.swift */,
+				353BC5E52530EB2B0087FE7D /* UpdateUserInformationsService.swift */,
+				3587F0F92531316600A918E9 /* ListInfoByIdService.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				12BB29DF25275817006408FF /* PhysicalSegmentedViewController.swift in Sources */,
 				351826FF25257DE700AC4D48 /* SignUpUserService.swift in Sources */,
 				35BD98B9252F56E0002A203E /* ListAllPostsService.swift in Sources */,
+				3587F0FA2531316600A918E9 /* ListInfoByIdService.swift in Sources */,
 				35BB2B98251A3E3C0028AF3E /* AppDelegate.swift in Sources */,
 				12828E01252F5C9B0079FE7C /* PostViewController.swift in Sources */,
 				12D2CA1D2525F666001FCFCC /* RegisterViewController.swift in Sources */,
@@ -492,10 +496,10 @@
 				120EBABF2530A333001FD302 /* MyCustomViewController.swift in Sources */,
 				35D5154A251D290300ACC8D2 /* UsersRepository.swift in Sources */,
 				35BD98B4252F5391002A203E /* ListPostsByUserService.swift in Sources */,
-				3500ACB5251E2929007E89E7 /* CreateFollowUserService.swift in Sources */,
 				F17CF2552524DB6100C3D81F /* Translation.swift in Sources */,
 				12A176EB251CDF0000495AD4 /* PersonViewController.swift in Sources */,
 				F1B5E51B251A7B2300140CB3 /* Enums.swift in Sources */,
+				353BC5E62530EB2B0087FE7D /* UpdateUserInformationsService.swift in Sources */,
 				35BB2B9A251A3E3C0028AF3E /* SceneDelegate.swift in Sources */,
 				12D2CA2225262FDD001FCFCC /* DigitalSegmentedViewController.swift in Sources */,
 				35675318251B7F950020AB89 /* FeedViewController.swift in Sources */,

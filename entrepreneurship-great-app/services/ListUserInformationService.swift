@@ -41,6 +41,7 @@ class ListUserInformationService {
                     
                     let userInfo = UserInfo(name: userInfoRecord["name"] as! String)
                     
+                    userInfo.recordID = userInfoRecord.recordID
                     userInfo.availablePartnerships = userInfoRecord["availablePartnerships"] as? Int64
                     userInfo.location = userInfoRecord["location"] as? CLLocation
                     userInfo.picture = userInfoRecord["picture"] as? CKAsset
