@@ -80,4 +80,8 @@ class Translation {
         
         static let gallery = NSLocalizedString("PostViewController.post.alertGalery", comment: "")
     }
+    
+    class Load {
+        static let loadingText = NSLocalizedString("Load.loadingText", comment: "")
+    }
 }

@@ -132,7 +132,7 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
     func drawLoadFollowButton(){
         followButton.isEnabled = false
         followButton.setTitleColor(.lightGray, for: .normal)
-        followButton.setTitle("Loading...", for: .normal)
+        followButton.setTitle(Translation.Load.loadingText, for: .normal)
     }
     
     func drawFollowButton(_ sender: UIButton){

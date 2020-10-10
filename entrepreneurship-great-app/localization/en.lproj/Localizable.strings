@@ -36,7 +36,7 @@
 "PostViewController.post.textButtonPost" = "Post";
 "PostViewController.post.alertCamera" = "Camera";
 "PostViewController.post.alertGalery" = "Photo Library";
-
+"Load.loadingText" = "Loading...";
 
 
 
