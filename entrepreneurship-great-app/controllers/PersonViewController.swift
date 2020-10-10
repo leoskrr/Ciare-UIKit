@@ -83,7 +83,10 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
             } else {
                 self.profileImage.image = UIImage(named: "defaultUserProfileImage")
             }
-            
+            self.profileImage.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+            self.profileImage.layer.masksToBounds = false
+            self.profileImage.layer.cornerRadius = 50
+            self.profileImage.clipsToBounds = true
             self.name.text = person.name
             self.niche.text = person.expertiseAreas?[0] ?? ""
             self.partnershipsQuantity.text = "0"
@@ -109,11 +112,15 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
                 DispatchQueue.main.async {
                     self.followButton.isEnabled = true
                     self.drawAskPartnershipButton(self.followButton)
+                    self.profileImage.isHidden = false
+
                 }
             } else {
                 DispatchQueue.main.async {
                     self.followButton.isEnabled = true
                     self.drawFollowButton(self.followButton)
+                    self.profileImage.isHidden = false
+
                 }
             }
         }
@@ -261,7 +268,7 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
         
         assecibilityApple()
         loadPersonData()
-        
+        profileImage.isHidden = true
         interfaceSegmented.delegate = self
         
         followButton.setTitle(Translation.Placeholder.btnFollow, for: .normal)

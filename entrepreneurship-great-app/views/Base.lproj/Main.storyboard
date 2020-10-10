@@ -555,13 +555,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="260" verticalHuggingPriority="260" image="img1" translatesAutoresizingMaskIntoConstraints="NO" id="rjb-Z3-4ZE">
-                                <rect key="frame" x="137" y="64" width="101" height="100"/>
+                                <rect key="frame" x="137.66666666666666" y="64" width="100" height="100"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Gnj-9a-ls2"/>
                                     <constraint firstAttribute="height" constant="100" id="yH7-hz-ahA"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="50"/>
+                                        <integer key="value" value="0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
@@ -773,15 +774,14 @@
                             <constraint firstItem="kk1-fl-Wh3" firstAttribute="centerX" secondItem="khx-Jb-FhL" secondAttribute="centerX" id="bHb-1Z-UB6"/>
                             <constraint firstItem="B1R-Sz-dYn" firstAttribute="top" secondItem="wFd-Sj-L5s" secondAttribute="top" constant="10" id="bWj-aX-ITZ"/>
                             <constraint firstItem="q8F-wN-vY8" firstAttribute="trailing" secondItem="khx-Jb-FhL" secondAttribute="trailingMargin" id="dld-u6-94j"/>
+                            <constraint firstItem="rjb-Z3-4ZE" firstAttribute="centerX" secondItem="khx-Jb-FhL" secondAttribute="centerX" id="hJ9-MY-Udy"/>
                             <constraint firstItem="fEs-wL-3PD" firstAttribute="centerX" secondItem="khx-Jb-FhL" secondAttribute="centerX" id="jtP-8l-owa"/>
                             <constraint firstItem="bfk-wR-Bqn" firstAttribute="centerX" secondItem="khx-Jb-FhL" secondAttribute="centerX" id="lZT-qI-Ert"/>
                             <constraint firstItem="wFd-Sj-L5s" firstAttribute="trailing" secondItem="QCv-h0-9Vm" secondAttribute="trailing" constant="16" id="m4M-OD-SDG"/>
                             <constraint firstItem="q8F-wN-vY8" firstAttribute="top" secondItem="wFd-Sj-L5s" secondAttribute="top" constant="10" id="ndY-xQ-ncy"/>
                             <constraint firstItem="B1R-Sz-dYn" firstAttribute="leading" secondItem="khx-Jb-FhL" secondAttribute="leadingMargin" id="snb-3d-uT0"/>
                             <constraint firstItem="wFd-Sj-L5s" firstAttribute="bottom" secondItem="65J-Od-0OI" secondAttribute="bottom" id="uHN-kk-iYK"/>
-                            <constraint firstItem="wFd-Sj-L5s" firstAttribute="trailing" secondItem="rjb-Z3-4ZE" secondAttribute="trailing" constant="137" id="uwY-E3-tHs"/>
                             <constraint firstItem="65J-Od-0OI" firstAttribute="leading" secondItem="wFd-Sj-L5s" secondAttribute="leading" constant="16" id="vkn-dX-Nqk"/>
-                            <constraint firstItem="rjb-Z3-4ZE" firstAttribute="leading" secondItem="wFd-Sj-L5s" secondAttribute="leading" constant="137" id="w15-7a-pEj"/>
                             <constraint firstItem="65J-Od-0OI" firstAttribute="top" secondItem="kk1-fl-Wh3" secondAttribute="bottom" constant="5" id="xWU-HP-x3d"/>
                         </constraints>
                     </view>
@@ -1390,13 +1390,13 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZJR-aS-YeX">
                                                                     <rect key="frame" x="60" y="17.666666666666668" width="283" height="37.666666666666657"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Company name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mY8-Lr-24w">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" ambiguous="YES" text="Company name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mY8-Lr-24w">
                                                                             <rect key="frame" x="0.0" y="0.0" width="113.33333333333333" height="19.333333333333332"/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TvZ-QA-e4D">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TvZ-QA-e4D">
                                                                             <rect key="frame" x="0.0" y="24.333333333333332" width="58.333333333333336" height="13.333333333333332"/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                                                             <nil key="textColor"/>
