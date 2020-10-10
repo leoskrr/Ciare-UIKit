@@ -73,10 +73,20 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image =  info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         
-        let imageData = image.pngData()
+//        guard let resizedImage = image.resized(toWidth: self.postImage.frame.width) else {
+//            print("Erro ao processar imagem, tente novamente")
+//            return
+//        }
         
+        let resizedImage = image.resize(image)
+        
+        print("Image resized?")
+        
+        let imageData = resizedImage.pngData()
+        
+        //postImage.image = resizedImage
         postImage.image = image
-        
+
         do {
             let path = NSTemporaryDirectory() + "avatar_temp_\(UUID().uuidString).png"
             let url = URL(fileURLWithPath: path)
@@ -85,7 +95,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             
             imageUrl = url
         } catch {
-            print("Error writing avatar to temporary directory: \(error)")
+            print("Erro ao processar imagem, tente novamente: \(error)")
         }
         
         picker.dismiss(animated: true, completion: nil )
