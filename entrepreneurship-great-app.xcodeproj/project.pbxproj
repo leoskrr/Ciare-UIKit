@@ -29,6 +29,7 @@
 		3545AC282533A3AB00F84990 /* AskedPartnership.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3545AC272533A3AB00F84990 /* AskedPartnership.swift */; };
 		3545AC2D2533A47800F84990 /* AskedPartnershipsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3545AC2C2533A47800F84990 /* AskedPartnershipsRepository.swift */; };
 		3545AC322533A6B100F84990 /* CreateAskPartnershipService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3545AC312533A6B100F84990 /* CreateAskPartnershipService.swift */; };
+		3545AC372533BCAE00F84990 /* ListOneAskPartnershipService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3545AC362533BCAE00F84990 /* ListOneAskPartnershipService.swift */; };
 		355674DA25260C6500BFD4A7 /* SignInUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355674D925260C6500BFD4A7 /* SignInUserService.swift */; };
 		3556CEAD252BA33100CF1A64 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3556CEAC252BA33100CF1A64 /* MapViewController.swift */; };
 		3556CEB2252BAABD00CF1A64 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3556CEB1252BAABD00CF1A64 /* MapKit.framework */; };
@@ -104,6 +105,7 @@
 		3545AC272533A3AB00F84990 /* AskedPartnership.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskedPartnership.swift; sourceTree = "<group>"; };
 		3545AC2C2533A47800F84990 /* AskedPartnershipsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskedPartnershipsRepository.swift; sourceTree = "<group>"; };
 		3545AC312533A6B100F84990 /* CreateAskPartnershipService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAskPartnershipService.swift; sourceTree = "<group>"; };
+		3545AC362533BCAE00F84990 /* ListOneAskPartnershipService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOneAskPartnershipService.swift; sourceTree = "<group>"; };
 		355674D925260C6500BFD4A7 /* SignInUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUserService.swift; sourceTree = "<group>"; };
 		3556CEAC252BA33100CF1A64 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3556CEB1252BAABD00CF1A64 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -203,6 +205,7 @@
 				353BC5E52530EB2B0087FE7D /* UpdateUserInformationsService.swift */,
 				3587F0F92531316600A918E9 /* ListInfoByIdService.swift */,
 				3545AC312533A6B100F84990 /* CreateAskPartnershipService.swift */,
+				3545AC362533BCAE00F84990 /* ListOneAskPartnershipService.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				35BD989D252F3D43002A203E /* TabBarViewController.swift in Sources */,
 				35BB2B9C251A3E3C0028AF3E /* ViewController.swift in Sources */,
 				3545AC2D2533A47800F84990 /* AskedPartnershipsRepository.swift in Sources */,
+				3545AC372533BCAE00F84990 /* ListOneAskPartnershipService.swift in Sources */,
 				128769842524C49100B04079 /* LoginViewController.swift in Sources */,
 				3545AC322533A6B100F84990 /* CreateAskPartnershipService.swift in Sources */,
 				35176981252E169F00E6B214 /* UserInfo.swift in Sources */,
