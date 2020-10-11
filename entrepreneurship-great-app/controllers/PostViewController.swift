@@ -19,8 +19,27 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var pickerImageButton: UIButton!
     @IBOutlet weak var postButton: UIButton!
     
+    var user: UserInfo? = nil {
+        didSet {
+            DispatchQueue.main.async {
+                self.companyNameLabel.text = self.user?.name
+                self.nicheLabel.text = self.user?.expertiseAreas?[0]
+                if let userImage = self.user?.picture {
+                    if let userImageUrl = userImage.fileURL {
+                        self.profileImage.image = UIImage(contentsOfFile: userImageUrl.path)
+                    } else {
+                        self.profileImage.image = UIImage(named: "defaultUserProfileImage")
+                    }
+                } else {
+                    self.profileImage.image = UIImage(named: "defaultUserProfileImage")
+                }
+            }
+        }
+    }
+    
     var imageUrl: URL?
     let placeholder = Translation.Post.description
+    let userRecordName = getUserInfoRecordNameFromUserDefaults()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +53,23 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.nicheLabel.text = Translation.Load.loadingText
+        self.companyNameLabel.text = Translation.Load.loadingText
+        self.profileImage.image = UIImage(named: "defaultUserProfileImage")
         drawTextView()
+        loadUser()
+    }
+    
+    func loadUser(){
+        ListUserInformationService().execute(){
+            info, error in
+            
+            guard let userInfos = info, error == nil else {
+                print("Erro ao carregar usuário")
+                return
+            }
+            self.user = userInfos
+        }
     }
     
     func drawTextView(){
@@ -125,9 +160,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             print("Error: missing image url")
             return
         }
-        
-        let userRecordName = getUserInfoRecordNameFromUserDefaults()
-        
+                
         guard let recordName = userRecordName else {
             print("Error: missing record name")
             return
