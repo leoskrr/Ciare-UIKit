@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import CoreGraphics
+import ImageIO
 
 extension UIImage {
     func resize(_ image: UIImage) -> UIImage {
@@ -16,7 +18,7 @@ extension UIImage {
         let maxWidth: Float = 335.0
         var imgRatio: Float = actualWidth / actualHeight
         let maxRatio: Float = maxWidth / maxHeight
-        let compressionQuality: Float = 0.5
+        let compressionQuality: Float = 1
         //50 percent compression
         if actualHeight > maxHeight || actualWidth > maxWidth {
             if imgRatio < maxRatio {
@@ -43,5 +45,27 @@ extension UIImage {
         let imageData = img?.jpegData(compressionQuality: CGFloat(compressionQuality))
         UIGraphicsEndImageContext()
         return UIImage(data: imageData!) ?? UIImage()
+    }
+    
+    func resizedImage(at url: URL, for size: CGSize) -> UIImage? {
+        guard let image = UIImage(contentsOfFile: url.path) else {
+            return nil
+        }
+        
+        let renderer = UIGraphicsImageRenderer(size: size)
+        return renderer.image { (context) in
+            image.draw(in: CGRect(origin: .zero, size: size))
+        }
+    }
+    
+    func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage{
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0);
+        
+        image.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
+        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        
+        UIGraphicsEndImageContext()
+        
+        return newImage
     }
 }

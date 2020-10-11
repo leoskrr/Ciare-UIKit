@@ -9,7 +9,7 @@ import UIKit
 import CloudKit
 
 class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
-
+    
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var companyNameLabel: UILabel!
     @IBOutlet weak var nicheLabel: UILabel!
@@ -40,13 +40,13 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     var imageUrl: URL?
     let placeholder = Translation.Post.description
     let userRecordName = getUserInfoRecordNameFromUserDefaults()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let tapOutsideTextView = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapOutsideTextView)
-
+        
         descriptionTextView.delegate = self
         postButton.setTitle(Translation.Post.textButtonPost, for: .normal)
         cancelButton.setTitle(Translation.Alert.cancel, for: .normal)
@@ -91,7 +91,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @IBAction func chooseImage(_ sender: UIButton) {
         view.endEditing(true)
-
+        
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         
@@ -121,21 +121,28 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         let image =  info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         
-        let resizedImage = image.resize(image)
-        
-        print("Image resized?")
-        
-        let imageData = resizedImage.pngData()
-        
-        postImage.image = resizedImage
-
         do {
             let path = NSTemporaryDirectory() + "avatar_temp_\(UUID().uuidString).png"
             let url = URL(fileURLWithPath: path)
-
+            
+            let imageData = image.pngData()
+            
             try imageData?.write(to: url)
             
             imageUrl = url
+            
+//            let scaleFactor = UIScreen.main.scale
+//            let scale = CGAffineTransform(scaleX: scaleFactor, y: scaleFactor)
+            //let size = postImage.bounds.size.applying(scale)
+            
+            let resizedImage = image
+        
+            UIView.transition(with: self.postImage,
+                              duration: 1.0,
+                              options: [.curveEaseOut, .transitionCrossDissolve],
+                              animations: {
+                                self.postImage.image = resizedImage
+                              })
         } catch {
             print("Erro ao processar imagem, tente novamente: \(error)")
         }
@@ -160,7 +167,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             print("Error: missing image url")
             return
         }
-                
+        
         guard let recordName = userRecordName else {
             print("Error: missing record name")
             return
