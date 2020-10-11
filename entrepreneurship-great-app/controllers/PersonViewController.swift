@@ -83,44 +83,47 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
             } else {
                 self.profileImage.image = UIImage(named: "defaultUserProfileImage")
             }
-            self.profileImage.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-            self.profileImage.layer.masksToBounds = false
-            self.profileImage.layer.cornerRadius = 50
-            self.profileImage.clipsToBounds = true
             self.name.text = person.name
             self.niche.text = person.expertiseAreas?[0] ?? ""
             self.partnershipsQuantity.text = "0"
             self.followingQuantity.text = "0"
             self.followersQuantity.text = "\(person.followers?.count ?? 0)"
+            self.profileImage.isHidden = false
         }
         
         shouldShowFollowButton(personToFollow: person)
     }
     
     func shouldShowFollowButton(personToFollow person: UserInfo){
-        ListUserInformationService().execute(){
-            loggedUser, error in
-            
-            guard let user = loggedUser, error == nil else {
-                print("Erro ao achar informações do usuário logado:\n\(error!)")
-                return
+        if person.recordID!.recordName == getUserInfoRecordNameFromUserDefaults()! {
+            DispatchQueue.main.async {
+                self.followButton.isEnabled = false
+                self.followButton.isHidden = true
             }
-            
-            guard let userFollowing = user.following else {
-                print("erro no userfollowing")
-                return
-            }
-            
-            if userFollowing.contains(CKRecord.Reference(recordID: person.recordID!, action: .none)) {
-                DispatchQueue.main.async {
-                    self.shouldShowAskPartnershipButton(loggedUser: user, person: person)
-                    self.followButton.isEnabled = true
+        } else {
+            ListUserInformationService().execute(){
+                loggedUser, error in
+                
+                guard let user = loggedUser, error == nil else {
+                    print("Erro ao achar informações do usuário logado:\n\(error!)")
+                    return
                 }
-            } else {
-                DispatchQueue.main.async {
-                    self.drawFollowButton(self.followButton)
-                    self.followButton.isEnabled = true
-                    self.profileImage.isHidden = false
+                
+                guard let userFollowing = user.following else {
+                    print("erro no userfollowing")
+                    return
+                }
+                
+                if userFollowing.contains(CKRecord.Reference(recordID: person.recordID!, action: .none)) {
+                    DispatchQueue.main.async {
+                        self.shouldShowAskPartnershipButton(loggedUser: user, person: person)
+                        self.followButton.isEnabled = true
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.drawFollowButton(self.followButton)
+                        self.followButton.isEnabled = true
+                    }
                 }
             }
         }
@@ -130,7 +133,6 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
         if loggedUser.partners!.contains(CKRecord.Reference(recordID: person.recordID!, action: .none)){
             DispatchQueue.main.async {
                 self.drawPartnersButton(self.followButton)
-                self.profileImage.isHidden = false
             }
         } else {
             ListOneAskPartnershipService().execute(by: loggedUser.recordID!, to: person.recordID!){
@@ -140,13 +142,11 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
                 guard error == nil else {
                     DispatchQueue.main.async {
                         self.drawAskPartnershipButton(self.followButton)
-                        self.profileImage.isHidden = false
                     }
                     return
                 }
                 DispatchQueue.main.async {
                     self.drawAskedPartnershipButton(self.followButton)
-                    self.profileImage.isHidden = false
                 }
             }
         }
