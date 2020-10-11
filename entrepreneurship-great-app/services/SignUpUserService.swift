@@ -47,12 +47,15 @@ class SignUpUserService {
                     userInfosRecord["expertiseAreas"] = user.expertiseAreas
                     userInfosRecord["socialNetworks"] = user.socialNetworks
 
-                    self.usersRepository.saveUser(userRecord: userRecord, userInfoRecord: userInfosRecord) { _, error in
+                    self.usersRepository.saveUser(userRecord: userRecord, userInfoRecord: userInfosRecord) { savedRecord, error in
                         
                         guard error == nil else {
                             completionHandler(.fail, error)
                             return
                         }
+                        let userInfoReference = CKRecord.Reference(recordID: savedRecord!.recordID, action: .none)
+                        storeUserInfoRecordNameInUserDefaults(userInfoReference)
+                        
                         completionHandler(.success, nil)
                     }
                 case .Failed:

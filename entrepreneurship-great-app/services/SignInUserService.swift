@@ -37,14 +37,13 @@ class SignInUserService {
                         
                         if userName != nil && !userName!.isEmpty {
                             completionHandler(.SendUserToFeed, record, nil)
+                            let userInfoReference = record!["informations"] as! CKRecord.Reference
+                            storeUserInfoRecordNameInUserDefaults(userInfoReference)
                         } else {
+                            print("entra aq")
                             completionHandler(.SendUserToRegister, record, nil)
                         }
-                        
-                        let userInfoReference = record!["informations"] as! CKRecord.Reference
-                                                
                         storeUserRecordNameInUserDefaults(recordID)
-                        storeUserInfoRecordNameInUserDefaults(userInfoReference)
                     case .Failed:
                         completionHandler(.Error, nil, error)
                 }
