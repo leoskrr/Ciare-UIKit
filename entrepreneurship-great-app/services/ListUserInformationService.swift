@@ -48,9 +48,21 @@ class ListUserInformationService {
                     userInfo.expertiseAreas = userInfoRecord["expertiseAreas"] as? [String]
                     userInfo.socialNetworks = userInfoRecord["socialNetworks"] as? [String]
                     userInfo.typeBusiness = userInfoRecord["typeBusiness"] as? String
-                    userInfo.followers = userInfoRecord["followers"] as? [CKRecord.Reference]
-                    userInfo.following = userInfoRecord["following"] as? [CKRecord.Reference]
-                    userInfo.partners = userInfoRecord["partners"] as? [CKRecord.Reference]
+                    if let followers = userInfoRecord["followers"] as? [CKRecord.Reference]{
+                        userInfo.followers = followers
+                    } else {
+                        userInfo.followers = []
+                    }
+                    if let following = userInfoRecord["following"] as? [CKRecord.Reference]{
+                        userInfo.following = following
+                    } else {
+                        userInfo.following = []
+                    }
+                    if let partners = userInfoRecord["partners"] as? [CKRecord.Reference]{
+                        userInfo.partners = partners
+                    } else {
+                        userInfo.partners = []
+                    }
                     
                     completionHandler(userInfo, nil)
                 }

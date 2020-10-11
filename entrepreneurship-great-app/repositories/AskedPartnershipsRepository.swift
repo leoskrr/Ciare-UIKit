@@ -27,6 +27,7 @@ class AskedPartnershipsRepository{
             
             guard let savedRecord = record, error == nil else {
                 completionHandler(nil, error)
+                print("error")
                 return
             }
             

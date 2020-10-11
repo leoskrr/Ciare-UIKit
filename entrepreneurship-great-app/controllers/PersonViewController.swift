@@ -105,23 +105,38 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
                 print("Erro ao achar informações do usuário logado:\n\(error!)")
                 return
             }
+                        
+            guard let userFollowing = user.following else {
+                print("erro no userfollowing")
+                return
+            }
             
-            let userFollowsPerson = user.following?.firstIndex(of: CKRecord.Reference(recordID: person.recordID!, action: .none))
-            
-            if let _ = userFollowsPerson {
+            if userFollowing.contains(CKRecord.Reference(recordID: person.recordID!, action: .none)) {
                 DispatchQueue.main.async {
+                    self.shouldShowAskPartnershipButton(loggedUser: user, person: person)
                     self.followButton.isEnabled = true
-                    self.drawAskPartnershipButton(self.followButton)
                     self.profileImage.isHidden = false
-
                 }
             } else {
                 DispatchQueue.main.async {
-                    self.followButton.isEnabled = true
                     self.drawFollowButton(self.followButton)
+                    self.followButton.isEnabled = true
                     self.profileImage.isHidden = false
-
                 }
+            }
+        }
+    }
+    
+    func shouldShowAskPartnershipButton(loggedUser: UserInfo, person: UserInfo){
+        //CASO 1: São parceiros
+        //CASO 2: Parceria foi solicitada mas não foi rejeitada e nem aceita
+        if loggedUser.partners!.contains(CKRecord.Reference(recordID: person.recordID!, action: .none)){
+            DispatchQueue.main.async {
+                self.drawPartnersButton(self.followButton)
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.drawAskPartnershipButton(self.followButton)
             }
         }
     }
@@ -132,8 +147,9 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
             followUserAction()
             drawAskPartnershipButton(sender)
         } else if sender.titleLabel?.text == Translation.Placeholder.askPartnership{
-            drawAskedPartnershipButton(sender)
+            askPartnershipAction()
         } else if sender.titleLabel?.text == Translation.Placeholder.askedPartnership {
+            //cancel partnership
             drawAskPartnershipButton(sender)
         }
     }
@@ -160,6 +176,12 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
     func drawAskedPartnershipButton(_ sender: UIButton){
         sender.setTitle(Translation.Placeholder.askedPartnership, for: .normal)
         sender.backgroundColor = #colorLiteral(red: 1, green: 0.6358063221, blue: 0, alpha: 1)
+        sender.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+    }
+    
+    func drawPartnersButton(_ sender: UIButton){
+        sender.setTitle(Translation.Info.partners, for: .normal)
+        sender.backgroundColor = #colorLiteral(red: 0.1098039216, green: 0.3058823529, blue: 0.6941176471, alpha: 1)
         sender.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
     }
     
@@ -196,6 +218,28 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
                 
                 self.updateInformationsOfUser(followerUser)
                 self.updateInformationsOfUser(followedUser)
+            }
+        }
+    }
+    
+    func askPartnershipAction(){
+        guard let loggedUserInfoRN = getUserInfoRecordNameFromUserDefaults() else {
+            return
+        }
+        
+        let loggedUserInfoId = CKRecord.ID(recordName: loggedUserInfoRN)
+        let askedUserInfoId = person!.recordID
+        
+        CreateAskPartnershipService().execute(by: loggedUserInfoId, to: askedUserInfoId!){
+            _, _, error in
+            
+            guard error == nil else {
+                print("Erro ao criar solicitação de parceria!")
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.drawAskedPartnershipButton(self.followButton)
             }
         }
     }
