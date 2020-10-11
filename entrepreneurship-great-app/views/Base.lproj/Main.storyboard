@@ -59,13 +59,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="51z-4o-aNO">
                                                     <rect key="frame" x="95" y="21.000000000000004" width="46.666666666666657" height="49.333333333333343"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pni-SB-Wqn">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pni-SB-Wqn">
                                                             <rect key="frame" x="0.0" y="0.0" width="46.666666666666664" height="20.333333333333332"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Niche" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GvM-xp-efc">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Niche" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GvM-xp-efc">
                                                             <rect key="frame" x="0.0" y="31.333333333333336" width="46.666666666666664" height="18"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                             <color key="textColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
@@ -167,17 +167,25 @@
                                 <color key="textColor" name="SubTitleRegister"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Brand name" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dr8-we-SrG">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Brand name" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dr8-we-SrG" customClass="CustomUITextField" customModule="entrepreneurship_great_app" customModuleProvider="target">
                                 <rect key="frame" x="16" y="230" width="343" height="45"/>
+                                <color key="backgroundColor" name="inputFieldColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="NkD-rx-DBL"/>
                                 </constraints>
                                 <color key="textColor" name="PlaceholderRegister"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="name"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="continue" textContentType="name"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundTextField" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="inputFieldColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                        <real key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -192,6 +200,7 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yft-Kt-lOH" userLabel="CustomSegmented" customClass="CustomSegmentedControl" customModule="entrepreneurship_great_app" customModuleProvider="target">
                                 <rect key="frame" x="16" y="326" width="343" height="45"/>
+                                <color key="backgroundColor" name="segmentedColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="8yY-h0-MNa"/>
                                 </constraints>
@@ -313,13 +322,13 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="pqH-fL-Lxe">
                                                                     <rect key="frame" x="60" y="17.666666666666668" width="275" height="37.666666666666657"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Company name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCN-Sh-Iyy">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" ambiguous="YES" text="Company name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCN-Sh-Iyy">
                                                                             <rect key="frame" x="0.0" y="0.0" width="113.33333333333333" height="19.333333333333332"/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPc-TW-gp2">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPc-TW-gp2">
                                                                             <rect key="frame" x="0.0" y="24.333333333333332" width="58.333333333333336" height="13.333333333333332"/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                                                             <nil key="textColor"/>
@@ -562,7 +571,7 @@
                                             </view>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sTy-Yr-CUo">
                                                 <rect key="frame" x="0.0" y="110" width="335" height="280"/>
-                                                <color key="backgroundColor" red="0.93119424579999999" green="0.92782962319999995" blue="0.9237568974" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" name="inputFieldColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="280" id="PMg-j7-hrX"/>
                                                 </constraints>
@@ -602,7 +611,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o71-3A-jzc">
                                 <rect key="frame" x="314.66666666666669" y="491.33333333333331" width="30.333333333333314" height="22.666666666666686"/>
-                                <color key="tintColor" red="0.51171451810000002" green="0.50720471140000001" blue="0.53068858389999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" name="PlaceholderRegister"/>
                                 <state key="normal">
                                     <imageReference key="image" image="camera.fill" catalog="system" symbolScale="large"/>
                                 </state>
@@ -937,14 +946,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="343" height="397"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Business Area" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zrX-Og-LUp">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Business Area" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zrX-Og-LUp" customClass="CustomUITextField" customModule="entrepreneurship_great_app" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="5" width="343" height="45"/>
+                                <color key="backgroundColor" name="inputFieldColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Gba-mj-Tdi"/>
                                 </constraints>
-                                <color key="textColor" red="0.34283557529999997" green="0.34282749890000003" blue="0.34282910820000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" name="PlaceholderRegister"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundTextField" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="inputFieldColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plataforms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3b-RX-NC1">
                                 <rect key="frame" x="0.0" y="70" width="86.666666666666671" height="20.333333333333329"/>
@@ -1141,7 +1163,7 @@
                                     <constraint firstAttribute="height" constant="40" id="miR-tt-gFl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <action selector="locationTextFieldDidEndEditing:" destination="7em-MN-fwJ" eventType="editingDidEnd" id="2y1-bX-hgG"/>
                                     <outlet property="delegate" destination="7em-MN-fwJ" id="L5J-Jd-m5F"/>
@@ -1178,23 +1200,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="343" height="397"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Business Area" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wHU-IJ-03F">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Business Area" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wHU-IJ-03F" customClass="CustomUITextField" customModule="entrepreneurship_great_app" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="49" width="343" height="45"/>
+                                <color key="backgroundColor" name="inputFieldColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="ISC-3E-Z9A"/>
                                 </constraints>
-                                <color key="textColor" red="0.34283557529999997" green="0.34282749890000003" blue="0.34282910820000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" name="PlaceholderRegister"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="inputFieldColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderPaddingHorizontal">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundTextField" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="4VZ-ah-Ebl">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="4VZ-ah-Ebl" customClass="CustomUITextField" customModule="entrepreneurship_great_app" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="109" width="343" height="45"/>
+                                <color key="backgroundColor" name="inputFieldColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="pTc-N8-Lwe" userLabel="height = 40"/>
                                 </constraints>
-                                <color key="textColor" red="0.34283557529999997" green="0.34282749890000003" blue="0.34282910820000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" name="PlaceholderRegister"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" textContentType="location"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="inputFieldColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundTextField" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KiB-Of-3qU">
                                 <rect key="frame" x="0.0" y="347" width="343" height="45"/>
@@ -1248,23 +1299,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="343" height="397"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Business Area" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lZ6-RL-zUm">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Business Area" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lZ6-RL-zUm" customClass="CustomUITextField" customModule="entrepreneurship_great_app" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="5" width="343" height="45"/>
+                                <color key="backgroundColor" name="inputFieldColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="AW7-B0-PEW"/>
                                 </constraints>
-                                <color key="textColor" red="0.34283557529999997" green="0.34282749890000003" blue="0.34282910820000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" name="inputFieldColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundTextField" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="inputFieldColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Pf8-rf-hbs">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Pf8-rf-hbs" customClass="CustomUITextField" customModule="entrepreneurship_great_app" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="65" width="343" height="45"/>
+                                <color key="backgroundColor" name="inputFieldColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="cm6-aW-Aee" userLabel="height = 40"/>
                                 </constraints>
-                                <color key="textColor" red="0.34283557529999997" green="0.34282749890000003" blue="0.34282910820000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" name="inputFieldColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" textContentType="location"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundTextField" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="inputFieldColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plataforms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzY-QY-p5R">
                                 <rect key="frame" x="0.0" y="130" width="86.666666666666671" height="20.333333333333343"/>
@@ -1648,8 +1719,28 @@
             <point key="canvasLocation" x="2241" y="-961"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="4VZ-ah-Ebl">
+            <size key="intrinsicContentSize" width="108.33333333333333" height="34"/>
+        </designable>
+        <designable name="Pf8-rf-hbs">
+            <size key="intrinsicContentSize" width="103.33333333333333" height="34"/>
+        </designable>
+        <designable name="dr8-we-SrG">
+            <size key="intrinsicContentSize" width="135" height="34"/>
+        </designable>
+        <designable name="lZ6-RL-zUm">
+            <size key="intrinsicContentSize" width="146" height="34"/>
+        </designable>
+        <designable name="wHU-IJ-03F">
+            <size key="intrinsicContentSize" width="122.66666666666667" height="22"/>
+        </designable>
+        <designable name="zrX-Og-LUp">
+            <size key="intrinsicContentSize" width="146" height="34"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="lkR-W7-B66"/>
+        <segue reference="96q-Ot-0O3"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="bell.fill" catalog="system" width="128" height="124"/>
@@ -1670,6 +1761,12 @@
         </namedColor>
         <namedColor name="TitleRegister">
             <color red="0.34099999070167542" green="0.34099999070167542" blue="0.34099999070167542" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="inputFieldColor">
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="segmentedColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

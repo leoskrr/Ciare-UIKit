@@ -34,8 +34,20 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        drawTextView()
+    }
+    
+    func drawTextView(){
         descriptionTextView.text = placeholder
-        descriptionTextView.textColor = UIColor(named: "PlaceholderRegister")
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        
+        guard UIApplication.shared.applicationState == .inactive else {
+            return
+        }
+        
+        drawTextView()
     }
     
     @objc override func dismissKeyboard() {
@@ -71,12 +83,8 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let image =  info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         
-//        guard let resizedImage = image.resized(toWidth: self.postImage.frame.width) else {
-//            print("Erro ao processar imagem, tente novamente")
-//            return
-//        }
+        let image =  info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         
         let resizedImage = image.resize(image)
         
@@ -84,8 +92,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         let imageData = resizedImage.pngData()
         
-        //postImage.image = resizedImage
-        postImage.image = image
+        postImage.image = resizedImage
 
         do {
             let path = NSTemporaryDirectory() + "avatar_temp_\(UUID().uuidString).png"
@@ -157,6 +164,4 @@ extension PostViewController {
             textView.textColor = UIColor(named: "PlaceholderRegister")
         }
     }
-    
-    
 }
