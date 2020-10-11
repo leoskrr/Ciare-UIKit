@@ -115,7 +115,7 @@
 		3587F0F92531316600A918E9 /* ListInfoByIdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInfoByIdService.swift; sourceTree = "<group>"; };
 		358F4D8E251B844B0018BE34 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		35B9E3F825321E6D008A9D5C /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
-		35BB2B94251A3E3C0028AF3E /* entrepreneurship-great-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "entrepreneurship-great-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		35BB2B94251A3E3C0028AF3E /* Ciare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ciare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35BB2B97251A3E3C0028AF3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35BB2B99251A3E3C0028AF3E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		35BB2B9B251A3E3C0028AF3E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -232,7 +232,7 @@
 		35BB2B95251A3E3C0028AF3E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				35BB2B94251A3E3C0028AF3E /* entrepreneurship-great-app.app */,
+				35BB2B94251A3E3C0028AF3E /* Ciare.app */,
 				35BB2BAD251A3E3D0028AF3E /* entrepreneurship-great-appTests.xctest */,
 				35BB2BB8251A3E3D0028AF3E /* entrepreneurship-great-appUITests.xctest */,
 			);
@@ -372,7 +372,7 @@
 			);
 			name = "entrepreneurship-great-app";
 			productName = "entrepreneurship-great-app";
-			productReference = 35BB2B94251A3E3C0028AF3E /* entrepreneurship-great-app.app */;
+			productReference = 35BB2B94251A3E3C0028AF3E /* Ciare.app */;
 			productType = "com.apple.product-type.application";
 		};
 		35BB2BAC251A3E3D0028AF3E /* entrepreneurship-great-appTests */ = {
@@ -732,7 +732,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vianaleonardo.entrepreneurship;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Ciare;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -753,7 +753,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vianaleonardo.entrepreneurship;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Ciare;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
