@@ -64,6 +64,10 @@ class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewData
         searchBar.placeholder = Translation.Placeholder.searchBar
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         let newVC = self.storyboard?.instantiateViewController(withIdentifier: "searchVC")
         self.definesPresentationContext = true
