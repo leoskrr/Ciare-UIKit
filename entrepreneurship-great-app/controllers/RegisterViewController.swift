@@ -72,6 +72,14 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
         interfaceSegmented.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
     @IBAction func brandNameDidEndEditing(_ sender: UITextField) {
         if let brandName = sender.text {
             userName = brandName
