@@ -84,4 +84,8 @@ class Translation {
     class Load {
         static let loadingText = NSLocalizedString("Load.loadingText", comment: "")
     }
+    
+    class Notification {
+        static let newPartnershipRequest = NSLocalizedString("Notification.newPartnershipRequest", comment: "")
+    }
 }

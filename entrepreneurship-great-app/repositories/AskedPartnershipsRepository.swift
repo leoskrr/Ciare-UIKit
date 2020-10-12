@@ -85,7 +85,7 @@ class AskedPartnershipsRepository{
             let subscription = CKQuerySubscription(recordType: "AskedPartnerships", predicate: predicate, options: .firesOnRecordCreation)
             
             let notification = CKSubscription.NotificationInfo()
-            notification.alertBody = "You received a new partnership request"
+            notification.alertBody = Translation.Notification.newPartnershipRequest
             
             subscription.notificationInfo = notification
             

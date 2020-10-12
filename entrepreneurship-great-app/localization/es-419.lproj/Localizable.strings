@@ -37,9 +37,4 @@
 "PostViewController.post.alertCamera" = "Cámara";
 "PostViewController.post.alertGalery" = "Galería";
 "Load.loadingText" = "Cargando...";
-
-
-
-
-
-
+"Notification.newPartnershipRequest" = "Recibiste una nueva solicitud de asociación";
