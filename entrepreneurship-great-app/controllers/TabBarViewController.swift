@@ -12,7 +12,7 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
 //        self.navigationController?.isNavigationBarHidden = true
         super.viewDidLoad()
-
+        AskedPartnershipsRepository().fetchSubscriptions()
         // Do any additional setup after loading the view.
     }
     

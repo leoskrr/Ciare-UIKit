@@ -57,6 +57,49 @@ class AskedPartnershipsRepository{
         }
     }
     
+    public func fetchSubscriptions(){
+        publicDatabase.fetchAllSubscriptions(){
+            subscriptions, error in
+            
+            guard let subscriptions = subscriptions, error == nil else {
+                print(error!)
+                return
+            }
+            
+            for subscription in subscriptions {
+                self.publicDatabase.delete(withSubscriptionID: subscription.subscriptionID){
+                    str, error in
+                    
+                    guard error == nil else {
+                        print(error!)
+                        return
+                    }
+                    
+                }
+            }
+            
+            let userRecordId = CKRecord.ID(recordName: getUserInfoRecordNameFromUserDefaults()!)
+            let userRef = CKRecord.Reference(recordID: userRecordId, action: .none)
+            
+            let predicate = NSPredicate(format:"toUser == %@", userRef)
+            let subscription = CKQuerySubscription(recordType: "AskedPartnerships", predicate: predicate, options: .firesOnRecordCreation)
+            
+            let notification = CKSubscription.NotificationInfo()
+            notification.alertBody = "You received a partnership request"
+            
+            subscription.notificationInfo = notification
+            
+            self.publicDatabase.save(subscription){
+                result, error in
+                
+                guard error == nil else {
+                    print(error!)
+                    return
+                }
+            }
+        }
+    }
+    
     private func executeQueryOperation(operation: CKQueryOperation, completionHandler: @escaping ([AskedPartnership]?, Error? ) -> ()){
         
         var askedPartnerships: [AskedPartnership] = []
