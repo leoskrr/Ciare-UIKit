@@ -43,3 +43,17 @@ public func getUserInfoRecordNameFromUserDefaults() -> String?{
     
     return recordName
 }
+
+public func setUserLoggedInApplicationStatus(_ status: Bool){
+    let defaults = UserDefaults.standard
+    
+    defaults.setValue(status, forKey: "isUserLoggedInApp")
+}
+
+public func getUserLoggedInApplicationStatus() -> Bool{
+    let defaults = UserDefaults.standard
+    
+    let status = defaults.bool(forKey: "isUserLoggedInApp")
+    
+    return status
+}

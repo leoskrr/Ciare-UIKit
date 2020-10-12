@@ -39,8 +39,8 @@ class SignInUserService {
                             completionHandler(.SendUserToFeed, record, nil)
                             let userInfoReference = record!["informations"] as! CKRecord.Reference
                             storeUserInfoRecordNameInUserDefaults(userInfoReference)
+                            setUserLoggedInApplicationStatus(true)
                         } else {
-                            print("entra aq")
                             completionHandler(.SendUserToRegister, record, nil)
                         }
                         storeUserRecordNameInUserDefaults(recordID)

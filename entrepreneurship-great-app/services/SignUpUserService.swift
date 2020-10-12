@@ -55,7 +55,8 @@ class SignUpUserService {
                         }
                         let userInfoReference = CKRecord.Reference(recordID: savedRecord!.recordID, action: .none)
                         storeUserInfoRecordNameInUserDefaults(userInfoReference)
-                        
+                        setUserLoggedInApplicationStatus(true)
+
                         completionHandler(.success, nil)
                     }
                 case .Failed:
