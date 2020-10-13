@@ -97,8 +97,7 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
     func shouldShowFollowButton(personToFollow person: UserInfo){
         if person.recordID!.recordName == getUserInfoRecordNameFromUserDefaults()! {
             DispatchQueue.main.async {
-                self.followButton.isEnabled = false
-                self.followButton.isHidden = true
+                self.drawYourProfileButton(self.followButton)
             }
         } else {
             ListUserInformationService().execute(){
@@ -192,6 +191,13 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
     
     func drawPartnersButton(_ sender: UIButton){
         sender.setTitle(Translation.Info.partners, for: .normal)
+        sender.backgroundColor = #colorLiteral(red: 0.1098039216, green: 0.3058823529, blue: 0.6941176471, alpha: 1)
+        sender.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+    }
+    
+    func drawYourProfileButton(_ sender: UIButton){
+        sender.isEnabled = false
+        sender.setTitle(Translation.Placeholder.youText, for: .normal)
         sender.backgroundColor = #colorLiteral(red: 0.1098039216, green: 0.3058823529, blue: 0.6941176471, alpha: 1)
         sender.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
     }

@@ -19,6 +19,8 @@ class Translation {
         static let askedPartnership = NSLocalizedString("PersonViewController.placeholder.askedPartnership", comment: "")
         
         static let brandName = NSLocalizedString("RegisterViewController.info.labelNameCompany", comment: "")
+        
+        static let youText = NSLocalizedString("Placeholder.Text.You", comment: "")
     }
     
     class Info {

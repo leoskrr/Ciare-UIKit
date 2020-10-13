@@ -38,3 +38,4 @@
 "PostViewController.post.alertGalery" = "Photo Library";
 "Load.loadingText" = "Loading...";
 "Notification.newPartnershipRequest" = "You received a new partnership request";
+"Placeholder.Text.You" = "You";

@@ -10,9 +10,7 @@ import CloudKit
 
 class MyPostTableViewCell: UITableViewCell {
 
-    
     var postId: CKRecord.ID!
-    
     
     @IBOutlet weak var companyNameLabel: UILabel!
     @IBOutlet weak var timeStampLabel: UILabel!
@@ -21,19 +19,12 @@ class MyPostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var postImage: UIImageView!
     
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     
@@ -56,13 +47,5 @@ class MyPostTableViewCell: UITableViewCell {
         if let postImgUrl = post.image.fileURL {
             self.postImage.image = UIImage(contentsOfFile: postImgUrl.path)
         }
-        
-//        self.postId = post.id
-//        self.companyNameLabel.text = post.author_id
-//
-//        if let postAsset = post.image
-//
-//
     }
-
 }

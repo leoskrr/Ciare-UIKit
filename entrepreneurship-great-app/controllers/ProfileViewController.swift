@@ -9,28 +9,39 @@ import UIKit
 import CloudKit.CKRecord
 
 class ProfileViewController: UIViewController, CustomSegmentedControlDelegate {
-   
-    
-
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var nicheLabel: UILabel!
-    
-    
-    
     
     @IBOutlet weak var followButton: UIButton!
     @IBOutlet weak var partnershipsQuantity: UILabel!
     @IBOutlet weak var followingQuantity: UILabel!
     @IBOutlet weak var followersQuantity: UILabel!
     
-    
-    
-    
     @IBOutlet weak var myContainer: UIView!
     @IBOutlet weak var midiaKitContainer: UIView!
     @IBOutlet weak var moodBoardContainer: UIView!
     
+    var user: UserInfo! {
+        didSet{
+            DispatchQueue.main.async {
+                self.nameLabel.text = self.user.name
+                self.nicheLabel.text = self.user.expertiseAreas?[0] ?? ""
+                self.partnershipsQuantity.text = "\(self.user.partners?.count ?? 0)"
+                self.followingQuantity.text = "\(self.user.following?.count ?? 0)"
+                self.followersQuantity.text = "\(self.user.followers?.count ?? 0)"
+                if let userImg = self.user.picture {
+                    if let userImgUrl = userImg.fileURL {
+                        self.profileImage.image = UIImage(contentsOfFile: userImgUrl.path)
+                    } else {
+                        self.profileImage.image = UIImage(named: "defaultUserProfileImage")
+                    }
+                } else {
+                    self.profileImage.image = UIImage(named: "defaultUserProfileImage")
+                }
+            }
+        }
+    }
     
     func change(to index: Int) {
         
@@ -66,21 +77,37 @@ class ProfileViewController: UIViewController, CustomSegmentedControlDelegate {
         }
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         change(to: 0)
-        
         interfaceSegmented.delegate = self
-
-
-        // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.followButton.isEnabled = false
+        self.followButton.setTitle(Translation.Placeholder.youText, for: .normal)
+        loadComponents()
+    }
     
+    func loadComponents(){
+        self.nameLabel.text = Translation.Load.loadingText
+        self.nicheLabel.text = Translation.Load.loadingText
+        self.partnershipsQuantity.text = "0"
+        self.followingQuantity.text = "0"
+        self.followersQuantity.text = "0"
+        
+        ListUserInformationService().execute(){
+            user, error in
+            
+            guard let info = user, error == nil else {
+                print("")
+                return
+            }
+            
+            self.user = info
+        }
+    }
     
     @IBAction func followButtonSelected(_ sender: UIButton) {
         
@@ -94,7 +121,4 @@ class ProfileViewController: UIViewController, CustomSegmentedControlDelegate {
 //            drawAskPartnershipButton(sender)
 //        }
     }
-    
-    
-
 }
