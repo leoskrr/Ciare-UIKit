@@ -9,7 +9,7 @@ import UIKit
 import CloudKit.CKRecord
 
 class Notifications1TableViewCell: UITableViewCell {
-
+    
     var notificationId: CKRecord.ID?
     
     @IBOutlet weak var partnershipRequestText: UILabel!
@@ -26,7 +26,7 @@ class Notifications1TableViewCell: UITableViewCell {
                 self.timeStampLabel.text = ""
                 self.acceptButton.isHidden = false
                 self.refuseButton.isHidden = false
-
+                
                 if let userImg = self.user?.picture {
                     if let userImgUrl = userImg.fileURL {
                         self.profileImage.image = UIImage(contentsOfFile: userImgUrl.path)
@@ -57,16 +57,22 @@ class Notifications1TableViewCell: UITableViewCell {
         partnershipRequestText.text = Translation.Notification.newPartnershipRequest
         acceptButton.setTitle(Translation.Notification.accept, for: .normal)
         refuseButton.setTitle(Translation.Notification.delete, for: .normal)
-        acceptButton.isHidden = true
-        refuseButton.isHidden = true
+        hideButtons()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
+    func hideButtons(){
+        
+        acceptButton.isHidden = true
+        refuseButton.isHidden = true
+    }
+    
     func fillCellWith(userInfoId: CKRecord.ID, notificationId: CKRecord.ID ){
         loadUserData(userId: userInfoId)
+        self.notificationId = notificationId
     }
     
     func createPartnership(){
@@ -84,13 +90,17 @@ class Notifications1TableViewCell: UITableViewCell {
             
             loggedUser.partners = self.insertUserInArray(loggedUser.partners, userRef: newPartnerRef)
             newPartner.partners = self.insertUserInArray(loggedUser.partners, userRef: loggedUserRef)
-
+            
             if !(loggedUser.following?.contains(newPartnerRef))!{
                 loggedUser.following?.append(newPartnerRef)
             }
             
             self.updateInformationsOfUser(loggedUser)
             self.updateInformationsOfUser(newPartner)
+            DispatchQueue.main.async {
+                self.hideButtons()
+            }
+            DeleteRequestPartnershipService().execute(id: self.notificationId!)
         }
     }
     
@@ -101,7 +111,6 @@ class Notifications1TableViewCell: UITableViewCell {
             guard let _ = infos, error == nil else {
                 return
             }
-            print("sucesso")
         }
     }
     
@@ -123,5 +132,9 @@ class Notifications1TableViewCell: UITableViewCell {
     }
     
     @IBAction func refuseButtonSelected(_ sender: Any) {
+        DeleteRequestPartnershipService().execute(id: notificationId!)
+        DispatchQueue.main.async {
+            self.hideButtons()
+        }
     }
 }

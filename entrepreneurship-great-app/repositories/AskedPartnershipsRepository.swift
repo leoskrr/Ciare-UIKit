@@ -72,6 +72,16 @@ class AskedPartnershipsRepository{
         }
     }
     
+    public func delete(withId id: CKRecord.ID){
+        self.publicDatabase.delete(withRecordID: id){
+            _, error in
+            
+            guard error == nil else {
+                return
+            }
+        }
+    }
+    
     public func fetchSubscriptions(){
         publicDatabase.fetchAllSubscriptions(){
             subscriptions, error in
