@@ -47,6 +47,9 @@ class Translation {
     }
     
     class Alert{
+        
+        static let logOut = NSLocalizedString("Log Out", comment: "")
+        
         static let cancel = NSLocalizedString("PersonViewController.alert.alertCancel", comment: "")
         
         static let message = NSLocalizedString("PersonViewController.alert.alertMessage", comment: "")

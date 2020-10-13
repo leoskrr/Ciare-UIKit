@@ -22,6 +22,10 @@ class ProfileViewController: UIViewController, CustomSegmentedControlDelegate {
     @IBOutlet weak var midiaKitContainer: UIView!
     @IBOutlet weak var moodBoardContainer: UIView!
     
+    
+    @IBOutlet weak var moreButton: UIButton!
+    
+    
     var user: UserInfo! {
         didSet{
             DispatchQueue.main.async {
@@ -114,4 +118,32 @@ class ProfileViewController: UIViewController, CustomSegmentedControlDelegate {
     @IBAction func followButtonSelected(_ sender: UIButton) {
         
     }
+    
+    @IBAction func moreButtonSelected(_ sender: Any) {
+        
+        let actionSheet = UIAlertController()
+        
+        actionSheet.addAction(UIAlertAction(title: Translation.Alert.cancel, style: .cancel, handler: nil))
+        
+        actionSheet.addAction(UIAlertAction(title:Translation.Alert.logOut, style: .destructive, handler: {_ in
+            
+            setUserLoggedInApplicationStatus(false)
+            let newVC = self.storyboard?.instantiateViewController(withIdentifier: "loginView")
+            self.definesPresentationContext = true
+            newVC?.modalPresentationStyle = .overCurrentContext
+            self.present(newVC!, animated: false, completion: nil)
+        }))
+        
+       
+        
+        present(actionSheet, animated: true)
+        
+        
+        
+        
+        
+    }
+    
+    
+    
 }

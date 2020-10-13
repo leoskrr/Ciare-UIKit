@@ -64,6 +64,11 @@ class Notifications1TableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 5, bottom: 7, right: 5))
+    }
+    
     func hideButtons(){
         
         acceptButton.isHidden = true
