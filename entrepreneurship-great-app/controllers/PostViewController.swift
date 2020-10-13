@@ -56,6 +56,8 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         self.nicheLabel.text = Translation.Load.loadingText
         self.companyNameLabel.text = Translation.Load.loadingText
         self.profileImage.image = UIImage(named: "defaultUserProfileImage")
+        self.descriptionTextView.text = placeholder
+        self.descriptionTextView.textColor = UIColor(named: "PlaceholderRegister")
         drawTextView()
         loadUser()
     }
