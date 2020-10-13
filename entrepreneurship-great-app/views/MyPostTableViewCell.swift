@@ -15,7 +15,7 @@ class MyPostTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var companyNameLabel: UILabel!
-    @IBOutlet weak var timestampLabel: UILabel!
+    @IBOutlet weak var timeStampLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var descriptionPost: UITextView!
     
@@ -41,7 +41,7 @@ class MyPostTableViewCell: UITableViewCell {
         
         self.companyNameLabel.text = user.name
         self.descriptionPost.text = post.description
-        self.timestampLabel.text = ""
+        self.timeStampLabel.text = ""
         
         if let userPicture = user.picture{
             if let userPictureUrl = userPicture.fileURL {
