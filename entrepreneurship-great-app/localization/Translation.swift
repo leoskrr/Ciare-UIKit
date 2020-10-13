@@ -88,6 +88,11 @@ class Translation {
         static let camera = NSLocalizedString("PostViewController.post.alertCamera", comment: "")
         
         static let gallery = NSLocalizedString("PostViewController.post.alertGalery", comment: "")
+            }
+    
+    class Photo {
+        static let source = NSLocalizedString("Photo.source", comment: "")
+        static let chooseSource = NSLocalizedString("Photo.source.choose", comment: "")
     }
     
     class Load {
@@ -96,5 +101,20 @@ class Translation {
     
     class Notification {
         static let newPartnershipRequest = NSLocalizedString("Notification.newPartnershipRequest", comment: "")
+    }
+    
+    class Error {
+        static let errorTitle = NSLocalizedString("Error.title", comment: "")
+        static let closeButton = NSLocalizedString("Error.button.close", comment: "")
+        static let server = NSLocalizedString("Error.internal.server", comment: "")
+        static let postDescription = NSLocalizedString("Error.post.description", comment: "")
+        static let postimage = NSLocalizedString("Error.post.image", comment: "")
+        static let processimage = NSLocalizedString("Error.post.processImage", comment: "")
+        static let cameraUnavailable = NSLocalizedString("Error.camera.unavailable", comment: "")
+    }
+    
+    class Success {
+        static let successTitle = NSLocalizedString("Success.title", comment: "")
+        static let createdPost = NSLocalizedString("Success.post.created", comment: "")
     }
 }
