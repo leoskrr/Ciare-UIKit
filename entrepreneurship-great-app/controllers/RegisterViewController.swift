@@ -17,9 +17,7 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
     @IBOutlet weak var registerLabel: UILabel!
     @IBOutlet weak var companyLabel: UILabel!
     @IBOutlet weak var businessTypeLabel: UILabel!
-    
-    var index:Int?
-    
+        
     var userName: String?
     var userEmail: String?
     var userBusinessPlacemarkName: String?
@@ -30,20 +28,20 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
         switch value {
         
         case 0:
-            index = 0
             physicalConteiner.isHidden = false
             digitalConteiner.isHidden = true
             bothConteiner.isHidden = true
+            setCurrentSegmentedIndexOnRegister(0)
         case 1:
-            index = 1
             physicalConteiner.isHidden = true
             digitalConteiner.isHidden = false
             bothConteiner.isHidden = true
+            setCurrentSegmentedIndexOnRegister(1)
         case 2:
-            index = 2
             physicalConteiner.isHidden = true
             digitalConteiner.isHidden = true
             bothConteiner.isHidden = false
+            setCurrentSegmentedIndexOnRegister(2)
         default:
             break
         }
@@ -67,7 +65,8 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
         
         acessibilityApple()
         
-        change(to: index ?? 0)
+        change(to: getCurrentSegmentedIndexOnRegister())
+        
         self.hideKeyboardWhenTappedAround()
         interfaceSegmented.delegate = self
     }

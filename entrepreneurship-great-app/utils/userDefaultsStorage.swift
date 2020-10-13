@@ -57,3 +57,17 @@ public func getUserLoggedInApplicationStatus() -> Bool{
     
     return status
 }
+
+public func setCurrentSegmentedIndexOnRegister(_ index: Int){
+    let defaults = UserDefaults.standard
+    
+    defaults.setValue(index, forKey: "currentSegmentedIndexOnRegister")
+}
+
+public func getCurrentSegmentedIndexOnRegister() -> Int{
+    let defaults = UserDefaults.standard
+    
+    let index = defaults.integer(forKey: "currentSegmentedIndexOnRegister")
+    
+    return index
+}
