@@ -19,6 +19,25 @@ class MyPostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var postImage: UIImageView!
     
+    var userInformations: UserInfo? {
+        didSet {
+            DispatchQueue.main.async {
+                if self.userInformations !== nil {
+                    self.companyNameLabel.text = self.userInformations!.name
+                    if let userPicture = self.userInformations!.picture{
+                        if let userPictureUrl = userPicture.fileURL {
+                            self.profileImage.image = UIImage(contentsOfFile: userPictureUrl.path)
+                        } else {
+                            self.profileImage.image = UIImage(named: "defaultUserProfileImage")
+                        }
+                    } else {
+                        self.profileImage.image = UIImage(named: "defaultUserProfileImage")
+                    }
+                }
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -27,22 +46,26 @@ class MyPostTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    func loadUserData(userId: CKRecord.ID){
+        ListInfoByIdService().execute(recordId: userId){
+            info, error in
+            
+            guard let userInfo = info, error == nil else {
+                return
+            }
+            
+            self.userInformations = userInfo
+        }
+    }
     
-    func fillCellData(_ post: Post,_ user: UserInfo){
+    func fillCellData(_ post: Post){
+        self.companyNameLabel.text = Translation.Load.loadingText
+        self.profileImage.image = UIImage(named: "defaultUserProfileImage")
+
+        loadUserData(userId: post.author_id.recordID)
         
-        self.companyNameLabel.text = user.name
         self.descriptionPost.text = post.description
         self.timeStampLabel.text = ""
-        
-        if let userPicture = user.picture{
-            if let userPictureUrl = userPicture.fileURL {
-                self.profileImage.image = UIImage(contentsOfFile: userPictureUrl.path)
-            } else {
-                self.profileImage.image = UIImage(named: "defaultUserProfileImage")
-            }
-        } else {
-            self.profileImage.image = UIImage(named: "defaultUserProfileImage")
-        }
         
         if let postImgUrl = post.image.fileURL {
             self.postImage.image = UIImage(contentsOfFile: postImgUrl.path)

@@ -62,7 +62,7 @@ class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MyPostTableViewCell
         
         if userInfos !== nil {
-            cell.fillCellData(post, userInfos!)
+            cell.fillCellData(post)
         }
         
         return cell
