@@ -58,16 +58,6 @@ class ProfileViewController: UIViewController, CustomSegmentedControlDelegate {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-        change(to: 0)
-
-
-        // Do any additional setup after loading the view.
-    }
-    
     @IBOutlet weak var interfaceSegmented: CustomSegmentedControl!{
         didSet{
             interfaceSegmented.setButtonTitles(buttonTitles: [Translation.Info.my,"MidiaKit","MoodBoard"])
@@ -75,6 +65,22 @@ class ProfileViewController: UIViewController, CustomSegmentedControlDelegate {
             interfaceSegmented.selectorTextColor = .orange
         }
     }
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        change(to: 0)
+        
+        interfaceSegmented.delegate = self
+
+
+        // Do any additional setup after loading the view.
+    }
+    
+    
     
     @IBAction func followButtonSelected(_ sender: UIButton) {
         
