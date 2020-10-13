@@ -57,6 +57,21 @@ class AskedPartnershipsRepository{
         }
     }
     
+    public func findAll(to toUser: CKRecord.Reference, completionHandler: @escaping ([AskedPartnership]?, Error?)->()){
+        let predicate = NSPredicate(format: "toUser == %@", toUser)
+        let query = CKQuery(recordType: "AskedPartnerships", predicate: predicate)
+        let operation = CKQueryOperation(query: query)
+        
+        executeQueryOperation(operation: operation){
+            askeds, error in
+            
+            guard let array = askeds, error == nil else {
+                return
+            }
+            completionHandler(array, nil)
+        }
+    }
+    
     public func fetchSubscriptions(){
         publicDatabase.fetchAllSubscriptions(){
             subscriptions, error in

@@ -28,6 +28,7 @@
 		12FC39DF253533740057507C /* MoodBoardProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FC39DE253533740057507C /* MoodBoardProfileViewController.swift */; };
 		12FC39E4253544EC0057507C /* MyProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FC39E3253544EC0057507C /* MyProfileTableViewCell.swift */; };
 		351562E52535CE6900919329 /* showAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351562E42535CE6900919329 /* showAlert.swift */; };
+		351562F02535E36E00919329 /* ListAllAskPartnershipService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351562EF2535E36E00919329 /* ListAllAskPartnershipService.swift */; };
 		35176981252E169F00E6B214 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35176980252E169F00E6B214 /* UserInfo.swift */; };
 		35176993252E30F800E6B214 /* ListAllUsersByCharactersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35176992252E30F800E6B214 /* ListAllUsersByCharactersService.swift */; };
 		35176998252E310B00E6B214 /* ListAllUsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35176997252E310B00E6B214 /* ListAllUsersService.swift */; };
@@ -112,6 +113,7 @@
 		12FC39DE253533740057507C /* MoodBoardProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodBoardProfileViewController.swift; sourceTree = "<group>"; };
 		12FC39E3253544EC0057507C /* MyProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileTableViewCell.swift; sourceTree = "<group>"; };
 		351562E42535CE6900919329 /* showAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showAlert.swift; sourceTree = "<group>"; };
+		351562EF2535E36E00919329 /* ListAllAskPartnershipService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAllAskPartnershipService.swift; sourceTree = "<group>"; };
 		35176980252E169F00E6B214 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		35176992252E30F800E6B214 /* ListAllUsersByCharactersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAllUsersByCharactersService.swift; sourceTree = "<group>"; };
 		35176997252E310B00E6B214 /* ListAllUsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAllUsersService.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				3587F0F92531316600A918E9 /* ListInfoByIdService.swift */,
 				3545AC312533A6B100F84990 /* CreateAskPartnershipService.swift */,
 				3545AC362533BCAE00F84990 /* ListOneAskPartnershipService.swift */,
+				351562EF2535E36E00919329 /* ListAllAskPartnershipService.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 				F17CF2552524DB6100C3D81F /* Translation.swift in Sources */,
 				12FC39DF253533740057507C /* MoodBoardProfileViewController.swift in Sources */,
 				12A176EB251CDF0000495AD4 /* PersonViewController.swift in Sources */,
+				351562F02535E36E00919329 /* ListAllAskPartnershipService.swift in Sources */,
 				F1B5E51B251A7B2300140CB3 /* Enums.swift in Sources */,
 				353BC5E62530EB2B0087FE7D /* UpdateUserInformationsService.swift in Sources */,
 				35BB2B9A251A3E3C0028AF3E /* SceneDelegate.swift in Sources */,
