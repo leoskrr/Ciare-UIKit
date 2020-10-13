@@ -10,6 +10,8 @@ import CloudKit.CKRecord
 
 class Notifications1TableViewCell: UITableViewCell {
 
+    var notificationId: CKRecord.ID?
+    
     @IBOutlet weak var partnershipRequestText: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var companyName: UILabel!
@@ -22,6 +24,9 @@ class Notifications1TableViewCell: UITableViewCell {
             DispatchQueue.main.async {
                 self.companyName.text = self.user?.name
                 self.timeStampLabel.text = ""
+                self.acceptButton.isHidden = false
+                self.refuseButton.isHidden = false
+
                 if let userImg = self.user?.picture {
                     if let userImgUrl = userImg.fileURL {
                         self.profileImage.image = UIImage(contentsOfFile: userImgUrl.path)
@@ -49,23 +54,74 @@ class Notifications1TableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        partnershipRequestText.text = Translation.Notification.newPartnershipRequest
+        acceptButton.setTitle(Translation.Notification.accept, for: .normal)
+        refuseButton.setTitle(Translation.Notification.delete, for: .normal)
+        acceptButton.isHidden = true
+        refuseButton.isHidden = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    func fillCellWith(userInfoId: CKRecord.ID){
-        partnershipRequestText.text = Translation.Notification.newPartnershipRequest
-        acceptButton.setTitle(Translation.Notification.accept, for: .normal)
-        refuseButton.setTitle(Translation.Notification.delete, for: .normal)
-
+    func fillCellWith(userInfoId: CKRecord.ID, notificationId: CKRecord.ID ){
         loadUserData(userId: userInfoId)
     }
     
-    @IBAction func acceptButtonSelected(_ sender: UIButton) {
-    }
-    @IBAction func refuseButtonSelected(_ sender: Any) {
+    func createPartnership(){
+        let newPartner = user!
+        
+        ListUserInformationService().execute(){
+            user, error in
+            
+            guard let loggedUser = user, error == nil else {
+                return
+            }
+            
+            let loggedUserRef = CKRecord.Reference(recordID: loggedUser.recordID!, action: .none)
+            let newPartnerRef = CKRecord.Reference(recordID: newPartner.recordID!, action: .none)
+            
+            loggedUser.partners = self.insertUserInArray(loggedUser.partners, userRef: newPartnerRef)
+            newPartner.partners = self.insertUserInArray(loggedUser.partners, userRef: loggedUserRef)
+
+            if !(loggedUser.following?.contains(newPartnerRef))!{
+                loggedUser.following?.append(newPartnerRef)
+            }
+            
+            self.updateInformationsOfUser(loggedUser)
+            self.updateInformationsOfUser(newPartner)
+        }
     }
     
+    func updateInformationsOfUser(_ user: UserInfo){
+        UpdateUserInformationsService().execute(userInfo: user) {
+            _, infos, error in
+            
+            guard let _ = infos, error == nil else {
+                return
+            }
+            print("sucesso")
+        }
+    }
+    
+    func insertUserInArray(_ array: [CKRecord.Reference]?, userRef: CKRecord.Reference) -> [CKRecord.Reference]?{
+        
+        var arrayToReturn = array
+        
+        if arrayToReturn == nil {
+            arrayToReturn = [userRef]
+        } else {
+            arrayToReturn?.append(userRef)
+        }
+        
+        return arrayToReturn
+    }
+    
+    @IBAction func acceptButtonSelected(_ sender: UIButton) {
+        createPartnership()
+    }
+    
+    @IBAction func refuseButtonSelected(_ sender: Any) {
+    }
 }

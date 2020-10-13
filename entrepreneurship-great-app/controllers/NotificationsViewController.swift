@@ -36,7 +36,7 @@ class NotificationsViewController: UIViewController, UITableViewDataSource {
         if let notifications = partnership {
             let notification = notifications[indexPath.row]
             
-            cellNotifications1.fillCellWith(userInfoId: notification.toUser.recordID)
+            cellNotifications1.fillCellWith(userInfoId: notification.byUser.recordID, notificationId: notification.id)
         }
         
         return cellNotifications1
