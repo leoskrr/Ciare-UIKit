@@ -87,7 +87,9 @@ extension LoginViewController {
                                 self.performSegue(withIdentifier: "goToRegisterVC", sender: self)
                             }
                         case .Error:
-                            print(error!)
+                            DispatchQueue.main.async {
+                                showAlertError(self, text: Translation.Error.server)
+                            }
                     }
                 }
             }

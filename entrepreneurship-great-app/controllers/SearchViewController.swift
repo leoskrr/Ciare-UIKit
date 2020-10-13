@@ -29,11 +29,12 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
             allUsers, error in
 
             guard let users = allUsers, error == nil else {
-                print(error!)
+                DispatchQueue.main.async {
+                    showAlertError(self, text: Translation.Error.server)
+                }
                 return
             }
             
-            //self.filterUser = users
             self.usersFromCK = users
         }
     }
@@ -72,7 +73,9 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         filterUser = []
         
         guard let users = usersFromCK else {
-            print("Erro ao encontrar usuários do banco")
+            DispatchQueue.main.async {
+                showAlertError(self, text: Translation.Error.server)
+            }
             return
         }
         

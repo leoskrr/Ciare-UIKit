@@ -65,7 +65,9 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             info, error in
             
             guard let userInfos = info, error == nil else {
-                showAlertError(self, text: Translation.Error.server)
+                DispatchQueue.main.async {
+                    showAlertError(self, text: Translation.Error.server)
+                }
                 return
             }
             self.user = userInfos
@@ -102,7 +104,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                 imagePickerController.sourceType = .camera
                 self.present(imagePickerController, animated: true, completion: nil)
             }else{
-                showAlertError(self, text: Translation.Error.server)
+                showAlertError(self, text: Translation.Error.cameraUnavailable)
             }
             
         }))

@@ -101,7 +101,9 @@ class ProfileViewController: UIViewController, CustomSegmentedControlDelegate {
             user, error in
             
             guard let info = user, error == nil else {
-                print("")
+                DispatchQueue.main.async {
+                    showAlertError(self, text: Translation.Error.server)
+                }
                 return
             }
             
@@ -111,14 +113,5 @@ class ProfileViewController: UIViewController, CustomSegmentedControlDelegate {
     
     @IBAction func followButtonSelected(_ sender: UIButton) {
         
-//        if sender.titleLabel?.text == Translation.Placeholder.btnFollow{
-//            followUserAction()
-//            drawAskPartnershipButton(sender)
-//        } else if sender.titleLabel?.text == Translation.Placeholder.askPartnership{
-//            askPartnershipAction()
-//        } else if sender.titleLabel?.text == Translation.Placeholder.askedPartnership {
-//            //cancel partnership
-//            drawAskPartnershipButton(sender)
-//        }
     }
 }

@@ -26,6 +26,9 @@ class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewData
             info, error in
             
             guard let user = info, error == nil else {
+                DispatchQueue.main.async {
+                    showAlertError(self, text: Translation.Error.server)
+                }
                 return
             }
             self.userInfos = user
@@ -35,7 +38,14 @@ class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewData
     func loadPostsFromDB(){
         ListAllPostsService().execute{
             allPosts, error in
-
+            
+            guard error == nil else {
+                DispatchQueue.main.async {
+                    showAlertError(self, text: Translation.Error.server)
+                }
+                return
+            }
+            
             self.posts = allPosts
             self.loadPersonData()
         }

@@ -64,7 +64,9 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
             person, error in
             
             guard let personProfile = person, error == nil else {
-                print("Erro ao achar informações do usuário seguido:\n\(error!)")
+                DispatchQueue.main.async {
+                    showAlertError(self, text: Translation.Error.server)
+                }
                 return
             }
             
@@ -104,12 +106,16 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
                 loggedUser, error in
                 
                 guard let user = loggedUser, error == nil else {
-                    print("Erro ao achar informações do usuário logado:\n\(error!)")
+                    DispatchQueue.main.async {
+                        showAlertError(self, text: Translation.Error.server)
+                    }
                     return
                 }
                 
                 guard let userFollowing = user.following else {
-                    print("erro no userfollowing")
+                    DispatchQueue.main.async {
+                        showAlertError(self, text: Translation.Error.server)
+                    }
                     return
                 }
                 
@@ -213,7 +219,9 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
             follower, error in
             
             guard let followerUser = follower, error == nil else {
-                print("Erro ao achar informações do usuário logado:\n\(error!)")
+                DispatchQueue.main.async {
+                    showAlertError(self, text: Translation.Error.server)
+                }
                 return
             }
             
@@ -221,7 +229,9 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
                 followed, error in
                 
                 guard let followedUser = followed, error == nil else {
-                    print("Erro ao achar informações do usuário seguido:\n\(error!)")
+                    DispatchQueue.main.async {
+                        showAlertError(self, text: Translation.Error.server)
+                    }
                     return
                 }
                 
@@ -251,7 +261,9 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
             _, _, error in
             
             guard error == nil else {
-                print("Erro ao criar solicitação de parceria!")
+                DispatchQueue.main.async {
+                    showAlertError(self, text: Translation.Error.server)
+                }
                 return
             }
             
@@ -278,12 +290,12 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
         UpdateUserInformationsService().execute(userInfo: user) {
             _, infos, error in
             
-            guard let userInfos = infos, error == nil else {
-                print("Erro ao salvar usuário \(user.name):\n\(error!)")
+            guard let _ = infos, error == nil else {
+                DispatchQueue.main.async {
+                    showAlertError(self, text: Translation.Error.server)
+                }
                 return
             }
-            
-            print("Usuário \(userInfos.name) atualizado com sucesso!")
         }
     }
     
