@@ -43,3 +43,14 @@
 "Load.loadingText" = "Carregando...";
 "Notification.newPartnershipRequest" = "Você recebeu uma nova solicitação de parceria";
 "Placeholder.Text.You" = "Você";
+"Error.title" = "Erro";
+"Error.internal.server" = "Parece que ocorreu um erro interno, por favor, tente novamente.";
+"Error.post.description" = "É necessário descrever a publicação.";
+"Error.post.image" = "É necessário que a publicação tenha uma imagem.";
+"Error.button.close" = "Fechar";
+"Error.post.processImage" = "Erro ao processar imagem, por favor, tente novamente";
+"Success.title" = "Sucesso";
+"Success.post.created" = "Publicação criada com sucesso.";
+"Error.camera.unavailable" = "Câmera indisponível.";
+"Photo.source" = "Origem da foto";
+"Photo.source.choose" = "Escolha uma opção abaixo";

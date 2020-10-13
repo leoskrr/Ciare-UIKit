@@ -65,7 +65,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             info, error in
             
             guard let userInfos = info, error == nil else {
-                print("Erro ao carregar usuário")
+                showAlertError(self, text: Translation.Error.server)
                 return
             }
             self.user = userInfos
@@ -95,14 +95,14 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         
-        let actionSheet = UIAlertController(title: "Photo Source", message: "Choose a source", preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(title: Translation.Photo.source, message: Translation.Photo.chooseSource, preferredStyle: .actionSheet)
         
         actionSheet.addAction(UIAlertAction(title: Translation.Post.camera, style: .default, handler: { (action: UIAlertAction) in
             if UIImagePickerController.isSourceTypeAvailable(.camera){
                 imagePickerController.sourceType = .camera
                 self.present(imagePickerController, animated: true, completion: nil)
             }else{
-                print("camera not available")
+                showAlertError(self, text: Translation.Error.server)
             }
             
         }))
@@ -131,12 +131,8 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             
             imageUrl = url
             
-//            let scaleFactor = UIScreen.main.scale
-//            let scale = CGAffineTransform(scaleX: scaleFactor, y: scaleFactor)
-            //let size = postImage.bounds.size.applying(scale)
-            
             let resizedImage = image
-        
+            
             UIView.transition(with: self.postImage,
                               duration: 1.0,
                               options: [.curveEaseOut, .transitionCrossDissolve],
@@ -144,7 +140,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                                 self.postImage.image = resizedImage
                               })
         } catch {
-            print("Erro ao processar imagem, tente novamente: \(error)")
+            showAlertError(self, text: Translation.Error.processimage)
         }
         
         picker.dismiss(animated: true, completion: nil )
@@ -159,17 +155,17 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         view.endEditing(true)
         
         guard let description = descriptionTextView.text else {
-            print("Error: missing description")
+            showAlertError(self, text: Translation.Error.postDescription)
             return
         }
         
         guard let imgUrl = imageUrl else {
-            print("Error: missing image url")
+            showAlertError(self, text: Translation.Error.postimage)
             return
         }
         
         guard let recordName = userRecordName else {
-            print("Error: missing record name")
+            showAlertError(self, text: Translation.Error.server)
             return
         }
         
@@ -182,9 +178,15 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             
             switch response {
             case .success:
-                print("Post criado com sucesso!")
+                DispatchQueue.main.async {
+                    showSuccessAlert(self, text: Translation.Success.createdPost)
+                    self.descriptionTextView.text = nil
+                    self.postImage.image = nil
+                }
             case .failed:
-                print("Erro ao criar post: \(error!)")
+                DispatchQueue.main.async {
+                    showAlertError(self, text: Translation.Error.server)
+                }
             }
         }
     }
