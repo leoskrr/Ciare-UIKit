@@ -11,6 +11,8 @@
 		120EBAC42530A896001FD302 /* MyPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120EBAC32530A896001FD302 /* MyPostTableViewCell.swift */; };
 		120EBAC92530B3CD001FD302 /* MidiaKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120EBAC82530B3CD001FD302 /* MidiaKitViewController.swift */; };
 		120EBACE2530B4A1001FD302 /* MoodBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120EBACD2530B4A1001FD302 /* MoodBoardViewController.swift */; };
+		12609E442535CBF800684036 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12609E432535CBF800684036 /* NotificationsViewController.swift */; };
+		12609E492535CFAD00684036 /* Notifications1TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12609E482535CFAD00684036 /* Notifications1TableViewCell.swift */; };
 		126D5695251B8D2D00077FD3 /* SearchUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126D5694251B8D2D00077FD3 /* SearchUserTableViewCell.swift */; };
 		12828E01252F5C9B0079FE7C /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12828E00252F5C9B0079FE7C /* PostViewController.swift */; };
 		128769842524C49100B04079 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128769832524C49100B04079 /* LoginViewController.swift */; };
@@ -93,6 +95,8 @@
 		120EBAC82530B3CD001FD302 /* MidiaKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiaKitViewController.swift; sourceTree = "<group>"; };
 		120EBACD2530B4A1001FD302 /* MoodBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodBoardViewController.swift; sourceTree = "<group>"; };
 		1226A090251A406D00379581 /* entrepreneurship-great-app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "entrepreneurship-great-app.entitlements"; sourceTree = "<group>"; };
+		12609E432535CBF800684036 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		12609E482535CFAD00684036 /* Notifications1TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications1TableViewCell.swift; sourceTree = "<group>"; };
 		126D5694251B8D2D00077FD3 /* SearchUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserTableViewCell.swift; sourceTree = "<group>"; };
 		12828E00252F5C9B0079FE7C /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		128769832524C49100B04079 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -312,6 +316,7 @@
 				126D5694251B8D2D00077FD3 /* SearchUserTableViewCell.swift */,
 				120EBAC32530A896001FD302 /* MyPostTableViewCell.swift */,
 				12FC39E3253544EC0057507C /* MyProfileTableViewCell.swift */,
+				12609E482535CFAD00684036 /* Notifications1TableViewCell.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -331,6 +336,7 @@
 				35BD989C252F3D43002A203E /* TabBarViewController.swift */,
 				12828E00252F5C9B0079FE7C /* PostViewController.swift */,
 				12FC39CF253528B40057507C /* ProfileViewController.swift */,
+				12609E432535CBF800684036 /* NotificationsViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -518,6 +524,7 @@
 				35BD989D252F3D43002A203E /* TabBarViewController.swift in Sources */,
 				35BB2B9C251A3E3C0028AF3E /* ViewController.swift in Sources */,
 				3545AC2D2533A47800F84990 /* AskedPartnershipsRepository.swift in Sources */,
+				12609E492535CFAD00684036 /* Notifications1TableViewCell.swift in Sources */,
 				3545AC372533BCAE00F84990 /* ListOneAskPartnershipService.swift in Sources */,
 				128769842524C49100B04079 /* LoginViewController.swift in Sources */,
 				3545AC322533A6B100F84990 /* CreateAskPartnershipService.swift in Sources */,
@@ -547,6 +554,7 @@
 				12828E01252F5C9B0079FE7C /* PostViewController.swift in Sources */,
 				12D2CA1D2525F666001FCFCC /* RegisterViewController.swift in Sources */,
 				F1B5E516251A53E400140CB3 /* User.swift in Sources */,
+				12609E442535CBF800684036 /* NotificationsViewController.swift in Sources */,
 				120EBABF2530A333001FD302 /* MyCustomViewController.swift in Sources */,
 				12FC39E4253544EC0057507C /* MyProfileTableViewCell.swift in Sources */,
 				35D5154A251D290300ACC8D2 /* UsersRepository.swift in Sources */,
