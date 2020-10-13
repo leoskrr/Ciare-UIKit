@@ -275,7 +275,7 @@
             </objects>
             <point key="canvasLocation" x="-1751" y="-267"/>
         </scene>
-        <!--Feed-->
+        <!--Home-->
         <scene sceneID="CNg-Y1-Ayz">
             <objects>
                 <viewController id="qga-c8-z3T" customClass="FeedViewController" customModule="Ciare" customModuleProvider="target" sceneMemberID="viewController">
@@ -421,7 +421,7 @@
                             <constraint firstAttribute="trailing" secondItem="IGR-au-NZ1" secondAttribute="trailing" constant="20" id="uUd-hS-tlV"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Feed" image="newspaper.fill" catalog="system" id="pC6-Aj-oXk" userLabel="Feed"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="pC6-Aj-oXk" userLabel="Feed"/>
                     <connections>
                         <outlet property="searchBar" destination="133-0K-y4J" id="Oyd-RX-ZBM"/>
                         <outlet property="tableView" destination="IGR-au-NZ1" id="MnW-tD-58y"/>
@@ -2146,10 +2146,10 @@
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="defaultUserProfileImage" width="842" height="842.33331298828125"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="img1" width="100" height="100"/>
         <image name="img2" width="99" height="99"/>
         <image name="message.fill" catalog="system" width="128" height="113"/>
-        <image name="newspaper.fill" catalog="system" width="128" height="111"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="plus.square.fill" catalog="system" width="128" height="114"/>
         <namedColor name="PlaceholderRegister">
