@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e2v-IO-8wV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kTQ-yH-1ay">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -1402,7 +1402,7 @@
             <objects>
                 <viewController storyboardIdentifier="Digital" id="WaO-sf-clG" customClass="DigitalSegmentedViewController" customModule="Ciare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mbi-B9-6QW">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="397"/>
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="397.33333333333331"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Business Area" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zrX-Og-LUp" customClass="CustomUITextField" customModule="Ciare" customModuleProvider="target">
@@ -1656,7 +1656,7 @@
             <objects>
                 <viewController storyboardIdentifier="Physical" id="y65-sH-JVd" customClass="PhysicalSegmentedViewController" customModule="Ciare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fd8-2y-Ym8">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="397"/>
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="397.33333333333331"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Business Area" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wHU-IJ-03F" customClass="CustomUITextField" customModule="Ciare" customModuleProvider="target">
@@ -1755,7 +1755,7 @@
             <objects>
                 <viewController id="MSc-az-Em6" customClass="BothSegmentedViewController" customModule="Ciare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gnF-rA-N0z">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="397"/>
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="397.33333333333331"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Business Area" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lZ6-RL-zUm" customClass="CustomUITextField" customModule="Ciare" customModuleProvider="target">
