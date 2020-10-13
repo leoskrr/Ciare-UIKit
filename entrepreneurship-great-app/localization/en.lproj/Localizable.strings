@@ -6,6 +6,10 @@
   
 */
 
+"TabBar.item.home" = "Home";
+"TabBar.item.post" = "Post";
+"TabBar.item.notifications" = "Notifications";
+"TabBar.item.profile" = "Profile";
 "PersonViewController.placeholder.btnFollow" = "Follow";
 "SearchViewController.placeholder.searchBar" = "Search";
 "PersonViewController.info.labelPartners" = "Partners";

@@ -10,21 +10,13 @@ import UIKit
 class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
-//        self.navigationController?.isNavigationBarHidden = true
         super.viewDidLoad()
+        
+        self.tabBar.items?[0].title = Translation.TabBar.home
+        self.tabBar.items?[1].title = Translation.TabBar.post
+        self.tabBar.items?[2].title = Translation.TabBar.notifications
+        self.tabBar.items?[3].title = Translation.TabBar.profile
+
         AskedPartnershipsRepository().fetchSubscriptions()
-        // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

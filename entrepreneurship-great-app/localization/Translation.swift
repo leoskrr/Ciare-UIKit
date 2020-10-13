@@ -9,6 +9,13 @@ import Foundation
 
 class Translation {
     
+    class TabBar {
+        static let home = NSLocalizedString("TabBar.item.home", comment: "")
+        static let post = NSLocalizedString("TabBar.item.post", comment: "")
+        static let notifications = NSLocalizedString("TabBar.item.notifications", comment: "")
+        static let profile = NSLocalizedString("TabBar.item.profile", comment: "")
+    }
+    
     class Placeholder {
         static let btnFollow = NSLocalizedString("PersonViewController.placeholder.btnFollow", comment: "")
         
