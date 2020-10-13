@@ -20,11 +20,8 @@ class NotificationsViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        print("aa")
-        
+                
         if let count = partnership?.count {
-            print(count)
             return count
         } else {
             return 0
@@ -47,8 +44,8 @@ class NotificationsViewController: UIViewController, UITableViewDataSource {
     
     func loadNotifications(){
         
-        let recordId = CKRecord.ID(recordName: getUserRecordNameFromUserDefaults()!)
-        
+        let recordId = CKRecord.ID(recordName: getUserInfoRecordNameFromUserDefaults()!)
+                
         ListAllAskPartnershipService().execute(to: recordId){
             partnerships, error in
             

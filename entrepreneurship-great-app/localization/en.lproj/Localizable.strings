@@ -41,7 +41,9 @@
 "PostViewController.post.alertCamera" = "Camera";
 "PostViewController.post.alertGalery" = "Photo Library";
 "Load.loadingText" = "Loading...";
-"Notification.newPartnershipRequest" = "You received a new partnership request";
+"Notification.newPartnershipRequest" = "New partnership request";
+"Notification.accept" = "accept";
+"Notification.delete" = "delete";
 "Placeholder.Text.You" = "You";
 "Error.title" = "Error";
 "Error.internal.server" = "It looks like an internal error has occurred, please try again.";

@@ -10,6 +10,7 @@ import CloudKit.CKRecord
 
 class Notifications1TableViewCell: UITableViewCell {
 
+    @IBOutlet weak var partnershipRequestText: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var companyName: UILabel!
     @IBOutlet weak var timeStampLabel: UILabel!
@@ -18,16 +19,18 @@ class Notifications1TableViewCell: UITableViewCell {
     
     var user: UserInfo? {
         didSet {
-            self.companyName.text = user?.name
-            self.timeStampLabel.text = ""
-            if let userImg = self.user?.picture {
-                if let userImgUrl = userImg.fileURL {
-                    self.profileImage.image = UIImage(contentsOfFile: userImgUrl.path)
+            DispatchQueue.main.async {
+                self.companyName.text = self.user?.name
+                self.timeStampLabel.text = ""
+                if let userImg = self.user?.picture {
+                    if let userImgUrl = userImg.fileURL {
+                        self.profileImage.image = UIImage(contentsOfFile: userImgUrl.path)
+                    } else {
+                        self.profileImage.image = UIImage(named: "defaultUserProfileImage")
+                    }
                 } else {
                     self.profileImage.image = UIImage(named: "defaultUserProfileImage")
                 }
-            } else {
-                self.profileImage.image = UIImage(named: "defaultUserProfileImage")
             }
         }
     }
@@ -46,16 +49,17 @@ class Notifications1TableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func fillCellWith(userInfoId: CKRecord.ID){
+        partnershipRequestText.text = Translation.Notification.newPartnershipRequest
+        acceptButton.setTitle(Translation.Notification.accept, for: .normal)
+        refuseButton.setTitle(Translation.Notification.delete, for: .normal)
+
         loadUserData(userId: userInfoId)
     }
     

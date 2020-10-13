@@ -41,7 +41,9 @@
 "PostViewController.post.alertCamera" = "Cámara";
 "PostViewController.post.alertGalery" = "Galería";
 "Load.loadingText" = "Cargando...";
-"Notification.newPartnershipRequest" = "Recibiste una nueva solicitud de asociación";
+"Notification.newPartnershipRequest" = "Solicitud de asociación";
+"Notification.accept" = "aceptar";
+"Notification.delete" = "rechazar";
 "Placeholder.Text.You" = "Tú";
 "Error.title" = "Error";
 "Error.internal.server" = "Parece que se ha producido un error interno. Vuelve a intentarlo.";

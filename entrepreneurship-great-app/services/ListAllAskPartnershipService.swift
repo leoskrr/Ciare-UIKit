@@ -23,10 +23,11 @@ class ListAllAskPartnershipService{
             askedPartnership, error in
             
             guard let foundAskedPartnership = askedPartnership, error == nil else {
+                print(error!.localizedDescription)
                 completionHandler(nil, error)
                 return
             }
-            
+                        
             completionHandler(foundAskedPartnership, nil)
         }
     }
