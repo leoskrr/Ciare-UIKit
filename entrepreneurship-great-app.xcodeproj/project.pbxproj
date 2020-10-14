@@ -45,6 +45,7 @@
 		35675318251B7F950020AB89 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35675317251B7F950020AB89 /* FeedViewController.swift */; };
 		3568F28E2530AB7F00862FA9 /* SaveUserInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3568F28D2530AB7F00862FA9 /* SaveUserInfoService.swift */; };
 		3568F2932530B52500862FA9 /* ListUserInformationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3568F2922530B52500862FA9 /* ListUserInformationService.swift */; };
+		357E27EA2537165B006B1B41 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357E27E92537165B006B1B41 /* UITableView+Extension.swift */; };
 		3587F0FA2531316600A918E9 /* ListInfoByIdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587F0F92531316600A918E9 /* ListInfoByIdService.swift */; };
 		358F4D8F251B844B0018BE34 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358F4D8E251B844B0018BE34 /* SearchViewController.swift */; };
 		35B9E3F925321E6D008A9D5C /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B9E3F825321E6D008A9D5C /* UIImage+Extension.swift */; };
@@ -131,6 +132,7 @@
 		35675317251B7F950020AB89 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		3568F28D2530AB7F00862FA9 /* SaveUserInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveUserInfoService.swift; sourceTree = "<group>"; };
 		3568F2922530B52500862FA9 /* ListUserInformationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserInformationService.swift; sourceTree = "<group>"; };
+		357E27E92537165B006B1B41 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		3587F0F92531316600A918E9 /* ListInfoByIdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInfoByIdService.swift; sourceTree = "<group>"; };
 		358F4D8E251B844B0018BE34 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		35B9E3F825321E6D008A9D5C /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				35B9E3F825321E6D008A9D5C /* UIImage+Extension.swift */,
+				357E27E92537165B006B1B41 /* UITableView+Extension.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 				35176981252E169F00E6B214 /* UserInfo.swift in Sources */,
 				12FC39D52535317E0057507C /* MyProfileViewController.swift in Sources */,
 				355674DA25260C6500BFD4A7 /* SignInUserService.swift in Sources */,
+				357E27EA2537165B006B1B41 /* UITableView+Extension.swift in Sources */,
 				3518010D251CF392001B7B38 /* Post.swift in Sources */,
 				12BB29E425275850006408FF /* BothSegmentedViewController.swift in Sources */,
 				351562E52535CE6900919329 /* showAlert.swift in Sources */,

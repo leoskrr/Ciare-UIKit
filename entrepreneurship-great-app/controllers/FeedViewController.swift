@@ -52,6 +52,13 @@ class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if posts.count == 0 {
+            self.tableView.setEmptyMessage(Translation.Placeholder.emptyTableViewFeed)
+        } else {
+            tableView.restore()
+        }
+        
         return posts.count
     }
     

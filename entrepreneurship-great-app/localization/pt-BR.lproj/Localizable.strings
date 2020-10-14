@@ -57,3 +57,5 @@
 "Photo.source" = "Origem da foto";
 "Photo.source.choose" = "Escolha uma opção abaixo";
 "Log Out" = "Sair";
+"Placeholder.TableView.Empty.Feed" = "Aqui você poderá ver as postagens das pessoas que você segue";
+"Placeholder.TableView.Empty.Posts" = "Parece que você não tem nenhuma publicação";

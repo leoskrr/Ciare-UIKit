@@ -22,6 +22,13 @@ class MyProfileViewController: UIViewController, UITableViewDataSource {
     var posts: [Post] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if posts.count == 0 {
+            self.tableView.setEmptyMessage(Translation.Placeholder.emptyTableViewPosts)
+        } else {
+            tableView.restore()
+        }
+        
         return posts.count
     }
     

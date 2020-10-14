@@ -28,6 +28,10 @@ class Translation {
         static let brandName = NSLocalizedString("RegisterViewController.info.labelNameCompany", comment: "")
         
         static let youText = NSLocalizedString("Placeholder.Text.You", comment: "")
+        
+        static let emptyTableViewFeed = NSLocalizedString("Placeholder.TableView.Empty.Feed", comment: "")
+        
+        static let emptyTableViewPosts = NSLocalizedString("Placeholder.TableView.Empty.Posts", comment: "")
     }
     
     class Info {
