@@ -9,6 +9,12 @@ import UIKit
 import CloudKit.CKRecord
 
 class NotificationsViewController: UIViewController, UITableViewDataSource {
+    
+    
+    @IBOutlet weak var notificationsLabel: UILabel!
+    
+    
+    
    
     @IBOutlet weak var tableView: UITableView!
     var partnership: [AskedPartnership]? = []{
@@ -61,6 +67,9 @@ class NotificationsViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.allowsSelection = false
+        
+        
+        notificationsLabel.text = Translation.Notification.notificationsLabel
     }
     
     override func viewWillAppear(_ animated: Bool) {

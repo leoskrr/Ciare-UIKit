@@ -44,6 +44,7 @@
 "Notification.newPartnershipRequest" = "New partnership request";
 "Notification.accept" = "accept";
 "Notification.delete" = "delete";
+"Notification.label" = "Notifications";
 "Placeholder.Text.You" = "You";
 "Error.title" = "Error";
 "Error.internal.server" = "It looks like an internal error has occurred, please try again.";

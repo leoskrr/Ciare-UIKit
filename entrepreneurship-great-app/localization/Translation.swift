@@ -110,6 +110,7 @@ class Translation {
         static let newPartnershipRequest = NSLocalizedString("Notification.newPartnershipRequest", comment: "")
         static let accept = NSLocalizedString("Notification.accept", comment: "")
         static let delete = NSLocalizedString("Notification.delete", comment: "")
+        static let notificationsLabel = NSLocalizedString("Notification.label", comment: "")
     }
     
     class Error {

@@ -142,7 +142,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" name="partnershipSquare"/>
+                                            <color key="backgroundColor" red="0.94902592900000005" green="0.94900828599999998" blue="0.9490202069" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstItem="v6w-Ee-2G6" firstAttribute="top" secondItem="E7O-LJ-IO5" secondAttribute="bottom" constant="10" id="6Vh-jY-vlK"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="E7O-LJ-IO5" secondAttribute="trailing" constant="20" symbolic="YES" id="HAv-7Z-AjY"/>
@@ -189,6 +189,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Notifications" image="bell.fill" catalog="system" id="Hdq-VT-pY7"/>
                     <connections>
+                        <outlet property="notificationsLabel" destination="OMw-HW-TNm" id="F71-h7-jE1"/>
                         <outlet property="tableView" destination="Gfp-GM-REp" id="1Qd-DU-d8N"/>
                     </connections>
                 </viewController>
@@ -2308,22 +2309,22 @@
     </scenes>
     <designables>
         <designable name="4VZ-ah-Ebl">
-            <size key="intrinsicContentSize" width="93.333333333333329" height="34"/>
+            <size key="intrinsicContentSize" width="108.33333333333333" height="34"/>
         </designable>
         <designable name="Pf8-rf-hbs">
-            <size key="intrinsicContentSize" width="93.333333333333329" height="34"/>
+            <size key="intrinsicContentSize" width="103.33333333333333" height="34"/>
         </designable>
         <designable name="dr8-we-SrG">
-            <size key="intrinsicContentSize" width="119.66666666666667" height="34"/>
+            <size key="intrinsicContentSize" width="135" height="34"/>
         </designable>
         <designable name="lZ6-RL-zUm">
-            <size key="intrinsicContentSize" width="136" height="34"/>
+            <size key="intrinsicContentSize" width="146" height="34"/>
         </designable>
         <designable name="wHU-IJ-03F">
-            <size key="intrinsicContentSize" width="107.66666666666667" height="22"/>
+            <size key="intrinsicContentSize" width="122.66666666666667" height="22"/>
         </designable>
         <designable name="zrX-Og-LUp">
-            <size key="intrinsicContentSize" width="136" height="34"/>
+            <size key="intrinsicContentSize" width="146" height="34"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
@@ -2353,9 +2354,6 @@
         </namedColor>
         <namedColor name="inputFieldColor">
             <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="partnershipSquare">
-            <color red="0.91399997472763062" green="0.91399997472763062" blue="0.91399997472763062" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="quantityColor">
             <color red="0.16899999976158142" green="0.16899999976158142" blue="0.16899999976158142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -44,6 +44,7 @@
 "Notification.newPartnershipRequest" = "Solicitud de asociación";
 "Notification.accept" = "aceptar";
 "Notification.delete" = "rechazar";
+"Notification.label" = "Notificaciones";
 "Placeholder.Text.You" = "Tú";
 "Error.title" = "Error";
 "Error.internal.server" = "Parece que se ha producido un error interno. Vuelve a intentarlo.";
