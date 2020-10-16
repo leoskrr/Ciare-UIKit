@@ -313,7 +313,7 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
         
         let actionSheet = UIAlertController(title: Translation.Alert.title, message: Translation.Alert.subtitle, preferredStyle: .actionSheet)
         
-        actionSheet.addAction(UIAlertAction(title: Translation.Alert.cancel, style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: Translation.Alert.clean, style: .cancel, handler: nil))
         
         actionSheet.addAction(UIAlertAction(title: Translation.Alert.message, style: .default, handler: nil))
         

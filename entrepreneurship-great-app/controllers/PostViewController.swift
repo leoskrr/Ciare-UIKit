@@ -10,7 +10,7 @@ import CloudKit
 
 class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
     
-    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var cleanButton: UIButton!
     @IBOutlet weak var companyNameLabel: UILabel!
     @IBOutlet weak var nicheLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
@@ -49,7 +49,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         descriptionTextView.delegate = self
         postButton.setTitle(Translation.Post.textButtonPost, for: .normal)
-        cancelButton.setTitle(Translation.Alert.cancel, for: .normal)
+        cleanButton.setTitle(Translation.Alert.clean, for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -115,7 +115,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                 = .photoLibrary
             self.present(imagePickerController, animated: true, completion: nil)
         }))
-        actionSheet.addAction(UIAlertAction(title: Translation.Alert.cancel, style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: Translation.Alert.clean, style: .cancel, handler: nil))
         
         self.present(actionSheet, animated: true, completion: nil)
         
@@ -192,8 +192,20 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                     showAlertError(self, text: Translation.Error.server)
                 }
             }
+            
         }
     }
+    
+    @IBAction func cleanButton(_ sender: Any) {
+        
+        descriptionTextView.text = placeholder
+        postImage.image = .none
+        
+        
+    }
+    
+    
+    
 }
 
 extension PostViewController {
@@ -210,4 +222,7 @@ extension PostViewController {
             textView.textColor = UIColor(named: "PlaceholderRegister")
         }
     }
+    
+    
+    
 }

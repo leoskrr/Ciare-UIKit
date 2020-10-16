@@ -18,7 +18,7 @@
 "PersonViewController.alert.alertMessage" = "Enviar Mensaje";
 "PersonViewController.alert.alertUnfollow" = "Dejar de Seguir";
 "PersonViewController.alert.alertBlockUser" = "Bloquear Usuario";
-"PersonViewController.alert.alertCancel" = "Cancelar";
+"PersonViewController.alert.alertClean" = "Limpiar";
 "PersonViewController.alert.alertTitle" = "Acciones";
 "PersonViewController.alert.alertSubTitle" = "Seleccione cualquiera de las opciones siguientes";
 "PersonViewController.alert.labelMy" = "Publicaciones";

@@ -54,7 +54,7 @@ class Translation {
         
         static let logOut = NSLocalizedString("Log Out", comment: "")
         
-        static let cancel = NSLocalizedString("PersonViewController.alert.alertCancel", comment: "")
+        static let clean = NSLocalizedString("PersonViewController.alert.alertClean", comment: "")
         
         static let message = NSLocalizedString("PersonViewController.alert.alertMessage", comment: "")
         

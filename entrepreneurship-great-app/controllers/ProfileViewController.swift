@@ -22,6 +22,9 @@ class ProfileViewController: UIViewController, CustomSegmentedControlDelegate {
     @IBOutlet weak var midiaKitContainer: UIView!
     @IBOutlet weak var moodBoardContainer: UIView!
     
+    @IBOutlet weak var partnerLabel: UILabel!
+    @IBOutlet weak var followingLabel: UILabel!
+    @IBOutlet weak var followersLabel: UILabel!
     
     @IBOutlet weak var moreButton: UIButton!
     
@@ -86,6 +89,12 @@ class ProfileViewController: UIViewController, CustomSegmentedControlDelegate {
         
         change(to: 0)
         interfaceSegmented.delegate = self
+        
+        partnerLabel.text = Translation.Info.partners
+        followingLabel.text = Translation.Info.following
+        followersLabel.text = Translation.Info.followers
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -123,7 +132,7 @@ class ProfileViewController: UIViewController, CustomSegmentedControlDelegate {
         
         let actionSheet = UIAlertController()
         
-        actionSheet.addAction(UIAlertAction(title: Translation.Alert.cancel, style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: Translation.Alert.clean, style: .cancel, handler: nil))
         
         actionSheet.addAction(UIAlertAction(title:Translation.Alert.logOut, style: .destructive, handler: {_ in
             
