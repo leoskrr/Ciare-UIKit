@@ -77,6 +77,7 @@ class AskedPartnershipsRepository{
             _, error in
             
             guard error == nil else {
+                print(error!)
                 return
             }
         }
