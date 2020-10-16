@@ -17,6 +17,7 @@ class MyProfileTableViewCell: UITableViewCell {
     @IBOutlet weak var timeStampLabel: UILabel!
     @IBOutlet weak var postDescription: UITextView!
     @IBOutlet weak var postImage: UIImageView!
+    @IBOutlet weak var textViewHC: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -50,5 +51,12 @@ class MyProfileTableViewCell: UITableViewCell {
         self.companyNameLabel.text = Translation.Load.loadingText
         self.postDescription.text = Translation.Load.loadingText
         self.timeStampLabel.text = ""
+    }
+    
+    func adjustUITextViewHeight(textView: UITextView){
+        textView.translatesAutoresizingMaskIntoConstraints = true
+        textView.sizeToFit()
+        textView.isScrollEnabled = false
+    
     }
 }

@@ -9,8 +9,13 @@ import UIKit
 
 class MidiaKitViewController: UIViewController {
 
+    @IBOutlet weak var soonLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        soonLabel.text = Translation.segmentedControl.soonMidiaKit
 
         // Do any additional setup after loading the view.
     }

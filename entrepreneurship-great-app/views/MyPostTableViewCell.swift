@@ -71,4 +71,11 @@ class MyPostTableViewCell: UITableViewCell {
             self.postImage.image = UIImage(contentsOfFile: postImgUrl.path)
         }
     }
+    
+    func adjustUITextViewHeight(textView: UITextView){
+        textView.translatesAutoresizingMaskIntoConstraints = true
+        textView.sizeToFit()
+        textView.isScrollEnabled = false
+    
+    }
 }
