@@ -9,9 +9,11 @@ import UIKit
 
 class MoodBoardProfileViewController: UIViewController {
 
+    @IBOutlet weak var soonLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        soonLabel.text = Translation.segmentedControl.soonMoodBoard
         // Do any additional setup after loading the view.
     }
     

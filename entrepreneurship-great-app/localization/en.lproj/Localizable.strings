@@ -45,6 +45,8 @@
 "Notification.accept" = "accept";
 "Notification.delete" = "delete";
 "Notification.label" = "Notifications";
+"MyProfileViewController.segmentedControl.soonLabelMidiaKit" = "Soon MidiaKit will be available";
+"MyProfileViewController.segmentedControl.soonLabelMoodBoard" = "Soon MoodBoard will be available";
 "Placeholder.Text.You" = "You";
 "Error.title" = "Error";
 "Error.internal.server" = "It looks like an internal error has occurred, please try again.";

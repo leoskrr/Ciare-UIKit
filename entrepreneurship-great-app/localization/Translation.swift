@@ -85,6 +85,10 @@ class Translation {
         static let plataforms = NSLocalizedString("RegisterViewController.segmentedControl.labelPlataforms", comment: "")
         
         static let finish = NSLocalizedString("RegisterViewController.segmentedControl.buttonFinish", comment: "")
+        
+        static let soonMidiaKit = NSLocalizedString("MyProfileViewController.segmentedControl.soonLabelMidiaKit", comment: "")
+        
+        static let soonMoodBoard = NSLocalizedString("MyProfileViewController.segmentedControl.soonLabelMoodBoard", comment: "")
     }
     
     class Post {
