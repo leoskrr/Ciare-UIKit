@@ -13,9 +13,6 @@ class NotificationsViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var notificationsLabel: UILabel!
     
-    
-    
-   
     @IBOutlet weak var tableView: UITableView!
     var partnership: [AskedPartnership]? = []{
         didSet {
@@ -56,7 +53,6 @@ class NotificationsViewController: UIViewController, UITableViewDataSource {
             partnerships, error in
             
             guard let array = partnerships, error == nil else {
-                print(error!)
                 return
             }
             
