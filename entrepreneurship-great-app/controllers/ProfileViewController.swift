@@ -137,10 +137,14 @@ class ProfileViewController: UIViewController, CustomSegmentedControlDelegate {
         actionSheet.addAction(UIAlertAction(title:Translation.Alert.logOut, style: .destructive, handler: {_ in
             
             setUserLoggedInApplicationStatus(false)
+            
+            
             let newVC = self.storyboard?.instantiateViewController(withIdentifier: "loginView")
             self.definesPresentationContext = true
             newVC?.modalPresentationStyle = .overCurrentContext
             self.present(newVC!, animated: false, completion: nil)
+            
+            self.tabBarController?.tabBar.isHidden = true
         }))
         
        

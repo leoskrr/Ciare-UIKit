@@ -41,7 +41,11 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, 
             tabbarVC.modalPresentationStyle = .overCurrentContext
 
             self.present(tabbarVC, animated: false, completion: nil)
+            
+            tabBarController?.tabBar.isHidden = true
         }
+        
+        
     }
     
     @objc
