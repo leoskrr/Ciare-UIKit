@@ -81,19 +81,19 @@ class ProfileViewController: UIViewController, CustomSegmentedControlDelegate {
             interfaceSegmented.setButtonTitles(buttonTitles: [Translation.Info.my,"MidiaKit","MoodBoard"])
             interfaceSegmented.selectorViewColor = .orange
             interfaceSegmented.selectorTextColor = .orange
+            
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        change(to: 0)
         interfaceSegmented.delegate = self
         
         partnerLabel.text = Translation.Info.partners
         followingLabel.text = Translation.Info.following
         followersLabel.text = Translation.Info.followers
-        
+        print()
         
     }
     
@@ -101,6 +101,8 @@ class ProfileViewController: UIViewController, CustomSegmentedControlDelegate {
         self.followButton.isEnabled = false
         self.followButton.setTitle(Translation.Placeholder.youText, for: .normal)
         loadComponents()
+        
+        change(to: 0)
     }
     
     func loadComponents(){

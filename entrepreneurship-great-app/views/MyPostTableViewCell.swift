@@ -16,6 +16,7 @@ class MyPostTableViewCell: UITableViewCell {
     @IBOutlet weak var timeStampLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var descriptionPost: UITextView!
+    @IBOutlet weak var textViewHC: NSLayoutConstraint!
     
     @IBOutlet weak var postImage: UIImageView!
     
@@ -72,10 +73,10 @@ class MyPostTableViewCell: UITableViewCell {
         }
     }
     
-    func adjustUITextViewHeight(textView: UITextView){
-        textView.translatesAutoresizingMaskIntoConstraints = true
-        textView.sizeToFit()
-        textView.isScrollEnabled = false
+    func adjustUITextViewHeight(){
+        descriptionPost.translatesAutoresizingMaskIntoConstraints = true
+        descriptionPost.sizeToFit()
+        descriptionPost.isScrollEnabled = false
     
     }
 }

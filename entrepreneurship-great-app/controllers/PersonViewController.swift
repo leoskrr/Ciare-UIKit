@@ -25,7 +25,7 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
     @IBOutlet weak var followingLabel: UILabel!
     @IBOutlet weak var followersLabel: UILabel!
     
-    @IBOutlet weak var MyConteiner: UIView!
+    @IBOutlet weak var postsContainer: UIView!
     @IBOutlet weak var MidiaKitConteiner: UIView!
     @IBOutlet weak var MoodBoardConteiner: UIView!
     
@@ -35,16 +35,16 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
         switch index {
         
         case 0:
-            MyConteiner.isHidden = false
+            postsContainer.isHidden = false
             MidiaKitConteiner.isHidden = true
             MoodBoardConteiner.isHidden = true
         case 1:
             MidiaKitConteiner.isHidden = false
-            MyConteiner.isHidden = true
+            postsContainer.isHidden = true
             MoodBoardConteiner.isHidden = true
         case 2:
             MidiaKitConteiner.isHidden = true
-            MyConteiner.isHidden = true
+            postsContainer.isHidden = true
             MoodBoardConteiner.isHidden = false
         default:
             break
@@ -345,11 +345,12 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
         interfaceSegmented.delegate = self
         
         followButton.setTitle(Translation.Placeholder.btnFollow, for: .normal)
+        followButton.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
         partnersLabel.text = Translation.Info.partners
         followingLabel.text = Translation.Info.following
         followersLabel.text = Translation.Info.followers
         
-        change(to: 0)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
