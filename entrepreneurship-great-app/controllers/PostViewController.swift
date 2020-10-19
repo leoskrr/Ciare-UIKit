@@ -134,8 +134,8 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             try imageData?.write(to: url)
             
             imageUrl = url
-            
-            let resizedImage = image
+                        
+            let resizedImage = image.resizeImage(image: image, newWidth: postImage.frame.width, newHeight: postImage.frame.height)
             
             UIView.transition(with: self.postImage,
                               duration: 1.0,
@@ -197,15 +197,9 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     @IBAction func cleanButton(_ sender: Any) {
-        
         descriptionTextView.text = placeholder
         postImage.image = .none
-        
-        
     }
-    
-    
-    
 }
 
 extension PostViewController {
@@ -222,7 +216,4 @@ extension PostViewController {
             textView.textColor = UIColor(named: "PlaceholderRegister")
         }
     }
-    
-    
-    
 }
