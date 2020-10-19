@@ -53,10 +53,10 @@ class MyProfileTableViewCell: UITableViewCell {
         self.timeStampLabel.text = ""
     }
     
-    func adjustUITextViewHeight(textView: UITextView){
-        textView.translatesAutoresizingMaskIntoConstraints = true
-        textView.sizeToFit()
-        textView.isScrollEnabled = false
-    
-    }
+//    func adjustUITextViewHeight(textView: UITextView){
+//        textView.translatesAutoresizingMaskIntoConstraints = true
+//        textView.sizeToFit()
+//        textView.isScrollEnabled = false
+//    
+//    }
 }

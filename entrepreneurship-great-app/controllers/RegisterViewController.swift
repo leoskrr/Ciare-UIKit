@@ -65,7 +65,7 @@ class RegisterViewController: UIViewController, CustomSegmentedControlDelegate, 
         
         acessibilityApple()
         
-        change(to: getCurrentSegmentedIndexOnRegister())
+//        change(to: getCurrentSegmentedIndexOnRegister())
         
         self.hideKeyboardWhenTappedAround()
         interfaceSegmented.delegate = self
