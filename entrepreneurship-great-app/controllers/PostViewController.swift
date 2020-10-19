@@ -135,7 +135,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             
             imageUrl = url
                         
-            let resizedImage = image.resizeImage(image: image, newWidth: postImage.frame.width, newHeight: postImage.frame.height)
+            let resizedImage = image
             
             UIView.transition(with: self.postImage,
                               duration: 1.0,
