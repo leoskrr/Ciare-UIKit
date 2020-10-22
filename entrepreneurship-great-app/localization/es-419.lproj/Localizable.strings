@@ -6,12 +6,17 @@
   
 */
 
+// TAB BAR BUTTONs
 "TabBar.item.home" = "Início";
 "TabBar.item.post" = "Publicación";
 "TabBar.item.notifications" = "Notificaciones";
 "TabBar.item.profile" = "Perfil";
-"PersonViewController.placeholder.btnFollow" = "Seguir";
+
+// SEARCH BAR
 "SearchViewController.placeholder.searchBar" = "Buscar";
+
+// PERSONVIEWCONTROLLER
+"PersonViewController.placeholder.btnFollow" = "Seguir";
 "PersonViewController.info.labelPartners" = "Socios";
 "PersonViewController.info.labelFollowing" = "Siguiendo";
 "PersonViewController.info.labelFollowers" = "Seguidores";
@@ -25,6 +30,8 @@
 "PersonViewController.placeholder.askPartnership" = "Solicitar asociación";
 "PersonViewController.placeholder.askedPartnership" = "Asociación solicitada";
 "PersonViewController.assecibility.profile" = "Perfil";
+
+// REGISTER VIEW CONTROLLER
 "RegisterViewController.info.labelRegister" = "Registrarse";
 "RegisterViewController.info.labelCompany" = "Negocio";
 "RegisterViewController.info.labelBusinessType" = "Tipo del Negocio";
@@ -36,18 +43,28 @@
 "RegisterViewController.segmentedControl.labelLocation" = "Localización";
 "RegisterViewController.segmentedControl.labelPlataforms" = "Redes sociales";
 "RegisterViewController.segmentedControl.buttonFinish" = "Terminar";
+
+// POST VIEW CONTROLLER
 "PostViewController.post.descriptionPlaceholder" = "Describe tu publicación aquí";
 "PostViewController.post.textButtonPost" = "Publicar";
 "PostViewController.post.alertCamera" = "Cámara";
 "PostViewController.post.alertGalery" = "Galería";
+
+// LOAD
 "Load.loadingText" = "Cargando...";
+
+// NOTIFICATION
 "Notification.newPartnershipRequest" = "Solicitud de asociación";
 "Notification.accept" = "aceptar";
 "Notification.delete" = "rechazar";
 "Notification.label" = "Notificaciones";
+
+//MY PROFILE
 "MyProfileViewController.segmentedControl.soonLabelMidiaKit" = "Pronto estará disponible MidiaKit";
 "MyProfileViewController.segmentedControl.soonLabelMoodBoard" = "Pronto estará disponible MoodBoard";
 "Placeholder.Text.You" = "Tú";
+
+// ERROS AND SUCESS
 "Error.title" = "Error";
 "Error.internal.server" = "Parece que se ha producido un error interno. Vuelve a intentarlo.";
 "Error.post.description" = "Es necesario describir la publicación.";
@@ -57,8 +74,31 @@
 "Success.title" = "Éxito";
 "Success.post.created" = "Publicación creada con éxito.";
 "Error.camera.unavailable" = "Cámara no disponible";
+
+// FOTO
 "Photo.source" = "Fuente de la foto";
 "Photo.source.choose" = "Elija una opción a continuación";
+
+// SAIR
 "Log Out" = "cerrar sesión";
+
+// PLACEHOLDER TABLE VIEW
 "Placeholder.TableView.Empty.Feed" = "Aquí puedes ver las publicaciones de las personas que sigues";
 "Placeholder.TableView.Empty.Posts" = "Parece que no tienes ninguna publicación";
+
+// TELA DE WALKTHROUGH - TITULOS
+"Walkthrough.title.one" = "Faça conexões com diversos negócios";
+"Walkthrough.title.two" = "Seu reconhecimento";
+"Walkthrough.title.three" = "Firme parcerias";
+
+// TELA DE WALKTHROUGH - SUBTITULOS
+"Walkthrough.subtitle.one" = "Crie seu networking com pessoas que pensam como você e alcance outras fora da sua área também!";
+
+"Walkthrough.subtitle.two" = "Faça posts sobre o seu negócio e ganhe mais reconhecimento e visibilidade na sua área!";
+
+"Walkthrough.subtitle.three" = "Encontre parceiros mais vantajosos e faça parcerias que trazem resultados para os dois lados.";
+
+// TELA DE WALKTHROUGH - BOTAO
+"Walkthrough.button.continue" = "Continuar";
+
+
