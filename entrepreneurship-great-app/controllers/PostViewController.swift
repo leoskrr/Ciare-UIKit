@@ -198,6 +198,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @IBAction func cleanButton(_ sender: Any) {
         descriptionTextView.text = placeholder
+        descriptionTextView.textColor = UIColor(named: "PlaceholderRegister")
         postImage.image = .none
     }
 }
