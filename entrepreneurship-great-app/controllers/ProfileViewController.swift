@@ -8,7 +8,8 @@
 import UIKit
 import CloudKit.CKRecord
 
-class ProfileViewController: UIViewController, CustomSegmentedControlDelegate {
+class ProfileViewController: UIViewController,UIImagePickerControllerDelegate, CustomSegmentedControlDelegate, UINavigationControllerDelegate {
+    
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var nicheLabel: UILabel!
@@ -28,6 +29,7 @@ class ProfileViewController: UIViewController, CustomSegmentedControlDelegate {
     
     @IBOutlet weak var moreButton: UIButton!
     
+    @IBOutlet weak var photoChooseButton: UIButton!
     
     var user: UserInfo! {
         didSet{
@@ -134,7 +136,7 @@ class ProfileViewController: UIViewController, CustomSegmentedControlDelegate {
         
         let actionSheet = UIAlertController()
         
-        actionSheet.addAction(UIAlertAction(title: Translation.Alert.clean, style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: Translation.Util.cancel, style: .cancel, handler: nil))
         
         actionSheet.addAction(UIAlertAction(title:Translation.Alert.logOut, style: .destructive, handler: {_ in
             
@@ -149,13 +151,80 @@ class ProfileViewController: UIViewController, CustomSegmentedControlDelegate {
             self.tabBarController?.tabBar.isHidden = true
         }))
         
-       
-        
         present(actionSheet, animated: true)
         
+    }
+    
+    
+    
+    @IBAction func photoChooseSelected(_ sender: Any) {
+        
+        view.endEditing(true)
+        
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        
+        let actionSheet = UIAlertController(title: Translation.Photo.source, message: Translation.Photo.chooseSource, preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: Translation.Post.camera, style: .default, handler: { (action: UIAlertAction) in
+            if UIImagePickerController.isSourceTypeAvailable(.camera){
+                imagePickerController.sourceType = .camera
+                self.present(imagePickerController, animated: true, completion: nil)
+            }else{
+                showAlertError(self, text: Translation.Error.cameraUnavailable)
+            }
+            
+        }))
+        actionSheet.addAction(UIAlertAction(title: Translation.Post.gallery, style: .default, handler: { (action: UIAlertAction) in
+            imagePickerController.sourceType
+                = .photoLibrary
+            self.present(imagePickerController, animated: true, completion: nil)
+        }))
+        actionSheet.addAction(UIAlertAction(title: Translation.Util.cancel, style: .cancel, handler: nil))
+        
+        self.present(actionSheet, animated: true, completion: nil)
         
         
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
+        let image =  info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        
+        do {
+            let path = NSTemporaryDirectory() + "avatar_temp_\(UUID().uuidString).png"
+            let url = URL(fileURLWithPath: path)
+            
+            let imageData = image.pngData()
+            
+            try imageData?.write(to: url)
+            
+            let updateUser = user
+            updateUser?.picture = CKAsset(fileURL: url)
+                        
+            let resizedImage = image
+            
+            UIView.transition(with: self.profileImage,
+                              duration: 1.0,
+                              options: [.curveEaseOut, .transitionCrossDissolve],
+                              animations: {
+                                self.profileImage.image = resizedImage
+                              })
+            
+            UpdateUserInformationsService().execute(userInfo: updateUser!) { (_, _, error) in
+                guard error == nil else {
+                    print(error!)
+                    return
+                }
+                print("Sucess")
+            }
+            
+            
+        } catch {
+            showAlertError(self, text: Translation.Error.processimage)
+        }
+        
+        picker.dismiss(animated: true, completion: nil )
         
     }
     

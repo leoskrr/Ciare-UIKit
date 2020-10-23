@@ -115,7 +115,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                 = .photoLibrary
             self.present(imagePickerController, animated: true, completion: nil)
         }))
-        actionSheet.addAction(UIAlertAction(title: Translation.Alert.clean, style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: Translation.Util.cancel, style: .cancel, handler: nil))
         
         self.present(actionSheet, animated: true, completion: nil)
         
@@ -200,6 +200,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         descriptionTextView.text = placeholder
         descriptionTextView.textColor = UIColor(named: "PlaceholderRegister")
         postImage.image = .none
+        descriptionTextView.endEditing(true)
     }
 }
 

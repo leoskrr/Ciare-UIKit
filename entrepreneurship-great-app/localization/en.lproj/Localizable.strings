@@ -98,3 +98,6 @@
 // TELA DE WALKTHROUGH - BOTAO
 "Walkthrough.button.continue" = "Continue";
 
+// UTIL
+"Util.cancel" = "Cancel";
+
