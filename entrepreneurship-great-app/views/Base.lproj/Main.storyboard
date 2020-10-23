@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZoG-Xe-YuA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kTQ-yH-1ay">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -516,8 +516,12 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YgQ-yf-xe5">
                                                                     <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
                                                                     <subviews>
-                                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" text="Post description" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tdk-fK-9qq">
+                                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" keyboardDismissMode="interactive" text="Post description" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tdk-fK-9qq">
                                                                             <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="9On-6y-0gv"/>
+                                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="335" id="BDz-6l-atc"/>
+                                                                            </constraints>
                                                                             <color key="textColor" name="PlaceholderRegister"/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -2514,7 +2518,7 @@ fora da sua área também !</string>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="V0T-NH-D7e"/>
+        <segue reference="lkR-W7-B66"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="appstore" width="1024" height="1024"/>
