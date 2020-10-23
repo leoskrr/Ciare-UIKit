@@ -200,6 +200,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         descriptionTextView.text = placeholder
         descriptionTextView.textColor = UIColor(named: "PlaceholderRegister")
         postImage.image = .none
+        descriptionTextView.endEditing(true)
     }
 }
 
