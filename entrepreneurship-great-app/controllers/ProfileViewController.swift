@@ -134,7 +134,7 @@ class ProfileViewController: UIViewController, CustomSegmentedControlDelegate {
         
         let actionSheet = UIAlertController()
         
-        actionSheet.addAction(UIAlertAction(title: Translation.Alert.clean, style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: Translation.Util.cancel, style: .cancel, handler: nil))
         
         actionSheet.addAction(UIAlertAction(title:Translation.Alert.logOut, style: .destructive, handler: {_ in
             

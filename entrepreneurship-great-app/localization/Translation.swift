@@ -131,4 +131,8 @@ class Translation {
         static let successTitle = NSLocalizedString("Success.title", comment: "")
         static let createdPost = NSLocalizedString("Success.post.created", comment: "")
     }
+    
+    class Util {
+        static let cancel = NSLocalizedString("Util.cancel", comment: "");
+    }
 }
