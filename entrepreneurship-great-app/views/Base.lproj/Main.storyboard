@@ -231,13 +231,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="51z-4o-aNO">
                                                     <rect key="frame" x="95" y="21" width="46.5" height="49.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pni-SB-Wqn">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pni-SB-Wqn">
                                                             <rect key="frame" x="0.0" y="0.0" width="46.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                             <color key="textColor" name="TitleRegister"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Niche" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GvM-xp-efc">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Niche" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GvM-xp-efc">
                                                             <rect key="frame" x="0.0" y="31.5" width="46.5" height="18"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -479,7 +479,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iPh-n2-MGy">
                                                             <rect key="frame" x="0.0" y="0.0" width="335" height="73"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="260" verticalHuggingPriority="260" image="defaultUserProfileImage" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="muD-xb-qJi">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="260" verticalHuggingPriority="260" image="defaultUserProfileImage" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="muD-xb-qJi">
                                                                     <rect key="frame" x="0.0" y="11.5" width="50" height="50"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="50" id="3xb-ti-Dx4"/>
@@ -807,7 +807,7 @@ fora da sua área também !</string>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nPN-GR-k8C">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="260" verticalHuggingPriority="260" image="defaultUserProfileImage" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tvn-Wc-Dls">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="260" verticalHuggingPriority="260" image="defaultUserProfileImage" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tvn-Wc-Dls">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="YWt-Uf-smC"/>
@@ -986,7 +986,7 @@ fora da sua área também !</string>
                                     <action selector="followButtonSelected:" destination="Szg-Rh-TSd" eventType="touchUpInside" id="kpr-ar-x0S"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="260" verticalHuggingPriority="260" image="defaultUserProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="WaB-Hp-IqJ" userLabel="Profile Image">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="260" verticalHuggingPriority="260" image="defaultUserProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="WaB-Hp-IqJ" userLabel="Profile Image">
                                 <rect key="frame" x="137.5" y="20" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="YDd-qz-5gF"/>
@@ -1153,16 +1153,28 @@ fora da sua área também !</string>
                                     <action selector="moreButtonSelected:" destination="Szg-Rh-TSd" eventType="touchUpInside" id="deY-Tv-F4A"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LXT-Kq-ygL" userLabel="Choose Photo">
+                                <rect key="frame" x="137.5" y="20" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="8Kf-rU-pWm"/>
+                                    <constraint firstAttribute="height" constant="100" id="XSS-9d-SuI"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="photoChooseSelected:" destination="Szg-Rh-TSd" eventType="touchUpInside" id="pal-8O-s4A"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0Gx-hR-Ehz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="co7-LS-Bdt" firstAttribute="leading" secondItem="0Gx-hR-Ehz" secondAttribute="leading" id="0d2-3L-xvG"/>
+                            <constraint firstItem="LXT-Kq-ygL" firstAttribute="centerX" secondItem="WaB-Hp-IqJ" secondAttribute="centerX" id="1qH-Oc-erq"/>
                             <constraint firstItem="3ds-dE-Pwj" firstAttribute="top" secondItem="WaB-Hp-IqJ" secondAttribute="bottom" constant="10" id="5w1-3e-2Ok"/>
                             <constraint firstItem="0Gx-hR-Ehz" firstAttribute="trailing" secondItem="7Sh-iT-LTz" secondAttribute="trailing" constant="20" id="8zO-9E-4Tg"/>
                             <constraint firstItem="idd-ZD-Jxb" firstAttribute="leading" secondItem="0Gx-hR-Ehz" secondAttribute="leading" constant="16" id="9Ya-yo-5xd"/>
                             <constraint firstItem="7Sh-iT-LTz" firstAttribute="top" secondItem="0Gx-hR-Ehz" secondAttribute="top" constant="10" id="CGW-pQ-kac"/>
                             <constraint firstItem="Bvw-aL-Nnj" firstAttribute="leading" secondItem="0Gx-hR-Ehz" secondAttribute="leading" constant="16" id="DcL-98-N6k"/>
+                            <constraint firstItem="LXT-Kq-ygL" firstAttribute="centerY" secondItem="WaB-Hp-IqJ" secondAttribute="centerY" id="DlY-fH-xCu"/>
                             <constraint firstItem="JXD-2j-byn" firstAttribute="centerX" secondItem="D39-AV-C7F" secondAttribute="centerX" id="Dx0-EM-Osg"/>
                             <constraint firstItem="up5-vL-ime" firstAttribute="leading" secondItem="0Gx-hR-Ehz" secondAttribute="leading" constant="16" id="EGL-Di-kYb"/>
                             <constraint firstItem="3ds-dE-Pwj" firstAttribute="centerX" secondItem="D39-AV-C7F" secondAttribute="centerX" id="Gry-Ow-cjw"/>
@@ -1201,6 +1213,7 @@ fora da sua área também !</string>
                         <outlet property="nicheLabel" destination="KMb-vY-Stj" id="imc-UR-Qxh"/>
                         <outlet property="partnerLabel" destination="XK6-qb-Oa3" id="Ihp-md-QlG"/>
                         <outlet property="partnershipsQuantity" destination="aeO-Sz-Zdf" id="PUF-zW-W2W"/>
+                        <outlet property="photoChooseButton" destination="LXT-Kq-ygL" id="UFu-wK-YDg"/>
                         <outlet property="profileImage" destination="WaB-Hp-IqJ" id="YrQ-xq-TPA"/>
                     </connections>
                 </viewController>
@@ -2103,7 +2116,7 @@ fora da sua área também !</string>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="017-lX-rZ0">
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="63"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="260" verticalHuggingPriority="260" image="img1" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mkz-kl-b0C">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="260" verticalHuggingPriority="260" image="img1" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mkz-kl-b0C">
                                                                     <rect key="frame" x="0.0" y="6.5" width="50" height="50"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="50" id="PBl-ey-SZN"/>
@@ -2312,7 +2325,7 @@ fora da sua área também !</string>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="egb-UD-ucL">
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="73"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="260" verticalHuggingPriority="260" image="defaultUserProfileImage" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hBp-Mv-tGt">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="260" verticalHuggingPriority="260" image="defaultUserProfileImage" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hBp-Mv-tGt">
                                                                     <rect key="frame" x="0.0" y="11.5" width="50" height="50"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="50" id="xfS-Li-sVM"/>
