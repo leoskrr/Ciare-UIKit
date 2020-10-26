@@ -11,9 +11,9 @@ class OnBoardingViewController: UIViewController, UICollectionViewDelegate, UICo
     
     var imagesArray:[UIImage?] = [UIImage(named:"mãos_peças"),UIImage(named:"menina_celular"),UIImage(named:"casal_emprend")]
     
-    var titleArray: [String] = ["Faça conexão com diversos negócios", "Seu reconhecimento", "Firme parcerias"]
+    var titleArray: [String] = [Translation.Walkthrough.titleone, Translation.Walkthrough.titletwo, Translation.Walkthrough.titlethree]
     
-    var descriptionArray: [String] = ["Crie seu networking com pessoas que pensam como você e alcance outras fora da sua área também !", "Faça posts sobre o seu negócio e ganhe mais reconhecimento e visibilidade na sua área!", "Encontre parceiros mais vantajosos e faça parcerias que trazem resultados para os dois lados."]
+    var descriptionArray: [String] = [Translation.Walkthrough.subtitleone, Translation.Walkthrough.subtitletwo, Translation.Walkthrough.subtitlethree]
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imagesArray.count
