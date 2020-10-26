@@ -144,7 +144,7 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate, C
             setUserLoggedInApplicationStatus(false)
             
             
-            let newVC = self.storyboard?.instantiateViewController(withIdentifier: "loginView")
+            let newVC = self.storyboard?.instantiateViewController(withIdentifier: "onBoardingVC")
             self.definesPresentationContext = true
             newVC?.modalPresentationStyle = .overCurrentContext
             self.present(newVC!, animated: false, completion: nil)

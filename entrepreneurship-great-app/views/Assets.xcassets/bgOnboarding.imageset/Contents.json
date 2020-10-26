@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "backgroundLight.pdf",
+      "filename" : "bgOnBoardingLight.pdf",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -12,7 +12,7 @@
           "value" : "light"
         }
       ],
-      "filename" : "backgroundLight-1.pdf",
+      "filename" : "bgOnBoardingLight-1.pdf",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -23,7 +23,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "backgroundDark.pdf",
+      "filename" : "bgOnBoardingDark.pdf",
       "idiom" : "universal",
       "scale" : "1x"
     },

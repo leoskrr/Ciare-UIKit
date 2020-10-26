@@ -9,7 +9,24 @@ import UIKit
 import AuthenticationServices
 import CloudKit
 
-class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
+
+
+class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding{
+    
+    var authorizationButton = ASAuthorizationAppleIDButton()
+    var currentTheme: UIUserInterfaceStyle!{
+        didSet{
+            if self.traitCollection.userInterfaceStyle == .dark {
+                authorizationButton = ASAuthorizationAppleIDButton(authorizationButtonType: .signIn, authorizationButtonStyle: .white)
+            }else{
+                authorizationButton = ASAuthorizationAppleIDButton(authorizationButtonType: .signIn, authorizationButtonStyle: .black)
+            }
+        }
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        currentTheme = self.traitCollection.userInterfaceStyle
+    }
     
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
         return self.view.window!
@@ -17,8 +34,11 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, 
     
     @IBOutlet weak var stackViewForAppleIDButton: UIStackView!
     
+    
     override func viewDidLoad() {
-        let authorizationButton = ASAuthorizationAppleIDButton()
+        
+        
+        currentTheme = self.traitCollection.userInterfaceStyle
         
         authorizationButton.addTarget(self, action: #selector(handleAuthorizationAppleIDButtonPress), for: .touchUpInside)
         
@@ -31,6 +51,9 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, 
     
     
     override func viewDidAppear(_ animated: Bool) {
+        
+        
+        
         let userIsLogged = getUserLoggedInApplicationStatus()
                         
         if userIsLogged{
