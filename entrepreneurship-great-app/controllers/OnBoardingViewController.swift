@@ -9,6 +9,12 @@ import UIKit
 
 class OnBoardingViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    
+    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var continueButton: UIButton!
+    
+    
+   
     var imagesArray:[UIImage?] = [UIImage(named:"mãos_peças"),UIImage(named:"menina_celular"),UIImage(named:"casal_emprend")]
     
     var titleArray: [String] = [Translation.Walkthrough.titleone, Translation.Walkthrough.titletwo, Translation.Walkthrough.titlethree]
@@ -34,19 +40,35 @@ class OnBoardingViewController: UIViewController, UICollectionViewDelegate, UICo
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        pageControl.numberOfPages = imagesArray.count
+        continueButton.isHidden = true
+        
+        
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+           let userIsLogged = getUserLoggedInApplicationStatus()
+                           
+           if userIsLogged{
+               let storyboard = UIStoryboard(name: "Main", bundle: nil)
+               let tabbarVC = storyboard.instantiateViewController(withIdentifier: "TabBarView") as! TabBarViewController
+               
+               self.definesPresentationContext = true
+               tabbarVC.modalPresentationStyle = .overCurrentContext
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+               self.present(tabbarVC, animated: false, completion: nil)
+               
+               tabBarController?.tabBar.isHidden = true
+           }
     }
-    */
+    
+    @IBAction func continueButtonSelected(_ sender: Any) {
+        
+    }
+    
+    
+    
+
 
 }
 
@@ -56,17 +78,44 @@ extension OnBoardingViewController: UIScrollViewDelegate {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
-        
+
         var offset = targetContentOffset.pointee
         let index = (offset.x + scrollView.contentInset.left) / cellWidthIncludingSpacing
         let roundedIndex = round(index)
-        
+
         offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.right, y: scrollView.contentInset.top)
-        
+
         targetContentOffset.pointee = offset
     }
     
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+
+        pageControl?.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+        
+        if pageControl.currentPage == 2 {
+            continueButton.isHidden = false
+        }else{
+            continueButton.isHidden = true
+        }
+    }
+
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+
+        pageControl?.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+        
+        if pageControl.currentPage == 2 {
+            continueButton.isHidden = false
+        }else{
+            continueButton.isHidden = true
+        }
+    }
+
     
+
+    
+    
+    
+
 }
 
    
