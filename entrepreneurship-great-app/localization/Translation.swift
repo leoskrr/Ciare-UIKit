@@ -135,4 +135,18 @@ class Translation {
     class Util {
         static let cancel = NSLocalizedString("Util.cancel", comment: "");
     }
+    
+    class Walkthrough {
+        static let titleone = NSLocalizedString("Walkthrough.title.one", comment: "")
+        
+        static let titletwo = NSLocalizedString("Walkthrough.title.one", comment: "")
+        
+        static let titlethree = NSLocalizedString("Walkthrough.title.one", comment: "")
+        
+        static let subtitleone = NSLocalizedString("Walkthrough.subtitle.one", comment: "")
+        
+        static let subtitletwo = NSLocalizedString("Walkthrough.subtitle.two", comment: "")
+        
+        static let subtitlethree = NSLocalizedString("Walkthrough.subtitle.three", comment: "")
+    }
 }
