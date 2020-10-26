@@ -200,46 +200,8 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate, C
             imageCropVC.delegate = self
             
             self.present(imageCropVC, animated: true)
-            
-            //            self.navigationController?.pushViewController(imageCropVC, animated: true)
+
         })
-        
-        //        do {
-        //            let path = NSTemporaryDirectory() + "avatar_temp_\(UUID().uuidString).png"
-        //            let url = URL(fileURLWithPath: path)
-        //
-        //            let imageData = image.pngData()
-        //
-        //            try imageData?.write(to: url)
-        //
-        //            let updateUser = user
-        //            updateUser?.picture = CKAsset(fileURL: url)
-        //
-        //            let resizedImage = image
-        //
-        //            UIView.transition(with: self.profileImage,
-        //                              duration: 1.0,
-        //                              options: [.curveEaseOut, .transitionCrossDissolve],
-        //                              animations: {
-        //                                self.profileImage.image = resizedImage
-        //                              })
-        //
-        //            UpdateUserInformationsService().execute(userInfo: updateUser!) { (_, _, error) in
-        //                guard error == nil else {
-        //                    print(error!)
-        //                    return
-        //                }
-        //                print("Sucess")
-        //            }
-        //
-        //
-        //        } catch {
-        //            showAlertError(self, text: Translation.Error.processimage)
-        //        }
-        //
-        //        picker.dismiss(animated: true, completion: nil )
-        //
-        //    }
     }
 }
 

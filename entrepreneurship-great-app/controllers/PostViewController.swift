@@ -98,6 +98,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
+        imagePickerController.allowsEditing = true
         
         let actionSheet = UIAlertController(title: Translation.Photo.source, message: Translation.Photo.chooseSource, preferredStyle: .actionSheet)
         
