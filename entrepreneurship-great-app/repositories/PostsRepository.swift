@@ -46,7 +46,7 @@ class PostsRepository {
     public func listAll(completionHandler: @escaping ([Post]?, Error?) -> ()) {
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: "Post", predicate: predicate)
-        query.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
+        query.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         
         let operation = CKQueryOperation(query: query)
         
@@ -65,7 +65,7 @@ class PostsRepository {
     public func listsPostsByUser(withId author_id: CKRecord.ID, completionHandler: @escaping ([Post]?, Error?) -> ()) {
         let predicate = NSPredicate(format: "author_id == %@", CKRecord.Reference(recordID: author_id, action: .none))
         let query = CKQuery(recordType: "Post", predicate: predicate)
-        query.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
+        query.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         let operation = CKQueryOperation(query: query)
         
         executeQueryOperation(operation: operation) {
