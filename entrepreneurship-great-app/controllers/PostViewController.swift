@@ -124,8 +124,20 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        let image =  info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        var selectedImage: UIImage?
         
+        if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            selectedImage = originalImage
+        }
+        
+        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            selectedImage = editedImage
+        }
+        
+        guard let image = selectedImage else {
+            return
+        }
+                
         do {
             let path = NSTemporaryDirectory() + "avatar_temp_\(UUID().uuidString).png"
             let url = URL(fileURLWithPath: path)
