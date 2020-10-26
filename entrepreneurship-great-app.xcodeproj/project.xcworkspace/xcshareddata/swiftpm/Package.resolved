@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "RSKImageCropper",
+        "repositoryURL": "https://github.com/ruslanskorb/RSKImageCropper.git",
+        "state": {
+          "branch": null,
+          "revision": "075c1a6de3b3397d78a9744ba5499ee27e887b19",
+          "version": "3.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

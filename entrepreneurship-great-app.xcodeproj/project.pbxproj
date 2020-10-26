@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -47,6 +47,7 @@
 		35675318251B7F950020AB89 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35675317251B7F950020AB89 /* FeedViewController.swift */; };
 		3568F28E2530AB7F00862FA9 /* SaveUserInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3568F28D2530AB7F00862FA9 /* SaveUserInfoService.swift */; };
 		3568F2932530B52500862FA9 /* ListUserInformationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3568F2922530B52500862FA9 /* ListUserInformationService.swift */; };
+		3569264B254377D200BAA7E8 /* RSKImageCropper in Frameworks */ = {isa = PBXBuildFile; productRef = 3569264A254377D200BAA7E8 /* RSKImageCropper */; };
 		357E27EA2537165B006B1B41 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357E27E92537165B006B1B41 /* UITableView+Extension.swift */; };
 		3587F0FA2531316600A918E9 /* ListInfoByIdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587F0F92531316600A918E9 /* ListInfoByIdService.swift */; };
 		358F4D8F251B844B0018BE34 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358F4D8E251B844B0018BE34 /* SearchViewController.swift */; };
@@ -181,6 +182,7 @@
 			files = (
 				3556CEB2252BAABD00CF1A64 /* MapKit.framework in Frameworks */,
 				35CC6D8D252230E900DD9E73 /* CloudKit.framework in Frameworks */,
+				3569264B254377D200BAA7E8 /* RSKImageCropper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +412,9 @@
 			dependencies = (
 			);
 			name = "entrepreneurship-great-app";
+			packageProductDependencies = (
+				3569264A254377D200BAA7E8 /* RSKImageCropper */,
+			);
 			productName = "entrepreneurship-great-app";
 			productReference = 35BB2B94251A3E3C0028AF3E /* Ciare.app */;
 			productType = "com.apple.product-type.application";
@@ -483,6 +488,9 @@
 				"es-419",
 			);
 			mainGroup = 35BB2B8B251A3E3B0028AF3E;
+			packageReferences = (
+				35692649254377D200BAA7E8 /* XCRemoteSwiftPackageReference "RSKImageCropper" */,
+			);
 			productRefGroup = 35BB2B95251A3E3C0028AF3E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -931,6 +939,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		35692649254377D200BAA7E8 /* XCRemoteSwiftPackageReference "RSKImageCropper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ruslanskorb/RSKImageCropper.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3569264A254377D200BAA7E8 /* RSKImageCropper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 35692649254377D200BAA7E8 /* XCRemoteSwiftPackageReference "RSKImageCropper" */;
+			productName = RSKImageCropper;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		35BB2BA0251A3E3C0028AF3E /* entrepreneurship_great_app.xcdatamodeld */ = {

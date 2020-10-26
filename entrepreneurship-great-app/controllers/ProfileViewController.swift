@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RSKImageCropper
 import CloudKit.CKRecord
 
 class ProfileViewController: UIViewController,UIImagePickerControllerDelegate, CustomSegmentedControlDelegate, UINavigationControllerDelegate {
@@ -191,6 +192,67 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate, C
         
         let image =  info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         
+        picker.dismiss(animated: false, completion: { () -> Void in
+            var imageCropVC: RSKImageCropViewController!
+            
+            imageCropVC = RSKImageCropViewController(image: image, cropMode: RSKImageCropMode.circle)
+            
+            imageCropVC.delegate = self
+            
+            self.present(imageCropVC, animated: true)
+            
+            //            self.navigationController?.pushViewController(imageCropVC, animated: true)
+        })
+        
+        //        do {
+        //            let path = NSTemporaryDirectory() + "avatar_temp_\(UUID().uuidString).png"
+        //            let url = URL(fileURLWithPath: path)
+        //
+        //            let imageData = image.pngData()
+        //
+        //            try imageData?.write(to: url)
+        //
+        //            let updateUser = user
+        //            updateUser?.picture = CKAsset(fileURL: url)
+        //
+        //            let resizedImage = image
+        //
+        //            UIView.transition(with: self.profileImage,
+        //                              duration: 1.0,
+        //                              options: [.curveEaseOut, .transitionCrossDissolve],
+        //                              animations: {
+        //                                self.profileImage.image = resizedImage
+        //                              })
+        //
+        //            UpdateUserInformationsService().execute(userInfo: updateUser!) { (_, _, error) in
+        //                guard error == nil else {
+        //                    print(error!)
+        //                    return
+        //                }
+        //                print("Sucess")
+        //            }
+        //
+        //
+        //        } catch {
+        //            showAlertError(self, text: Translation.Error.processimage)
+        //        }
+        //
+        //        picker.dismiss(animated: true, completion: nil )
+        //
+        //    }
+    }
+}
+
+extension ProfileViewController: RSKImageCropViewControllerDelegate {
+    func imageCropViewControllerDidCancelCrop(_ controller: RSKImageCropViewController) {
+        
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func imageCropViewController(_ controller: RSKImageCropViewController, didCropImage croppedImage: UIImage, usingCropRect cropRect: CGRect, rotationAngle: CGFloat) {
+        
+        let image = croppedImage
+        
         do {
             let path = NSTemporaryDirectory() + "avatar_temp_\(UUID().uuidString).png"
             let url = URL(fileURLWithPath: path)
@@ -201,7 +263,7 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate, C
             
             let updateUser = user
             updateUser?.picture = CKAsset(fileURL: url)
-                        
+            
             let resizedImage = image
             
             UIView.transition(with: self.profileImage,
@@ -218,16 +280,10 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate, C
                 }
                 print("Sucess")
             }
-            
-            
         } catch {
             showAlertError(self, text: Translation.Error.processimage)
         }
         
-        picker.dismiss(animated: true, completion: nil )
-        
+        controller.dismiss(animated: true, completion: nil)
     }
-    
-    
-    
 }
