@@ -44,6 +44,10 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         searchBar.placeholder = Translation.Placeholder.searchBar
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let users = filterUser {
             return users.count
