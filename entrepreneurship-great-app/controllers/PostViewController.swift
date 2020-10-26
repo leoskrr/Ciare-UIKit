@@ -190,9 +190,13 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         let post = Post(author_id: CKRecord.Reference(recordID: userId, action: .none), description: description, image: CKAsset(fileURL: imgUrl))
         
+        showLoadingOnViewController(self)
+        
         CreatePostService().execute(post: post) {
             response, createdPost, error in
             
+            removeLoadingOnViewController(self)
+
             switch response {
             case .success:
                 DispatchQueue.main.async {
@@ -205,7 +209,6 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                     showAlertError(self, text: Translation.Error.server)
                 }
             }
-            
         }
     }
     
