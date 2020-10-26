@@ -32,6 +32,8 @@ class Translation {
         static let emptyTableViewFeed = NSLocalizedString("Placeholder.TableView.Empty.Feed", comment: "")
         
         static let emptyTableViewPosts = NSLocalizedString("Placeholder.TableView.Empty.Posts", comment: "")
+        
+        static let emptyTableViewNotifications = NSLocalizedString("Placeholder.TableView.Empty.Notifications", comment: "")
     }
     
     class Info {

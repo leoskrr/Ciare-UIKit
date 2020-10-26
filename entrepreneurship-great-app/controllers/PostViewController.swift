@@ -195,7 +195,9 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         CreatePostService().execute(post: post) {
             response, createdPost, error in
             
-            removeLoadingOnViewController(self)
+            DispatchQueue.main.async {
+                removeLoadingOnViewController(self)
+            }
 
             switch response {
             case .success:

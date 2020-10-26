@@ -23,8 +23,15 @@ class NotificationsViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-                
+                  
         if let count = partnership?.count {
+            
+            if count == 0 {
+                self.tableView.setEmptyMessage(Translation.Placeholder.emptyTableViewNotifications)
+            } else {
+                tableView.restore()
+            }
+            
             return count
         } else {
             return 0
@@ -48,9 +55,15 @@ class NotificationsViewController: UIViewController, UITableViewDataSource {
     func loadNotifications(){
         
         let recordId = CKRecord.ID(recordName: getUserInfoRecordNameFromUserDefaults()!)
-                
+        
+        showLoadingOnViewController(self)
+
         ListAllAskPartnershipService().execute(to: recordId){
             partnerships, error in
+            
+            DispatchQueue.main.async {
+                removeLoadingOnViewController(self)
+            }
             
             guard let array = partnerships, error == nil else {
                 return

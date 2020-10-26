@@ -85,6 +85,7 @@
 // PLACEHOLDER TABLE VIEW
 "Placeholder.TableView.Empty.Feed" = "Aquí puedes ver las publicaciones de las personas que sigues";
 "Placeholder.TableView.Empty.Posts" = "Parece que no tienes ninguna publicación";
+"Placeholder.TableView.Empty.Notifications" = "Parece que no tienes notificaciones";
 
 // TELA DE WALKTHROUGH - TITULOS
 "Walkthrough.title.one" = "Faça conexões com diversos negócios";

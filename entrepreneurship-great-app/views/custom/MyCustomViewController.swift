@@ -38,10 +38,14 @@ class MyCustomViewController: UIViewController, UITableViewDataSource {
     
     func loadPostsFromDB(){
         let userInfoId = personViewController?.person?.recordID
-        
+        showLoadingOnViewController(self)
+
         ListPostsByUserService().execute(userInfoId: userInfoId!){
             _, allPosts, error in
             
+            DispatchQueue.main.async {
+                removeLoadingOnViewController(self)
+            }
             guard let userPosts = allPosts, error == nil else {
                 print("Could not load posts")
                 return

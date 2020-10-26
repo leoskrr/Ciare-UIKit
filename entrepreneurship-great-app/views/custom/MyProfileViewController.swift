@@ -63,8 +63,14 @@ class MyProfileViewController: UIViewController, UITableViewDataSource {
     func loadPostsFromDB(){
         let userInfoId = CKRecord.ID(recordName: getUserInfoRecordNameFromUserDefaults()!)
         
+        showLoadingOnViewController(self)
+        
         ListPostsByUserService().execute(userInfoId: userInfoId){
             _, allPosts, error in
+            
+            DispatchQueue.main.async {
+                removeLoadingOnViewController(self)
+            }
             
             guard let userPosts = allPosts, error == nil else {
                 print("Could not load posts")

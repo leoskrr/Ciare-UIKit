@@ -25,6 +25,10 @@ class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewData
         ListUserInformationService().execute(){
             info, error in
             
+            DispatchQueue.main.async {
+                removeLoadingOnViewController(self)
+            }
+
             guard let user = info, error == nil else {
                 DispatchQueue.main.async {
                     showAlertError(self, text: Translation.Error.server)
@@ -36,9 +40,11 @@ class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewData
     }
     
     func loadPostsFromDB(){
+        showLoadingOnViewController(self)
+
         ListAllPostsService().execute{
             allPosts, error in
-            
+        
             guard error == nil else {
                 DispatchQueue.main.async {
                     showAlertError(self, text: Translation.Error.server)
