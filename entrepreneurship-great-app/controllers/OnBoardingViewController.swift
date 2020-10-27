@@ -9,17 +9,20 @@ import UIKit
 
 class OnBoardingViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var continueButton: UIButton!
     
-    
-   
     var imagesArray:[UIImage?] = [UIImage(named:"mãos_peças"),UIImage(named:"menina_celular"),UIImage(named:"casal_emprend")]
     
-    var titleArray: [String] = [Translation.Walkthrough.titleone, Translation.Walkthrough.titletwo, Translation.Walkthrough.titlethree]
+    var titleArray: [String] = [
+        Translation.Walkthrough.titleone,
+        Translation.Walkthrough.titletwo,
+        Translation.Walkthrough.titlethree]
     
-    var descriptionArray: [String] = [Translation.Walkthrough.subtitleone, Translation.Walkthrough.subtitletwo, Translation.Walkthrough.subtitlethree]
+    var descriptionArray: [String] = [
+        Translation.Walkthrough.subtitleone,
+        Translation.Walkthrough.subtitletwo,
+        Translation.Walkthrough.subtitlethree]
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imagesArray.count
@@ -27,7 +30,7 @@ class OnBoardingViewController: UIViewController, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! OnBoardingCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OnBoardCell", for: indexPath) as! OnBoardingCollectionViewCell
         
         cell.fillCell(image: imagesArray[indexPath.row], title: titleArray[indexPath.row], description: descriptionArray[indexPath.row])
         
@@ -41,9 +44,8 @@ class OnBoardingViewController: UIViewController, UICollectionViewDelegate, UICo
         super.viewDidLoad()
 
         pageControl.numberOfPages = imagesArray.count
+        continueButton.setTitle(Translation.Walkthrough.button, for: .normal)
         continueButton.isHidden = true
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -65,16 +67,10 @@ class OnBoardingViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBAction func continueButtonSelected(_ sender: Any) {
         
     }
-    
-    
-    
-
-
 }
 
 extension OnBoardingViewController: UIScrollViewDelegate {
     
-
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
@@ -109,13 +105,4 @@ extension OnBoardingViewController: UIScrollViewDelegate {
             continueButton.isHidden = true
         }
     }
-
-    
-
-    
-    
-    
-
 }
-
-   

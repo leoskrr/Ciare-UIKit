@@ -88,26 +88,19 @@
 "Placeholder.TableView.Empty.Notifications" = "Parece que no tienes notificaciones";
 
 // TELA DE WALKTHROUGH - TITULOS
-"Walkthrough.title.one" = "Faça conexões com diversos negócios";
-"Walkthrough.title.two" = "Seu reconhecimento";
-"Walkthrough.title.three" = "Firme parcerias";
+"Walkthrough.title.one" = "Haz conexiones con diferentes personas";
+"Walkthrough.title.two" = "Tu reconocimiento";
+"Walkthrough.title.three" = "Crea asociaciones";
 
 // TELA DE WALKTHROUGH - SUBTITULOS
-"Walkthrough.subtitle.one" = "Crie seu networking com pessoas que pensam como você e alcance outras fora da sua área também!";
+"Walkthrough.subtitle.one" = "¡Cree su red con personas de ideas afines y llegue a otras personas fuera de su área también!";
 
-"Walkthrough.subtitle.two" = "Faça posts sobre o seu negócio e ganhe mais reconhecimento e visibilidade na sua área!";
+"Walkthrough.subtitle.two" = "¡Haga publicaciones sobre su negocio y obtenga más reconocimiento y visibilidad en su área!";
 
-"Walkthrough.subtitle.three" = "Encontre parceiros mais vantajosos e faça parcerias que trazem resultados para os dois lados.";
+"Walkthrough.subtitle.three" = "Encuentre socios más ventajosos y establezca asociaciones que traigan resultados para ambas partes.";
 
 // TELA DE WALKTHROUGH - BOTAO
-"Walkthrough.button.continue" = "Continuar";
+"Walkthrough.button.continue" = "Seguir adelante";
 
 // UTIL
 "Util.cancel" = "Cancelar";
-
-
-
-
-
-
-
