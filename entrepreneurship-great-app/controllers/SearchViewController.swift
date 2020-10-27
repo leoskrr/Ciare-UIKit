@@ -12,10 +12,15 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var usersFromCK: [UserInfo]?
-    
-    var filterUser: [UserInfo]!
     let usersRepository: UsersRepository
+    
+    var usersFromCK: [UserInfo] = []{
+        didSet{
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     required init?(coder: NSCoder) {
         self.usersRepository = UsersRepository()
@@ -24,10 +29,21 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        ListAllUsersService().execute() {
+    }
+    
+    func loadUsers(withText: String){
+        
+        if(withText.count == 1){
+            showLoadingOnViewController(self)
+        }
+        
+        ListAllUsersByCharactersService().execute(characters: withText){
             allUsers, error in
-
+            
+            DispatchQueue.main.async {
+                removeLoadingOnViewController(self)
+            }
+            
             guard let users = allUsers, error == nil else {
                 DispatchQueue.main.async {
                     showAlertError(self, text: Translation.Error.server)
@@ -49,16 +65,12 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let users = filterUser {
-            return users.count
-        } else {
-            return 0
-        }
+        return usersFromCK.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let user = filterUser[indexPath.row]
+        let user = usersFromCK[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SearchUserTableViewCell
         
@@ -73,32 +85,11 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    
-        filterUser = []
-        
-        guard let users = usersFromCK else {
-            DispatchQueue.main.async {
-                showAlertError(self, text: Translation.Error.server)
-            }
-            return
-        }
-        
         if searchText == "" {
-            filterUser = []
+            usersFromCK = []
         }else{
-            for user in users{
-                if user.name.lowercased().contains(searchText.lowercased()){
-                    filterUser.append(user)
-                }
-                
-                else if !(user.expertiseAreas!.isEmpty){
-                    if user.expertiseAreas![0].lowercased().contains(searchText.lowercased()){
-                        filterUser.append(user)
-                    }
-                }
-            }
+            loadUsers(withText: searchText)
         }
-        self.tableView.reloadData()
     }
     
     
@@ -107,7 +98,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         let userCell = tableView.cellForRow(at: indexPath) as! SearchUserTableViewCell
         
         if let userId = userCell.userInfoId {
-            let selectedUser = usersFromCK?.first { $0.recordID == userId }
+            let selectedUser = usersFromCK.first { $0.recordID == userId }
             
             let personVC = self.storyboard?.instantiateViewController(withIdentifier: "personVC") as! PersonViewController
             
