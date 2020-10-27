@@ -14,15 +14,20 @@ class PhysicalSegmentedViewController: UIViewController {
     var registerViewController: RegisterViewController?
     
     @IBOutlet weak var businessAreaTextField: UITextField!
-    @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var streetTextField: UITextField!
+    @IBOutlet weak var cityNameTextField: UITextField!
+    
+    @IBOutlet weak var zipCodeTextField: UITextField!
     @IBOutlet weak var finishButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationTextField.delegate = self
+        zipCodeTextField.placeholder = Translation.segmentedControl.zipCode
+        cityNameTextField.placeholder = Translation.segmentedControl.city
+        streetTextField.placeholder = Translation.segmentedControl.street
         businessAreaTextField.placeholder = Translation.segmentedControl.businessArea
-        locationTextField.placeholder = Translation.segmentedControl.location
+
         finishButton.setTitle(Translation.segmentedControl.finish, for: .normal)
         
         assecibilityApple()
@@ -30,7 +35,7 @@ class PhysicalSegmentedViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         if let userLocation = registerViewController!.userBusinessPlacemarkName {
-            locationTextField.text = userLocation
+            streetTextField.text = userLocation
         }
     }
     
@@ -68,8 +73,4 @@ class PhysicalSegmentedViewController: UIViewController {
     }
 }
 
-extension PhysicalSegmentedViewController: UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        registerViewController?.showMapView()
-    }
-}
+

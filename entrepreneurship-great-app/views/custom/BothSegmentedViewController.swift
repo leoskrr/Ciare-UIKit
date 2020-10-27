@@ -12,7 +12,7 @@ class BothSegmentedViewController: UIViewController {
     
     @IBOutlet weak var businessAreaTextField: UITextField!
     
-    @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var zipCodeTextField: UITextField!
     
     @IBOutlet weak var instagramButton: UIButton!
     @IBOutlet weak var facebookButton: UIButton!
@@ -22,6 +22,9 @@ class BothSegmentedViewController: UIViewController {
     @IBOutlet weak var whatsappButton: UIButton!
     @IBOutlet weak var finishButton: UIButton!
     @IBOutlet weak var plataformsLabel: UILabel!
+    @IBOutlet weak var streetTextField: UITextField!
+    @IBOutlet weak var cityNameTextField: UITextField!
+    
     
     
     var selected1 = false
@@ -49,9 +52,13 @@ class BothSegmentedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationTextField.delegate = self
+        
         businessAreaTextField.placeholder = Translation.segmentedControl.businessArea
-        locationTextField.placeholder = Translation.segmentedControl.location
+        zipCodeTextField.placeholder = Translation.segmentedControl.zipCode
+        cityNameTextField.placeholder = Translation.segmentedControl.city
+        streetTextField.placeholder = Translation.segmentedControl.street
+        
+        
         finishButton.setTitle(Translation.segmentedControl.finish, for: .normal)
         plataformsLabel.text = Translation.segmentedControl.plataforms
         
@@ -59,7 +66,7 @@ class BothSegmentedViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        locationTextField.text = registerViewController!.userBusinessPlacemarkName
+        zipCodeTextField.text = registerViewController!.userBusinessPlacemarkName
     }
     
     @IBAction func instagramSelected(_ sender: UIButton) {
@@ -178,11 +185,5 @@ class BothSegmentedViewController: UIViewController {
                 print("erro ao cadastrar: \(error!)")
             }
         }
-    }
-}
-
-extension BothSegmentedViewController: UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        registerViewController?.showMapView()
     }
 }

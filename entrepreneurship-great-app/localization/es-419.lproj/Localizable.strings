@@ -40,9 +40,12 @@
 "RegisterViewController.segmentedControl.labelDigital" = "Digital";
 "RegisterViewController.segmentedControl.labelBoth" = "Ambos";
 "RegisterViewController.segmentedControl.labelBusinessArea" = "Area de actuación";
-"RegisterViewController.segmentedControl.labelLocation" = "Localización";
+"RegisterViewController.segmentedControl.zipCode" = "Código postal";
 "RegisterViewController.segmentedControl.labelPlataforms" = "Redes sociales";
 "RegisterViewController.segmentedControl.buttonFinish" = "Terminar";
+"RegisterViewController.segmentedControl.street" = "Calle";
+"RegisterViewController.segmentedControl.city" = "Ciudad";
+
 
 // POST VIEW CONTROLLER
 "PostViewController.post.descriptionPlaceholder" = "Describe tu publicación aquí";

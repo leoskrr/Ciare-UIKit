@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "mãos_peças-1.pdf",
+      "filename" : "mãos_peças.pdf",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -12,7 +12,7 @@
           "value" : "light"
         }
       ],
-      "filename" : "mãos_peças.pdf",
+      "filename" : "mãos_peças-2.pdf",
       "idiom" : "universal",
       "scale" : "1x"
     },

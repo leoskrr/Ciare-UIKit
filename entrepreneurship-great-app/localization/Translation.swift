@@ -82,7 +82,9 @@ class Translation {
         
         static let businessArea = NSLocalizedString("RegisterViewController.segmentedControl.labelBusinessArea", comment: "")
         
-        static let location = NSLocalizedString("RegisterViewController.segmentedControl.labelLocation", comment: "")
+        static let zipCode = NSLocalizedString("RegisterViewController.segmentedControl.zipCode", comment: "")
+        static let street = NSLocalizedString("RegisterViewController.segmentedControl.street", comment: "")
+        static let city = NSLocalizedString("RegisterViewController.segmentedControl.city", comment: "")
         
         static let plataforms = NSLocalizedString("RegisterViewController.segmentedControl.labelPlataforms", comment: "")
         
