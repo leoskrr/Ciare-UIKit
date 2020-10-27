@@ -25,24 +25,20 @@ class ListAllPostsService {
                 return
             }
             
-            self.postsRepository.listAll{
+            guard let usersFollowing = user.following else {
+                    completionHandler([], nil)
+                    return
+            }
+            
+            self.postsRepository.listsPostsByUsers(withIds: usersFollowing){
                 foundPosts, error in
-                                
-                guard let allPosts = foundPosts, error == nil else {
+                
+                guard let posts = foundPosts, error == nil else {
                     completionHandler([], error)
                     return
                 }
-                                
-                guard let usersFollowing = user.following else {
-                    completionHandler([], nil)
-                    return
-                }
                 
-                let allPostsByUsersFollowing = allPosts.filter {
-                    usersFollowing.contains($0.author_id)
-                }
-                
-                completionHandler(allPostsByUsersFollowing, nil)
+                completionHandler(posts, nil);
             }
         }
     }

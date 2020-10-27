@@ -11,31 +11,11 @@ class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewData
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    var posts: [Post] = []
-    
-    var userInfos: UserInfo? {
-        didSet {
+    var posts: [Post] = [] {
+        didSet{
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-        }
-    }
-    
-    func loadPersonData(){
-        ListUserInformationService().execute(){
-            info, error in
-            
-            DispatchQueue.main.async {
-                removeLoadingOnViewController(self)
-            }
-
-            guard let user = info, error == nil else {
-                DispatchQueue.main.async {
-                    showAlertError(self, text: Translation.Error.server)
-                }
-                return
-            }
-            self.userInfos = user
         }
     }
     
@@ -44,16 +24,19 @@ class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewData
 
         ListAllPostsService().execute{
             allPosts, error in
-        
+
+            DispatchQueue.main.async {
+                removeLoadingOnViewController(self)
+            }
+            
             guard error == nil else {
                 DispatchQueue.main.async {
                     showAlertError(self, text: Translation.Error.server)
                 }
                 return
             }
-            
+
             self.posts = allPosts
-            self.loadPersonData()
         }
     }
     
@@ -74,21 +57,18 @@ class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewData
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MyPostTableViewCell
         
-        if userInfos !== nil {
-            cell.fillCellData(post)
-        }
-        
+        cell.fillCellData(post)
         return cell
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadPostsFromDB()
         searchBar.placeholder = Translation.Placeholder.searchBar
     }
-    
+        
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
+        loadPostsFromDB()
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
