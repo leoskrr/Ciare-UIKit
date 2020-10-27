@@ -9,8 +9,6 @@ import UIKit
 import AuthenticationServices
 import CloudKit
 
-
-
 class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding{
     
     var authorizationButton = ASAuthorizationAppleIDButton()
@@ -36,8 +34,6 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, 
     
     
     override func viewDidLoad() {
-        
-        
         currentTheme = self.traitCollection.userInterfaceStyle
         
         authorizationButton.addTarget(self, action: #selector(handleAuthorizationAppleIDButtonPress), for: .touchUpInside)
@@ -47,28 +43,6 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, 
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-    }
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
-        
-        
-        let userIsLogged = getUserLoggedInApplicationStatus()
-                        
-        if userIsLogged{
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let tabbarVC = storyboard.instantiateViewController(withIdentifier: "TabBarView") as! TabBarViewController
-            
-            self.definesPresentationContext = true
-            tabbarVC.modalPresentationStyle = .overCurrentContext
-
-            self.present(tabbarVC, animated: false, completion: nil)
-            
-            tabBarController?.tabBar.isHidden = true
-        }
-        
-        
     }
     
     @objc
