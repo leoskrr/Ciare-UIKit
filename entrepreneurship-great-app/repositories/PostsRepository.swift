@@ -80,6 +80,24 @@ class PostsRepository {
         }
     }
     
+    public func listsPostsByUsers(withIds authors: [CKRecord.Reference], completionHandler: @escaping ([Post]?, Error?) -> ()) {
+        let predicate = NSPredicate(format: "author_id IN %@", authors)
+        let query = CKQuery(recordType: "Post", predicate: predicate)
+        query.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        let operation = CKQueryOperation(query: query)
+        
+        executeQueryOperation(operation: operation) {
+            posts, error in
+            
+            guard error == nil else {
+                completionHandler(nil, error)
+                return
+            }
+            
+            completionHandler(posts, nil)
+        }
+    }
+    
     private func executeQueryOperation(operation: CKQueryOperation, completionHandler: @escaping ([Post]?, Error? ) -> ()){
         
         var posts: [Post] = []
