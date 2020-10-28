@@ -12,6 +12,7 @@ class MyPostTableViewCell: UITableViewCell {
 
     var postId: CKRecord.ID!
     
+    
     @IBOutlet weak var companyNameLabel: UILabel!
     @IBOutlet weak var timeStampLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
@@ -22,12 +23,44 @@ class MyPostTableViewCell: UITableViewCell {
     
     var userInformations: UserInfo!
     
+    var feedView:FeedViewController?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.gestureTap(_:)))
+        gestureRecognizer.numberOfTapsRequired = 1
+        gestureRecognizer.numberOfTouchesRequired = 1
+        
+//        profileImage.addGestureRecognizer(gestureRecognizer)
+//        profileImage.isUserInteractionEnabled = true
+        
+        companyNameLabel.addGestureRecognizer(gestureRecognizer)
+        companyNameLabel.isUserInteractionEnabled = true
        
     }
 
+    @objc func gestureTap (_ gesture: UITapGestureRecognizer){
+        
+        
+        print("\nAté aqui deu bom\n")
+        
+        let selectedUser = userInformations
+        
+    
+        if let view = feedView {
+            
+            let personVC = view.storyboard?.instantiateViewController(withIdentifier: "personVC") as! PersonViewController
+
+            view.definesPresentationContext = true
+
+            personVC.modalPresentationStyle = .overCurrentContext
+            personVC.person = selectedUser
+
+            view.present(personVC, animated: false, completion: nil)
+        }
+        
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
@@ -57,9 +90,6 @@ class MyPostTableViewCell: UITableViewCell {
         
         
     }
-    
-    
-    
     
     func adjustUITextViewHeight(){
         descriptionPost.translatesAutoresizingMaskIntoConstraints = true
