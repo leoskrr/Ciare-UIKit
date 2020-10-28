@@ -50,16 +50,16 @@ class OnBoardingViewController: UIViewController, UICollectionViewDelegate, UICo
     
     override func viewDidAppear(_ animated: Bool) {
            let userIsLogged = getUserLoggedInApplicationStatus()
-                           
+
            if userIsLogged{
                let storyboard = UIStoryboard(name: "Main", bundle: nil)
                let tabbarVC = storyboard.instantiateViewController(withIdentifier: "TabBarView") as! TabBarViewController
-               
+
                self.definesPresentationContext = true
                tabbarVC.modalPresentationStyle = .overCurrentContext
 
                self.present(tabbarVC, animated: false, completion: nil)
-               
+
                tabBarController?.tabBar.isHidden = true
            }
     }
