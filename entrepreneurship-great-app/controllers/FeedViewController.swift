@@ -21,9 +21,14 @@ class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewData
         }
     }
     
-    func loadPostsFromDB(){
+    
+    var refresh: UIRefreshControl!
+    
+    
+    @objc func loadPostsFromDB(){
         ListAllPostsService().execute(excludePosts: posts){
             allPosts, error in
+            
             
             guard error == nil else {
                 DispatchQueue.main.async {
@@ -33,6 +38,9 @@ class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewData
             }
 
             self.posts.append(contentsOf: allPosts)
+            DispatchQueue.main.async {
+                self.refresh.endRefreshing()
+            }
         }
     }
     
@@ -61,6 +69,12 @@ class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.placeholder = Translation.Placeholder.searchBar
+        
+        
+        refresh = UIRefreshControl()
+        refresh.attributedTitle = NSAttributedString(string: "Pull to load posts")
+        refresh.addTarget(self, action: #selector(loadPostsFromDB), for: .valueChanged)
+        self.tableView.addSubview(refresh)
     }
         
     override func viewWillAppear(_ animated: Bool) {
