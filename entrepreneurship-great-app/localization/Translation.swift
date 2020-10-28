@@ -155,4 +155,9 @@ class Translation {
         
         static let button = NSLocalizedString("Walkthrough.button.continue", comment: "")
     }
+    
+    class Feed{
+        static let reload = NSLocalizedString("FeedViewController.reload", comment: "")
+    }
+    
 }

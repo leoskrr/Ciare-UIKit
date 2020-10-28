@@ -72,7 +72,7 @@ class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewData
         
         
         refresh = UIRefreshControl()
-        refresh.attributedTitle = NSAttributedString(string: "Pull to load posts")
+        refresh.attributedTitle = NSAttributedString(string: Translation.Feed.reload)
         refresh.addTarget(self, action: #selector(loadPostsFromDB), for: .valueChanged)
         self.tableView.addSubview(refresh)
     }
