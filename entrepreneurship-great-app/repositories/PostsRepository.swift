@@ -80,17 +80,18 @@ class PostsRepository {
         }
     }
     
-    public func listsPostsByUsers(withIds authors: [CKRecord.Reference], completionHandler: @escaping ([Post]?, Error?) -> ()) {
+    public func listsPostsByUsers(withIds authors: [CKRecord.Reference], excludePostsWithIds: [CKRecord.ID], completionHandler: @escaping ([Post]?, Error?) -> ()) {
         
         if authors.count == 0 {
             completionHandler([], nil);
             return
         }
         
-        let predicate = NSPredicate(format: "author_id IN %@", authors)
+        let predicate = NSPredicate(format: "author_id IN %@ AND NOT (recordID IN  %@)", authors, excludePostsWithIds)
         let query = CKQuery(recordType: "Post", predicate: predicate)
         query.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         let operation = CKQueryOperation(query: query)
+        operation.resultsLimit = 3
         
         executeQueryOperation(operation: operation) {
             posts, error in

@@ -15,7 +15,14 @@ class ListAllPostsService {
         self.postsRepository = PostsRepository()
     }
     
-    public func execute(completionHandler: @escaping ([Post], Error?)->()){
+    public func execute(excludePosts: [Post], completionHandler: @escaping ([Post], Error?)->()){
+        
+        var recordsIdsToExclude: [CKRecord.ID] = []
+        
+        for post in excludePosts {
+            recordsIdsToExclude.append(post.id!)
+        }
+        
         ListUserInformationService().execute(){
             userInfo, error in
                         
@@ -30,7 +37,7 @@ class ListAllPostsService {
                     return
             }
             
-            self.postsRepository.listsPostsByUsers(withIds: usersFollowing){
+            self.postsRepository.listsPostsByUsers(withIds: usersFollowing, excludePostsWithIds: recordsIdsToExclude){
                 foundPosts, error in
                 
                 guard let posts = foundPosts, error == nil else {

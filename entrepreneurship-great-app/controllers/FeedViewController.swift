@@ -11,6 +11,8 @@ class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewData
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
+    var shouldLoadData: Bool = true
+    
     var posts: [Post] = [] {
         didSet{
             DispatchQueue.main.async {
@@ -20,14 +22,8 @@ class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewData
     }
     
     func loadPostsFromDB(){
-        showLoadingOnViewController(self)
-
-        ListAllPostsService().execute{
+        ListAllPostsService().execute(excludePosts: posts){
             allPosts, error in
-
-            DispatchQueue.main.async {
-                removeLoadingOnViewController(self)
-            }
             
             guard error == nil else {
                 DispatchQueue.main.async {
@@ -36,7 +32,7 @@ class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewData
                 return
             }
 
-            self.posts = allPosts
+            self.posts.append(contentsOf: allPosts)
         }
     }
     
@@ -58,6 +54,7 @@ class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MyPostTableViewCell
         
         cell.fillCellData(post)
+        
         return cell
     }
     
@@ -76,5 +73,19 @@ class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewData
         self.definesPresentationContext = true
         newVC?.modalPresentationStyle = .overCurrentContext
         self.present(newVC!, animated: false, completion: nil)
+    }
+}
+
+extension FeedViewController: UIScrollViewDelegate{
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        shouldLoadData = false
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if ((tableView.contentOffset.y + tableView.frame.size.height) >= tableView.contentSize.height){
+            if !shouldLoadData {
+                loadPostsFromDB()
+            }
+        }
     }
 }
