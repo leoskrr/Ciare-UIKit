@@ -461,11 +461,10 @@
                                     <outlet property="delegate" destination="qga-c8-z3T" id="g1X-Wk-C3r"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IGR-au-NZ1">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IGR-au-NZ1">
                                 <rect key="frame" x="20" y="56" width="335" height="562"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="403" id="4z9-oZ-s6d" customClass="MyPostTableViewCell" customModule="Ciare" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="403" id="4z9-oZ-s6d" customClass="MyPostTableViewCell" customModule="Ciare" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="335" height="403"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4z9-oZ-s6d" id="3oO-LL-3nR">
@@ -512,7 +511,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Bdy-YA-kBI">
                                                             <rect key="frame" x="0.0" y="73" width="335" height="305"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YgQ-yf-xe5">
+                                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YgQ-yf-xe5">
                                                                     <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
                                                                     <subviews>
                                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" keyboardDismissMode="interactive" text="Post description" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tdk-fK-9qq">
@@ -2676,38 +2675,38 @@ fora da sua área também !</string>
     </scenes>
     <designables>
         <designable name="023-JP-FkB">
-            <size key="intrinsicContentSize" width="73.5" height="34"/>
+            <size key="intrinsicContentSize" width="58.5" height="34"/>
         </designable>
         <designable name="4VZ-ah-Ebl">
-            <size key="intrinsicContentSize" width="89.5" height="34"/>
+            <size key="intrinsicContentSize" width="74.5" height="34"/>
         </designable>
         <designable name="EiN-k5-aCJ">
-            <size key="intrinsicContentSize" width="110" height="34"/>
+            <size key="intrinsicContentSize" width="95" height="34"/>
         </designable>
         <designable name="K0n-xL-fZG">
-            <size key="intrinsicContentSize" width="68.5" height="34"/>
+            <size key="intrinsicContentSize" width="58.5" height="34"/>
         </designable>
         <designable name="Pf8-rf-hbs">
-            <size key="intrinsicContentSize" width="105" height="34"/>
+            <size key="intrinsicContentSize" width="95" height="34"/>
         </designable>
         <designable name="SVy-iL-KqN">
-            <size key="intrinsicContentSize" width="84.5" height="34"/>
+            <size key="intrinsicContentSize" width="74.5" height="34"/>
         </designable>
         <designable name="dr8-we-SrG">
-            <size key="intrinsicContentSize" width="135" height="34"/>
+            <size key="intrinsicContentSize" width="120" height="34"/>
         </designable>
         <designable name="lZ6-RL-zUm">
-            <size key="intrinsicContentSize" width="145.5" height="34"/>
+            <size key="intrinsicContentSize" width="135.5" height="34"/>
         </designable>
         <designable name="wHU-IJ-03F">
-            <size key="intrinsicContentSize" width="122.5" height="22"/>
+            <size key="intrinsicContentSize" width="107.5" height="22"/>
         </designable>
         <designable name="zrX-Og-LUp">
-            <size key="intrinsicContentSize" width="145.5" height="34"/>
+            <size key="intrinsicContentSize" width="135.5" height="34"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="96q-Ot-0O3"/>
+        <segue reference="V0T-NH-D7e"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="background" width="380" height="815"/>

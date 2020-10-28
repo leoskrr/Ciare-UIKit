@@ -98,7 +98,10 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         let userCell = tableView.cellForRow(at: indexPath) as! SearchUserTableViewCell
         
         if let userId = userCell.userInfoId {
-            let selectedUser = usersFromCK.first { $0.recordID == userId }
+            let selectedUser = usersFromCK.first {
+                $0.recordID == userId
+                
+            }
             
             let personVC = self.storyboard?.instantiateViewController(withIdentifier: "personVC") as! PersonViewController
             

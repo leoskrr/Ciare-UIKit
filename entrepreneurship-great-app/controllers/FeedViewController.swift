@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
@@ -13,7 +14,17 @@ class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewData
     
     var shouldLoadData: Bool = true
     
+    var userInfoId: CKRecord.ID!
+    
     var posts: [Post] = [] {
+        didSet{
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    var usersFromCK: [UserInfo] = []{
         didSet{
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -38,6 +49,7 @@ class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewData
             }
 
             self.posts.append(contentsOf: allPosts)
+            
             DispatchQueue.main.async {
                 self.refresh.endRefreshing()
             }
@@ -61,9 +73,45 @@ class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewData
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MyPostTableViewCell
         
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.gestureTap(_:)))
+        gestureRecognizer.numberOfTapsRequired = 1
+        gestureRecognizer.numberOfTouchesRequired = 1
+
+        
         cell.fillCellData(post)
         
+        cell.companyNameLabel.addGestureRecognizer(gestureRecognizer)
+        cell.companyNameLabel.isUserInteractionEnabled = true
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let userCell = tableView.cellForRow(at: indexPath) as! MyPostTableViewCell
+    }
+    
+    @objc func gestureTap (_ gesture: UITapGestureRecognizer){
+        
+        print("\n\ntapped\n\n")
+        
+        
+        
+        if let userId = userInfoId {
+            print("\nAté aqui n deu bom\n")
+            let selectedUser = usersFromCK.first { $0.recordID == userId }
+            
+            let personVC = self.storyboard?.instantiateViewController(withIdentifier: "personVC") as! PersonViewController
+            
+            self.definesPresentationContext = true
+            
+            personVC.modalPresentationStyle = .overCurrentContext
+            personVC.person = selectedUser
+            
+            searchBar.resignFirstResponder()
+            self.present(personVC, animated: false, completion: nil)
+        }
+        
     }
     
     override func viewDidLoad() {
@@ -75,6 +123,7 @@ class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewData
         refresh.attributedTitle = NSAttributedString(string: "Pull to load posts")
         refresh.addTarget(self, action: #selector(loadPostsFromDB), for: .valueChanged)
         self.tableView.addSubview(refresh)
+        
     }
         
     override func viewWillAppear(_ animated: Bool) {

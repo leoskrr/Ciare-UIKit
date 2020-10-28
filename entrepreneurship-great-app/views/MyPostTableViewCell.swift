@@ -20,6 +20,7 @@ class MyPostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var postImage: UIImageView!
     
+    
     var userInformations: UserInfo? {
         didSet {
             DispatchQueue.main.async {
@@ -41,10 +42,13 @@ class MyPostTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+       
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        
     }
     
     func loadUserData(userId: CKRecord.ID){
@@ -71,12 +75,17 @@ class MyPostTableViewCell: UITableViewCell {
         if let postImgUrl = post.image.fileURL {
             self.postImage.image = UIImage(contentsOfFile: postImgUrl.path)
         }
+        
+        
     }
+    
+    
+    
     
     func adjustUITextViewHeight(){
         descriptionPost.translatesAutoresizingMaskIntoConstraints = true
         descriptionPost.sizeToFit()
         descriptionPost.isScrollEnabled = false
-    
     }
+    
 }
