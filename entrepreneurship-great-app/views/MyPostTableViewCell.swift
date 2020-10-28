@@ -20,24 +20,7 @@ class MyPostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var postImage: UIImageView!
     
-    var userInformations: UserInfo? {
-        didSet {
-            DispatchQueue.main.async {
-                if self.userInformations !== nil {
-                    self.companyNameLabel.text = self.userInformations!.name
-                    if let userPicture = self.userInformations!.picture{
-                        if let userPictureUrl = userPicture.fileURL {
-                            self.profileImage.image = UIImage(contentsOfFile: userPictureUrl.path)
-                        } else {
-                            self.profileImage.image = UIImage(named: "defaultUserProfileImage")
-                        }
-                    } else {
-                        self.profileImage.image = UIImage(named: "defaultUserProfileImage")
-                    }
-                }
-            }
-        }
-    }
+    var userInformations: UserInfo!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -50,6 +33,8 @@ class MyPostTableViewCell: UITableViewCell {
     func fillCellData(_ post: Post, _ user: UserInfo){
         //User
         self.companyNameLabel.text = user.name
+        self.userInformations = user
+        
         if let userPicture = user.picture{
             if let userPictureUrl = userPicture.fileURL {
                 self.profileImage.image = UIImage(contentsOfFile: userPictureUrl.path)
