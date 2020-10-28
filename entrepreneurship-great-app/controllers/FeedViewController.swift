@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import CloudKit.CKRecord
 
 class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
+    var feedIsLoading = true
     var shouldLoadData: Bool = true
-    
     var posts: [Post] = [] {
         didSet{
             DispatchQueue.main.async {
@@ -20,15 +21,19 @@ class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewData
             }
         }
     }
-    
-    
+    var authors: [UserInfo] = []
     var refresh: UIRefreshControl!
-    
     
     @objc func loadPostsFromDB(){
         ListAllPostsService().execute(excludePosts: posts){
-            allPosts, error in
+            allPosts, allAuthors, error  in
             
+            if self.feedIsLoading {
+                DispatchQueue.main.async {
+                    removeLoadingOnViewController(self)
+                }
+                self.feedIsLoading = false
+            }
             
             guard error == nil else {
                 DispatchQueue.main.async {
@@ -36,8 +41,10 @@ class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewData
                 }
                 return
             }
-
+            
+            self.authors = allAuthors
             self.posts.append(contentsOf: allPosts)
+            
             DispatchQueue.main.async {
                 self.refresh.endRefreshing()
             }
@@ -60,16 +67,17 @@ class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewData
         let post = posts[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MyPostTableViewCell
-        
-        cell.fillCellData(post)
-        
+
+        if let author = authors.first(where: { $0.recordID == post.author_id.recordID }) {
+            cell.fillCellData(post, author)
+        }
+
         return cell
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.placeholder = Translation.Placeholder.searchBar
-        
         
         refresh = UIRefreshControl()
         refresh.attributedTitle = NSAttributedString(string: Translation.Feed.reload)
@@ -79,6 +87,9 @@ class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewData
         
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
+        if feedIsLoading {
+            showLoadingOnViewController(self)
+        }
         loadPostsFromDB()
     }
     

@@ -164,9 +164,7 @@ class UsersRepository{
     
     public func updateUsersInformations(informations: [UserInfo]) {
         var ckRecordsArray = [CKRecord]()
-        
-        print("chegou")
-        
+                
         for newInformations in informations {
             let record = CKRecord(recordType: "UsersInfos", recordID: newInformations.recordID!)
             
@@ -194,10 +192,29 @@ class UsersRepository{
                 print("Error \(error!)")
                 return
             }
-            
-            print("Records atualizados!")
         }
-
+    }
+    
+    public func loadUsersWithIds(_ ids: [CKRecord.ID], completionHandler: @escaping ([UserInfo]?, Error?) -> ()){
+        if ids.count == 0 {
+            completionHandler([], nil);
+            return
+        }
+        
+        let predicate = NSPredicate(format: "recordID IN %@", ids)
+        let query = CKQuery(recordType: "UsersInfos", predicate: predicate)
+        let operation = CKQueryOperation(query: query)
+        
+        executeQueryOperation(operation: operation) {
+            users, error in
+            
+            guard error == nil else {
+                completionHandler(nil, error)
+                return
+            }
+            
+            completionHandler(users, nil)
+        }
     }
     
     public func findUserById(_ id: String) -> User? {

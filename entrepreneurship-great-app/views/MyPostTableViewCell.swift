@@ -47,24 +47,19 @@ class MyPostTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func loadUserData(userId: CKRecord.ID){
-        ListInfoByIdService().execute(recordId: userId){
-            info, error in
-            
-            guard let userInfo = info, error == nil else {
-                return
+    func fillCellData(_ post: Post, _ user: UserInfo){
+        //User
+        self.companyNameLabel.text = user.name
+        if let userPicture = user.picture{
+            if let userPictureUrl = userPicture.fileURL {
+                self.profileImage.image = UIImage(contentsOfFile: userPictureUrl.path)
+            } else {
+                self.profileImage.image = UIImage(named: "defaultUserProfileImage")
             }
-            
-            self.userInformations = userInfo
+        } else {
+            self.profileImage.image = UIImage(named: "defaultUserProfileImage")
         }
-    }
-    
-    func fillCellData(_ post: Post){
-        self.companyNameLabel.text = Translation.Load.loadingText
-        self.profileImage.image = UIImage(named: "defaultUserProfileImage")
-
-        loadUserData(userId: post.author_id.recordID)
-        
+        //Post
         self.descriptionPost.text = post.description
         self.timeStampLabel.text = ""
         
@@ -77,6 +72,5 @@ class MyPostTableViewCell: UITableViewCell {
         descriptionPost.translatesAutoresizingMaskIntoConstraints = true
         descriptionPost.sizeToFit()
         descriptionPost.isScrollEnabled = false
-    
     }
 }
