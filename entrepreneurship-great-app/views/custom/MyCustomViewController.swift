@@ -31,7 +31,7 @@ class MyCustomViewController: UIViewController, UITableViewDataSource {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MyPostTableViewCell
         
-        cell.fillCellData(post)
+        cell.fillCellData(post, person)
         
         return cell
     }

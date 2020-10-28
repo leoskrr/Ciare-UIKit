@@ -104,3 +104,6 @@
 
 // UTIL
 "Util.cancel" = "Cancelar";
+
+// reload
+"FeedViewController.reload" = "Puxe para recarregar os posts";

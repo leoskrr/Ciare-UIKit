@@ -104,3 +104,6 @@
 
 // UTIL
 "Util.cancel" = "Cancel";
+
+// reload
+"FeedViewController.reload" = "Pull to load posts";
