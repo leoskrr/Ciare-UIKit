@@ -81,6 +81,12 @@ class PostsRepository {
     }
     
     public func listsPostsByUsers(withIds authors: [CKRecord.Reference], completionHandler: @escaping ([Post]?, Error?) -> ()) {
+        
+        if authors.count == 0 {
+            completionHandler([], nil);
+            return
+        }
+        
         let predicate = NSPredicate(format: "author_id IN %@", authors)
         let query = CKQuery(recordType: "Post", predicate: predicate)
         query.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
