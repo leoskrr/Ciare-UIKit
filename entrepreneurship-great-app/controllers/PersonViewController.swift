@@ -251,6 +251,49 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
         }
     }
     
+    func unFollowUserAction(){
+        if !(followersQuantity.text == "0"){
+            if let currentTextInLabel = followersQuantity.text {
+                followersQuantity.text = "\(Int(currentTextInLabel)! - 1)"
+            } else {
+                followersQuantity.text = "0"
+            }
+            
+            ListUserInformationService().execute(){
+                unfollower, error in
+                
+                guard let unfollowerUser = unfollower, error == nil else {
+                    DispatchQueue.main.async {
+                        showAlertError(self, text: Translation.Error.server)
+                    }
+                    return
+                }
+                
+                ListInfoByIdService().execute(recordId: self.person!.recordID!) {
+                    unfollowed, error in
+                    
+                    guard let unfollowedUser = unfollowed, error == nil else {
+                        DispatchQueue.main.async {
+                            showAlertError(self, text: Translation.Error.server)
+                        }
+                        return
+                    }
+                    
+                    let unfollowedUserRef = CKRecord.Reference(recordID: unfollowedUser.recordID!, action: .none)
+                    
+                    let unfollowerUserRef = CKRecord.Reference(recordID: unfollowerUser.recordID!, action: .none)
+                    
+                    unfollowerUser.following = self.removeUserInArray(unfollowerUser.following, userRef: unfollowedUserRef)
+                    
+                    unfollowedUser.followers = self.removeUserInArray(unfollowedUser.followers, userRef: unfollowerUserRef)
+                    
+                    self.updateInformationsOfUser(unfollowerUser)
+                    self.updateInformationsOfUser(unfollowedUser)
+                }
+            }
+        }
+    }
+    
     func askPartnershipAction(){
         guard let loggedUserInfoRN = getUserInfoRecordNameFromUserDefaults() else {
             return
@@ -283,6 +326,19 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
             arrayToReturn = [userRef]
         } else {
             arrayToReturn?.append(userRef)
+        }
+        
+        return arrayToReturn
+    }
+    
+    func removeUserInArray(_ array: [CKRecord.Reference]?, userRef: CKRecord.Reference) -> [CKRecord.Reference]?{
+        
+        var arrayToReturn = array
+        
+        if arrayToReturn == nil {
+            arrayToReturn = [userRef]
+        } else {
+            arrayToReturn?.removeAll(where: { $0 == userRef })
         }
         
         return arrayToReturn
@@ -335,6 +391,8 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
             self.followButton.backgroundColor = #colorLiteral(red: 0.9505110383, green: 0.9506440759, blue: 0.9504690766, alpha: 1)
             self.followButton.layer.borderWidth = 0
             self.followButton.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+            
+            self.unFollowUserAction()
         }))
         
 //        actionSheet.addAction(UIAlertAction(title: Translation.Alert.blockUser, style: .destructive, handler: nil))
