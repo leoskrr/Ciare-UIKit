@@ -50,9 +50,11 @@ class AskedPartnershipsRepository{
             guard let array = askeds, error == nil else {
                 return
             }
-            
+                        
             if array.count > 0 {
                 completionHandler(array.first!, nil)
+            } else {
+                completionHandler(nil, nil)
             }
         }
     }

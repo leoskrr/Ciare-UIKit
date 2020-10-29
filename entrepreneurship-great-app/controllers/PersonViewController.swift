@@ -137,23 +137,31 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
     }
     
     func shouldShowAskPartnershipButton(loggedUser: UserInfo, person: UserInfo){
-        if loggedUser.partners!.contains(CKRecord.Reference(recordID: person.recordID!, action: .none)){
-            DispatchQueue.main.async {
-                self.drawPartnersButton(self.followButton)
-            }
-        } else {
-            ListOneAskPartnershipService().execute(by: loggedUser.recordID!, to: person.recordID!){
-                
-                _, error in
-                
-                guard error == nil else {
-                    DispatchQueue.main.async {
-                        self.drawAskPartnershipButton(self.followButton)
-                    }
-                    return
-                }
+        if let userHasPartners = loggedUser.partners {
+
+            if userHasPartners.contains(CKRecord.Reference(recordID: person.recordID!, action: .none)){
+
                 DispatchQueue.main.async {
-                    self.drawAskedPartnershipButton(self.followButton)
+                    self.drawPartnersButton(self.followButton)
+                }
+            } else {
+                ListOneAskPartnershipService().execute(by: loggedUser.recordID!, to: person.recordID!){
+                    
+                    ask, error in
+                                        
+                    guard error == nil else {
+                        return
+                    }
+                    
+                    if ask == nil {
+                        DispatchQueue.main.async {
+                            self.drawAskPartnershipButton(self.followButton)
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            self.drawAskedPartnershipButton(self.followButton)
+                        }
+                    }
                 }
             }
         }
@@ -184,6 +192,7 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
     }
     
     func drawAskPartnershipButton(_ sender: UIButton){
+        print("a")
         sender.setTitle(Translation.Placeholder.askPartnership, for: .normal)
         sender.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         sender.layer.borderColor = #colorLiteral(red: 1, green: 0.6358063221, blue: 0, alpha: 1)
