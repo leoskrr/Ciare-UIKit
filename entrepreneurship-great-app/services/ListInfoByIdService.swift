@@ -31,7 +31,7 @@ class ListInfoByIdService {
             
             userInfo.recordID = userInfoRecord.recordID
             userInfo.availablePartnerships = userInfoRecord["availablePartnerships"] as? Int64
-            userInfo.location = userInfoRecord["location"] as? CLLocation
+            userInfo.location = userInfoRecord["locale"] as? String
             userInfo.picture = userInfoRecord["picture"] as? CKAsset
             userInfo.expertiseAreas = userInfoRecord["expertiseAreas"] as? [String]
             userInfo.socialNetworks = userInfoRecord["socialNetworks"] as? [String]

@@ -171,10 +171,13 @@ class BothSegmentedViewController: UIViewController {
         userInfo.typeBusiness = "Both"
         userInfo.socialNetworks = socialNetworks
         
-        if let coreLocation = registerViewController!.userBusinessCoordinate {
-            userInfo.location = CLLocation(latitude: coreLocation.latitude, longitude: coreLocation.longitude)
+        if let street = streetTextField.text,
+           let city = cityNameTextField.text,
+           let zipCode = zipCodeTextField.text {
+            
+            userInfo.location = street + "," + city + "," + zipCode
         }
-                
+        
         SignUpUserService().execute(userInfo) {
             signUpResult, error in
             
