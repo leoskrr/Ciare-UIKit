@@ -19,6 +19,8 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var pickerImageButton: UIButton!
     @IBOutlet weak var postButton: UIButton!
     
+    var shouldLoadDynamicData = true
+    
     var user: UserInfo? = nil {
         didSet {
             DispatchQueue.main.async {
@@ -53,18 +55,24 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.nicheLabel.text = Translation.Load.loadingText
-        self.companyNameLabel.text = Translation.Load.loadingText
-        self.profileImage.image = UIImage(named: "defaultUserProfileImage")
         self.descriptionTextView.text = placeholder
         self.descriptionTextView.textColor = UIColor(named: "PlaceholderRegister")
         drawTextView()
-        loadUser()
+        
+        if shouldLoadDynamicData {
+            self.nicheLabel.text = Translation.Load.loadingText
+            self.companyNameLabel.text = Translation.Load.loadingText
+            self.profileImage.image = UIImage(named: "defaultUserProfileImage")
+
+            loadUser()
+        }
     }
     
     func loadUser(){
         ListUserInformationService().execute(){
             info, error in
+            
+            self.shouldLoadDynamicData = false
             
             guard let userInfos = info, error == nil else {
                 DispatchQueue.main.async {

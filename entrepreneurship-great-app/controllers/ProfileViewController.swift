@@ -32,6 +32,8 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate, C
     
     @IBOutlet weak var photoChooseButton: UIButton!
     
+    var IsDynamicDataLoading = true
+
     var user: UserInfo! {
         didSet{
             DispatchQueue.main.async {
@@ -96,7 +98,6 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate, C
         partnerLabel.text = Translation.Info.partners
         followingLabel.text = Translation.Info.following
         followersLabel.text = Translation.Info.followers
-        print()
         
     }
     
@@ -109,8 +110,13 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate, C
     }
     
     func loadComponents(){
-        self.nameLabel.text = Translation.Load.loadingText
-        self.nicheLabel.text = Translation.Load.loadingText
+        if IsDynamicDataLoading {
+            self.nameLabel.text = Translation.Load.loadingText
+            self.nicheLabel.text = Translation.Load.loadingText
+            
+            IsDynamicDataLoading = false
+        }
+
         self.partnershipsQuantity.text = "0"
         self.followingQuantity.text = "0"
         self.followersQuantity.text = "0"
