@@ -326,9 +326,9 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
         
         let actionSheet = UIAlertController(title: Translation.Alert.title, message: Translation.Alert.subtitle, preferredStyle: .actionSheet)
         
-        actionSheet.addAction(UIAlertAction(title: Translation.Alert.clean, style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: Translation.Util.cancel, style: .cancel, handler: nil))
         
-        actionSheet.addAction(UIAlertAction(title: Translation.Alert.message, style: .default, handler: nil))
+//        actionSheet.addAction(UIAlertAction(title: Translation.Alert.message, style: .default, handler: nil))
         
         actionSheet.addAction(UIAlertAction(title: Translation.Alert.unfollow, style: .default, handler: {_ in
             self.followButton.setTitle(Translation.Placeholder.btnFollow, for: .normal)
@@ -337,7 +337,7 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
             self.followButton.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
         }))
         
-        actionSheet.addAction(UIAlertAction(title: Translation.Alert.blockUser, style: .destructive, handler: nil))
+//        actionSheet.addAction(UIAlertAction(title: Translation.Alert.blockUser, style: .destructive, handler: nil))
         
         present(actionSheet, animated: true)
     }
