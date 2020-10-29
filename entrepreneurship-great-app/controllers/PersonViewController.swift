@@ -13,6 +13,8 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
     var person: UserInfo?
     var personWithLoadedData: UserInfo?
     
+    var shouldBackToSearch = true
+    
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var niche: UILabel!
@@ -301,12 +303,18 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
     
     @IBAction func backToSearchView(_ sender: Any) {
         
-        let searchVC = self.storyboard?.instantiateViewController(withIdentifier: "searchVC") as! SearchViewController
+        if shouldBackToSearch {
+            let searchVC = self.storyboard?.instantiateViewController(withIdentifier: "searchVC") as! SearchViewController
+            
+            self.definesPresentationContext = true
+            
+            searchVC.modalPresentationStyle = .overCurrentContext
+            self.present(searchVC, animated: false, completion: nil)
+        } else {
+            
+        }
         
-        self.definesPresentationContext = true
         
-        searchVC.modalPresentationStyle = .overCurrentContext
-        self.present(searchVC, animated: false, completion: nil)
     }
     
     @IBAction func actionViewButton(_ sender: Any) {

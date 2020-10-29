@@ -37,13 +37,8 @@ class MyPostTableViewCell: UITableViewCell {
     }
 
     @objc func gestureTap (_ gesture: UITapGestureRecognizer){
-        
-        
-        print("\nAté aqui deu bom\n")
-        
         let selectedUser = userInformations
         
-    
         if let view = feedView {
             
             let personVC = view.storyboard?.instantiateViewController(withIdentifier: "personVC") as! PersonViewController
@@ -52,6 +47,7 @@ class MyPostTableViewCell: UITableViewCell {
 
             personVC.modalPresentationStyle = .overCurrentContext
             personVC.person = selectedUser
+            personVC.shouldBackToSearch = false
 
             view.present(personVC, animated: false, completion: nil)
         }

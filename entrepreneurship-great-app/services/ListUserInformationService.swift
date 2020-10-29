@@ -49,17 +49,17 @@ class ListUserInformationService {
                     userInfo.socialNetworks = userInfoRecord["socialNetworks"] as? [String]
                     userInfo.typeBusiness = userInfoRecord["typeBusiness"] as? String
                     if let followers = userInfoRecord["followers"] as? [CKRecord.Reference]{
-                        userInfo.followers = followers
+                        userInfo.followers = Array(Set(followers))
                     } else {
                         userInfo.followers = []
                     }
                     if let following = userInfoRecord["following"] as? [CKRecord.Reference]{
-                        userInfo.following = following
+                        userInfo.following = Array(Set(following))
                     } else {
                         userInfo.following = []
                     }
                     if let partners = userInfoRecord["partners"] as? [CKRecord.Reference]{
-                        userInfo.partners = partners
+                        userInfo.partners = Array(Set(partners))
                     } else {
                         userInfo.partners = []
                     }

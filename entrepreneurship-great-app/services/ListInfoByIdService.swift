@@ -36,9 +36,18 @@ class ListInfoByIdService {
             userInfo.expertiseAreas = userInfoRecord["expertiseAreas"] as? [String]
             userInfo.socialNetworks = userInfoRecord["socialNetworks"] as? [String]
             userInfo.typeBusiness = userInfoRecord["typeBusiness"] as? String
-            userInfo.followers = userInfoRecord["followers"] as? [CKRecord.Reference]
-            userInfo.following = userInfoRecord["following"] as? [CKRecord.Reference]
-            userInfo.partners = userInfoRecord["partners"] as? [CKRecord.Reference]
+            
+            if let followers = userInfoRecord["followers"] as? [CKRecord.Reference]{
+                userInfo.followers = Array(Set(followers))
+            }
+            
+            if let following = userInfoRecord["following"] as? [CKRecord.Reference]{
+                userInfo.following = Array(Set(following))
+            }
+            
+            if let partners = userInfoRecord["partners"] as? [CKRecord.Reference]{
+                userInfo.partners = Array(Set(partners))
+            }
             
             completionHandler(userInfo, nil)
         }
