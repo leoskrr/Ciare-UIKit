@@ -54,7 +54,7 @@ class UsersRepository{
         }
 
         userInfoRecord["availablePartnerships"] = userInfo.availablePartnerships
-        userInfoRecord["location"] = userInfo.location
+        userInfoRecord["locale"] = userInfo.location
         userInfoRecord["picture"] = userInfo.picture
         userInfoRecord["expertiseAreas"] = userInfo.expertiseAreas
         userInfoRecord["name"] = userInfo.name
@@ -140,7 +140,7 @@ class UsersRepository{
             }
             
             record.setObject(newInformations.availablePartnerships as CKRecordValue?, forKey: "availablePartnerships")
-            record.setObject(newInformations.location, forKey: "location")
+            record.setObject(newInformations.location as CKRecordValue?, forKey: "locale")
             record.setObject(newInformations.picture, forKey: "picture")
             record.setObject(newInformations.name as CKRecordValue?, forKey: "name")
             record.setObject(newInformations.expertiseAreas as CKRecordValue?, forKey: "expertiseAreas")
@@ -169,7 +169,7 @@ class UsersRepository{
             let record = CKRecord(recordType: "UsersInfos", recordID: newInformations.recordID!)
             
             record.setObject(newInformations.availablePartnerships as CKRecordValue?, forKey: "availablePartnerships")
-            record.setObject(newInformations.location, forKey: "location")
+            record.setObject(newInformations.location as CKRecordValue?, forKey: "locale")
             record.setObject(newInformations.picture, forKey: "picture")
             record.setObject(newInformations.name as CKRecordValue?, forKey: "name")
             record.setObject(newInformations.expertiseAreas as CKRecordValue?, forKey: "expertiseAreas")
@@ -234,7 +234,7 @@ class UsersRepository{
             let user = UserInfo(name: record["name"] as! String, recordID: record.recordID)
 
             user.availablePartnerships = record["availablePartnerships"] as? Int64
-            user.location = record["location"] as? CLLocation
+            user.location = record["locale"] as? String
             user.picture = record["picture"] as? CKAsset
             user.typeBusiness = record["typeBusiness"] as? String
             user.expertiseAreas = record["expertiseAreas"] as? [String]

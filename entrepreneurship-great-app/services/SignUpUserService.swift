@@ -40,7 +40,7 @@ class SignUpUserService {
                     userRecord["name"] = user.name
                     
                     userInfosRecord["name"] = user.name
-                    userInfosRecord["location"] = user.location
+                    userInfosRecord["locale"] = user.location
                     userInfosRecord["picture"] = user.picture
                     userInfosRecord["availablePartnerships"] = user.availablePartnerships
                     userInfosRecord["typeBusiness"] = user.typeBusiness

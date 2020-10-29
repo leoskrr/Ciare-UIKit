@@ -11,7 +11,7 @@ import CloudKit
 class UserInfo: NSObject {
     var name: String
     var recordID: CKRecord.ID?
-    var location: CLLocation?
+    var location: String?
     var picture: CKAsset?
     var availablePartnerships: Int64?
     var typeBusiness: String?
@@ -23,7 +23,7 @@ class UserInfo: NSObject {
 
     init(name: String,
          recordID: CKRecord.ID? = nil,
-         location: CLLocation? = nil,
+         location: String? = nil,
          picture: CKAsset? = nil,
          availablePartnerships: Int64? = nil,
          expertiseAreas: [String]? = nil,

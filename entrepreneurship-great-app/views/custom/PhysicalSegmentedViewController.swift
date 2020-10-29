@@ -16,8 +16,8 @@ class PhysicalSegmentedViewController: UIViewController {
     @IBOutlet weak var businessAreaTextField: UITextField!
     @IBOutlet weak var streetTextField: UITextField!
     @IBOutlet weak var cityNameTextField: UITextField!
-    
     @IBOutlet weak var zipCodeTextField: UITextField!
+    
     @IBOutlet weak var finishButton: UIButton!
     
     override func viewDidLoad() {
@@ -51,11 +51,15 @@ class PhysicalSegmentedViewController: UIViewController {
         let userInfo = UserInfo(name: name)
         userInfo.expertiseAreas = businessArea.components(separatedBy: " ")
         userInfo.typeBusiness = "Physical"
+
         
-        if let coreLocation = registerViewController!.userBusinessCoordinate {
-            userInfo.location = CLLocation(latitude: coreLocation.latitude, longitude: coreLocation.longitude)
+        if let street = streetTextField.text,
+           let city = cityNameTextField.text,
+           let zipCode = zipCodeTextField.text {
+            
+            userInfo.location = street + "," + city + "," + zipCode
         }
-        
+                
         SignUpUserService().execute(userInfo) {
             signUpResult, error in
             
