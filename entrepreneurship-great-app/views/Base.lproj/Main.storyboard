@@ -457,7 +457,7 @@
         <!--Home-->
         <scene sceneID="CNg-Y1-Ayz">
             <objects>
-                <viewController id="qga-c8-z3T" customClass="FeedViewController" customModule="Ciare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FeedView" id="qga-c8-z3T" customClass="FeedViewController" customModule="Ciare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gZk-uc-EfA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
