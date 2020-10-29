@@ -8,7 +8,11 @@
 import Foundation
 import CloudKit
 
-class Post {
+class Post: Equatable {
+    static func == (lhs: Post, rhs: Post) -> Bool {
+        return lhs.id == rhs.author_id
+    }
+    
     var id: CKRecord.ID?
     var author_id: CKRecord.Reference
     var description: String

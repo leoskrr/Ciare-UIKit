@@ -19,6 +19,9 @@ class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewData
     
     var posts: [Post] = [] {
         didSet{
+            posts = posts.filterDuplicates {
+                $0.id == $1.id
+            }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -26,6 +29,32 @@ class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewData
     }
     var authors: [UserInfo] = []
     var refresh: UIRefreshControl!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        searchBar.placeholder = Translation.Placeholder.searchBar
+        
+        refresh = UIRefreshControl()
+        refresh.attributedTitle = NSAttributedString(string: Translation.Feed.reload)
+        refresh.addTarget(self, action: #selector(loadPostsFromDB), for: .valueChanged)
+        self.tableView.addSubview(refresh)
+        
+    }
+        
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+        if feedIsLoading {
+            showLoadingOnViewController(self)
+            loadPostsFromDB()
+        }
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        let newVC = self.storyboard?.instantiateViewController(withIdentifier: "searchVC")
+        self.definesPresentationContext = true
+        newVC?.modalPresentationStyle = .overCurrentContext
+        self.present(newVC!, animated: false, completion: nil)
+    }
     
     @objc func loadPostsFromDB(){
         ListAllPostsService().execute(excludePosts: posts){
@@ -53,6 +82,9 @@ class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewData
             }
         }
     }
+}
+
+extension FeedViewController: UIScrollViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -80,34 +112,6 @@ class FeedViewController: UIViewController, UISearchBarDelegate, UITableViewData
         return cell
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        searchBar.placeholder = Translation.Placeholder.searchBar
-        
-        refresh = UIRefreshControl()
-        refresh.attributedTitle = NSAttributedString(string: Translation.Feed.reload)
-        refresh.addTarget(self, action: #selector(loadPostsFromDB), for: .valueChanged)
-        self.tableView.addSubview(refresh)
-        
-    }
-        
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = true
-        if feedIsLoading {
-            showLoadingOnViewController(self)
-        }
-        loadPostsFromDB()
-    }
-    
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        let newVC = self.storyboard?.instantiateViewController(withIdentifier: "searchVC")
-        self.definesPresentationContext = true
-        newVC?.modalPresentationStyle = .overCurrentContext
-        self.present(newVC!, animated: false, completion: nil)
-    }
-}
-
-extension FeedViewController: UIScrollViewDelegate{
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         shouldLoadData = false
     }

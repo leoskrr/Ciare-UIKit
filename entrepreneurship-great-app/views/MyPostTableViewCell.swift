@@ -12,7 +12,6 @@ class MyPostTableViewCell: UITableViewCell {
 
     var postId: CKRecord.ID!
     
-    
     @IBOutlet weak var companyNameLabel: UILabel!
     @IBOutlet weak var timeStampLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
@@ -31,10 +30,7 @@ class MyPostTableViewCell: UITableViewCell {
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.gestureTap(_:)))
         gestureRecognizer.numberOfTapsRequired = 1
         gestureRecognizer.numberOfTouchesRequired = 1
-        
-//        profileImage.addGestureRecognizer(gestureRecognizer)
-//        profileImage.isUserInteractionEnabled = true
-        
+                
         companyNameLabel.addGestureRecognizer(gestureRecognizer)
         companyNameLabel.isUserInteractionEnabled = true
        
@@ -87,8 +83,6 @@ class MyPostTableViewCell: UITableViewCell {
         if let postImgUrl = post.image.fileURL {
             self.postImage.image = UIImage(contentsOfFile: postImgUrl.path)
         }
-        
-        
     }
     
     func adjustUITextViewHeight(){
@@ -96,5 +90,4 @@ class MyPostTableViewCell: UITableViewCell {
         descriptionPost.sizeToFit()
         descriptionPost.isScrollEnabled = false
     }
-    
 }
