@@ -376,12 +376,14 @@ class PersonViewController: UIViewController, CustomSegmentedControlDelegate {
             searchVC.modalPresentationStyle = .overCurrentContext
             self.present(searchVC, animated: false, completion: nil)
         } else {
-            let searchVC = self.storyboard?.instantiateViewController(withIdentifier: "FeedView") as! FeedViewController
-            
-            self.definesPresentationContext = true
-            
-            searchVC.modalPresentationStyle = .overCurrentContext
-            self.present(searchVC, animated: false, completion: nil)
+            self.performSegue(withIdentifier: "goToTabVC", sender: self)
+
+//            let searchVC = self.storyboard?.instantiateViewController(withIdentifier: "FeedView") as! FeedViewController
+//            
+//            self.definesPresentationContext = false
+//            
+//            searchVC.modalPresentationStyle = .overCurrentContext
+//            self.present(searchVC, animated: false, completion: nil)
         }
         
         

@@ -36,7 +36,7 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gfp-GM-REp">
                                 <rect key="frame" x="16" y="68" width="343" height="550"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="collectionViewColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellNotifications1" rowHeight="120" id="QDc-Rh-LBF" customClass="Notifications1TableViewCell" customModule="Ciare" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="120"/>
@@ -160,6 +160,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="collectionViewColor"/>
                                         <connections>
                                             <outlet property="acceptButton" destination="MtA-Q1-YNS" id="QGD-eb-uCa"/>
                                             <outlet property="companyName" destination="z9a-uk-4yE" id="jcs-Qj-4Vk"/>
@@ -177,7 +178,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="W45-zk-bTf"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="collectionViewColor"/>
                         <constraints>
                             <constraint firstItem="ME3-Sb-3gR" firstAttribute="top" secondItem="OMw-HW-TNm" secondAttribute="bottom" constant="2" id="DMB-DF-2yc"/>
                             <constraint firstItem="Gfp-GM-REp" firstAttribute="leading" secondItem="W45-zk-bTf" secondAttribute="leading" constant="16" id="ETe-IV-jQw"/>
@@ -209,6 +210,8 @@
                         <subviews>
                             <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d6g-1q-usL">
                                 <rect key="frame" x="13" y="0.0" width="349" height="56"/>
+                                <color key="backgroundColor" name="collectionViewColor"/>
+                                <color key="barTintColor" name="collectionViewColor"/>
                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                                 <scopeButtonTitles>
                                     <string>Title</string>
@@ -220,6 +223,7 @@
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ahn-vc-ROM">
                                 <rect key="frame" x="0.0" y="56" width="375" height="611"/>
+                                <color key="backgroundColor" name="collectionViewColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="91" id="grc-wg-QmS" customClass="SearchUserTableViewCell" customModule="Ciare" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="91"/>
@@ -286,6 +290,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="collectionViewColor"/>
                                         <connections>
                                             <outlet property="nameUser" destination="pni-SB-Wqn" id="62x-we-vOM"/>
                                             <outlet property="niche" destination="GvM-xp-efc" id="LbZ-MR-455"/>
@@ -300,7 +305,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Dz9-sa-CZF"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="collectionViewColor"/>
                         <constraints>
                             <constraint firstItem="d6g-1q-usL" firstAttribute="trailing" secondItem="Dz9-sa-CZF" secondAttribute="trailing" constant="-13" id="98o-uM-NFw"/>
                             <constraint firstItem="Ahn-vc-ROM" firstAttribute="trailing" secondItem="Dz9-sa-CZF" secondAttribute="trailing" id="PZy-d9-x7n"/>
@@ -464,6 +469,8 @@
                         <subviews>
                             <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="133-0K-y4J">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                <color key="backgroundColor" name="collectionViewColor"/>
+                                <color key="barTintColor" name="collectionViewColor"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="qga-c8-z3T" id="g1X-Wk-C3r"/>
@@ -471,6 +478,7 @@
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IGR-au-NZ1">
                                 <rect key="frame" x="20" y="56" width="335" height="562"/>
+                                <color key="backgroundColor" name="collectionViewColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="403" id="4z9-oZ-s6d" customClass="MyPostTableViewCell" customModule="Ciare" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="335" height="403"/>
@@ -576,6 +584,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="Sw5-Ob-h1W" secondAttribute="bottom" constant="20" id="hGc-cW-SNH"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="collectionViewColor"/>
                                         <connections>
                                             <outlet property="companyNameLabel" destination="fCN-Sh-Iyy" id="lAs-IM-cRm"/>
                                             <outlet property="descriptionPost" destination="tdk-fK-9qq" id="6Ez-cW-ljc"/>
@@ -592,7 +601,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="u4d-uH-fV4"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="collectionViewColor"/>
                         <constraints>
                             <constraint firstItem="IGR-au-NZ1" firstAttribute="top" secondItem="133-0K-y4J" secondAttribute="bottom" id="C7k-x3-Mmx"/>
                             <constraint firstItem="133-0K-y4J" firstAttribute="trailing" secondItem="u4d-uH-fV4" secondAttribute="trailing" id="EUh-CT-ZF6"/>
@@ -975,7 +984,7 @@ fora da sua área também !</string>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eSr-Yx-808"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="collectionViewColor"/>
                         <constraints>
                             <constraint firstItem="o71-3A-jzc" firstAttribute="bottom" secondItem="sTy-Yr-CUo" secondAttribute="bottom" constant="-10" id="8R8-Wi-b9L"/>
                             <constraint firstItem="YGf-FK-0vx" firstAttribute="leading" secondItem="eSr-Yx-808" secondAttribute="leading" constant="20" id="JqC-xS-bbB"/>
@@ -1071,7 +1080,7 @@ fora da sua área também !</string>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" name="collectionViewColor"/>
                                                 <constraints>
                                                     <constraint firstItem="dnX-U5-LTv" firstAttribute="centerY" secondItem="kmz-Pz-19R" secondAttribute="centerY" id="kxf-a6-KsE"/>
                                                     <constraint firstItem="dnX-U5-LTv" firstAttribute="top" secondItem="kmz-Pz-19R" secondAttribute="top" constant="10" id="meQ-ya-8wu"/>
@@ -1102,7 +1111,7 @@ fora da sua área também !</string>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" name="collectionViewColor"/>
                                                 <constraints>
                                                     <constraint firstItem="y69-8M-JHz" firstAttribute="centerY" secondItem="r40-89-enH" secondAttribute="centerY" id="E4k-TH-6O8"/>
                                                     <constraint firstItem="y69-8M-JHz" firstAttribute="top" secondItem="r40-89-enH" secondAttribute="top" constant="10" id="ECy-Eh-S8j"/>
@@ -1133,7 +1142,7 @@ fora da sua área também !</string>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" name="collectionViewColor"/>
                                                 <constraints>
                                                     <constraint firstItem="VNm-eT-j1n" firstAttribute="centerX" secondItem="Vl3-rc-lIe" secondAttribute="centerX" id="C2q-bw-e4X"/>
                                                     <constraint firstItem="VNm-eT-j1n" firstAttribute="top" secondItem="Vl3-rc-lIe" secondAttribute="top" constant="10" id="Eyj-sb-YLs"/>
@@ -1150,6 +1159,7 @@ fora da sua área também !</string>
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" name="collectionViewColor"/>
                                 <constraints>
                                     <constraint firstItem="A5R-8c-bP9" firstAttribute="leading" secondItem="co7-LS-Bdt" secondAttribute="leading" id="4F6-Bx-LgA"/>
                                     <constraint firstItem="WuY-CG-mS4" firstAttribute="leading" secondItem="co7-LS-Bdt" secondAttribute="leading" id="Mv3-ki-9Xh"/>
@@ -1208,7 +1218,7 @@ fora da sua área também !</string>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0Gx-hR-Ehz"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="collectionViewColor"/>
                         <constraints>
                             <constraint firstItem="co7-LS-Bdt" firstAttribute="leading" secondItem="0Gx-hR-Ehz" secondAttribute="leading" id="0d2-3L-xvG"/>
                             <constraint firstItem="LXT-Kq-ygL" firstAttribute="centerX" secondItem="WaB-Hp-IqJ" secondAttribute="centerX" id="1qH-Oc-erq"/>
@@ -1358,7 +1368,7 @@ fora da sua área também !</string>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" name="collectionViewColor"/>
                                                 <constraints>
                                                     <constraint firstItem="i3n-cU-Fhe" firstAttribute="centerX" secondItem="fen-Gq-Qms" secondAttribute="centerX" id="MuX-cS-6db"/>
                                                     <constraint firstItem="i3n-cU-Fhe" firstAttribute="top" secondItem="fen-Gq-Qms" secondAttribute="top" constant="10" id="UgU-Rx-x5S"/>
@@ -1387,9 +1397,10 @@ fora da sua área também !</string>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
+                                                        <color key="backgroundColor" name="collectionViewColor"/>
                                                     </stackView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" name="collectionViewColor"/>
                                                 <constraints>
                                                     <constraint firstItem="oJH-au-tfm" firstAttribute="centerY" secondItem="gCc-YU-4M3" secondAttribute="centerY" id="6Ox-Jw-fvx"/>
                                                     <constraint firstItem="oJH-au-tfm" firstAttribute="top" secondItem="gCc-YU-4M3" secondAttribute="top" constant="10" id="Cvk-qD-xpw"/>
@@ -1418,9 +1429,10 @@ fora da sua área também !</string>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
+                                                        <color key="backgroundColor" name="collectionViewColor"/>
                                                     </stackView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" name="collectionViewColor"/>
                                                 <constraints>
                                                     <constraint firstItem="66y-oe-CTp" firstAttribute="top" secondItem="40B-Bg-Thq" secondAttribute="top" constant="10" id="5GD-Bc-Dda"/>
                                                     <constraint firstItem="66y-oe-CTp" firstAttribute="centerY" secondItem="40B-Bg-Thq" secondAttribute="centerY" id="p9Y-AZ-0GG"/>
@@ -1458,6 +1470,7 @@ fora da sua área também !</string>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GsM-Ki-ju7" userLabel="Conteiner-&quot;Posts&quot;">
                                 <rect key="frame" x="16" y="371" width="343" height="296"/>
+                                <color key="backgroundColor" name="collectionViewColor"/>
                                 <connections>
                                     <segue destination="rTT-LN-j9w" kind="embed" identifier="personPostsContainer" id="zjR-31-iix"/>
                                 </connections>
@@ -1475,7 +1488,7 @@ fora da sua área também !</string>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wFd-Sj-L5s"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="collectionViewColor"/>
                         <constraints>
                             <constraint firstItem="GsM-Ki-ju7" firstAttribute="top" secondItem="kk1-fl-Wh3" secondAttribute="bottom" constant="5" id="16Z-sh-fKK"/>
                             <constraint firstItem="wFd-Sj-L5s" firstAttribute="trailing" secondItem="kk1-fl-Wh3" secondAttribute="trailing" id="1xj-ab-KXA"/>
@@ -1522,6 +1535,7 @@ fora da sua área também !</string>
                         <outlet property="partnershipsQuantity" destination="txW-xm-LYL" id="gmK-BM-2gI"/>
                         <outlet property="postsContainer" destination="GsM-Ki-ju7" id="J8b-to-Gl8"/>
                         <outlet property="profileImage" destination="rjb-Z3-4ZE" id="3xo-Yf-qp1"/>
+                        <segue destination="e2v-IO-8wV" kind="presentation" identifier="goToTabVC" animates="NO" modalPresentationStyle="fullScreen" id="LCo-KV-ugV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IOV-BB-r1B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2273,6 +2287,7 @@ fora da sua área também !</string>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sfN-SP-KZI">
                                 <rect key="frame" x="0.0" y="0.0" width="343" height="296"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="separatorColor" name="collectionViewColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="403" id="jYq-lh-8E7" customClass="MyPostTableViewCell" customModule="Ciare" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="403"/>
@@ -2378,6 +2393,7 @@ fora da sua área também !</string>
                                                 <constraint firstAttribute="bottom" secondItem="pg4-iG-1F2" secondAttribute="bottom" constant="20" id="sKK-YK-2a4"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="collectionViewColor"/>
                                         <connections>
                                             <outlet property="companyNameLabel" destination="mY8-Lr-24w" id="gyS-Zw-ac6"/>
                                             <outlet property="descriptionPost" destination="nlV-hm-z3c" id="LN7-HZ-aHf"/>
@@ -2481,7 +2497,7 @@ fora da sua área também !</string>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1MZ-dj-H1Q">
                                 <rect key="frame" x="0.0" y="0.0" width="343" height="247"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="collectionViewColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellMy" rowHeight="403" id="171-Sn-b11" customClass="MyProfileTableViewCell" customModule="Ciare" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="403"/>
@@ -2587,6 +2603,7 @@ fora da sua área também !</string>
                                                 <constraint firstAttribute="trailing" secondItem="0pM-Ci-ioD" secondAttribute="trailing" id="twY-of-T1J"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="collectionViewColor"/>
                                         <connections>
                                             <outlet property="companyNameLabel" destination="hUE-NR-T50" id="3oS-c8-xgz"/>
                                             <outlet property="postDescription" destination="M8V-Cl-bPL" id="MmS-l8-UR8"/>
@@ -2714,7 +2731,7 @@ fora da sua área também !</string>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="V0T-NH-D7e"/>
+        <segue reference="LCo-KV-ugV"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="background" width="380" height="815"/>
